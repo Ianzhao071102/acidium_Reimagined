@@ -1,0 +1,14 @@
+package org.izdevs.acidium.api.v1;
+
+import lombok.Getter;
+import org.izdevs.acidium.serialization.API;
+
+public class v1 extends API {
+    public v1() {
+        super("v1","v1",new User());
+    }
+    @Getter
+    enum defined{
+        USER,PLAYER,MOB,MOB_SPEC
+    }
+}

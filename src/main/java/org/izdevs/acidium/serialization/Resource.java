@@ -1,0 +1,45 @@
+package org.izdevs.acidium.serialization;
+
+import com.google.gson.Gson;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.ArrayList;
+
+import static org.izdevs.acidium.serialization.ResourceFacade.registerResource;
+
+public class Resource {
+    @Getter
+    @Setter
+    public boolean unset;
+    @Getter
+    public boolean isApi;
+    @Setter
+    public API associatedApi;
+    @Setter
+    @Getter
+    public String typeName;
+    @Setter
+    @Getter
+    public ArrayList<SpecObject> spec;
+    public Resource(String name, ArrayList<SpecObject> objects){
+        this.typeName = name;
+        this.spec = objects;
+    }
+    public Resource(String name,boolean isApi){
+        this.typeName = name;
+        this.isApi = isApi;
+    }
+    public void register(){
+        registerResource(this);
+    }
+    public static Resource deserialize(String serialized){
+        Gson gson = new Gson();
+        //inline
+        return gson.fromJson(serialized,Resource.class);
+    }
+    public String serialize(){
+        Gson gson = new Gson();
+        return gson.toJson(this);
+    }
+}

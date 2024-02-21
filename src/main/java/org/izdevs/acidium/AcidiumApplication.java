@@ -8,8 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class AcidiumApplication {
 
 	public static void main(String[] args) {
-//		SpringApplication.run(AcidiumApplication.class, args);
+		//SpringApplication.run(AcidiumApplication.class, args);
 
 	}
-
 }

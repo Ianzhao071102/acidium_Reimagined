@@ -5,10 +5,10 @@ import org.izdevs.acidium.serialization.API;
 
 public class v1 extends API {
     public v1() {
-        super("v1","v1",new User());
+        super("v1","v1",new User(),new Player());
     }
     @Getter
     enum defined{
-        USER,PLAYER,MOB,MOB_SPEC
+        USER,PLAYER,MOB,ENTITY
     }
 }

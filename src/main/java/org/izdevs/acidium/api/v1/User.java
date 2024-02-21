@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 public class User extends Resource {
+
     ArrayList<SpecObject> specof = new ArrayList<>();
     public User(String username, UUID uuid) {
         super("USER", false);

@@ -14,6 +14,9 @@ java {
 
 repositories {
 	mavenCentral()
+	maven {
+		url "https://libraries.minecraft.net"
+	}
 }
 
 ext {
@@ -42,7 +45,10 @@ dependencies {
 	implementation 'org.reflections:reflections:0.10.2'
 	runtimeOnly 'com.mysql:mysql-connector-j'
 	implementation 'com.google.code.gson:gson:2.10.1'
-	implementation group: 'org.yaml', name: 'snakeyaml', version: '1.28'
+	implementation 'org.yaml:snakeyaml'
+	implementation 'com.mojang:brigadier:1.0.18'
+	implementation 'com.google.re2j:re2j:1.6'
+
 }
 
 dependencyManagement {

@@ -2,7 +2,6 @@ package org.izdevs.acidium.world;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.izdevs.acidium.api.v1.BlockType;
 
 @Getter
 @Setter

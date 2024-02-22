@@ -19,7 +19,7 @@ import java.lang.invoke.MethodHandles;
 import java.net.URL;
 import java.util.ArrayList;
 
-import static org.izdevs.acidium.serialization.YamlParser.registerYamlDef;
+import static org.izdevs.acidium.serialization.NBTParser.registerNBTDef;
 
 @Configuration
 @SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
@@ -30,11 +30,11 @@ public class AcidiumApplication{
 	public static void main(String[] args) throws NoSuchMethodException, IOException, InstantiationException, IllegalAccessException {
 		SpringApplication.run(AcidiumApplication.class, args);
 		TickManager.init();
-		loadYaml();
+		loadNBT();
 		logger.info("starting resource facade, registering....");
 		ResourceFacade.start();
 	}
-	public static void loadYaml() throws IOException {
+	public static void loadNBT() throws IOException {
 		org.springframework.core.io.Resource[] resource = getXMLResources();
 		if(resource.length == 0){
 			logger.debug("no yaml found on classpath");
@@ -44,7 +44,7 @@ public class AcidiumApplication{
 			org.springframework.core.io.Resource resource1 = resource[i];
 			URL path = resource1.getURL();
 			try(InputStream stream = new FileInputStream(String.valueOf(path))){
-				registerYamlDef(stream);
+				registerNBTDef(stream);
 			}
 		}
 	}
@@ -53,7 +53,7 @@ public class AcidiumApplication{
 		ClassLoader classLoader = MethodHandles.lookup().getClass().getClassLoader();
 		PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver(classLoader);
 
-		return resolver.getResources("classpath:*.yaml");
+		return resolver.getResources("classpath:*.nbt");
 
 	}
 }

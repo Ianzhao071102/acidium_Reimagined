@@ -1,18 +1,13 @@
 package org.izdevs.acidium.command;
 
-import org.izdevs.acidium.serialization.YamlParser;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 import org.springframework.shell.standard.ShellOption;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
-import static org.izdevs.acidium.serialization.YamlParser.registerYamlDef;
+import static org.izdevs.acidium.serialization.NBTParser.registerNBTDef;
 
 @ShellComponent
 public class CommandHandler {
@@ -27,7 +22,7 @@ public class CommandHandler {
         try {
             ClassLoader classloader = Thread.currentThread().getContextClassLoader();
             InputStream is = classloader.getResourceAsStream(name);
-            registerYamlDef(is);
+            registerNBTDef(is);
         }catch(Throwable e){
             throw new RuntimeException(e);
         }

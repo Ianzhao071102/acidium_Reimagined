@@ -54,7 +54,7 @@ public class Resource implements Ticked {
         Gson gson = new Gson();
         return gson.toJson(this);
     }
-
+    //IDEA: THIS COULD BE SERIALIZED TO NBT IF COULD
     @Scheduled(fixedDelay = 1000/Config.ticksPerSecond)
     @Override
     public void tick() {

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class MobHolder implements Ticked {
+    //WARNING: PLEASE REGISTER YOUR SPAWNER HERE OR IT WON'T BE CALLED IN THE FUTURE
     public static ArrayList<Mob> registeredMobs = new ArrayList<>();
     public static void registerMob(Mob mob){
         registeredMobs.add(mob);

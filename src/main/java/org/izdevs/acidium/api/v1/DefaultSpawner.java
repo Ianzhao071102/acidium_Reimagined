@@ -2,7 +2,6 @@ package org.izdevs.acidium.api.v1;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.izdevs.acidium.api.v1.Mob;
 import org.izdevs.acidium.entity.AbstractMobSpawner;
 import org.izdevs.acidium.serialization.Resource;
 

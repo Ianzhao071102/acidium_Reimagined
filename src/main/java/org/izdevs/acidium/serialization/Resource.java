@@ -3,13 +3,21 @@ package org.izdevs.acidium.serialization;
 import com.google.gson.Gson;
 import lombok.Getter;
 import lombok.Setter;
+import org.izdevs.acidium.Config;
+import org.izdevs.acidium.tick.Ticked;
+import org.springframework.scheduling.annotation.Scheduled;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.izdevs.acidium.serialization.ResourceFacade.registerResource;
 
-public class Resource {
+public class Resource implements Ticked {
+    @Getter
+    @Setter
+    Runnable tickRun;
+    @Getter
+    boolean ticked;
     @Getter
     @Setter
     List<String> flags;
@@ -45,5 +53,13 @@ public class Resource {
     public String serialize(){
         Gson gson = new Gson();
         return gson.toJson(this);
+    }
+
+    @Scheduled(fixedDelay = 1000/Config.ticksPerSecond)
+    @Override
+    public void tick() {
+        if(tickRun != null){
+            tickRun.run();
+        }
     }
 }

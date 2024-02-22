@@ -9,7 +9,7 @@ public class SpecObject {
     String key;
     Object value;
     public SpecObject(String key,Object value){
-        this.setKey(key);
-        this.setValue(value);
+        this.key = key;
+        this.value = value;
     }
 }

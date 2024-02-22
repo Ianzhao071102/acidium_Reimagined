@@ -3,6 +3,8 @@ plugins {
 	id 'org.springframework.boot' version '3.2.2'
 	id 'io.spring.dependency-management' version '1.1.4'
 	id 'org.graalvm.buildtools.native' version '0.9.28'
+	id 'io.freefair.lombok' version "8.6"
+
 }
 
 group = 'org.izdevs'
@@ -31,9 +33,12 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-websocket'
 	implementation 'org.springframework.kafka:spring-kafka'
 	implementation 'org.springframework.modulith:spring-modulith-starter-core'
-	implementation 'org.projectlombok:lombok'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
-	implementation 'org.springframework.modulith:spring-modulith-starter-jdbc'
+
+	compileOnly 'org.projectlombok:lombok:1.18.30'
+	annotationProcessor 'org.projectlombok:lombok:1.18.30'
+	testCompileOnly 'org.projectlombok:lombok:1.18.30'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.boot:spring-boot-testcontainers'
 	testImplementation 'org.springframework.batch:spring-batch-test'
@@ -43,12 +48,12 @@ dependencies {
 	testImplementation 'org.testcontainers:junit-jupiter'
 	testImplementation 'org.testcontainers:kafka'
 	implementation 'org.reflections:reflections:0.10.2'
-	runtimeOnly 'com.mysql:mysql-connector-j'
 	implementation 'com.google.code.gson:gson:2.10.1'
 	implementation 'org.yaml:snakeyaml'
 	implementation 'com.mojang:brigadier:1.0.18'
 	implementation 'com.google.re2j:re2j:1.6'
 
+	testImplementation 'org.awaitility:awaitility:3.1.2'
 }
 
 dependencyManagement {

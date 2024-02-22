@@ -11,28 +11,20 @@ public class User extends Resource {
     ArrayList<SpecObject> specof = new ArrayList<>();
     public User(String username, UUID uuid) {
         super("USER", false);
-        SpecObject usernameSpec = new SpecObject();
-        usernameSpec.setKey("username");
-        usernameSpec.setValue(username);
+        SpecObject usernameSpec = new SpecObject("username",username);
         specof.add(usernameSpec);
 
-        SpecObject uuidSpec = new SpecObject();
-        uuidSpec.setKey("uuid");
-        uuidSpec.setValue(uuid.toString());
+        SpecObject uuidSpec = new SpecObject("uuid",uuid.toString());
         specof.add(uuidSpec);
         this.spec = specof;
         register();
     }
     public User(){
         super("USER", false);
-        SpecObject usernameSpec = new SpecObject();
-        usernameSpec.setKey("username");
-        usernameSpec.setValue("unset");
+        SpecObject usernameSpec = new SpecObject("username","unset");
         specof.add(usernameSpec);
 
-        SpecObject uuidSpec = new SpecObject();
-        uuidSpec.setKey("uuid");
-        uuidSpec.setValue("unset");
+        SpecObject uuidSpec = new SpecObject("uuid","unset");
         specof.add(uuidSpec);
         this.spec = specof;
         register();

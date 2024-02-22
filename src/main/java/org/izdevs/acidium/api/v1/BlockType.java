@@ -8,9 +8,9 @@ import org.izdevs.acidium.serialization.SpecObject;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+@Setter
 @Getter
 public class BlockType extends Resource {
-    @Setter
     ArrayList<String> bTypes = new ArrayList<>();
     public BlockType(String name) {
         super(name, false);

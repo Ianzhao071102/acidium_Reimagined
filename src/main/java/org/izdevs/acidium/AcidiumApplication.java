@@ -1,20 +1,24 @@
 package org.izdevs.acidium;
 
-import com.mojang.brigadier.CommandDispatcher;
+import org.izdevs.acidium.serialization.Resource;
+import org.izdevs.acidium.serialization.ResourceFacade;
+import org.izdevs.acidium.tick.TickManager;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
-import static com.mojang.brigadier.arguments.IntegerArgumentType.getInteger;
-import static com.mojang.brigadier.arguments.IntegerArgumentType.integer;
-import static com.mojang.brigadier.builder.LiteralArgumentBuilder.literal;
-import static com.mojang.brigadier.builder.RequiredArgumentBuilder.argument;
+import java.util.ArrayList;
 
-@SpringBootApplication
-public class AcidiumApplication {
-
-	public static void main(String[] args) {
-		//SpringApplication.run(AcidiumApplication.class, args);
-
+@Configuration
+@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
+@EnableScheduling
+public class AcidiumApplication{
+	static ArrayList<Resource> resources = new ArrayList<>();
+	public static void main(String[] args) throws NoSuchMethodException {
+		SpringApplication.run(AcidiumApplication.class, args);
+		TickManager.init();
+		resources = ResourceFacade.getResources();
 	}
-
-
 }

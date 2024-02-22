@@ -8,14 +8,11 @@ import org.springframework.shell.standard.ShellOption;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.nio.file.Files;
+import java.io.InputStream;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Set;
+
+import static org.izdevs.acidium.serialization.YamlParser.registerYamlDef;
 
 @ShellComponent
 public class CommandHandler {
@@ -27,15 +24,13 @@ public class CommandHandler {
 
     @ShellMethod(key = "regClassPathYaml")
     public String regClassPathYaml(@ShellOption(defaultValue = "name") String name) throws FileNotFoundException {
-       Path url = null;
         try {
-            url = Paths.get(String.valueOf(this.getClass().getResource(name)));
+            ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+            InputStream is = classloader.getResourceAsStream(name);
+            registerYamlDef(is);
         }catch(Throwable e){
             throw new RuntimeException(e);
         }
-
-        File file = new File(url.toString());
-        YamlParser.registerYamlDef(new FileInputStream(file));
-        return "successful";
+        return "success";
     }
 }

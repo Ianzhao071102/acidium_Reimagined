@@ -19,6 +19,7 @@ repositories {
 	maven {
 		url "https://libraries.minecraft.net"
 	}
+	maven { url 'https://jitpack.io/' }
 }
 
 ext {
@@ -51,11 +52,14 @@ dependencies {
 	testImplementation 'org.testcontainers:kafka'
 	implementation 'org.reflections:reflections:0.10.2'
 	implementation 'com.google.code.gson:gson:2.10.1'
-	implementation 'org.yaml:snakeyaml'
 	implementation 'com.mojang:brigadier:1.0.18'
 	implementation 'com.google.re2j:re2j:1.6'
 
 	testImplementation 'org.awaitility:awaitility:3.1.2'
+	implementation 'com.esri.geometry:esri-geometry-api:2.2.4'
+	implementation group: 'com.esotericsoftware.yamlbeans', name: 'yamlbeans', version: '1.17'
+
+	implementation 'com.github.Querz:NBT:6.1'
 }
 
 dependencyManagement {

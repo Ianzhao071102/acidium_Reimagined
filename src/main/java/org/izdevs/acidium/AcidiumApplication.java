@@ -1,6 +1,7 @@
 package org.izdevs.acidium;
 
 import org.izdevs.acidium.serialization.Resource;
+import org.izdevs.acidium.serialization.ResourceFacade;
 import org.izdevs.acidium.tick.TickManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,14 +12,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.invoke.MethodHandles;
-import java.net.URI;
 import java.net.URL;
-import java.nio.file.Path;
 import java.util.ArrayList;
 
 import static org.izdevs.acidium.serialization.YamlParser.registerYamlDef;
@@ -29,10 +27,12 @@ import static org.izdevs.acidium.serialization.YamlParser.registerYamlDef;
 public class AcidiumApplication{
 	static Logger logger = LoggerFactory.getLogger(AcidiumApplication.class);
 	static ArrayList<Resource> resources = new ArrayList<>();
-	public static void main(String[] args) throws NoSuchMethodException, IOException {
+	public static void main(String[] args) throws NoSuchMethodException, IOException, InstantiationException, IllegalAccessException {
 		SpringApplication.run(AcidiumApplication.class, args);
 		TickManager.init();
 		loadYaml();
+		logger.info("starting resource facade, registering....");
+		ResourceFacade.start();
 	}
 	public static void loadYaml() throws IOException {
 		org.springframework.core.io.Resource[] resource = getXMLResources();

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: MobSpec
+metadata:
+  name: "Hydrogen"
+spec:
+  health: 5
+  speed: 1
+  bDamage: 50
+  Additional: None

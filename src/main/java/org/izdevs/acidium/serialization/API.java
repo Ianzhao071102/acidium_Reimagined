@@ -20,7 +20,7 @@ public class API extends Resource{
     public API(String name, String pointer, Resource... resources) {
         super(name,true);
         this.pointer = pointer;
-        this.resources = new ArrayList<>(Arrays.asList(resources).subList(0, resources.length + 1));
+        this.resources = new ArrayList<>(Arrays.asList(resources).subList(0, resources.length));
         registerAPI(this);
     }
 

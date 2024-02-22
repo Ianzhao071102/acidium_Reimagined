@@ -23,6 +23,7 @@ repositories {
 
 ext {
 	set('springModulithVersion', "1.1.2")
+	springShellVersion = "3.2.0"
 }
 
 dependencies {
@@ -33,6 +34,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-websocket'
 	implementation 'org.springframework.kafka:spring-kafka'
 	implementation 'org.springframework.modulith:spring-modulith-starter-core'
+	implementation 'org.springframework.shell:spring-shell-starter'
 
 	compileOnly 'org.projectlombok:lombok:1.18.30'
 	annotationProcessor 'org.projectlombok:lombok:1.18.30'
@@ -59,6 +61,7 @@ dependencies {
 dependencyManagement {
 	imports {
 		mavenBom "org.springframework.modulith:spring-modulith-bom:${springModulithVersion}"
+		mavenBom "org.springframework.shell:spring-shell-dependencies:$springShellVersion"
 	}
 }
 

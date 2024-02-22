@@ -1,15 +1,13 @@
-package org.izdevs.acidium.command;
+package org.izdevs.acidium.serialization;
 
 import org.izdevs.acidium.api.v1.CommandDefinition;
-import org.izdevs.acidium.api.v1.Mob;
 import org.izdevs.acidium.api.v1.DefaultSpawner;
+import org.izdevs.acidium.api.v1.Mob;
 import org.izdevs.acidium.entity.AbstractMobSpawner;
-import org.izdevs.acidium.serialization.API;
-import org.izdevs.acidium.serialization.Resource;
-import org.izdevs.acidium.serialization.ResourceFacade;
 import org.izdevs.acidium.tick.Ticked;
 import org.yaml.snakeyaml.Yaml;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -17,7 +15,7 @@ import java.util.regex.Pattern;
 
 public class YamlParser implements Ticked {
     public static ArrayList<CommandDefinition> definitions = new ArrayList<>();
-    public static void registerYamlCommandDef(String raw){
+    public static void registerYamlDef(InputStream raw){
         final Yaml yaml = new Yaml();
 
 
@@ -47,7 +45,7 @@ public class YamlParser implements Ticked {
                 }
                 String type = (String) obj.get("type");
                 switch(type){
-                    case "Mob" -> {
+                    case "mobSpec" -> {
                         String name = null;
                         String health = null;
                         String speed = null;
@@ -94,7 +92,9 @@ public class YamlParser implements Ticked {
                         //anti un-nested gross helper
                         //in switch definition for case: "mob"
                     }
+                    case "Mob" -> {
 
+                    }
                     //TODO ADD MORE CASES TO PARSE MORE YAML FROM SHIT
                 }
 

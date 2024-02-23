@@ -1,5 +1,6 @@
 package org.izdevs.acidium;
 
+import org.izdevs.acidium.networking.Server;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.serialization.ResourceFacade;
 import org.izdevs.acidium.tick.TickManager;
@@ -16,6 +17,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.ServerSocket;
+import java.net.SocketException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -25,14 +28,30 @@ import static org.izdevs.acidium.serialization.NBTParser.registerNBTDef;
 @SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
 @EnableScheduling
 public class AcidiumApplication{
+	public static String version = "alpha-0.1";
 	static Logger logger = LoggerFactory.getLogger(AcidiumApplication.class);
 	static ArrayList<Resource> resources = new ArrayList<>();
-	public static void main(String[] args) throws NoSuchMethodException, IOException, InstantiationException, IllegalAccessException {
+	public static void main(String[] args) throws Throwable {
 		SpringApplication.run(AcidiumApplication.class, args);
 		TickManager.init();
 		loadNBT();
 		logger.info("starting resource facade, registering....");
 		ResourceFacade.start();
+		int port = 0;
+		boolean random = true;
+		try{
+			port = Integer.parseInt(args[0]);
+			random = false;
+		}
+		catch(Throwable e){
+			logger.error(Arrays.toString(e.getStackTrace()));
+			logger.warn("it is possible that the port of the server (the first argument) is misconfigured");
+		}
+		port = getFreePort();
+		Server server = new Server(port);
+		if (random) logger.warn("Server is running in randomized port: " + port);
+		else logger.warn("server running on port: " + port);
+		server.start();
 	}
 	public static void loadNBT() throws IOException {
 		org.springframework.core.io.Resource[] resource = getXMLResources();
@@ -63,4 +82,12 @@ public class AcidiumApplication{
 			throw new RuntimeException("error when getting the files..." + Arrays.toString(e.getStackTrace()));
 		}
 	}
+	public static int getFreePort() {
+		try (ServerSocket socket = new ServerSocket(0)) {
+			socket.setReuseAddress(true);
+			return socket.getLocalPort();
+		} catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

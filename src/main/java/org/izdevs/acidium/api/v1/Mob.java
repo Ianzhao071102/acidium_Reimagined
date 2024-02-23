@@ -1,11 +1,16 @@
 package org.izdevs.acidium.api.v1;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.serialization.SpecObject;
 
 import java.util.ArrayList;
 
 public class Mob extends Resource {
+    @Getter
+    @Setter
+    int x,y;
     double speed;
     int health;
 

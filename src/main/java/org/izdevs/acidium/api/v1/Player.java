@@ -6,7 +6,7 @@ import org.izdevs.acidium.serialization.SpecObject;
 
 import java.util.UUID;
 
-@Getter
+
 public class Player extends Resource {
     String username;
     UUID uuid;

@@ -2,10 +2,14 @@ package org.izdevs.acidium.world;
 
 import lombok.Getter;
 import lombok.Setter;
+import net.forthecrown.nbt.CompoundTag;
 
 @Getter
 @Setter
 public class Block {
+    @Getter
+    @Setter
+    CompoundTag tag;
     int x;
     int y;
     BlockType type;
@@ -16,4 +20,5 @@ public class Block {
         this.type = type;
         this.walkable = walkable;
     }
+
 }

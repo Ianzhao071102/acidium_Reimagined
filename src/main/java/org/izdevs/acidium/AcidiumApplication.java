@@ -10,14 +10,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.invoke.MethodHandles;
-import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import static org.izdevs.acidium.serialization.NBTParser.registerNBTDef;
 
@@ -37,23 +37,30 @@ public class AcidiumApplication{
 	public static void loadNBT() throws IOException {
 		org.springframework.core.io.Resource[] resource = getXMLResources();
 		if(resource.length == 0){
+			logger.info(resource.length + " resources was/were found");
 			logger.debug("no yaml found on classpath");
 			return;
 		}
-		for(int i=0;i<= resource.length;i++){
-			org.springframework.core.io.Resource resource1 = resource[i];
-			URL path = resource1.getURL();
-			try(InputStream stream = new FileInputStream(String.valueOf(path))){
+		for(int i=0;i<= resource.length-1;i++){
+			org.springframework.core.io.Resource resource1 = resource[i];;
+			try(InputStream stream = new FileInputStream(resource1.getFile())){
 				registerNBTDef(stream);
+				logger.info("found NBT resource file... : " + resource1);
 			}
 		}
 	}
 	private static org.springframework.core.io.Resource[] getXMLResources() throws IOException
 	{
-		ClassLoader classLoader = MethodHandles.lookup().getClass().getClassLoader();
-		PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver(classLoader);
-
-		return resolver.getResources("classpath:*.nbt");
-
+		ResourcePatternResolver resourcePatternResolver = new PathMatchingResourcePatternResolver();
+		try {
+			org.springframework.core.io.Resource[] metaInfResources = resourcePatternResolver
+					.getResources("classpath*:*.nbt");
+			for(org.springframework.core.io.Resource r : metaInfResources){
+				logger.debug(r.getURI() + "found resource nbt");
+			}
+			return metaInfResources;
+		}catch(Throwable e){
+			throw new RuntimeException("error when getting the files..." + Arrays.toString(e.getStackTrace()));
+		}
 	}
 }

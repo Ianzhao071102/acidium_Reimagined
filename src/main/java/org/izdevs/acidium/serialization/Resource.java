@@ -3,6 +3,7 @@ package org.izdevs.acidium.serialization;
 import com.google.gson.Gson;
 import lombok.Getter;
 import lombok.Setter;
+import net.forthecrown.nbt.CompoundTag;
 import org.izdevs.acidium.Config;
 import org.izdevs.acidium.tick.Ticked;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -62,4 +63,5 @@ public class Resource implements Ticked {
             tickRun.run();
         }
     }
+    protected CompoundTag data;
 }

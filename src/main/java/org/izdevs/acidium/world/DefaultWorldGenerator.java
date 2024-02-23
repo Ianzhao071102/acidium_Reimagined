@@ -9,7 +9,6 @@ import java.util.Map;
 import java.util.Random;
 
 public class DefaultWorldGenerator implements WorldGenerator{
-    //TODO MAKE A COMMAND FOR THIS FUNCTION
     @Override
     public World generate(String seed) {
         Map<Point,Block> blockMap = new HashMap<>();
@@ -38,8 +37,5 @@ public class DefaultWorldGenerator implements WorldGenerator{
         }
         return world;
     }
-    //TODO FINISH THIS TOMORROW
-//    public Map<Point,Block> genPart(String seed){
-//
-//    }
+
 }

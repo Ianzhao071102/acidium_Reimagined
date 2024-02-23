@@ -18,7 +18,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class NBTParser implements Ticked {
+public class NBTParser{
     static Logger logger = LoggerFactory.getLogger(NBTParser.class);
     public static ArrayList<CommandDefinition> definitions = new ArrayList<>();
     public static void registerNBTDef(InputStream raw) throws YamlException {

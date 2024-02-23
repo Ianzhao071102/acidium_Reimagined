@@ -1,6 +1,5 @@
 package org.izdevs.acidium.api.v1;
 
-import lombok.Getter;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.serialization.SpecObject;
 

@@ -49,21 +49,26 @@ public class NBTParser{
                     spec.setWalkable(walkable.equalsIgnoreCase("true"));
 
                     try{
+                        boolean found = false;
                         for(int i=0;i<=BlockType.values().length-1;i++){
                             if(name.equalsIgnoreCase(BlockType.values()[i].toString())){
+                                found = true;
                                 break;
                             }
                         }
-                        throw new IllegalArgumentException();
+                        if(!found){
+                            throw new IllegalArgumentException();
+                        }
+                        if(!BlockDataHolder.registered.contains(spec)) {
+                            BlockDataHolder.registerSpec(spec);
+                        } else{
+                            logger.warn("spec is already registered...");
+                        }
                     }catch(IllegalArgumentException e){
                         throw new RuntimeException("please render a valid name for the blockSpec, it must match a existing name in:" + Arrays.toString(BlockType.values()));
                     }
-
-                    if(!BlockDataHolder.registered.contains(spec)) BlockDataHolder.registerSpec(spec);
-                    else{
-                        logger.warn("spec is already registered...");
-                    }
                 }
+
             }
 
             //```

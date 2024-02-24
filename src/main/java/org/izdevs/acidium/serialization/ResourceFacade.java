@@ -1,27 +1,30 @@
 package org.izdevs.acidium.serialization;
 
 import lombok.Getter;
+import org.apache.kafka.common.errors.ResourceNotFoundException;
 import org.izdevs.acidium.tick.Ticked;
 import org.reflections.Reflections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.Sort;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 import static org.reflections.scanners.Scanners.SubTypes;
 
 
-public class ResourceFacade implements Ticked {
+public abstract class ResourceFacade implements ResourceRepository {
+    public static ResourceRepository repository;
     static Logger logger = LoggerFactory.getLogger(ResourceFacade.class);
     @Getter
     static ArrayList<Resource> resources = new ArrayList<>();
 
-    @Override
-    public void tick() {
 
-    }
     public static void registerAPI(API api){
         api.isApi = true;
         resources.add(api);
@@ -30,6 +33,7 @@ public class ResourceFacade implements Ticked {
         resources.add(resource);
     }
     public static void start() throws InstantiationException, IllegalAccessException {
+
         Reflections reflections = new Reflections("org.izdevs.acidium");
 
         Set<Class<?>> subTypes =
@@ -38,4 +42,37 @@ public class ResourceFacade implements Ticked {
             logger.debug(subType.newInstance().toString());
         }
     }
+
+    @Override
+    public Resource findByNameAndApiIs(String name, boolean api) {
+        for(int i=0;i<=resources.size()-1;i++){
+            if(resources.get(i).getName().equals(name) && resources.get(i).isApi() == api){
+                return resources.get(i);
+            }
+        }
+        throw new ResourceNotFoundException("the resource is not found, api: " + api + " name:" + name + " [SUCKS TO BORROW EXCEPTION FROM KAFKA]");
+    }
+
+    @Override
+    public Resource findByNameAndAssociatedApi(String name, API api) {
+        for(int i=0;i<=resources.size()-1;i++){
+            if(resources.get(i).getName().equals(name) && resources.get(i).associatedApi.equals(api)){
+                return resources.get(i);
+            }
+        }
+        throw new ResourceNotFoundException("the resource is not found, api: " + api + " name:" + name + " [SUCKS TO BORROW EXCEPTION FROM KAFKA]");
+    }
+
+
+    @Override
+    public Resource findResource(String name, String api) {
+        for(int i=0;i<=resources.size()-1;i++){
+            if(resources.get(i).getName().equals(name) && resources.get(i).associatedApi.getName().equals(api)){
+                return resources.get(i);
+            }
+        }
+        throw new ResourceNotFoundException("the resource is not found, api: " + api + " name:" + name + " [SUCKS TO BORROW EXCEPTION FROM KAFKA]");
+    }
+
+
 }

@@ -8,26 +8,34 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.ServerSocket;
-import java.net.SocketException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Properties;
 
 import static org.izdevs.acidium.serialization.NBTParser.registerNBTDef;
 
 @Configuration
-@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
+@SpringBootApplication//(exclude= {DataSourceAutoConfiguration.class}) //this thing is useless completely
 @EnableScheduling
+@EntityScan("org.izdevs.acidium")
 public class AcidiumApplication{
+	public static Connection SQLConnection = null;
+
 	public static String version = "alpha-0.1";
 	static Logger logger = LoggerFactory.getLogger(AcidiumApplication.class);
 	static ArrayList<Resource> resources = new ArrayList<>();
@@ -51,13 +59,17 @@ public class AcidiumApplication{
 		Server server = new Server(port);
 		if (random) logger.warn("Server is running in randomized port: " + port);
 		else logger.warn("server running on port: " + port);
-		server.start();
+
+
+
+
+		logger.info("SQL connection is established with/without exception");
 	}
 	public static void loadNBT() throws IOException {
 		org.springframework.core.io.Resource[] resource = getXMLResources();
 		if(resource.length == 0){
 			logger.info(resource.length + " resources was/were found");
-			logger.debug("no yaml found on classpath");
+			logger.debug("no nbt file found on classpath");
 			return;
 		}
 		for(int i=0;i<= resource.length-1;i++){
@@ -68,8 +80,7 @@ public class AcidiumApplication{
 			}
 		}
 	}
-	private static org.springframework.core.io.Resource[] getXMLResources() throws IOException
-	{
+	private static org.springframework.core.io.Resource[] getXMLResources() {
 		ResourcePatternResolver resourcePatternResolver = new PathMatchingResourcePatternResolver();
 		try {
 			org.springframework.core.io.Resource[] metaInfResources = resourcePatternResolver
@@ -90,4 +101,8 @@ public class AcidiumApplication{
             throw new RuntimeException(e);
         }
     }
+	public static String bcrypt(String string){
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
+        return encoder.encode("myPassword");
+	}
 }

@@ -31,16 +31,20 @@ public class Resource implements Ticked {
     public API associatedApi;
     @Setter
     @Getter
+    @Deprecated
     public String typeName;
+    @Getter
+    @Setter
+    public String name;
     @Setter
     @Getter
     public ArrayList<SpecObject> spec;
     public Resource(String name, ArrayList<SpecObject> objects){
-        this.typeName = name;
+        this.name = name;
         this.spec = objects;
     }
     public Resource(String name,boolean isApi){
-        this.typeName = name;
+        this.name = name;
         this.isApi = isApi;
     }
     public void register(){

@@ -9,7 +9,8 @@ public class v1 extends API {
     public v1() {
         super("v1","v1",new User(),new Player(),new Mob(),new DefaultSpawner(),new BlockSpec());
         this.isApi = true;
-        this.setTypeName("v1");
+        this.setName("v1");
+
         this.register();
         registerAPI(this);
     }

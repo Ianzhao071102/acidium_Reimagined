@@ -1,5 +1,6 @@
 package org.izdevs.acidium.api.v1;
 
+import jakarta.persistence.GeneratedValue;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.serialization.SpecObject;
 
@@ -28,5 +29,13 @@ public class User extends Resource {
         specof.add(uuidSpec);
         this.spec = specof;
         register();
+    }
+    public User(String name){
+        super("USER",false);
+        SpecObject username = new SpecObject("username",name);
+        SpecObject uuid = new SpecObject("uuid",UUID.randomUUID().toString());
+        specof.add(username);
+        specof.add(uuid);
+        this.setSpec(specof);
     }
 }

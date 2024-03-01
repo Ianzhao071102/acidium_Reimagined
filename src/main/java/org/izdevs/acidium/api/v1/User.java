@@ -1,6 +1,7 @@
 package org.izdevs.acidium.api.v1;
 
-import jakarta.persistence.GeneratedValue;
+import lombok.Getter;
+import lombok.Setter;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.serialization.SpecObject;
 
@@ -10,6 +11,9 @@ import java.util.UUID;
 public class User extends Resource {
 
     ArrayList<SpecObject> specof = new ArrayList<>();
+    @Getter
+    @Setter
+    String passwordHash = "";
     public User(String username, UUID uuid) {
         super("USER", false);
         SpecObject usernameSpec = new SpecObject("username",username);
@@ -30,12 +34,13 @@ public class User extends Resource {
         this.spec = specof;
         register();
     }
-    public User(String name){
+    public User(String name,String passwordHash){
         super("USER",false);
         SpecObject username = new SpecObject("username",name);
         SpecObject uuid = new SpecObject("uuid",UUID.randomUUID().toString());
         specof.add(username);
         specof.add(uuid);
         this.setSpec(specof);
+        this.passwordHash = passwordHash;
     }
 }

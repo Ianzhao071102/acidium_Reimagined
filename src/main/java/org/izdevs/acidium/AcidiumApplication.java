@@ -6,10 +6,13 @@ import org.izdevs.acidium.serialization.ResourceFacade;
 import org.izdevs.acidium.tick.TickManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.r2dbc.ConnectionFactoryBuilder;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
@@ -30,10 +33,13 @@ import java.util.Properties;
 import static org.izdevs.acidium.serialization.NBTParser.registerNBTDef;
 
 @Configuration
-@SpringBootApplication//(exclude= {DataSourceAutoConfiguration.class}) //this thing is useless completely
+@SpringBootApplication//(exclude= {DataSourceAutoConfiguration.class}) this thing is NOT useless completely but pretty annoying
 @EnableScheduling
 @EntityScan("org.izdevs.acidium")
 public class AcidiumApplication{
+	@Autowired
+	public static ApplicationContext context;
+
 	public static Connection SQLConnection = null;
 
 	public static String version = "alpha-0.1";
@@ -47,22 +53,35 @@ public class AcidiumApplication{
 		ResourceFacade.start();
 		int port = 0;
 		boolean random = true;
-		try{
-			port = Integer.parseInt(args[0]);
-			random = false;
+		if(args.length>0){
+			try{
+				port = Integer.parseInt(args[0]);
+				random = false;
+			}catch(Throwable e){
+				logger.warn("error when parsing port(first argument)");
+			}
 		}
-		catch(Throwable e){
-			logger.error(Arrays.toString(e.getStackTrace()));
-			logger.warn("it is possible that the port of the server (the first argument) is misconfigured");
+		else{
+			random = true;
+			port = getFreePort();
 		}
-		port = getFreePort();
+
+		if(random){
+			logger.warn("using free port:" + port);
+		}
 		Server server = new Server(port);
 		if (random) logger.warn("Server is running in randomized port: " + port);
 		else logger.warn("server running on port: " + port);
+		server.start();
 
-
-
-
+		try {
+			String url = (String) context.getBean("spring.datasource.url");
+			String name = (String) context.getBean("spring.datasource.username");
+			String password = (String) context.getBean("spring.datasource.password");
+			SQLConnection = DriverManager.getConnection(url,name,password);
+		}catch(Throwable e){
+			logger.error(e.getMessage());
+		}
 		logger.info("SQL connection is established with/without exception");
 	}
 	public static void loadNBT() throws IOException {

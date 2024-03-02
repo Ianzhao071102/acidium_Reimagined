@@ -13,7 +13,8 @@ import static org.izdevs.acidium.serialization.NBTParser.registerNBTDef;
 public class CommandHandler {
 //    EXAMPLE
 //    @ShellMethod(key = "hello-world")
-//    public String helloWorld(@ShellOption(defaultValue = "spring") String arg) {
+//    public String helloWorld(@ShellOption(defaultValue = "spring") String arg)
+//    {
 //        return "Hello world " + arg;
 //    }
 
@@ -28,4 +29,6 @@ public class CommandHandler {
         }
         return "success";
     }
+    //TODO MORE SHELL METHODS LIKE PLAYER RELATED ONES
+
 }

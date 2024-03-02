@@ -18,8 +18,7 @@ import java.util.Set;
 import static org.reflections.scanners.Scanners.SubTypes;
 
 
-public abstract class ResourceFacade implements ResourceRepository {
-    public static ResourceRepository repository;
+public abstract class ResourceFacade{
     static Logger logger = LoggerFactory.getLogger(ResourceFacade.class);
     @Getter
     static ArrayList<Resource> resources = new ArrayList<>();
@@ -43,7 +42,6 @@ public abstract class ResourceFacade implements ResourceRepository {
         }
     }
 
-    @Override
     public Resource findByNameAndApiIs(String name, boolean api) {
         for(int i=0;i<=resources.size()-1;i++){
             if(resources.get(i).getName().equals(name) && resources.get(i).isApi() == api){
@@ -53,7 +51,7 @@ public abstract class ResourceFacade implements ResourceRepository {
         throw new ResourceNotFoundException("the resource is not found, api: " + api + " name:" + name + " [SUCKS TO BORROW EXCEPTION FROM KAFKA]");
     }
 
-    @Override
+
     public Resource findByNameAndAssociatedApi(String name, API api) {
         for(int i=0;i<=resources.size()-1;i++){
             if(resources.get(i).getName().equals(name) && resources.get(i).associatedApi.equals(api)){
@@ -64,7 +62,7 @@ public abstract class ResourceFacade implements ResourceRepository {
     }
 
 
-    @Override
+
     public Resource findResource(String name, String api) {
         for(int i=0;i<=resources.size()-1;i++){
             if(resources.get(i).getName().equals(name) && resources.get(i).associatedApi.getName().equals(api)){

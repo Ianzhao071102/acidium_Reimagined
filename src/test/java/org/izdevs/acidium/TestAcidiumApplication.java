@@ -16,7 +16,7 @@ public class TestAcidiumApplication {
 		return new KafkaContainer(DockerImageName.parse("confluentinc/cp-kafka:latest"));
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Throwable{
 		SpringApplication.from(AcidiumApplication::main).with(TestAcidiumApplication.class).run(args);
 	}
 

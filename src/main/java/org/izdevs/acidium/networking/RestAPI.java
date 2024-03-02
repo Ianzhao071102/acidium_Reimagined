@@ -9,13 +9,9 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("v1") //RESOURCE GETTER API V1
-public class RESTAPI {
-    @GetMapping(value = "/resources/v1",produces = "application/json")
-    public String getResources(){
-        return ResourceFacade.getResources().toString();
-    }
+public class RestAPI {
 
-    @GetMapping(value = "/resources/v1",produces = "application/json")
+    @GetMapping(value = "/resources",produces = "application/json")
     public Resource getResource(@RequestParam(name = "name") String name,@RequestParam(required = false) String api){
         for(int i=0;i<=ResourceFacade.getResources().size();i++){
             Resource resource = ResourceFacade.getResources().get(i);

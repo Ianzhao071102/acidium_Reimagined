@@ -18,6 +18,7 @@ public class Server {
         EventLoopGroup group = new NioEventLoopGroup();
         try{
             ServerBootstrap b = new ServerBootstrap();
+            b.localAddress(port);
             b.group(group)
                     .channel(NioServerSocketChannel.class)
                     .childHandler(new ChannelInitializer<SocketChannel>(){
@@ -28,6 +29,7 @@ public class Server {
                         }
                     })
             ;
+
             ChannelFuture f = b.bind().sync();
             f.channel().closeFuture().sync();
 

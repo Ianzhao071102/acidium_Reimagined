@@ -1,7 +1,6 @@
 package org.izdevs.acidium.api.v1;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+
 import lombok.Getter;
 import lombok.Setter;
 import org.izdevs.acidium.serialization.Resource;
@@ -10,22 +9,22 @@ import org.izdevs.acidium.serialization.SpecObject;
 import java.util.ArrayList;
 
 public class Mob extends Resource {
-    @Id
-    @GeneratedValue
     int id;
     @Getter
     @Setter
     int x,y;
     double speed;
     int health;
-
+    int hitboxRadius;
     int bDamage; //body damage
-    public Mob(String name, double speed,int health,int bDamage) {
+    public Mob(String name, double speed,int health,int bDamage,int hitboxRadius) {
         super("Mob",false);
         ArrayList<SpecObject> objects = new ArrayList<>();
         objects.add(new SpecObject("name",name));
         objects.add(new SpecObject("speed",speed));
         objects.add(new SpecObject("bDamage",bDamage));
+        objects.add(new SpecObject("health",health));
+        objects.add(new SpecObject("hitboxRadius",hitboxRadius));
         this.spec = objects;
     }
     public Mob(){

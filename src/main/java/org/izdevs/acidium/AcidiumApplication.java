@@ -7,38 +7,39 @@ import org.izdevs.acidium.tick.TickManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-import org.springframework.boot.r2dbc.ConnectionFactoryBuilder;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
+import org.springframework.jdbc.datasource.DataSourceUtils;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import javax.sql.DataSource;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.ServerSocket;
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Properties;
 
 import static org.izdevs.acidium.serialization.NBTParser.registerNBTDef;
 
 @Configuration
-@SpringBootApplication//(exclude= {DataSourceAutoConfiguration.class}) this thing is NOT useless completely but pretty annoying
+@SpringBootApplication
 @EnableScheduling
 @EntityScan("org.izdevs.acidium")
 public class AcidiumApplication{
+
+	@Qualifier("jdbcEventPublicationRepository")
 	@Autowired
-	public static ApplicationContext context;
+	static DataSource dataSource;
 
 	public static Connection SQLConnection = null;
 
@@ -46,11 +47,14 @@ public class AcidiumApplication{
 	static Logger logger = LoggerFactory.getLogger(AcidiumApplication.class);
 	static ArrayList<Resource> resources = new ArrayList<>();
 	public static void main(String[] args) throws Throwable {
+		//REGISTER RESOURCES
 		SpringApplication.run(AcidiumApplication.class, args);
 		TickManager.init();
 		loadNBT();
 		logger.info("starting resource facade, registering....");
 		ResourceFacade.start();
+
+		//PORT
 		int port = 0;
 		boolean random = true;
 		if(args.length>0){
@@ -62,8 +66,7 @@ public class AcidiumApplication{
 			}
 		}
 		else{
-			random = true;
-			port = getFreePort();
+            port = getFreePort();
 		}
 
 		if(random){
@@ -74,15 +77,16 @@ public class AcidiumApplication{
 		else logger.warn("server running on port: " + port);
 		server.start();
 
+
+		//SQL CONNECTION
 		try {
-			String url = (String) context.getBean("spring.datasource.url");
-			String name = (String) context.getBean("spring.datasource.username");
-			String password = (String) context.getBean("spring.datasource.password");
-			SQLConnection = DriverManager.getConnection(url,name,password);
+			SQLConnection = DataSourceUtils.getConnection(dataSource);
 		}catch(Throwable e){
 			logger.error(e.getMessage());
 		}
 		logger.info("SQL connection is established with/without exception");
+		SQLConnection.createStatement().execute("CREATE TABLE IF NOT EXISTS users (uuid CHARACTER(36),username VARCHAR(21),passwordHash VARCHAR(72))");
+
 	}
 	public static void loadNBT() throws IOException {
 		org.springframework.core.io.Resource[] resource = getXMLResources();

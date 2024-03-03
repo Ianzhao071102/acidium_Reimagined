@@ -112,7 +112,8 @@ public class AcidiumApplication{
 			org.springframework.core.io.Resource[] metaInfResources = resourcePatternResolver
 					.getResources("classpath*:*.nbt");
 			for(org.springframework.core.io.Resource r : metaInfResources){
-				logger.debug(r.getURI() + "found resource nbt");
+				logger.info(r.getURI() + " found resource nbt");
+				logger.info(r.getURI() + "is being loaded....");
 			}
 			return metaInfResources;
 		}catch(Throwable e){

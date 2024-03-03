@@ -33,10 +33,10 @@ public class NBTParser{
                     int bDamage = spec.getInt("bDamage");
                     int health = spec.getInt("health");
                     double speed = spec.getDouble("speed");
-
+                    int hitboxRadius = spec.getInt("hitboxRadius");
                     if(apiVersion.matches("^v+\\d")){
                         //api version legit
-                        Mob mob = new Mob(name,speed,health,bDamage);
+                        Mob mob = new Mob(name,speed,health,bDamage,hitboxRadius);
                         logger.info(mob + " was successfully loaded and is now being registered");
                         MobHolder.registerMob(mob);
                         if(MobHolder.registeredMobs.contains(mob))  logger.info(mob + " was registered");

@@ -1,5 +1,6 @@
 package org.izdevs.acidium;
 
+
 import org.izdevs.acidium.networking.Server;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.serialization.ResourceFacade;
@@ -7,13 +8,10 @@ import org.izdevs.acidium.tick.TickManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceUtils;
@@ -37,7 +35,9 @@ import static org.izdevs.acidium.serialization.NBTParser.registerNBTDef;
 @EntityScan("org.izdevs.acidium")
 public class AcidiumApplication{
 
-	@Qualifier("jdbcEventPublicationRepository")
+	@Autowired
+	int maxPlayers;
+
 	@Autowired
 	static DataSource dataSource;
 
@@ -53,6 +53,8 @@ public class AcidiumApplication{
 		loadNBT();
 		logger.info("starting resource facade, registering....");
 		ResourceFacade.start();
+
+
 
 		//PORT
 		int port = 0;
@@ -86,6 +88,7 @@ public class AcidiumApplication{
 		}
 		logger.info("SQL connection is established with/without exception");
 		SQLConnection.createStatement().execute("CREATE TABLE IF NOT EXISTS users (uuid CHARACTER(36),username VARCHAR(21),passwordHash VARCHAR(72))");
+
 
 	}
 	public static void loadNBT() throws IOException {

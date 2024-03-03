@@ -161,8 +161,8 @@ public class ServerHandler extends ChannelInboundHandlerAdapter {
                     ctx.writeAndFlush("please, do not attack our services, it is a project made in free time....");
                     ctx.close();
                 }
-
             }
+            //ANTI_GROSS: UN-NESTED CODE, YOU ARE IN A SWITCH RIGHT HERE IN THIS SCOPE(CASE DEFINITIONS)
 
         }
     }

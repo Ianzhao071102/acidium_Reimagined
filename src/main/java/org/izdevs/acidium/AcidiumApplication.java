@@ -46,7 +46,7 @@ public class AcidiumApplication{
 	public static String version = "alpha-0.1";
 	static Logger logger = LoggerFactory.getLogger(AcidiumApplication.class);
 	static ArrayList<Resource> resources = new ArrayList<>();
-	public static void main(String[] args) throws Throwable {
+	public static void main(String[] args) throws Exception {
 		//REGISTER RESOURCES
 		SpringApplication.run(AcidiumApplication.class, args);
 		TickManager.init();
@@ -77,8 +77,11 @@ public class AcidiumApplication{
 		Server server = new Server(port);
 		if (random) logger.warn("Server is running in randomized port: " + port);
 		else logger.warn("server running on port: " + port);
-		server.start();
-
+		try {
+			server.start();
+		}catch(Throwable e){
+			logger.error(e.getLocalizedMessage());
+		}
 
 		//SQL CONNECTION
 		try {

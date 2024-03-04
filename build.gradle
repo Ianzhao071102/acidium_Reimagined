@@ -67,6 +67,7 @@ dependencies {
 
 	implementation group: 'io.micrometer', name: 'micrometer-core', version: '1.12.3'
 
+	implementation 'com.github.implicit-invocation:jwalkable:master-SNAPSHOT'
 
 }
 

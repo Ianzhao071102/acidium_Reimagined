@@ -133,6 +133,6 @@ public class AcidiumApplication{
     }
 	public static String bcrypt(String string){
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
-        return encoder.encode("myPassword");
+        return encoder.encode(string);
 	}
 }

@@ -4,7 +4,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
 import org.springframework.context.annotation.Bean;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.testcontainers.containers.KafkaContainer;
 import org.testcontainers.utility.DockerImageName;
 
@@ -18,10 +17,6 @@ public class TestAcidiumApplication {
 	}
 
 	public static void main(String[] args) {
-		try {
-			SpringApplication.from(AcidiumApplication::main).with(TestAcidiumApplication.class).run(args);
-		} catch (Throwable e) {
-            throw new RuntimeException(e);
-        }
+		SpringApplication.from(AcidiumApplication::main).with(TestAcidiumApplication.class).run(args);
     }
 }

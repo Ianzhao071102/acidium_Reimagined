@@ -83,7 +83,9 @@ public class ServerHandler extends ChannelInboundHandlerAdapter {
                         ctx.writeAndFlush(payload);
                         ctx.channel().attr(AttributeKey.valueOf("uuid")).set(uuid);
 
-                        Player associated = new Player(new User(username,uuid));
+
+                        //WARNING: THE PLAYER'S ENTITY STATE IS JUST THE INITIAL STATE HERE!!!!!!!!!!
+                        Player associated = new Player(new User(username,uuid),5,20,5);
                         PlayerManager.add(associated);
                         ctx.channel().attr(AttributeKey.valueOf("player")).set(associated);
                     }

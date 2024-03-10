@@ -1,6 +1,8 @@
 package org.izdevs.acidium;
 
 
+import com.badlogic.gdx.ai.msg.MessageDispatcher;
+import com.badlogic.gdx.ai.msg.MessageManager;
 import org.izdevs.acidium.networking.Server;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.serialization.ResourceFacade;
@@ -34,6 +36,7 @@ import static org.izdevs.acidium.serialization.NBTParser.registerNBTDef;
 @EnableScheduling
 @EntityScan("org.izdevs.acidium")
 public class AcidiumApplication{
+	public static MessageDispatcher dispatcher = null;
 
 	@Autowired
 	int maxPlayers;
@@ -93,6 +96,11 @@ public class AcidiumApplication{
 		SQLConnection.createStatement().execute("CREATE TABLE IF NOT EXISTS users (uuid CHARACTER(36),username VARCHAR(21),passwordHash VARCHAR(72))");
 
 
+		logger.info("Messaging for gdxAI is initializing...");
+		dispatcher = MessageManager.getInstance();
+		logger.info("finished...");
+
+
 	}
 	public static void loadNBT() throws IOException {
 		org.springframework.core.io.Resource[] resource = getXMLResources();
@@ -134,5 +142,14 @@ public class AcidiumApplication{
 	public static String bcrypt(String string){
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
         return encoder.encode(string);
+	}
+
+
+	public double distance(
+			double x1,
+			double y1,
+			double x2,
+			double y2) {
+		return Math.sqrt((y2 - y1) * (y2 - y1) + (x2 - x1) * (x2 - x1));
 	}
 }

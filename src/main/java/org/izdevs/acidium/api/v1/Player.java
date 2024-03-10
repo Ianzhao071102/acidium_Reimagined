@@ -9,15 +9,16 @@ import org.izdevs.acidium.serialization.SpecObject;
 import java.util.UUID;
 
 
-public class Player extends Resource {
+public class Player extends Entity{
     @Setter
     @Getter
     Entity entity;
     String username;
     UUID uuid;
 
-    public Player(User user) {
-        super("player",false);
+    public Player(User user,double movementSpeed,int health, int bDamage) {
+        super(user.getName(), movementSpeed, health,20,bDamage);
+
         UUID uuid = null;
         String username = null;
         try {
@@ -36,12 +37,12 @@ public class Player extends Resource {
         this.username = username;
     }
     public Player(){
-        super("player",false);
+        super("unset",0,20,2,0);
         this.username = "unset";
         this.uuid = UUID.randomUUID();
     }
     public Player(User user,Entity entity){
-        super("player",false);
+        super(entity.getName(), entity.getMovementSpeed(), entity.getHealth(), entity.getHitboxRadius(), entity.getBDamage());
         UUID uuid = null;
         String username = null;
         try {

@@ -50,8 +50,6 @@ public enum BasicEntityState implements State<Entity> {
             FloatArray goal = new FloatArray(2);
             goal.set(0,closeX);
             goal.set(0,closeY);
-            //TODO MAKE ATTACKING STATE AND SOMETHING ELSE...
-            //change the state based on todo of line 49
             entity.getStateMachine().changeState(BasicEntityState.ATTACKING);
         }
 
@@ -90,6 +88,5 @@ public enum BasicEntityState implements State<Entity> {
             return false;
         }
     }
-
 
 }

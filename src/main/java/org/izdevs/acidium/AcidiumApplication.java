@@ -25,9 +25,12 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.ServerSocket;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static org.izdevs.acidium.serialization.NBTParser.registerNBTDef;
 
@@ -151,5 +154,24 @@ public class AcidiumApplication{
 			double x2,
 			double y2) {
 		return Math.sqrt((y2 - y1) * (y2 - y1) + (x2 - x1) * (x2 - x1));
+	}
+
+	public static void readAndPrintNote(){
+		ResourcePatternResolver resourcePatternResolver = new PathMatchingResourcePatternResolver();
+		try {
+			org.springframework.core.io.Resource[] metaInfResources = resourcePatternResolver
+					.getResources("classpath*:*.note");
+			for(org.springframework.core.io.Resource r : metaInfResources){
+				logger.info(r.getURI() + " found node");
+				List<String> lines = Files.readAllLines(Path.of(r.getURI()));
+				logger.info("--------- BEGIN NOTE --------------");
+				for(int j=0;j<= lines.size()-1;j++){
+					logger.info(lines.get(j));
+				}
+				logger.info("--------- END NOTE ----------------");
+			}
+		}catch(Throwable e){
+			throw new RuntimeException("error when getting the files..." + Arrays.toString(e.getStackTrace()));
+		}
 	}
 }

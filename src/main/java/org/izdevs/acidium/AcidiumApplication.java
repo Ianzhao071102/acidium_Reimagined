@@ -7,7 +7,7 @@ import org.izdevs.acidium.networking.Server;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.serialization.ResourceFacade;
 import org.izdevs.acidium.tick.TickManager;
-import org.jline.terminal.Terminal;
+import org.izdevs.acidium.world.WorldController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +28,7 @@ import java.io.InputStream;
 import java.net.ServerSocket;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.security.SecureRandom;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -108,8 +109,9 @@ public class AcidiumApplication{
 		dispatcher = MessageManager.getInstance();
 		logger.info("finished...");
 
-
-
+		//generate a default level...
+		SecureRandom seeder = new SecureRandom();
+		WorldController.generateWorld(String.valueOf(seeder.nextLong()));
 	}
 	public static void loadNBT() throws IOException {
 		org.springframework.core.io.Resource[] resource = getXMLResources();

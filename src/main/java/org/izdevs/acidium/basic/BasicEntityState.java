@@ -50,7 +50,15 @@ public enum BasicEntityState implements State<Entity> {
             FloatArray goal = new FloatArray(2);
             goal.set(0,closeX);
             goal.set(0,closeY);
-            entity.getStateMachine().changeState(BasicEntityState.ATTACKING);
+            Logger logger = LoggerFactory.getLogger(this.getClass());
+
+            if(distance(mobX,closeY,closeX,mobY) < 15){
+                entity.getStateMachine().changeState(BasicEntityState.ATTACKING);
+                logger.debug("entity:" + entity.getId() + "decided to attack");
+                entity.setPathFinderGoal(goal);
+            }else{
+                logger.debug("entity decides not to attack...");
+            }
         }
 
         @Override
@@ -74,7 +82,30 @@ public enum BasicEntityState implements State<Entity> {
 
         @Override
         public void update(Entity entity) {
-            //TODO FINISH ATTACKING UPDATE STATE
+            if(entity.getAttackBehaviour() == null){
+                double mobX = entity.getX();
+                double mobY = entity.getY();
+                int closeX = 0;
+                int closeY = 0;
+                for(int i = 0; i<= TickedWorld.players.size()-1; i++){
+                    double x = TickedWorld.players.get(i).getX();
+                    double y = TickedWorld.players.get(i).getY();
+
+                    if(distance(mobX,mobY,x,y) < distance(closeX,mobY,mobX,closeY)){
+                        //update close
+                        closeX = (int) x;
+                        closeY = (int) y;
+                    }
+                }
+
+
+
+
+                FloatArray goal = new FloatArray(2);
+                goal.set(0,closeX);
+                goal.set(1,closeY);
+                entity.setPathFinderGoal(goal);
+            }
         }
 
         @Override
@@ -88,5 +119,6 @@ public enum BasicEntityState implements State<Entity> {
             return false;
         }
     }
+
 
 }

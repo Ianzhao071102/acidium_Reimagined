@@ -38,8 +38,6 @@ dependencies {
 	implementation 'org.springframework.shell:spring-shell-starter'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
 	implementation 'org.springframework.modulith:spring-modulith-starter-jdbc'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.modulith:spring-modulith-starter-jpa'
 
 	compileOnly 'org.projectlombok:lombok:1.18.30'
 	annotationProcessor 'org.projectlombok:lombok:1.18.30'
@@ -73,6 +71,7 @@ dependencies {
 
 	implementation "com.badlogicgames.gdx:gdx-ai:1.8.1"
 
+	compileOnly "com.github.xaguzman:pathfinding:0.2.6"
 }
 
 dependencyManagement {

@@ -7,6 +7,7 @@ import org.izdevs.acidium.networking.Server;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.serialization.ResourceFacade;
 import org.izdevs.acidium.tick.TickManager;
+import org.jline.terminal.Terminal;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,8 @@ import static org.izdevs.acidium.serialization.NBTParser.registerNBTDef;
 @EntityScan("org.izdevs.acidium")
 public class AcidiumApplication{
 	public static MessageDispatcher dispatcher = null;
+
+
 
 	@Autowired
 	int maxPlayers;
@@ -79,10 +82,12 @@ public class AcidiumApplication{
 
 		if(random){
 			logger.warn("using free port:" + port);
+
 		}
 		Server server = new Server(port);
 		if (random) logger.warn("Server is running in randomized port: " + port);
 		else logger.warn("server running on port: " + port);
+
 		try {
 			server.start();
 		}catch(Throwable e){
@@ -102,6 +107,7 @@ public class AcidiumApplication{
 		logger.info("Messaging for gdxAI is initializing...");
 		dispatcher = MessageManager.getInstance();
 		logger.info("finished...");
+
 
 
 	}

@@ -1,10 +1,13 @@
 package org.izdevs.acidium;
 
+import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
 import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.core.env.Environment;
 import org.springframework.core.io.ClassPathResource;
@@ -14,7 +17,12 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
+import java.util.Objects;
 
+@PropertySources({
+       @PropertySource("classpath:application.properties"),
+       @PropertySource("classpath:server.properties")
+})
 @Configuration
 @EnableScheduling
 @Component
@@ -25,16 +33,21 @@ public class Config{
 
     public static final int ticksPerSecond = 20;
 
-    @Bean
+    @Bean(name = "maxPlayers")
     public static int getMaxPlayers(){
         return 20;
     }
-    @ConfigurationProperties("application.properties")
-    @Bean
-    public DataSource getDataSource(){
-        String url = env.getProperty("spring.datasource.url");
-        String username = env.getProperty("spring.datasource.username");
-        String pwd = env.getProperty("spring.datasource.password");
-        return DataSourceBuilder.create().username(username).url(url).password(pwd).build();
+
+//    @Bean(name = "psql")
+//    public DataSource getDataSource(){
+//        String url = env.getProperty("spring.datasource.url");
+//        String username = env.getProperty("spring.datasource.username");
+//        String pwd = env.getProperty("spring.datasource.password");
+//        return DataSourceBuilder.create().username(username).url(url).password(pwd).build();
+//    }
+
+    @Bean(name = "port")
+    public int port(){
+        return Integer.parseInt(Objects.requireNonNull(env.getProperty("port")));
     }
 }

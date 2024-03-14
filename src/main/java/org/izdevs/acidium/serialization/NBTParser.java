@@ -86,19 +86,19 @@ public class NBTParser{
                     for(int i=0;i<=blocks.size()-1;i++){
                         String plr = blocks.getString(i);
 
-                        Gson gson = new Gson();
+                        logger.debug("received dara: " + plr);
+                        Gson gson = new GsonBuilder().create();
 
-                        Type mapType = new TypeToken<HashMap<Point,Block>>(){}.getType();
+                        Type mapType = new TypeToken<Block>(){}.getType();
 
-                        HashMap<Point,Block> map = gson.fromJson(plr,mapType);
+                        int x = 0,y = 0;
+                        Block block = gson.fromJson(plr,mapType);
+                        x = block.getX();;
+                        y = block.getY();
 
-                        Point point = map.keySet().iterator().next();
-                        Block block = map.get(point);
+                        Point point = new Point(x,y);
 
-
-                        //merge with current map
                         current.put(point,block);
-
                     }
                     //create with specified name...
                     Structure structure = new Structure(name);

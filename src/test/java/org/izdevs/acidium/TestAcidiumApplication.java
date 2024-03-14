@@ -1,6 +1,8 @@
 package org.izdevs.acidium;
 
 import com.esri.core.geometry.Point;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import org.izdevs.acidium.world.Block;
 import org.izdevs.acidium.world.BlockType;
 import org.springframework.boot.SpringApplication;
@@ -24,8 +26,7 @@ public class TestAcidiumApplication {
 
 	public static void main(String[] args) {
 		//SpringApplication.from(AcidiumApplication::main).with(TestAcidiumApplication.class).run(args);
-		Map<Point, Block> description = new HashMap<>();
-		description.put(new Point(0,0),new Block(0,0, BlockType.VOID,true));
-		System.out.println(description);
+		Block block = new Block(0,0,BlockType.CREDIT_BLOCK,false);
+		System.out.println(new GsonBuilder().create().toJson(block));
     }
 }

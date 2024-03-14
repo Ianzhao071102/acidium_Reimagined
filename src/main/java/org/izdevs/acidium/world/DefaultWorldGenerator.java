@@ -10,11 +10,11 @@ import java.util.Random;
 
 public class DefaultWorldGenerator implements WorldGenerator{
     @Override
-    public World generate(String seed) {
+    public World generate(long seed) {
         Map<Point,Block> blockMap = new HashMap<>();
         World world = new World(blockMap);
 
-        Random random = new Random(Long.getLong(seed));
+        Random random = new Random(seed);
         ArrayList<Structure> structures = StructureHolder.structures;
         for(int i=0;i<=3995;i++){
             for(int j=0;j<=3995;j++){

@@ -62,9 +62,12 @@ public class AcidiumApplication{
 		TickManager.init();
 		loadNBT();
 		logger.info("starting resource facade, registering....");
-		ResourceFacade.start();
 
 
+		logger.trace("start world generation...");
+		SecureRandom seeder = new SecureRandom();
+		WorldController.generateWorld(seeder.nextLong());
+		logger.warn("World is being generated...");
 
 		//PORT
 		int port = 0;
@@ -109,9 +112,10 @@ public class AcidiumApplication{
 		dispatcher = MessageManager.getInstance();
 		logger.info("finished...");
 
-		//generate a default level...
-		SecureRandom seeder = new SecureRandom();
-		WorldController.generateWorld(String.valueOf(seeder.nextLong()));
+
+
+		//init later...
+		ResourceFacade.start();
 	}
 	public static void loadNBT() throws IOException {
 		org.springframework.core.io.Resource[] resource = getXMLResources();

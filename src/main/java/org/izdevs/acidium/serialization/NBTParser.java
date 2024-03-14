@@ -1,29 +1,40 @@
 package org.izdevs.acidium.serialization;
 
 import com.esotericsoftware.yamlbeans.YamlException;
+import com.esri.core.geometry.Point;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import net.forthecrown.nbt.BinaryTags;
 import net.forthecrown.nbt.CompoundTag;
+import net.forthecrown.nbt.ListTag;
 import org.izdevs.acidium.api.v1.BlockSpec;
 import org.izdevs.acidium.api.v1.CommandDefinition;
 import org.izdevs.acidium.api.v1.Mob;
+import org.izdevs.acidium.api.v1.Structure;
 import org.izdevs.acidium.entity.MobHolder;
 import org.izdevs.acidium.tick.Ticked;
+import org.izdevs.acidium.world.Block;
 import org.izdevs.acidium.world.BlockDataHolder;
 import org.izdevs.acidium.world.BlockType;
+import org.izdevs.acidium.world.StructureHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.launch.support.RuntimeExceptionTranslator;
 
 import java.io.*;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class NBTParser{
     static Logger logger = LoggerFactory.getLogger(NBTParser.class);
     public static ArrayList<CommandDefinition> definitions = new ArrayList<>();
     public static void registerNBTDef(InputStream raw) throws YamlException {
         try {
-            CompoundTag tag = BinaryTags.readCompressed(raw); //top level containing:
+            CompoundTag tag = BinaryTags.readCompressed(raw); //top level
             String apiVersion = tag.getString("apiVersion");
             String name = tag.getString("name");
             String type = tag.getString("type");
@@ -69,6 +80,33 @@ public class NBTParser{
                     }
                 }
 
+                case "structure" -> {
+                    ListTag blocks = tag.getList("blocks");
+                    Map<Point,Block> current = new HashMap<>();
+                    for(int i=0;i<=blocks.size()-1;i++){
+                        String plr = blocks.getString(i);
+
+                        Gson gson = new Gson();
+
+                        Type mapType = new TypeToken<HashMap<Point,Block>>(){}.getType();
+
+                        HashMap<Point,Block> map = gson.fromJson(plr,mapType);
+
+                        Point point = map.keySet().iterator().next();
+                        Block block = map.get(point);
+
+
+                        //merge with current map
+                        current.put(point,block);
+
+                    }
+                    //create with specified name...
+                    Structure structure = new Structure(name);
+
+                    //register to holder...
+                    structure.setDescription(current);
+                    StructureHolder.register(structure);
+                }
             }
 
             //```

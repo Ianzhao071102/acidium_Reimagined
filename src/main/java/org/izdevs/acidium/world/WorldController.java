@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class WorldController {
     public static ArrayList<World> worlds = new ArrayList<>();
 
-    public static void generateWorld(String seed){
+    public static void generateWorld(long seed){
         //still uses default world generator just for now...
         DefaultWorldGenerator gen = new DefaultWorldGenerator();
         World world = gen.generate(seed);

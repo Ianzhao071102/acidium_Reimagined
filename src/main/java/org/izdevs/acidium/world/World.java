@@ -25,7 +25,9 @@ public class World {
         if(map.containsKey(new Point(location.getX(),location.getY()))){
             return map.replace(new Point(location.getX(),location.getY()),block);
         }else{
-            throw new IllegalArgumentException("block is not found in:" + map);
+            Point point = new Point(location.x,location.y);
+            map.put(point,block);
+            return block;
         }
     }
 }

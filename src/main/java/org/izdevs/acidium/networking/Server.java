@@ -40,8 +40,6 @@ public class Server{
             bootstrap.childOption(ChannelOption.ALLOCATOR, PooledByteBufAllocator.DEFAULT);
 
             ChannelFuture f = bootstrap.bind(port).sync();
-            f.channel().closeFuture().sync();
-
 
         }finally{
             master.shutdownGracefully();

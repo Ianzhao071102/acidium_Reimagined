@@ -4,10 +4,7 @@ import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.annotation.PropertySources;
+import org.springframework.context.annotation.*;
 import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.core.env.Environment;
 import org.springframework.core.io.ClassPathResource;
@@ -34,19 +31,24 @@ public class Config{
     public static final int ticksPerSecond = 20;
 
     @Bean(name = "maxPlayers")
+    @Lazy(false)
     public static int getMaxPlayers(){
         return 20;
     }
 
-//    @Bean(name = "psql")
-//    public DataSource getDataSource(){
-//        String url = env.getProperty("spring.datasource.url");
-//        String username = env.getProperty("spring.datasource.username");
-//        String pwd = env.getProperty("spring.datasource.password");
-//        return DataSourceBuilder.create().username(username).url(url).password(pwd).build();
-//    }
+    @Bean(name = "psql")
+    @Lazy(false)
+
+    public DataSource getDataSource(){
+        String url = env.getProperty("spring.datasource.url");
+        String username = env.getProperty("spring.datasource.username");
+        String pwd = env.getProperty("spring.datasource.password");
+        return DataSourceBuilder.create().username(username).url(url).password(pwd).build();
+    }
 
     @Bean(name = "port")
+    @Lazy(false)
+
     public int port(){
         return Integer.parseInt(Objects.requireNonNull(env.getProperty("port")));
     }

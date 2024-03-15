@@ -3,6 +3,7 @@ package org.izdevs.acidium;
 
 import com.badlogic.gdx.ai.msg.MessageDispatcher;
 import com.badlogic.gdx.ai.msg.MessageManager;
+import jakarta.annotation.PostConstruct;
 import org.izdevs.acidium.networking.Server;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.serialization.ResourceFacade;
@@ -41,20 +42,20 @@ import static org.izdevs.acidium.serialization.NBTParser.registerNBTDef;
 @SpringBootApplication
 @EnableScheduling
 @EntityScan("org.izdevs.acidium")
-public class AcidiumApplication {
+public class AcidiumApplication extends SpringApplication{
     public static MessageDispatcher dispatcher = null;
 
     @Autowired
     @Qualifier("port")
-    static int port;
+    int port;
 
     @Autowired
     @Qualifier("maxPlayers")
     int maxPlayers;
 
     @Autowired
-//	@Qualifier("psql")
-    static DataSource dataSource;
+    @Qualifier("psql")
+    DataSource dataSource;
 
     public static Connection SQLConnection = null;
 
@@ -63,8 +64,12 @@ public class AcidiumApplication {
     static ArrayList<Resource> resources = new ArrayList<>();
 
     public static void main(String[] args) throws Exception {
-        //REGISTER RESOURCES
         SpringApplication.run(AcidiumApplication.class, args);
+    }
+    @PostConstruct
+    public void started() throws Exception{
+        //REGISTER RESOURCES
+
         TickManager.init();
         loadNBT();
         logger.info("starting resource facade, registering....");
@@ -102,7 +107,6 @@ public class AcidiumApplication {
         //SQL CONNECTION
         try {
             logger.info("trying to connect to sql...");
-            logger.info(dataSource.toString());
             SQLConnection = DataSourceUtils.getConnection(dataSource);
         } catch (Throwable e) {
             logger.error(e.getMessage());

@@ -17,7 +17,6 @@ import java.util.Random;
 @Getter
 @Setter
 public class DefaultSpawner extends Resource implements AbstractMobSpawner {
-    @Getter
     World world;
     public static List<Mob> jobQueue = new ArrayList<>();
     @Override

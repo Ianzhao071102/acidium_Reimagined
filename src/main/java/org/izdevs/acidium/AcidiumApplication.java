@@ -1,10 +1,12 @@
 package org.izdevs.acidium;
 
 
+import ch.qos.logback.core.util.Loader;
 import com.badlogic.gdx.ai.msg.MessageDispatcher;
 import com.badlogic.gdx.ai.msg.MessageManager;
 import jakarta.annotation.PostConstruct;
 import org.izdevs.acidium.networking.Server;
+import org.izdevs.acidium.serialization.ReflectUtil;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.serialization.ResourceFacade;
 import org.izdevs.acidium.tick.TickManager;
@@ -65,15 +67,15 @@ public class AcidiumApplication extends SpringApplication{
 
     public static void main(String[] args) throws Exception {
         SpringApplication.run(AcidiumApplication.class, args);
+
+
     }
     @PostConstruct
     public void started() throws Exception{
-        //REGISTER RESOURCES
-
+        //REGISTER RESOURCE
         TickManager.init();
         loadNBT();
         logger.info("starting resource facade, registering....");
-
 
         logger.trace("start world generation...");
         SecureRandom seeder = new SecureRandom();
@@ -125,8 +127,9 @@ public class AcidiumApplication extends SpringApplication{
         ResourceFacade.start();
     }
 
+
     public static void loadNBT() throws IOException {
-        org.springframework.core.io.Resource[] resource = getXMLResources();
+        org.springframework.core.io.Resource[] resource = ReflectUtil.getResources();
         if (resource.length == 0) {
             logger.info(resource.length + " resources was/were found");
             logger.debug("no nbt file found on classpath");
@@ -134,28 +137,13 @@ public class AcidiumApplication extends SpringApplication{
         }
         for (int i = 0; i <= resource.length - 1; i++) {
             org.springframework.core.io.Resource resource1 = resource[i];
-            ;
-            try (InputStream stream = new FileInputStream(resource1.getFile())) {
-                registerNBTDef(stream);
-                logger.info("found NBT resource file... : " + resource1);
-            }
+            InputStream stream = resource1.getInputStream();
+            registerNBTDef(stream);
+            logger.info("registered nbt def: " + resource1.getFilename());
         }
     }
 
-    private static org.springframework.core.io.Resource[] getXMLResources() {
-        ResourcePatternResolver resourcePatternResolver = new PathMatchingResourcePatternResolver();
-        try {
-            org.springframework.core.io.Resource[] metaInfResources = resourcePatternResolver
-                    .getResources("classpath*:*.nbt");
-            for (org.springframework.core.io.Resource r : metaInfResources) {
-                logger.info(r.getURI() + " found resource nbt");
-                logger.info(r.getURI() + "is being loaded....");
-            }
-            return metaInfResources;
-        } catch (Throwable e) {
-            throw new RuntimeException("error when getting the files..." + Arrays.toString(e.getStackTrace()));
-        }
-    }
+
 
     public static int getFreePort() {
         try (ServerSocket socket = new ServerSocket(0)) {
@@ -180,22 +168,17 @@ public class AcidiumApplication extends SpringApplication{
         return Math.sqrt((y2 - y1) * (y2 - y1) + (x2 - x1) * (x2 - x1));
     }
 
-    public static void readAndPrintNote() {
-        ResourcePatternResolver resourcePatternResolver = new PathMatchingResourcePatternResolver();
-        try {
-            org.springframework.core.io.Resource[] metaInfResources = resourcePatternResolver
-                    .getResources("classpath*:*.note");
-            for (org.springframework.core.io.Resource r : metaInfResources) {
-                logger.info(r.getURI() + " found node");
-                List<String> lines = Files.readAllLines(Path.of(r.getURI()));
-                logger.info("--------- BEGIN NOTE --------------");
-                for (int j = 0; j <= lines.size() - 1; j++) {
-                    logger.info(lines.get(j));
-                }
-                logger.info("--------- END NOTE ----------------");
+    public static void readAndPrintNote() throws IOException {
+        org.springframework.core.io.Resource[] resources = new PathMatchingResourcePatternResolver().getResources("classpath*:/*.note");
+        for(int i=0;i<=resources.length-1;i++){
+            org.springframework.core.io.Resource resource = resources[i];
+            List<String> lines = Files.readAllLines(Path.of(resource.getURI()));
+
+            logger.info("---------- BEGIN NOTE ----------");
+            for(int j=0;j<=lines.size()-1;j++){
+                logger.info(lines.get(j));
             }
-        } catch (Throwable e) {
-            throw new RuntimeException("error when getting the files..." + Arrays.toString(e.getStackTrace()));
+            logger.info("---------- END NOTE -----------");
         }
     }
 }

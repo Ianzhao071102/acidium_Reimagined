@@ -57,6 +57,7 @@ dependencies {
 	testImplementation 'org.testcontainers:junit-jupiter'
 	testImplementation 'org.testcontainers:kafka'
 	implementation 'org.reflections:reflections:0.10.2'
+	compileOnly 'org.reflections:reflections:0.10.2'
 	implementation 'com.google.code.gson:gson:2.10.1'
 	implementation 'com.mojang:brigadier:1.0.18'
 	implementation 'com.google.re2j:re2j:1.6'
@@ -75,6 +76,7 @@ dependencies {
 	implementation "com.badlogicgames.gdx:gdx-ai:1.8.1"
 
 	compileOnly "com.github.xaguzman:pathfinding:0.2.6"
+	implementation "com.github.xaguzman:pathfinding:0.2.6"
 }
 
 dependencyManagement {
@@ -87,3 +89,4 @@ dependencyManagement {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+

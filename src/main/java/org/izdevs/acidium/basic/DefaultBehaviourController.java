@@ -9,7 +9,9 @@ import org.izdevs.acidium.world.World;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.xguzm.pathfinding.grid.GridCell;
 import org.xguzm.pathfinding.grid.NavigationGrid;
+import org.xguzm.pathfinding.grid.NavigationGridGraph;
 import org.xguzm.pathfinding.grid.finders.AStarGridFinder;
+import org.xguzm.pathfinding.grid.finders.GridFinderOptions;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -29,10 +31,12 @@ public class DefaultBehaviourController extends AbstractBehaviourController {
 
             else{
                 //requires current step of pathfinding
-                AStarGridFinder<GridCell> finder = new AStarGridFinder<>(GridCell.class);
+                GridFinderOptions opt = new GridFinderOptions();
+                opt.allowDiagonal = true;
+                AStarGridFinder<GridCell> finder = new AStarGridFinder<>(GridCell.class,opt);
                 int sizeInOneWay = world.getMap().size();
                 GridCell[][] cells = new GridCell[sizeInOneWay][sizeInOneWay];
-
+                NavigationGrid<GridCell> navGrid = new NavigationGrid<>(cells);
                 //basically sets walkable values
                 for(int i=0;i<=world.getMap().size()-1;i++){
                     Block block = world.getMap().values().iterator().next();
@@ -41,14 +45,14 @@ public class DefaultBehaviourController extends AbstractBehaviourController {
 
                     cells[x][y].setWalkable(block.isWalkable());
                 }
-                NavigationGrid<GridCell> navGrid = new NavigationGrid(cells);
-                List<GridCell> path = finder.findPath((int) this.controlled.getX(),(int) this.controlled.getY(),(int) this.getGoal().get(0),(int) this.getGoal().get(1),navGrid);
 
-                GridCell cell = path.get(0);
+                float x,y;
+                List<GridCell> pathToEnd = finder.findPath(0, 0, 4, 3,navGrid);
+                x = pathToEnd.get(0).x;
+                y = pathToEnd.get(0).y;
                 FloatArray now = new FloatArray(2);
-                now.set(0,cell.x);
-                now.set(1,cell.y);
-
+                now.set(0,x);
+                now.set(1,y);
                 return now;
             }
         }

@@ -11,6 +11,7 @@ import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.world.World;
 import org.izdevs.acidium.world.WorldController;
 import org.springframework.data.annotation.Id;
+import org.xguzm.pathfinding.grid.NavigationGridGraphNode;
 
 import java.util.Random;
 
@@ -49,6 +50,7 @@ public class Entity extends Resource implements Telegraph {
         //due to issues now controller is just default controller bro come on...
         this.controller = new DefaultBehaviourController(world,this);
     }
+
 
     public Entity(World world,String name, double movementSpeed, int health, int hitboxRadius, int bDamage) {
 

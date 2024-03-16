@@ -11,6 +11,9 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.datasource.init.DataSourceInitializer;
 import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
@@ -51,5 +54,11 @@ public class Config{
 
     public int port(){
         return Integer.parseInt(Objects.requireNonNull(env.getProperty("port")));
+    }
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        //this is a filter chain...
+        http.cors(Customizer.withDefaults()); // disable this line to reproduce the CORS 401
+        return http.build();
     }
 }

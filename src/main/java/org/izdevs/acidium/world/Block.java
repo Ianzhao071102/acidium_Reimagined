@@ -1,5 +1,6 @@
 package org.izdevs.acidium.world;
 
+import com.google.gson.Gson;
 import lombok.Getter;
 import lombok.Setter;
 import net.forthecrown.nbt.CompoundTag;
@@ -9,10 +10,8 @@ import java.util.Arrays;
 
 @Getter
 @Setter
-public class Block implements Serializable {
-    @Getter
-    @Setter
-    CompoundTag tag;
+public class Block{
+
     int x;
     int y;
     BlockType type;
@@ -22,5 +21,10 @@ public class Block implements Serializable {
         this.y = y;
         this.type = type;
         this.walkable = walkable;
+    }
+    @Override
+    public String toString(){
+        Gson gson = new Gson();
+        return gson.toJson(this);
     }
 }

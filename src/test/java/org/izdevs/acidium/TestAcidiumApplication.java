@@ -3,8 +3,10 @@ package org.izdevs.acidium;
 import com.esri.core.geometry.Point;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import jakarta.annotation.PostConstruct;
 import org.izdevs.acidium.world.Block;
 import org.izdevs.acidium.world.BlockType;
+import org.izdevs.acidium.world.WorldController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
@@ -26,7 +28,6 @@ public class TestAcidiumApplication {
 
 	public static void main(String[] args) {
 		//SpringApplication.from(AcidiumApplication::main).with(TestAcidiumApplication.class).run(args);
-		Block block = new Block(0,0,BlockType.CREDIT_BLOCK,false);
-		System.out.println(new GsonBuilder().create().toJson(block));
+
     }
 }

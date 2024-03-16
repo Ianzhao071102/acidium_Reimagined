@@ -80,6 +80,7 @@ public class AcidiumApplication extends SpringApplication{
         WorldController.generateWorld(seeder.nextLong());
         logger.warn("World is being generated...");
 
+
         //PORT
         boolean random = true;
         if (port != 0) {
@@ -119,7 +120,7 @@ public class AcidiumApplication extends SpringApplication{
         dispatcher = MessageManager.getInstance();
         logger.info("finished...");
 
-
+        readAndPrintNote();
         //init later...
         ResourceFacade.start();
     }

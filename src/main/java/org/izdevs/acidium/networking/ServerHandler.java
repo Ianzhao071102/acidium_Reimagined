@@ -7,6 +7,9 @@ import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.AttributeKey;
+import lombok.Getter;
+import lombok.Setter;
+import org.izdevs.acidium.Metrics;
 import org.izdevs.acidium.api.v1.Payload;
 import org.izdevs.acidium.api.v1.Player;
 import org.izdevs.acidium.api.v1.User;
@@ -14,6 +17,7 @@ import org.izdevs.acidium.security.PlayerManager;
 import org.izdevs.acidium.security.SessionGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -21,7 +25,11 @@ import java.util.UUID;
 
 import static org.izdevs.acidium.AcidiumApplication.*;
 
+@Getter
+@Setter
 public class ServerHandler extends ChannelInboundHandlerAdapter {
+
+    public static int playersOnline = 0;
     Logger logger = LoggerFactory.getLogger(ServerHandler.class);
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
@@ -34,6 +42,10 @@ public class ServerHandler extends ChannelInboundHandlerAdapter {
         String message = in.toString();
         String[] split = message.split("-");
         ctx.writeAndFlush("rcv");
+
+        //add metrics' requests counter
+        Metrics.requests.increment();
+
         switch(split[0]){
             case "login" -> {
                 if(ctx.channel().hasAttr(AttributeKey.valueOf("connected"))){
@@ -88,6 +100,7 @@ public class ServerHandler extends ChannelInboundHandlerAdapter {
                         Player associated = new Player(new User(username,uuid),5,20,5);
                         PlayerManager.add(associated);
                         ctx.channel().attr(AttributeKey.valueOf("player")).set(associated);
+                        playersOnline++;
                     }
                 }else{
                     ctx.writeAndFlush("-105 invalid argument");

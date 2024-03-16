@@ -2,13 +2,17 @@ package org.izdevs.acidium.basic;
 
 import com.dongbat.walkable.FloatArray;
 import com.esri.core.geometry.Point;
+import jakarta.annotation.PostConstruct;
+import org.izdevs.acidium.Config;
 import org.izdevs.acidium.world.Block;
 import org.izdevs.acidium.world.World;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.xguzm.pathfinding.grid.GridCell;
 import org.xguzm.pathfinding.grid.NavigationGrid;
 import org.xguzm.pathfinding.grid.finders.AStarGridFinder;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 public class DefaultBehaviourController extends AbstractBehaviourController {
     @Override
@@ -52,5 +56,23 @@ public class DefaultBehaviourController extends AbstractBehaviourController {
 
     public DefaultBehaviourController(World world,Entity entity){
         this.world = world;
+    }
+
+
+    @Scheduled(fixedDelay = 1000/ Config.ticksPerSecond)
+    @PostConstruct
+    public void move(){
+        Thread thread = new Thread(){
+            public void run(){
+                try {
+                    Thread.sleep((long) (1/getControlled().getMovementSpeed()));
+                } catch (InterruptedException ignored) {
+                }
+                //JUST MOVE
+                getControlled().setX(nextStep().get(0));
+                getControlled().setY(nextStep().get(1));
+            }
+        };
+        thread.start();
     }
 }

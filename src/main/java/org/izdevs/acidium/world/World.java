@@ -4,16 +4,18 @@ import com.esri.core.geometry.Point;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
 @Setter
 @Getter
-public class World {
+public class World{
     Map<Point,Block> map = new HashMap<>();
     public World(Map<Point,Block> map){
         this.map = map;
     }
+
     public Block getBlockAtLoc(Location location){
         if(map.containsKey(new Point(location.getX(),location.getY()))){
             return map.get(new Point(location.getX(),location.getY()));
@@ -29,5 +31,9 @@ public class World {
             map.put(point,block);
             return block;
         }
+    }
+    @Override
+    public String toString(){
+        return this.map.toString();
     }
 }

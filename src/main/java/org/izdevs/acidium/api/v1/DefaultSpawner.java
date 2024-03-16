@@ -6,6 +6,7 @@ import org.izdevs.acidium.entity.AbstractMobSpawner;
 import org.izdevs.acidium.entity.MobHolder;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.world.TickedWorld;
+import org.izdevs.acidium.world.World;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.izdevs.acidium.Config;
 
@@ -16,6 +17,8 @@ import java.util.Random;
 @Getter
 @Setter
 public class DefaultSpawner extends Resource implements AbstractMobSpawner {
+    @Getter
+    World world;
     public static List<Mob> jobQueue = new ArrayList<>();
     @Override
     public void spawn() {
@@ -24,7 +27,7 @@ public class DefaultSpawner extends Resource implements AbstractMobSpawner {
         Mob mob = MobHolder.registeredMobs.get(now);
         mob.setX(random.nextInt(0,3995));
         mob.setY(random.nextInt(0,3995));
-        TickedWorld.addMob(mob);
+        world.addMob(mob);
     }
 
     @Override
@@ -44,5 +47,8 @@ public class DefaultSpawner extends Resource implements AbstractMobSpawner {
         this.getFlags().add("spawner");
         MobHolder.register(this);
     };
-
+    public DefaultSpawner(World world){
+        super("DefaultSpawner",false);
+        this.world = world;
+    }
 }

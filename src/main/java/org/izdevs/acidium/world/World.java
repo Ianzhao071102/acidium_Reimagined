@@ -11,13 +11,14 @@ import java.util.Map;
 
 @Setter
 @Getter
-public class World {
+public class World extends TickedWorld{
     @Getter
     @Setter
     AbstractMobSpawner spawner;
     Map<Point, Block> map;
 
     public World(Map<Point, Block> map) {
+        super(map);
         this.map = map;
     }
 

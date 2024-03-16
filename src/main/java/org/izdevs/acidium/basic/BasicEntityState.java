@@ -3,7 +3,6 @@ package org.izdevs.acidium.basic;
 import com.badlogic.gdx.ai.fsm.State;
 import com.badlogic.gdx.ai.msg.Telegram;
 import com.dongbat.walkable.FloatArray;
-import org.izdevs.acidium.world.TickedWorld;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -37,9 +36,9 @@ public enum BasicEntityState implements State<Entity> {
             double mobY = entity.getY();
             int closeX = 0;
             int closeY = 0;
-            for(int i = 0; i<= TickedWorld.players.size()-1; i++){
-                double x = TickedWorld.players.get(i).getX();
-                double y = TickedWorld.players.get(i).getY();
+            for(int i = 0; i<= entity.getWorld().players.size()-1; i++){
+                double x = entity.getWorld().players.get(i).getX();
+                double y = entity.getWorld().players.get(i).getY();
 
                 if(distance(mobX,mobY,x,y) < distance(closeX,mobY,mobX,closeY)){
                     //update close
@@ -87,9 +86,9 @@ public enum BasicEntityState implements State<Entity> {
                 double mobY = entity.getY();
                 int closeX = 0;
                 int closeY = 0;
-                for(int i = 0; i<= TickedWorld.players.size()-1; i++){
-                    double x = TickedWorld.players.get(i).getX();
-                    double y = TickedWorld.players.get(i).getY();
+                for(int i = 0; i<= entity.getWorld().players.size()-1; i++){
+                    double x = entity.getWorld().players.get(i).getX();
+                    double y = entity.getWorld().players.get(i).getY();
 
                     if(distance(mobX,mobY,x,y) < distance(closeX,mobY,mobX,closeY)){
                         //update close

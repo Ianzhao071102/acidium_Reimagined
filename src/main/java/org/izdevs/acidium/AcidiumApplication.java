@@ -5,6 +5,7 @@ import ch.qos.logback.core.util.Loader;
 import com.badlogic.gdx.ai.msg.MessageDispatcher;
 import com.badlogic.gdx.ai.msg.MessageManager;
 import jakarta.annotation.PostConstruct;
+import org.izdevs.acidium.basic.ManifestHolder;
 import org.izdevs.acidium.networking.Server;
 import org.izdevs.acidium.serialization.ReflectUtil;
 import org.izdevs.acidium.serialization.Resource;
@@ -125,6 +126,8 @@ public class AcidiumApplication extends SpringApplication{
         readAndPrintNote();
         //init later...
         ResourceFacade.start();
+
+        ManifestHolder.init();
     }
 
 

@@ -2,7 +2,9 @@ package org.izdevs.acidium.networking;
 
 
 import com.google.gson.Gson;
+import jakarta.websocket.server.PathParam;
 import org.izdevs.acidium.api.v1.Error;
+import org.izdevs.acidium.basic.ManifestHolder;
 import org.izdevs.acidium.serialization.API;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.serialization.ResourceFacade;
@@ -12,8 +14,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("v1") //RESOURCE GETTER API V1
 public class RestAPI {
 
-    @GetMapping(value = "/resources",produces = "application/json")
-    public String getResource(@RequestParam(name = "name") String name,@RequestParam(required = false) String api){
+    @GetMapping(path = "resources/{name}/{api}")
+    public String getResource(@PathVariable(name = "name") String name, @PathVariable(name = "api",required = false) String api){
         for(int i=0;i<=ResourceFacade.getResources().size();i++){
             Resource resource = ResourceFacade.getResources().get(i);
             if( (name.isEmpty() || name.isBlank()) && (api.isBlank() || api.isEmpty())){
@@ -53,4 +55,8 @@ public class RestAPI {
         return gson.toJson(new Error(new Throwable("Internal Server Caused an Exception")));
     }
 
+    @GetMapping(path = "/manifest")
+    public String manifest(){
+        return new Gson().toJson(ManifestHolder.getManifests());
+    }
 }

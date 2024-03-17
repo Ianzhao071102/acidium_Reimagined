@@ -22,7 +22,7 @@ public class ManifestHolder {
     static Set<URI> manifests = new HashSet<>();
 
     public static void init() throws IOException {
-        Resource[] resources = new PathMatchingResourcePatternResolver().getResources("classpath*:/*.yaml");
+        Resource[] resources = new PathMatchingResourcePatternResolver().getResources("classpath*:/*.txt");
         Logger logger = LoggerFactory.getLogger(ManifestHolder.class);
 
         logger.debug("found " + resources.length + " manifests on classpath resources folder..");

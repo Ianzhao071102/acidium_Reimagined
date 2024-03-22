@@ -1,11 +1,16 @@
 package org.izdevs.acidium.scheduling;
 
 import lombok.Getter;
+import org.izdevs.acidium.tick.TickManager;
 
 import java.util.HashSet;
 import java.util.Set;
 
 public class LoopManager {
+
+
+    @Getter
+    static Set<DelayedTask> delayedTasks = new HashSet<>();
     @Getter
     static Set<ScheduledTask> tasks = new HashSet<>();
 
@@ -14,6 +19,7 @@ public class LoopManager {
     }
 
     public static void scheduleAsyncDelayedTask(int ticks,ScheduledTask task){
-
+        long dest = TickManager.tick + ticks;
+        delayedTasks.add(new DelayedTask(task,dest));
     }
 }

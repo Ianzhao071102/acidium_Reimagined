@@ -4,6 +4,7 @@ import com.dongbat.walkable.FloatArray;
 import com.esri.core.geometry.Point;
 import jakarta.annotation.PostConstruct;
 import org.izdevs.acidium.Config;
+import org.izdevs.acidium.scheduling.LoopManager;
 import org.izdevs.acidium.scheduling.ScheduledTask;
 import org.izdevs.acidium.world.Block;
 import org.izdevs.acidium.world.World;
@@ -76,5 +77,7 @@ public class DefaultBehaviourController extends AbstractBehaviourController {
         };
         ScheduledTask task = new ScheduledTask(move);
 
+        //schedule the task...
+        LoopManager.scheduleAsyncDelayedTask(1,task);
     }
 }

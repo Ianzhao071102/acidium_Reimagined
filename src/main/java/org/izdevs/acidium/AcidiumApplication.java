@@ -1,11 +1,9 @@
 package org.izdevs.acidium;
 
 
-import ch.qos.logback.core.util.Loader;
 import com.badlogic.gdx.ai.msg.MessageDispatcher;
 import com.badlogic.gdx.ai.msg.MessageManager;
 import jakarta.annotation.PostConstruct;
-import org.izdevs.acidium.basic.ManifestHolder;
 import org.izdevs.acidium.networking.Server;
 import org.izdevs.acidium.serialization.ReflectUtil;
 import org.izdevs.acidium.serialization.Resource;
@@ -21,13 +19,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
-import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceUtils;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.sql.DataSource;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.ServerSocket;
@@ -36,7 +32,6 @@ import java.nio.file.Path;
 import java.security.SecureRandom;
 import java.sql.Connection;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static org.izdevs.acidium.serialization.NBTParser.registerNBTDef;
@@ -127,7 +122,6 @@ public class AcidiumApplication extends SpringApplication{
         //init later...
         ResourceFacade.start();
 
-        ManifestHolder.init();
     }
 
 

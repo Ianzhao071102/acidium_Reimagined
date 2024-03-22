@@ -4,6 +4,7 @@ import com.dongbat.walkable.FloatArray;
 import com.esri.core.geometry.Point;
 import jakarta.annotation.PostConstruct;
 import org.izdevs.acidium.Config;
+import org.izdevs.acidium.scheduling.ScheduledTask;
 import org.izdevs.acidium.world.Block;
 import org.izdevs.acidium.world.World;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -58,7 +59,7 @@ public class DefaultBehaviourController extends AbstractBehaviourController {
         }
     }
 
-    public DefaultBehaviourController(World world,Entity entity){
+    public DefaultBehaviourController(World world){
         this.world = world;
     }
 
@@ -66,17 +67,14 @@ public class DefaultBehaviourController extends AbstractBehaviourController {
     @Scheduled(fixedDelay = 1000/ Config.ticksPerSecond)
     @PostConstruct
     public void move(){
-        Thread thread = new Thread(){
-            public void run(){
-                try {
-                    Thread.sleep((long) (1/getControlled().getMovementSpeed()));
-                } catch (InterruptedException ignored) {
-                }
-                //JUST MOVE
-                getControlled().setX(nextStep().get(0));
-                getControlled().setY(nextStep().get(1));
+        Runnable move = new Runnable() {
+            @Override
+            public void run() {
+                controlled.setX(nextStep().get(0));
+                controlled.setY(nextStep().get(1));
             }
         };
-        thread.start();
+        ScheduledTask task = new ScheduledTask(move);
+
     }
 }

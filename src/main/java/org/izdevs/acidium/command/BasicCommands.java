@@ -7,7 +7,6 @@ import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 import org.springframework.shell.standard.ShellOption;
 
-import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -18,16 +17,10 @@ import java.util.Objects;
 import static org.izdevs.acidium.serialization.NBTParser.registerNBTDef;
 
 @ShellComponent
-public class CommandHandler {
-//    EXAMPLE
-//    @ShellMethod(key = "hello-world")
-//    public String helloWorld(@ShellOption(defaultValue = "spring") String arg)
-//    {
-//        return "Hello world " + arg;
-//    }
+public class BasicCommands {
 
-    @ShellMethod(key = "regClassPathYaml")
-    public String regClassPathYaml(@ShellOption(defaultValue = "name") String name) throws FileNotFoundException {
+    @ShellMethod(value = "regClassPathYaml")
+    public String regClassPathYaml(@ShellOption(defaultValue = "name") String name) {
         try {
             ClassLoader classloader = Thread.currentThread().getContextClassLoader();
             InputStream is = classloader.getResourceAsStream(name);
@@ -38,7 +31,7 @@ public class CommandHandler {
         return "success";
     }
 
-    @ShellMethod(key = "note")
+    @ShellMethod(value = "note")
     public String notes(@ShellOption(defaultValue = "ALL") String noteName) {
         if (Objects.equals(noteName, "ALL")) {
             ResourcePatternResolver resourcePatternResolver = new PathMatchingResourcePatternResolver();

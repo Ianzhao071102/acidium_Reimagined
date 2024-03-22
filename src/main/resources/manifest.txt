@@ -1,1 +1,2 @@
-https://raw.githubusercontent.com/Ianzhao071102/acidium_manifests/main/void.png,https://raw.githubusercontent.com/Ianzhao071102/acidium_manifests/main/void.png
+https://raw.githubusercontent.com/Ianzhao071102/acidium_manifests/main/void.png
+https://raw.githubusercontent.com/Ianzhao071102/acidium_manifests/main/credit.png

@@ -2,9 +2,7 @@ package org.izdevs.acidium.networking;
 
 
 import com.google.gson.Gson;
-import jakarta.websocket.server.PathParam;
 import org.izdevs.acidium.api.v1.Error;
-import org.izdevs.acidium.basic.ManifestHolder;
 import org.izdevs.acidium.serialization.API;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.serialization.ResourceFacade;
@@ -55,8 +53,5 @@ public class RestAPI {
         return gson.toJson(new Error(new Throwable("Internal Server Caused an Exception")));
     }
 
-    @GetMapping(path = "/manifest")
-    public String manifest(){
-        return new Gson().toJson(ManifestHolder.getManifests());
-    }
+
 }

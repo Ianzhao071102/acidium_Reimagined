@@ -11,7 +11,6 @@ import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.world.World;
 import org.izdevs.acidium.world.WorldController;
 import org.springframework.data.annotation.Id;
-import org.xguzm.pathfinding.grid.NavigationGridGraphNode;
 
 import java.util.Random;
 
@@ -48,7 +47,7 @@ public class Entity extends Resource implements Telegraph {
         int id = random.nextInt(0,WorldController.worlds.size());
         this.world = WorldController.worlds.get(id);
         //due to issues now controller is just default controller bro come on...
-        this.controller = new DefaultBehaviourController(world,this);
+        this.controller = new DefaultBehaviourController(world);
     }
 
 
@@ -65,7 +64,7 @@ public class Entity extends Resource implements Telegraph {
         this.stateMachine = new DefaultStateMachine<>(this, BasicEntityState.WANDER);
 
         this.world = world;
-        this.controller = new DefaultBehaviourController(world,this);
+        this.controller = new DefaultBehaviourController(world);
     }
 
     FloatArray pathFinderGoal = new FloatArray(2);

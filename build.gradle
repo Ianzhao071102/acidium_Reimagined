@@ -15,11 +15,15 @@ java {
 }
 
 repositories {
+	maven {
+		url "https://maven-central-asia.storage-download.googleapis.com/maven2/"
+	}
 	mavenCentral()
 	maven {
 		url "https://libraries.minecraft.net"
 	}
 	maven { url 'https://jitpack.io/' }
+
 }
 
 ext {
@@ -78,6 +82,10 @@ dependencies {
 
 	compileOnly "com.github.xaguzman:pathfinding:0.2.6"
 	implementation "com.github.xaguzman:pathfinding:0.2.6"
+
+	testImplementation group: 'com.h2database', name: 'h2', version: '2.2.224'
+
+
 }
 
 dependencyManagement {

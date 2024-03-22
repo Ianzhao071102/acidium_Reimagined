@@ -1,15 +1,12 @@
 package org.izdevs.acidium;
 
-import jakarta.validation.constraints.NotNull;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.*;
-import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.core.env.Environment;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.jdbc.datasource.init.DataSourceInitializer;
-import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -17,6 +14,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
+import java.sql.SQLException;
 import java.util.Objects;
 
 @PropertySources({
@@ -27,6 +25,7 @@ import java.util.Objects;
 @EnableScheduling
 @Component
 public class Config{
+
 
     @Autowired
     Environment env;
@@ -41,13 +40,28 @@ public class Config{
 
     @Bean(name = "psql")
     @Lazy(false)
-
-    public DataSource getDataSource(){
+    public DataSource getDataSource() {
+        Logger logger = LoggerFactory.getLogger(this.getClass());
         String url = env.getProperty("spring.datasource.url");
         String username = env.getProperty("spring.datasource.username");
         String pwd = env.getProperty("spring.datasource.password");
-        return DataSourceBuilder.create().username(username).url(url).password(pwd).build();
+        DataSource _this = DataSourceBuilder.create().username(username).url(url).password(pwd).build();
+
+        try {
+            _this.getConnection();
+
+        } catch (SQLException e) {
+            logger.warn("failed to connect to sql...");
+            logger.warn("using embedded psql...");
+
+            _this = DataSourceBuilder.create().username("sa").password("password").driverClassName("org.h2.Driver").url("jdbc:h2:file:/data/acidium").build();
+        }
+
+        logger.info("connection to sql has been verified to be legitimate...");
+        logger.debug(_this.toString());
+        return _this;
     }
+
 
     @Bean(name = "port")
     @Lazy(false)

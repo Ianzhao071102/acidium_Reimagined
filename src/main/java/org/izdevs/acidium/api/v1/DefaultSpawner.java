@@ -4,6 +4,9 @@ import lombok.Getter;
 import lombok.Setter;
 import org.izdevs.acidium.entity.AbstractMobSpawner;
 import org.izdevs.acidium.entity.MobHolder;
+import org.izdevs.acidium.scheduling.DelayedTask;
+import org.izdevs.acidium.scheduling.LoopManager;
+import org.izdevs.acidium.scheduling.ScheduledTask;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.world.TickedWorld;
 import org.izdevs.acidium.world.World;
@@ -29,17 +32,26 @@ public class DefaultSpawner extends Resource implements AbstractMobSpawner {
         world.addMob(mob);
     }
 
-    @Override
-    @Scheduled(fixedDelay = 1000/Config.ticksPerSecond)
+
     public void tick() {
-        Random random = new Random();
-        long sleep = random.nextLong(20L,500L);
-        try {
-            Thread.sleep(sleep);
-            spawn();
-        }catch(InterruptedException ignored){
-        }
+        DelayedTask task = new DelayedTask(() -> {
+            Random random = new Random();
+            long sleep = random.nextLong(20L,500L);
+            try {
+                Thread.sleep(sleep);
+                spawn();
+            }catch(InterruptedException ignored){
+            }
+        },500,false);
+
+        LoopManager.scheduleAsyncDelayedTask(500,task);
     }
+
+    @Override
+    public void spawnManual(Mob mob) {
+
+    }
+
     public DefaultSpawner(){
         super("DefaultSpawner",false);
         this.setFlags(new ArrayList<>());

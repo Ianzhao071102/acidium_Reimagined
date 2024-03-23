@@ -42,7 +42,7 @@ public class Player extends Entity{
         this.uuid = UUID.randomUUID();
     }
     public Player(User user,Entity entity){
-        super(entity.getName(), entity.getMovementSpeed(), entity.getHealth(), entity.getHitboxRadius(), entity.getBDamage());
+        super(user.getName(), entity.getMovementSpeed(), entity.getHealth(), entity.getHitboxRadius(), entity.getBDamage());
         UUID uuid = null;
         String username = null;
         try {

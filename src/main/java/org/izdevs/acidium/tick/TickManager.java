@@ -27,17 +27,21 @@ public class TickManager {
             if(!LoopManager.getDelayedTasks().isEmpty()){
                 for(int i = 0; i<=LoopManager.getDelayedTasks().size()-1; i++){
                     DelayedTask task = LoopManager.getDelayedTasks().iterator().next();
-                    if(task.getDestTick() == tick) task.exec();
+                    if(task.getDestTick() == tick){
+                        task.exec();
+
+                        //is it single timed
+                        if(task.isSingle()) LoopManager.getDelayedTasks().remove(task);
+                    }
                 }
             }
+            tick++;
         }
-        tick++;
 
     }
     public static void init(){
         Logger logger = LoggerFactory.getLogger(TickManager.class);
         logger.info("tick manager has been initialized");
-        logger.debug("tick manager is not stable...");
     }
 
 }

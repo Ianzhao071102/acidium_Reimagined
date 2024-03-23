@@ -5,8 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 import org.izdevs.acidium.entity.AbstractMobSpawner;
 
-import java.io.Serializable;
-import java.util.HashMap;
 import java.util.Map;
 
 @Setter

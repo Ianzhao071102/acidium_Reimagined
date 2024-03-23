@@ -20,6 +20,10 @@ public class Entity extends Resource implements Telegraph {
     AbstractBehaviourController controller;
     @Id
     int id = 0;
+
+    /**
+        basic self-representing global state machine for a basic entity
+     */
     StateMachine<Entity, BasicEntityState> stateMachine;
     BasicEntityState state;
     double x, y;
@@ -27,8 +31,15 @@ public class Entity extends Resource implements Telegraph {
     double movementSpeed;
     int health;
     int hitboxRadius;
+    /**
+     * body damage
+     */
     int bDamage;
     Runnable attackBehaviour;
+
+    /**
+     * which world it is in
+     */
     World world;
 
     public Entity(String name, double movementSpeed, int health, int hitboxRadius, int bDamage) {

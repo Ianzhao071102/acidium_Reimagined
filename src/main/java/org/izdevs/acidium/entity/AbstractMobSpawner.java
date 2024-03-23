@@ -16,4 +16,5 @@ public interface AbstractMobSpawner extends Ticked{
     default void deleteJob(Mob mob){
         jobQueue.remove(mob);
     }
+    void spawnManual(Mob mob);
 }

@@ -1,8 +1,7 @@
-package org.izdevs.acidium.game;
+package org.izdevs.acidium.game.equipment;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.izdevs.acidium.serialization.API;
 import org.reflections.Reflections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

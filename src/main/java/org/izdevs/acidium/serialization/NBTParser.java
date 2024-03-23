@@ -1,6 +1,5 @@
 package org.izdevs.acidium.serialization;
 
-import com.esotericsoftware.yamlbeans.YamlException;
 import com.esri.core.geometry.Point;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -13,15 +12,12 @@ import org.izdevs.acidium.api.v1.CommandDefinition;
 import org.izdevs.acidium.api.v1.Mob;
 import org.izdevs.acidium.api.v1.Structure;
 import org.izdevs.acidium.entity.MobHolder;
-import org.izdevs.acidium.game.EquipmentHolder;
-import org.izdevs.acidium.tick.Ticked;
 import org.izdevs.acidium.world.Block;
 import org.izdevs.acidium.world.BlockDataHolder;
 import org.izdevs.acidium.world.BlockType;
 import org.izdevs.acidium.world.StructureHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.batch.core.launch.support.RuntimeExceptionTranslator;
 
 import java.io.*;
 import java.lang.reflect.Type;

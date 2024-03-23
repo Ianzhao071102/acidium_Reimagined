@@ -2,7 +2,7 @@ package org.izdevs.acidium.game.inventory;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.izdevs.acidium.game.Equipment;
+import org.izdevs.acidium.game.equipment.Equipment;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -4,7 +4,7 @@ package org.izdevs.acidium;
 import com.badlogic.gdx.ai.msg.MessageDispatcher;
 import com.badlogic.gdx.ai.msg.MessageManager;
 import jakarta.annotation.PostConstruct;
-import org.izdevs.acidium.game.EquipmentHolder;
+import org.izdevs.acidium.game.equipment.EquipmentHolder;
 import org.izdevs.acidium.networking.Server;
 import org.izdevs.acidium.serialization.ReflectUtil;
 import org.izdevs.acidium.serialization.Resource;

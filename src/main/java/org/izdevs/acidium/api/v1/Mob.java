@@ -1,13 +1,11 @@
 package org.izdevs.acidium.api.v1;
 
 
-import jakarta.annotation.Generated;
 import lombok.Getter;
 import lombok.Setter;
-import org.izdevs.acidium.game.Equipment;
+import org.izdevs.acidium.game.equipment.Equipment;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.serialization.SpecObject;
-import org.springframework.data.annotation.Id;
 
 import java.util.ArrayList;
 import java.util.HashSet;

@@ -13,6 +13,7 @@ import org.izdevs.acidium.api.v1.CommandDefinition;
 import org.izdevs.acidium.api.v1.Mob;
 import org.izdevs.acidium.api.v1.Structure;
 import org.izdevs.acidium.entity.MobHolder;
+import org.izdevs.acidium.game.EquipmentHolder;
 import org.izdevs.acidium.tick.Ticked;
 import org.izdevs.acidium.world.Block;
 import org.izdevs.acidium.world.BlockDataHolder;
@@ -29,28 +30,29 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class NBTParser{
+public class NBTParser {
     static Logger logger = LoggerFactory.getLogger(NBTParser.class);
     public static ArrayList<CommandDefinition> definitions = new ArrayList<>();
-    public static void registerNBTDef(InputStream raw) throws YamlException {
+
+    public static void registerNBTDef(InputStream raw) {
         try {
             CompoundTag tag = BinaryTags.readCompressed(raw); //top level
             String apiVersion = tag.getString("apiVersion");
             String name = tag.getString("name");
             String type = tag.getString("type");
-            switch(type){
+            switch (type) {
                 case "mobSpec" -> {
                     CompoundTag spec = tag.getCompound("spec");
                     int bDamage = spec.getInt("bDamage");
                     int health = spec.getInt("health");
                     double speed = spec.getDouble("speed");
                     int hitboxRadius = spec.getInt("hitboxRadius");
-                    if(apiVersion.matches("^v+\\d")){
+                    if (apiVersion.matches("^v+\\d")) {
                         //api version legit
-                        Mob mob = new Mob(name,speed,health,bDamage,hitboxRadius);
+                        Mob mob = new Mob(name, speed, health, bDamage, hitboxRadius);
                         logger.info(mob + " was successfully loaded and is now being registered");
                         MobHolder.registerMob(mob);
-                        if(MobHolder.registeredMobs.contains(mob))  logger.info(mob + " was registered");
+                        if (MobHolder.registeredMobs.contains(mob)) logger.info(mob + " was registered");
                         else logger.warn("the mob maybe isn't registered");
                     }
                 }
@@ -59,46 +61,48 @@ public class NBTParser{
                     BlockSpec spec = new BlockSpec(tag);
                     spec.setWalkable(walkable.equalsIgnoreCase("true"));
 
-                    try{
+                    try {
                         boolean found = false;
-                        for(int i=0;i<=BlockType.values().length-1;i++){
-                            if(name.equalsIgnoreCase(BlockType.values()[i].toString())){
+                        for (int i = 0; i <= BlockType.values().length - 1; i++) {
+                            if (name.equalsIgnoreCase(BlockType.values()[i].toString())) {
                                 found = true;
                                 break;
                             }
                         }
-                        if(!found){
+                        if (!found) {
                             throw new IllegalArgumentException();
                         }
-                        if(!BlockDataHolder.registered.contains(spec)) {
+                        if (!BlockDataHolder.registered.contains(spec)) {
                             BlockDataHolder.registerSpec(spec);
-                        } else{
+                        } else {
                             logger.warn("spec is already registered...");
                         }
-                    }catch(IllegalArgumentException e){
+                    } catch (IllegalArgumentException e) {
                         throw new RuntimeException("please render a valid name for the blockSpec, it must match a existing name in:" + Arrays.toString(BlockType.values()));
                     }
                 }
 
                 case "structure" -> {
                     ListTag blocks = tag.getList("blocks");
-                    Map<Point,Block> current = new HashMap<>();
-                    for(int i=0;i<=blocks.size()-1;i++){
+                    Map<Point, Block> current = new HashMap<>();
+                    for (int i = 0; i <= blocks.size() - 1; i++) {
                         String plr = blocks.getString(i);
 
                         logger.debug("received dara: " + plr);
                         Gson gson = new GsonBuilder().create();
 
-                        Type mapType = new TypeToken<Block>(){}.getType();
+                        Type mapType = new TypeToken<Block>() {
+                        }.getType();
 
-                        int x = 0,y = 0;
-                        Block block = gson.fromJson(plr,mapType);
-                        x = block.getX();;
+                        int x = 0, y = 0;
+                        Block block = gson.fromJson(plr, mapType);
+                        x = block.getX();
+                        ;
                         y = block.getY();
 
-                        Point point = new Point(x,y);
+                        Point point = new Point(x, y);
 
-                        current.put(point,block);
+                        current.put(point, block);
                     }
                     //create with specified name...
                     Structure structure = new Structure(name);
@@ -107,6 +111,7 @@ public class NBTParser{
                     structure.setDescription(current);
                     StructureHolder.register(structure);
                 }
+
             }
 
             //```
@@ -120,7 +125,7 @@ public class NBTParser{
             //  bDamage: 50
             //  Additional: None
             //```
-        }catch(Throwable throwable){
+        } catch (Throwable throwable) {
             logger.error(String.valueOf(throwable));
             throw new RuntimeException(throwable);
         }

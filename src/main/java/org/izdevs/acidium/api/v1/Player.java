@@ -3,6 +3,8 @@ package org.izdevs.acidium.api.v1;
 import lombok.Getter;
 import lombok.Setter;
 import org.izdevs.acidium.basic.Entity;
+import org.izdevs.acidium.game.inventory.Inventory;
+import org.izdevs.acidium.game.inventory.InventoryType;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.serialization.SpecObject;
 
@@ -10,6 +12,8 @@ import java.util.UUID;
 
 
 public class Player extends Entity{
+    Inventory electronInv = new Inventory(InventoryType.Electron);
+    Inventory armourInv = new Inventory(InventoryType.Armour);
     @Setter
     @Getter
     Entity entity;

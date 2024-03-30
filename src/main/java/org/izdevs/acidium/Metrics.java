@@ -4,7 +4,8 @@ import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.Gauge;
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.core.instrument.binder.MeterBinder;
-import org.izdevs.acidium.networking.ServerHandler;
+import org.izdevs.acidium.networking.RestAPI;
+
 import org.springframework.stereotype.Component;
 
 import java.util.function.Supplier;
@@ -20,7 +21,7 @@ public class Metrics implements MeterBinder {
         Gauge players = Gauge.builder("players", new Supplier<Number>() {
             @Override
             public Number get() {
-                return ServerHandler.playersOnline;
+                return RestAPI.playersOnline;
             }
         }).register(meterRegistry);
         Metrics.requests = requests;

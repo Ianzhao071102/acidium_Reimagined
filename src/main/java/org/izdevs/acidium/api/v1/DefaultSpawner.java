@@ -6,12 +6,8 @@ import org.izdevs.acidium.entity.AbstractMobSpawner;
 import org.izdevs.acidium.entity.MobHolder;
 import org.izdevs.acidium.scheduling.DelayedTask;
 import org.izdevs.acidium.scheduling.LoopManager;
-import org.izdevs.acidium.scheduling.ScheduledTask;
 import org.izdevs.acidium.serialization.Resource;
-import org.izdevs.acidium.world.TickedWorld;
 import org.izdevs.acidium.world.World;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.izdevs.acidium.Config;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,7 +53,8 @@ public class DefaultSpawner extends Resource implements AbstractMobSpawner {
         this.setFlags(new ArrayList<>());
         this.getFlags().add("spawner");
         MobHolder.register(this);
-    };
+    }
+
     public DefaultSpawner(World world){
         super("DefaultSpawner",false);
         this.world = world;

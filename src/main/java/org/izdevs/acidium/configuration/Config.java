@@ -1,4 +1,4 @@
-package org.izdevs.acidium;
+package org.izdevs.acidium.configuration;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,11 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
+import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
+import org.springframework.session.web.http.HeaderHttpSessionIdResolver;
+import org.springframework.session.web.http.HttpSessionIdResolver;
 import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
@@ -24,6 +28,7 @@ import java.util.Objects;
 @Configuration
 @EnableScheduling
 @Component
+@EnableRedisHttpSession
 public class Config{
 
 
@@ -74,5 +79,15 @@ public class Config{
         //this is a filter chain...
         http.cors(Customizer.withDefaults()); // disable this line to reproduce the CORS 401
         return http.build();
+    }
+
+    @Bean
+    public LettuceConnectionFactory connectionFactory() {
+        return new LettuceConnectionFactory();
+    }
+
+    @Bean
+    public HttpSessionIdResolver httpSessionIdResolver() {
+        return HeaderHttpSessionIdResolver.xAuthToken();
     }
 }

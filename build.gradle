@@ -43,6 +43,11 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
 	implementation 'org.springframework.modulith:spring-modulith-starter-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.session:spring-session-jdbc'
+	testImplementation 'org.testcontainers:junit-jupiter'
+	testImplementation 'org.springframework.boot:spring-boot-testcontainers'
+	testImplementation 'org.testcontainers:kafka'
+	testImplementation 'org.testcontainers:postgresql'
 
 	compileOnly 'org.projectlombok:lombok:1.18.30'
 	annotationProcessor 'org.projectlombok:lombok:1.18.30'
@@ -71,7 +76,7 @@ dependencies {
 	implementation 'com.esri.geometry:esri-geometry-api:2.2.4'
 	implementation group: 'com.esotericsoftware.yamlbeans', name: 'yamlbeans', version: '1.17'
 	implementation("net.forthecrown:nbt:1.5.0")
-	implementation 'io.netty:netty-all:4.1.24.Final'
+	implementation 'io.netty:netty-all:4.1.100.Final'
 
 
 	implementation group: 'io.micrometer', name: 'micrometer-core', version: '1.12.3'
@@ -84,6 +89,10 @@ dependencies {
 	implementation "com.github.xaguzman:pathfinding:0.2.6"
 
 	testImplementation group: 'com.h2database', name: 'h2', version: '2.2.224'
+
+	implementation 'org.springframework.session:spring-session-data-redis:3.2.2'
+
+	implementation 'io.lettuce:lettuce-core:6.3.2.RELEASE'
 
 
 }

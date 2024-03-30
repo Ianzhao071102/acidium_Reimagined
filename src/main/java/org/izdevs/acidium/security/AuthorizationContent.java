@@ -7,7 +7,7 @@ import org.izdevs.acidium.api.v1.Payload;
 public class AuthorizationContent extends Payload {
     String uuid;
     String sessionData;
-    public AuthorizationContent(String uuid,String sessionData){
+    public AuthorizationContent(String uuid, SessionDetail sessionData){
         this.uuid = uuid;
         this.sessionData = sessionData;
     }

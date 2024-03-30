@@ -1,9 +1,8 @@
 package org.izdevs.acidium.basic;
 
 import com.dongbat.walkable.FloatArray;
-import com.esri.core.geometry.Point;
 import jakarta.annotation.PostConstruct;
-import org.izdevs.acidium.Config;
+import org.izdevs.acidium.configuration.Config;
 import org.izdevs.acidium.scheduling.LoopManager;
 import org.izdevs.acidium.scheduling.ScheduledTask;
 import org.izdevs.acidium.world.Block;
@@ -11,12 +10,10 @@ import org.izdevs.acidium.world.World;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.xguzm.pathfinding.grid.GridCell;
 import org.xguzm.pathfinding.grid.NavigationGrid;
-import org.xguzm.pathfinding.grid.NavigationGridGraph;
 import org.xguzm.pathfinding.grid.finders.AStarGridFinder;
 import org.xguzm.pathfinding.grid.finders.GridFinderOptions;
 
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
 
 public class DefaultBehaviourController extends AbstractBehaviourController {
     @Override

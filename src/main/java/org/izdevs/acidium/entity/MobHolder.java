@@ -4,7 +4,7 @@ import org.izdevs.acidium.api.v1.DefaultSpawner;
 import org.izdevs.acidium.api.v1.Mob;
 import org.izdevs.acidium.tick.Ticked;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.izdevs.acidium.Config;
+import org.izdevs.acidium.configuration.Config;
 import java.util.ArrayList;
 import java.util.Random;
 

@@ -1,5 +1,5 @@
 package org.izdevs.acidium.tick;
-import org.izdevs.acidium.Config;
+import org.izdevs.acidium.configuration.Config;
 import org.springframework.scheduling.annotation.Scheduled;
 
 public interface Ticked {

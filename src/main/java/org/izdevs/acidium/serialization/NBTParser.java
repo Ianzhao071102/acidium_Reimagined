@@ -95,7 +95,6 @@ public class NBTParser {
                         int x = 0, y = 0;
                         Block block = gson.fromJson(plr, mapType);
                         x = block.getX();
-                        ;
                         y = block.getY();
 
                         Point point = new Point(x, y);

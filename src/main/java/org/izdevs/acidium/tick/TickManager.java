@@ -2,7 +2,7 @@ package org.izdevs.acidium.tick;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.izdevs.acidium.Config;
+import org.izdevs.acidium.configuration.Config;
 import org.izdevs.acidium.scheduling.DelayedTask;
 import org.izdevs.acidium.scheduling.LoopManager;
 import org.izdevs.acidium.scheduling.ScheduledTask;

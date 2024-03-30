@@ -4,20 +4,21 @@ package org.izdevs.acidium.networking;
 import com.google.gson.Gson;
 import com.google.re2j.Matcher;
 import com.google.re2j.Pattern;
+import jakarta.servlet.http.HttpServletResponse;
 import org.izdevs.acidium.api.v1.Error;
-import org.izdevs.acidium.api.v1.Role;
-import org.izdevs.acidium.security.AuthorizationContent;
-import org.izdevs.acidium.security.SessionDetail;
+import org.izdevs.acidium.api.v1.Payload;
 import org.izdevs.acidium.serialization.API;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.serialization.ResourceFacade;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import static org.izdevs.acidium.AcidiumApplication.SQLConnection;
-import static org.izdevs.acidium.AcidiumApplication.bcrypt;
 
 @RestController
 @RequestMapping("v1") //RESOURCE GETTER API V1
@@ -25,7 +26,7 @@ public class RestAPI {
     public static int playersOnline = 0;
 
     @GetMapping(path = "resources/{name}/{api}")
-    public String getResource(@PathVariable(name = "name") String name, @PathVariable(name = "api", required = false) String api) {
+    public String getResource(@PathVariable(name = "name") String name, @PathVariable(name = "api", required = false) String api,HttpServletResponse response) {
         for (int i = 0; i <= ResourceFacade.getResources().size() - 1; i++) {
             Resource resource = ResourceFacade.getResources().get(i);
             if ((name.isEmpty() || name.isBlank()) && (api.isBlank() || api.isEmpty())) {
@@ -64,7 +65,8 @@ public class RestAPI {
     }
 
     @PostMapping(path = "/login/{username}/{password}")
-    public String login(@PathVariable(name = "username") String username, @PathVariable(name = "password") String password) throws SQLException {
+    //SPRING WILL AUTOMATICALLY PASS HTTPSERVLETRESPONSE BEAN TO THIS METHOD IT WILL WORK FOR SURE
+    public ResponseEntity<Payload> login(@PathVariable(name = "username") String username, @PathVariable(name = "password") String password, HttpServletResponse response) throws SQLException, IOException {
         Pattern username_pattern = Pattern.compile("^([a-z]|[A-Z]|[0-9]|[\\-]|[\\_]){5,20}$"); //NOTE: USERNAME LENGTH MUST BE 5-20, ONLY CHARACTERS AND NUMBERS
         Matcher username_match = username_pattern.matcher(username);
 
@@ -72,34 +74,21 @@ public class RestAPI {
         Matcher pwd_match = pwd_pattern.matcher(password);
 
         if (username_match.matches() && pwd_match.matches()) {
-            //if username and password matches expression
-            ResultSet result = SQLConnection.createStatement().executeQuery("SELECT uuid,username,passwordhash from users WHERE username = " + username);
-            int rowcount = 0;
-            if (result.last()) {
-                rowcount = result.getRow();
+            ResultSet rs = SQLConnection.createStatement().executeQuery("SELECT username,uuid,passwordhash FROM users WHERE username = " + username);
 
-                //move it back
-                result.beforeFirst(); // not rs.first() because the rs.next() below will move on, missing the first element
-            }
-            if (rowcount != 1) return new Gson().toJson(new Error(new IllegalArgumentException("invalid username")));
-            else {
-                //rowcount == 1
-                String uuid = result.getString("uuid");
-                String passwordHash = result.getString("passwordhash");
-                String hashed = bcrypt(password);
-
-                if (passwordHash.equals(hashed)) {
-                    //password satisfied
-
-                    playersOnline++;
-                    return new Gson().toJson(new AuthorizationContent(uuid, new SessionDetail("game", new Role("Player"))));
-                }
-            }
-
+            //TODO FINISH USERNAME AND PASSWORD HASH MATCHING AND ALONGSIDE COOKIE SETTING
         } else {
-            return new Gson().toJson(new Error(new IllegalArgumentException("username or password is invalid")));
+            //username or password is illegal
+            response.getWriter().write("illegal username or password");
+            response.getWriter().flush();
+            return new ResponseEntity<>(new Payload("illegal parameter"), HttpStatusCode.valueOf(403));
         }
-        return new Gson().toJson(new Error(new IllegalArgumentException("argument is suspiciously illegal")));
+        return new ResponseEntity<>(new Payload("illegal parameter"), HttpStatusCode.valueOf(403));
     }
 
+    @PostMapping(path = "/operations/move/{degree}", params = "degree")
+    public ResponseEntity<Payload> move(@PathVariable(name = "degree") double degree, HttpServletResponse response) throws IOException {
+        //TODO FINISH TESTING AND FINISH THIS ALGORITHM
+        return null;
+    }
 }

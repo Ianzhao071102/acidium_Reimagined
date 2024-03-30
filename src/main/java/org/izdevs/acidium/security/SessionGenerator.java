@@ -10,8 +10,8 @@ import java.util.UUID;
 
 public class SessionGenerator {
     static Logger logger = LoggerFactory.getLogger(SessionGenerator.class);
-    public static Set<UUID> avalibles = new HashSet<>();
-    public static Set<UUID> valid = new HashSet<>();
+    public static volatile Set<UUID> avalibles = new HashSet<>();
+    public static volatile Set<UUID> valid = new HashSet<>();
     @Scheduled(fixedDelay = 100) //10 uuids per second
     public synchronized static void session(){
         UUID uuid = UUID.randomUUID();

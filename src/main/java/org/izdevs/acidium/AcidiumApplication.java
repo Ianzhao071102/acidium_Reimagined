@@ -61,10 +61,8 @@ public class AcidiumApplication extends SpringApplication{
     static Logger logger = LoggerFactory.getLogger(AcidiumApplication.class);
     static ArrayList<Resource> resources = new ArrayList<>();
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         SpringApplication.run(AcidiumApplication.class, args);
-
-
     }
     @PostConstruct
     public void started() throws Exception{
@@ -77,6 +75,7 @@ public class AcidiumApplication extends SpringApplication{
         SecureRandom seeder = new SecureRandom();
         WorldController.generateWorld(seeder.nextLong());
         logger.warn("World is being generated...");
+
 
         //SQL CONNECTION
         try {
@@ -98,6 +97,7 @@ public class AcidiumApplication extends SpringApplication{
         ResourceFacade.start();
 
         EquipmentHolder.init();
+
     }
 
 

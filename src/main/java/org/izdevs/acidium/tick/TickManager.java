@@ -31,7 +31,14 @@ public class TickManager {
                         task.exec();
 
                         //is it single timed
-                        if(task.isSingle()) LoopManager.getDelayedTasks().remove(task);
+                        if(task.isSingle()) {
+                            LoopManager.getDelayedTasks().remove(task);
+                        }else{
+                            //adds the dest tick to make sure the task runs again
+                            long dest_tick_added = task.destTick;
+                            task.destTick += dest_tick_added;
+                        }
+
                     }
                 }
             }

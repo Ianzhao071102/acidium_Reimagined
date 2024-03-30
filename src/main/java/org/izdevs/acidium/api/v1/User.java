@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 public class User extends Resource {
-
+    @Getter
+    @Setter
+    Role role;
     ArrayList<SpecObject> specof = new ArrayList<>();
     @Getter
     @Setter
@@ -32,7 +34,7 @@ public class User extends Resource {
         SpecObject uuidSpec = new SpecObject("uuid","unset");
         specof.add(uuidSpec);
         this.spec = specof;
-        register();
+        this.register();
     }
     public User(String name,String passwordHash){
         super("USER",false);

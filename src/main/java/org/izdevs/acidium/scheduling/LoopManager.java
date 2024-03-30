@@ -10,9 +10,9 @@ public class LoopManager {
 
 
     @Getter
-    static Set<DelayedTask> delayedTasks = new HashSet<>();
+    static volatile Set<DelayedTask> delayedTasks = new HashSet<>();
     @Getter
-    static Set<ScheduledTask> tasks = new HashSet<>();
+    static volatile Set<ScheduledTask> tasks = new HashSet<>();
 
     public static void registerTask(ScheduledTask task){
         tasks.add(task);

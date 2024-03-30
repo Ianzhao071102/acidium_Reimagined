@@ -4,6 +4,8 @@ import com.esri.core.geometry.Point;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import com.google.re2j.Matcher;
+import com.google.re2j.Pattern;
 import net.forthecrown.nbt.BinaryTags;
 import net.forthecrown.nbt.CompoundTag;
 import net.forthecrown.nbt.ListTag;
@@ -108,6 +110,30 @@ public class NBTParser {
                     StructureHolder.register(structure);
                 }
 
+                case "user" -> {
+                    //anti injection is included...
+                    String username = tag.getString("username");
+                    String uuid = tag.getString("uuid");
+                    String passwordHash = tag.getString("password_hash");
+                    if(username == null || uuid == null || passwordHash == null){
+                        throw new IllegalArgumentException("username, uuid and password hash could NOT be null");
+                    }else{
+                        //no fucked data found
+
+                        //regex pattern for username
+                        Pattern pattern = Pattern.compile("^[a-z]|[A-Z]|[0-9]{5,20}$"); //NOTE: USERNAME LENGTH MUST BE 5-20, ONLY CHARACTERS AND NUMBERS
+                        Matcher username_match = pattern.matcher(username);
+
+                        //regex pattern for uuid
+                        Matcher uuid_match = Pattern.compile("^[0-9a-fA-F]{8}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{12}$").matcher(uuid);
+                        if(username_match.matches() && uuid_match.matches()) {
+                            //matches till here, good to go
+
+                        }else{
+                            throw new IllegalArgumentException("username or password hash is illegal...");
+                        }
+                    }
+                }
             }
 
             //```

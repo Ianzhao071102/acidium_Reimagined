@@ -5,7 +5,6 @@ import com.badlogic.gdx.ai.msg.MessageDispatcher;
 import com.badlogic.gdx.ai.msg.MessageManager;
 import jakarta.annotation.PostConstruct;
 import org.izdevs.acidium.game.equipment.EquipmentHolder;
-import org.izdevs.acidium.networking.Server;
 import org.izdevs.acidium.serialization.ReflectUtil;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.serialization.ResourceFacade;
@@ -78,31 +77,6 @@ public class AcidiumApplication extends SpringApplication{
         SecureRandom seeder = new SecureRandom();
         WorldController.generateWorld(seeder.nextLong());
         logger.warn("World is being generated...");
-
-
-        //PORT
-        boolean random = true;
-        if (port != 0) {
-            random = false;
-        } else {
-            port = getFreePort();
-        }
-
-        if (random) {
-            logger.warn("using free port:" + port);
-
-        }
-        Server server = new Server(port);
-        if (random) logger.warn("Server is running in randomized port: " + port);
-        else logger.warn("server running on port: " + port);
-
-        try {
-            logger.info("start of server is being tried...");
-            server.start();
-        } catch (Throwable e) {
-            logger.error(e.getLocalizedMessage());
-        }
-        logger.info("started server...");
 
         //SQL CONNECTION
         try {

@@ -62,12 +62,13 @@ public class AcidiumApplication extends SpringApplication{
     public static void main(String[] args) throws IOException {
         SpringApplication.run(AcidiumApplication.class, args);
         //REGISTER RESOURCE
-        TickManager.init();
-        loadNBT();
-        logger.info("starting resource facade, registering....");
+
     }
     @PostConstruct
     public void started() throws Exception{
+        TickManager.init();
+        loadNBT();
+        logger.info("starting resource facade, registering....");
         logger.trace("start world generation...");
         SecureRandom seeder = new SecureRandom();
         WorldController.generateWorld(seeder.nextLong());

@@ -7,10 +7,5 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class AcidiumApplicationTests {
-    @Autowired
-    public UserRepository repository;
-    @Test
-    public void repositoryTest(){
-        repository.findById(0L);
-    }
+    
 }

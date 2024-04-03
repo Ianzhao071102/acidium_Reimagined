@@ -11,6 +11,7 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 import org.springframework.session.web.http.HeaderHttpSessionIdResolver;
@@ -78,6 +79,7 @@ public class Config{
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         //this is a filter chain...
         http.cors(Customizer.withDefaults()); // disable this line to reproduce the CORS 401
+        http.csrf(AbstractHttpConfigurer::disable);
         return http.build();
     }
 

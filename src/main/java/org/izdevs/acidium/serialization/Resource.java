@@ -68,4 +68,9 @@ public class Resource implements Ticked {
         }
     }
     protected CompoundTag data;
+
+    @Override
+    public String toString(){
+        return new Gson().toJson(this);
+    }
 }

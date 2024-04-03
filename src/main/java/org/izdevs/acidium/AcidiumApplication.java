@@ -65,16 +65,14 @@ public class AcidiumApplication extends SpringApplication{
         TickManager.init();
         loadNBT();
         logger.info("starting resource facade, registering....");
-
+    }
+    @PostConstruct
+    public void started() throws Exception{
         logger.trace("start world generation...");
         SecureRandom seeder = new SecureRandom();
         WorldController.generateWorld(seeder.nextLong());
         logger.warn("World is being generated...");
 
-
-    }
-    @PostConstruct
-    public void started() throws Exception{
         //SQL CONNECTION
         try {
             logger.info("trying to connect to sql...");

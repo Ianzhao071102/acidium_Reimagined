@@ -4,6 +4,7 @@ package org.izdevs.acidium;
 import com.badlogic.gdx.ai.msg.MessageDispatcher;
 import com.badlogic.gdx.ai.msg.MessageManager;
 import jakarta.annotation.PostConstruct;
+import org.aspectj.lang.annotation.After;
 import org.izdevs.acidium.entity.EntityHolder;
 import org.izdevs.acidium.game.equipment.EquipmentHolder;
 import org.izdevs.acidium.serialization.ReflectUtil;
@@ -45,10 +46,6 @@ public class AcidiumApplication extends SpringApplication{
     public static MessageDispatcher dispatcher = null;
 
     @Autowired
-    @Qualifier("port")
-    int port;
-
-    @Autowired
     @Qualifier("maxPlayers")
     int maxPlayers;
 
@@ -62,11 +59,8 @@ public class AcidiumApplication extends SpringApplication{
     static Logger logger = LoggerFactory.getLogger(AcidiumApplication.class);
     static ArrayList<Resource> resources = new ArrayList<>();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         SpringApplication.run(AcidiumApplication.class, args);
-    }
-    @PostConstruct
-    public void started() throws Exception{
         //REGISTER RESOURCE
         TickManager.init();
         loadNBT();
@@ -78,6 +72,9 @@ public class AcidiumApplication extends SpringApplication{
         logger.warn("World is being generated...");
 
 
+    }
+    @PostConstruct
+    public void started() throws Exception{
         //SQL CONNECTION
         try {
             logger.info("trying to connect to sql...");
@@ -86,6 +83,7 @@ public class AcidiumApplication extends SpringApplication{
             logger.error(e.getMessage());
         }
         logger.info("SQL connection is established with/without exception");
+
         SQLConnection.createStatement().execute("CREATE TABLE IF NOT EXISTS users (uuid CHARACTER(36),username VARCHAR(21),passwordHash VARCHAR(72))");
 
 

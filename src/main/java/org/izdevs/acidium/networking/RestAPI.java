@@ -9,14 +9,20 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.izdevs.acidium.api.v1.Error;
 import org.izdevs.acidium.api.v1.Payload;
-import org.izdevs.acidium.api.v1.Role;
+import org.izdevs.acidium.api.v1.Player;
 import org.izdevs.acidium.api.v1.User;
+import org.izdevs.acidium.basic.Entity;
+import org.izdevs.acidium.basic.UserRepository;
+import org.izdevs.acidium.scheduling.DelayedTask;
+import org.izdevs.acidium.scheduling.LoopManager;
 import org.izdevs.acidium.security.AuthorizationContent;
 import org.izdevs.acidium.security.SessionDetail;
 import org.izdevs.acidium.security.SessionGenerator;
 import org.izdevs.acidium.serialization.API;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.serialization.ResourceFacade;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -33,6 +39,9 @@ import static org.izdevs.acidium.AcidiumApplication.bcrypt;
 @RequestMapping("v1") //RESOURCE GETTER API V1
 public class RestAPI {
     public static int playersOnline = 0;
+
+    @Autowired
+    public UserRepository repository;
 
     @GetMapping(path = "resources/{name}/{api}")
     public String getResource(@PathVariable(name = "name") String name, @PathVariable(name = "api", required = false) String api, HttpServletResponse response) {
@@ -100,10 +109,13 @@ public class RestAPI {
                     String playerUUID = rs.getString("uuid");
                     UUID sid = SessionGenerator.use();
 
+                    User user = new User(username, playerUUID);
 
+                    response.addCookie(new Cookie("session", String.valueOf(sid)));
+                    response.addCookie(new Cookie("user",user.toString()));
 
-                    response.addCookie(new Cookie("session",String.valueOf(sid)));
-                    response.addCookie(new Cookie("user",new User(username,playerUUID).toString()));
+                    //initial value of player
+                    request.getSession().setAttribute("player",new Player(user,new Entity(username,1,20,0,20)));
                     return new ResponseEntity<>(
                             new Payload(
                                     new Gson().toJson(
@@ -132,15 +144,37 @@ public class RestAPI {
     }
 
     @PostMapping(path = "/operations/move/{degree}", params = "degree")
-    public ResponseEntity<Payload> move(@PathVariable(name = "degree") double degree, HttpServletResponse response, @RequestBody AuthorizationContent content) {
+    public ResponseEntity<Payload> move(@PathVariable(name = "degree") double degree, @RequestBody AuthorizationContent content, HttpServletRequest request) {
         String uuid = content.getSessionData().getSessionID();
         Matcher matcher = Pattern.compile("^[0-9a-fA-F]{8}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{12}$").matcher(uuid);
-        if(matcher.matches()){
+        if (matcher.matches()) {
             //uuid follows the uuid schema
-            if(SessionGenerator.validate(UUID.fromString(uuid))){
+            if (SessionGenerator.validate(UUID.fromString(uuid))) {
                 //session is valid
+                if (request.getSession().getAttribute("player") == null) {
+                    //if attribute is not present
+                    return new ResponseEntity<>(HttpStatusCode.valueOf(911));
+                } else {
+                    //session is preset
+                    if (request.getSession().getAttribute("player") instanceof Player player) {
+                        double add_x = player.getMovementSpeed() * Math.cos(degree);
+                        double add_y = player.getMovementSpeed() * Math.sin(degree);
 
-            }else{
+
+                        //schedules task to execute after 1 tick
+                        DelayedTask task = new DelayedTask(() -> {
+                            player.setX(player.getX() + add_x);
+                            player.setY(player.getY() + add_y);
+                        },1,true);
+
+                        LoopManager.scheduleAsyncDelayedTask(1,task);
+                        return new ResponseEntity<>(HttpStatus.OK);
+                    } else {
+                        //invalid session
+                        return new ResponseEntity<>(new Payload("invalid session"), HttpStatusCode.valueOf(403));
+                    }
+                }
+            } else {
                 return new ResponseEntity<>(HttpStatusCode.valueOf(403));
             }
         }

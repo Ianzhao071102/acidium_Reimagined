@@ -20,9 +20,9 @@ import org.springframework.data.annotation.Id;
 import java.util.Random;
 
 import static com.esri.core.geometry.Point2D.distance;
-
 @Setter
 @Getter
+
 public class Entity extends Resource implements Telegraph {
     Inventory inventory = new Inventory(InventoryType.Inventory);
     Inventory electronInv = new Inventory(InventoryType.Electron);

@@ -94,7 +94,8 @@ dependencies {
 
 	implementation 'io.lettuce:lettuce-core:6.3.2.RELEASE'
 
-
+	//the jcabi-log bundle utils
+	implementation group: 'com.jcabi', name: 'jcabi-log', version: '0.24.1'
 }
 
 dependencyManagement {

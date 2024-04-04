@@ -138,11 +138,11 @@ public class NBTParser {
                     }
                 }
 
-                case "crafting-recipe" -> {
+                case "crafting_recipe" -> {
                     String recipe_name = tag.getString("crafting_recipe_name");
                     ListTag ingredients = tag.getList("ingredients");
-                    boolean ordered = tag.getBoolean("ordered");
-                    boolean creatable = tag.getBoolean("craftable");
+                    boolean ordered = tag.getInt("ordered") >= 1;
+                    boolean creatable = tag.getInt("craftable") >= 1;
                     //todo finish recipe construction method impl
 
                     if (ingredients.isEmpty()) {
@@ -195,7 +195,7 @@ public class NBTParser {
                                 Equipment equipment = new Equipment(equipment_name);
                                 CraftingRecipe recipe = null;
                                 for(CraftingRecipe _recipe:CraftingRecipeHolder.getRecipes()){
-                                    if(_recipe.getName().equals(crafting_recipe_name)){
+                                    if(_recipe.getName().equalsIgnoreCase(crafting_recipe_name)){
                                         recipe = _recipe;
                                     }
                                 }

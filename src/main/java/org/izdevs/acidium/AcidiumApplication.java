@@ -6,6 +6,7 @@ import com.badlogic.gdx.ai.msg.MessageManager;
 import jakarta.annotation.PostConstruct;
 import org.aspectj.lang.annotation.After;
 import org.izdevs.acidium.entity.EntityHolder;
+import org.izdevs.acidium.game.crafting.CraftingRecipeHolder;
 import org.izdevs.acidium.game.equipment.EquipmentHolder;
 import org.izdevs.acidium.serialization.ReflectUtil;
 import org.izdevs.acidium.serialization.Resource;
@@ -92,6 +93,8 @@ public class AcidiumApplication extends SpringApplication{
         //init later...
         ResourceFacade.start();
 
+        //note that crafting recipe holder must start before equipment holder
+        CraftingRecipeHolder.init();
         EquipmentHolder.init();
 
         //initialize entity holder here

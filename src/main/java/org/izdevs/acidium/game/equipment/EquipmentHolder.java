@@ -26,6 +26,7 @@ public class EquipmentHolder {
         Set<Class<?>> subTypes =
                 reflections.get(SubTypes.of(Equipment.class).asClass());
         for (Class<?> subType : subTypes) {
+            register((Equipment) subType.newInstance());
             logger.debug(subType.newInstance().toString());
         }
     }

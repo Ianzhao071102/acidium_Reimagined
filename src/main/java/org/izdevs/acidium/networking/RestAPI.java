@@ -30,6 +30,9 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.Instant;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 import static org.izdevs.acidium.AcidiumApplication.SQLConnection;
@@ -187,6 +190,40 @@ public class RestAPI {
             }
         }
         return new ResponseEntity<>(HttpStatusCode.valueOf(403));
+    }
+    @Autowired
+    String version;
+    @PostMapping(path = "/operations/update")
+    public ResponseEntity<Payload> update(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        if (!(request.getSession().getAttribute("session-id") instanceof UUID session) || !(request.getSession().getAttribute("player") instanceof Player)) {
+            //handle invalid session
+            request.getSession().setAttribute("session-id", SessionGenerator.use().toString());
+            response.getWriter().println("invalid session, new session is set");
+            return new ResponseEntity<>(HttpStatus.ACCEPTED);
+        } else {
+            if(SessionGenerator.validate(session)){
+                Gson gson = new Gson();
+                Map<String,String> entityMap = new HashMap<>();
+
+                //the data required to be updated
+                entityMap.put("session-id",session.toString());
+                entityMap.put("timestamp", Instant.now().toString());
+                entityMap.put("version",version);
+
+
+                Payload response_payload = new Payload(gson.toJson(entityMap));
+                return new ResponseEntity<>(response_payload, HttpStatus.ACCEPTED);
+            }
+            else{
+                return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
+            }
+        }
+    }
+
+    @PostMapping
+    public ResponseEntity<Payload> inventory(HttpServletResponse response, HttpServletRequest request){
+        //TODO MAKE INVENTORY UPDATER THAT OPERATES: (MOVE FOR EXAMPLE)
+        return null;
     }
 }
 

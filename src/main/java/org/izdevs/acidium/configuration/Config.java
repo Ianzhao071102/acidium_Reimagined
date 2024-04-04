@@ -3,6 +3,7 @@ package org.izdevs.acidium.configuration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
@@ -23,14 +24,14 @@ import java.sql.SQLException;
 import java.util.Objects;
 
 @PropertySources({
-       @PropertySource("classpath:application.properties"),
-       @PropertySource("classpath:server.properties")
+        @PropertySource("classpath:application.properties"),
+        @PropertySource("classpath:server.properties")
 })
 @Configuration
 @EnableScheduling
 @Component
 @EnableRedisHttpSession
-public class Config{
+public class Config {
 
 
     @Autowired
@@ -40,7 +41,7 @@ public class Config{
 
     @Bean(name = "maxPlayers")
     @Lazy(false)
-    public static int getMaxPlayers(){
+    public static int getMaxPlayers() {
         return 20;
     }
 
@@ -72,9 +73,10 @@ public class Config{
     @Bean(name = "port")
     @Lazy(false)
 
-    public int port(){
+    public int port() {
         return Integer.parseInt(Objects.requireNonNull(env.getProperty("port")));
     }
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         //this is a filter chain...
@@ -92,4 +94,16 @@ public class Config{
     public HttpSessionIdResolver httpSessionIdResolver() {
         return HeaderHttpSessionIdResolver.xAuthToken();
     }
+
+    @Bean(name = "ticksPerSecond")
+    public int getTicksPerSecond() {
+        return ticksPerSecond;
+    }
+    @Value( "${version}" )
+    String version;
+    @Bean
+    public String getVersion(){
+        return version;
+    }
+
 }

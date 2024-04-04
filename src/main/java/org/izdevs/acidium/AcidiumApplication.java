@@ -61,8 +61,6 @@ public class AcidiumApplication extends SpringApplication{
 
     public static void main(String[] args) throws IOException {
         SpringApplication.run(AcidiumApplication.class, args);
-        //REGISTER RESOURCE
-
     }
     @PostConstruct
     public void started() throws Exception{

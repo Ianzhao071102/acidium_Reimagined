@@ -1,5 +1,7 @@
 package org.izdevs.acidium.game.equipment;
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import lombok.Getter;
 import lombok.Setter;
 import org.izdevs.acidium.basic.Entity;
@@ -15,6 +17,7 @@ public class Equipment extends Entity {
     @Getter
     @Setter
     CraftingRecipe recipe;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     int id;
     @Getter
@@ -40,7 +43,8 @@ public class Equipment extends Entity {
     /**
      * equip current equipment to its owner's electron slot
      */
-    public void equipElectronSlot(int slotId) {
+    public void equipElectronSlot(int slotId,String name) {
+        this.setName(name);
         if (this.equipEntity.getInventory().getItems().contains(this)) {
             this.equipEntity.getInventory().getItems().remove(this);
         } else {

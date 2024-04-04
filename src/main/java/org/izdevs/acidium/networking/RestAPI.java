@@ -132,9 +132,6 @@ public class RestAPI {
                     return new ResponseEntity<>(new Payload("illegal parameter"), HttpStatusCode.valueOf(403));
                 }
             }
-
-
-            //TODO FINISH USERNAME AND PASSWORD HASH MATCHING AND ALONGSIDE COOKIE SETTING
         } else {
             //username or password is illegal
             response.getWriter().write("illegal username or password");

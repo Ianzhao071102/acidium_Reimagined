@@ -112,10 +112,11 @@ public class RestAPI {
                     User user = new User(username, playerUUID);
 
                     response.addCookie(new Cookie("session", String.valueOf(sid)));
-                    response.addCookie(new Cookie("user",user.toString()));
+                    response.addCookie(new Cookie("user", user.toString()));
 
                     //initial value of player
-                    request.getSession().setAttribute("player",new Player(user,new Entity(username,1,20,0,20)));
+                    request.getSession().setAttribute("player", new Player(user, new Entity(username, 1, 20, 0, 20)));
+                    request.getSession().setAttribute("session-id", sid);
                     return new ResponseEntity<>(
                             new Payload(
                                     new Gson().toJson(
@@ -141,12 +142,22 @@ public class RestAPI {
     }
 
     @PostMapping(path = "/operations/move/{degree}", params = "degree")
-    public ResponseEntity<Payload> move(@PathVariable(name = "degree") double degree, @RequestBody AuthorizationContent content, HttpServletRequest request) {
-        String uuid = content.getSessionData().getSessionID();
-        Matcher matcher = Pattern.compile("^[0-9a-fA-F]{8}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{12}$").matcher(uuid);
+    public ResponseEntity<Payload> move(@PathVariable(name = "degree") double degree, HttpServletRequest request) {
+        if (request.getSession().getAttribute("session-id") == null) {
+            //fuck no shit
+            return new ResponseEntity<>(HttpStatusCode.valueOf(403));
+
+        }
+
+
+        if (!(request.getSession().getAttribute("session-id") instanceof UUID uuid)) {
+            return new ResponseEntity<>(HttpStatusCode.valueOf(911));
+        }
+        Matcher matcher = Pattern.compile("^[0-9a-fA-F]{8}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{12}$").matcher(uuid.toString());
+
         if (matcher.matches()) {
             //uuid follows the uuid schema
-            if (SessionGenerator.validate(UUID.fromString(uuid))) {
+            if (SessionGenerator.validate(uuid)) {
                 //session is valid
                 if (request.getSession().getAttribute("player") == null) {
                     //if attribute is not present
@@ -162,9 +173,9 @@ public class RestAPI {
                         DelayedTask task = new DelayedTask(() -> {
                             player.setX(player.getX() + add_x);
                             player.setY(player.getY() + add_y);
-                        },1,true);
+                        }, 1, true);
 
-                        LoopManager.scheduleAsyncDelayedTask(1,task);
+                        LoopManager.scheduleAsyncDelayedTask(1, task);
                         return new ResponseEntity<>(HttpStatus.OK);
                     } else {
                         //invalid session
@@ -178,3 +189,4 @@ public class RestAPI {
         return new ResponseEntity<>(HttpStatusCode.valueOf(403));
     }
 }
+

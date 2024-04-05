@@ -1,6 +1,5 @@
 package org.izdevs.acidium.networking;
 
-
 import com.google.gson.Gson;
 import com.google.re2j.Matcher;
 import com.google.re2j.Pattern;
@@ -13,6 +12,9 @@ import org.izdevs.acidium.api.v1.Player;
 import org.izdevs.acidium.api.v1.User;
 import org.izdevs.acidium.basic.Entity;
 import org.izdevs.acidium.basic.UserRepository;
+import org.izdevs.acidium.game.equipment.Equipment;
+import org.izdevs.acidium.game.inventory.Inventory;
+import org.izdevs.acidium.game.inventory.InventoryType;
 import org.izdevs.acidium.scheduling.DelayedTask;
 import org.izdevs.acidium.scheduling.LoopManager;
 import org.izdevs.acidium.security.AuthorizationContent;
@@ -34,9 +36,12 @@ import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.atomic.AtomicReference;
 
 import static org.izdevs.acidium.AcidiumApplication.SQLConnection;
 import static org.izdevs.acidium.AcidiumApplication.bcrypt;
+import static org.izdevs.acidium.game.inventory.Inventory.getInventoryOfPlayerByType;
+import static org.izdevs.acidium.game.inventory.Inventory.getTypeBySlotId;
 
 @RestController
 @RequestMapping("v1") //RESOURCE GETTER API V1
@@ -98,7 +103,7 @@ public class RestAPI {
 
             int size = 0;
             if (rs != null) {
-                rs.last();    // moves cursor to the last row
+                rs.last(); // moves cursor to the last row
                 size = rs.getRow(); // get row id
             }
 
@@ -127,8 +132,7 @@ public class RestAPI {
                                                     playerUUID,
                                                     new SessionDetail(String.valueOf(sid))
                                             )
-                                    ))
-                            , HttpStatusCode.valueOf(200)
+                                    )), HttpStatusCode.valueOf(200)
                     );
                 } else {
                     response.getWriter().write("illegal username or password");
@@ -152,7 +156,6 @@ public class RestAPI {
 
         }
 
-
         if (!(request.getSession().getAttribute("session-id") instanceof UUID uuid)) {
             return new ResponseEntity<>(HttpStatusCode.valueOf(911));
         }
@@ -171,28 +174,29 @@ public class RestAPI {
                         double add_x = player.getMovementSpeed() * Math.cos(degree);
                         double add_y = player.getMovementSpeed() * Math.sin(degree);
 
-
                         //schedules task to execute after 1 tick
                         DelayedTask task = new DelayedTask(() -> {
                             player.setX(player.getX() + add_x);
                             player.setY(player.getY() + add_y);
                         }, 1, true);
 
-                        LoopManager.scheduleAsyncDelayedTask(1, task);
+                        LoopManager.scheduleAsyncDelayedTask(task);
                         return new ResponseEntity<>(HttpStatus.OK);
                     } else {
                         //invalid session
-                        return new ResponseEntity<>(new Payload("invalid session"), HttpStatusCode.valueOf(403));
+                        return new ResponseEntity<>(new Payload("invalid session"), HttpStatus.UNAUTHORIZED);
                     }
                 }
             } else {
-                return new ResponseEntity<>(HttpStatusCode.valueOf(403));
+                return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
             }
         }
-        return new ResponseEntity<>(HttpStatusCode.valueOf(403));
+        return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
     }
+
     @Autowired
     String version;
+
     @PostMapping(path = "/operations/update")
     public ResponseEntity<Payload> update(HttpServletRequest request, HttpServletResponse response) throws IOException {
         if (!(request.getSession().getAttribute("session-id") instanceof UUID session) || !(request.getSession().getAttribute("player") instanceof Player)) {
@@ -201,29 +205,80 @@ public class RestAPI {
             response.getWriter().println("invalid session, new session is set");
             return new ResponseEntity<>(HttpStatus.ACCEPTED);
         } else {
-            if(SessionGenerator.validate(session)){
+            if (SessionGenerator.validate(session)) {
                 Gson gson = new Gson();
-                Map<String,String> entityMap = new HashMap<>();
+                Map<String, String> entityMap = new HashMap<>();
 
                 //the data required to be updated
-                entityMap.put("session-id",session.toString());
+                entityMap.put("session-id", session.toString());
                 entityMap.put("timestamp", Instant.now().toString());
-                entityMap.put("version",version);
-
+                entityMap.put("version", version);
 
                 Payload response_payload = new Payload(gson.toJson(entityMap));
                 return new ResponseEntity<>(response_payload, HttpStatus.ACCEPTED);
-            }
-            else{
+            } else {
                 return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
             }
         }
     }
 
-    @PostMapping
-    public ResponseEntity<Payload> inventory(HttpServletResponse response, HttpServletRequest request){
-        //TODO MAKE INVENTORY UPDATER THAT OPERATES: (MOVE FOR EXAMPLE)
-        return null;
+    @PostMapping(consumes = "application/json")
+    public ResponseEntity<Payload> SwapInventory(HttpServletRequest request) {
+        if (request.getSession().getAttribute("session-id") != null && request.getSession().getAttribute("player") != null) {
+            //session id
+            if (request.getSession().getAttribute("uuid") instanceof UUID session_id && request.getSession().getAttribute("player") instanceof Player player) {
+                if (request.getParameter("op_slot") != null && request.getParameter("dest_slot") != null) {
+                    //the slot to be operated is not null
+                    int op_slot = 0;
+                    int dest_slot = 0;
+                    try {
+                        op_slot = Integer.parseInt(request.getParameter("op_slot"));
+                        dest_slot = Integer.parseInt(request.getParameter("dest_slot"));
+                    } catch (IllegalArgumentException e) {
+                        return new ResponseEntity<>(new Payload(e.getMessage()), HttpStatus.UNPROCESSABLE_ENTITY);
+                    }
+
+                    InventoryType type_of_op_slot;
+                    InventoryType type_of_dest_slot;
+                    try {
+                        type_of_op_slot = getTypeBySlotId(op_slot);
+                        type_of_dest_slot = getTypeBySlotId(dest_slot);
+                    } catch (IllegalArgumentException e) {
+                        return new ResponseEntity<>(new Payload(e.getMessage()), HttpStatus.UNPROCESSABLE_ENTITY);
+                    }
+
+                    try {
+                        //ATOMIC OPERATIONS FOR SETTER FOR VOLATILE VALUES IN A PLAYER'S DEFINITION
+                        AtomicReference<Inventory> op_inv = new AtomicReference<>();
+                        op_inv.set(getInventoryOfPlayerByType(type_of_op_slot, player));
+                        AtomicReference<Inventory> dest_inv = new AtomicReference<>();
+                        dest_inv.set(getInventoryOfPlayerByType(type_of_dest_slot, player));
+
+                        Equipment a = op_inv.get().getItems().get(Inventory.getInnerInventorySlotId(op_slot));
+                        Equipment b = dest_inv.get().getItems().get(Inventory.getInnerInventorySlotId(dest_slot));
+
+                        //swap the slots in next tick
+                        Inventory finalOp_inv = op_inv.get();
+                        Inventory finalDest_inv = dest_inv.get();
+                        DelayedTask task = new DelayedTask(() -> {
+                            finalOp_inv.getItems().remove(a);
+                            finalDest_inv.getItems().remove(b);
+
+                            op_inv.set(finalOp_inv);
+                            dest_inv.set(finalDest_inv);
+                        }, 1, true);
+                        LoopManager.scheduleAsyncDelayedTask(task);
+                    } catch (Exception e) {
+                        return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
+                    }
+                    return new ResponseEntity<>(HttpStatus.ACCEPTED);
+
+                } else return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+            } else {
+                return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
+            }
+        } else {
+            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        }
     }
 }
-

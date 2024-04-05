@@ -10,12 +10,12 @@ import org.izdevs.acidium.serialization.SpecObject;
 
 import java.util.UUID;
 
-
+@Getter
 public class Player extends Entity{
-    Inventory electronInv = new Inventory(InventoryType.Electron);
-    Inventory armourInv = new Inventory(InventoryType.Armour);
+    volatile Inventory electronInv = new Inventory(InventoryType.Electron);
+    volatile Inventory armourInv = new Inventory(InventoryType.Armour);
+    volatile Inventory craftingGrid = new Inventory(InventoryType._Crafting);
     @Setter
-    @Getter
     Entity entity;
     String username;
     UUID uuid;

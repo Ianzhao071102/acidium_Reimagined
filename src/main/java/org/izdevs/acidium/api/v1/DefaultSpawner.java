@@ -40,7 +40,7 @@ public class DefaultSpawner extends Resource implements AbstractMobSpawner {
             }
         },500,false);
 
-        LoopManager.scheduleAsyncDelayedTask(500,task);
+        LoopManager.scheduleAsyncDelayedTask(task);
     }
 
     @Override

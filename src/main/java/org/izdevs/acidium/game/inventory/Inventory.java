@@ -2,7 +2,9 @@ package org.izdevs.acidium.game.inventory;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.izdevs.acidium.api.v1.Player;
 import org.izdevs.acidium.game.equipment.Equipment;
+import org.izdevs.acidium.utils.NumberUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,10 +13,28 @@ import java.util.List;
 public class Inventory {
     InventoryType type;
     @Setter
-    List<Equipment> items = new ArrayList<>();
+    List<Equipment> items;
 
+
+    /**
+     * here defines the inventory MAX slot sizes
+     */
     public Inventory(InventoryType type) {
         this.type = type;
+        switch (type) {
+            case Inventory -> {
+                items = new ArrayList<>(100);
+            }
+            case Armour -> {
+                items = new ArrayList<>(20);
+            }
+            case Electron -> {
+                items = new ArrayList<>(50);
+            }
+            case _Crafting -> {
+                items = new ArrayList<>(9);
+            }
+        }
     }
 
     public Inventory(InventoryType type, List<Equipment> items) {
@@ -30,4 +50,50 @@ public class Inventory {
         }
     }
 
+    /**
+     * WELL HERE IS THE INVENTORY SLOT ID SCHEMA:
+     * 0-100 INVENTORY (PERSISTS FOREVER AND HAS 100 SLOTS)
+     * 101-121 ARMOUR SLOTS
+     * 122-172 ELECTRON SLOTS
+     * 173-182 CRAFTING SLOTS THAT HAS ONLY 9 SLOTS
+     */
+    public static InventoryType getTypeBySlotId(int id) {
+        if (NumberUtils.isInRange(9, 100, id)) return InventoryType.Inventory;
+        else if (NumberUtils.isInRange(101, 121, id)) return InventoryType.Armour;
+        else if (NumberUtils.isInRange(122, 172, id)) return InventoryType.Electron;
+        else if (NumberUtils.isInRange(173, 182, id)) return InventoryType._Crafting;
+        else throw new IllegalArgumentException("inventory id is OUT OF BOUNDS, MAX VALUE IS 182, GOT INSTEAD:" + id);
+    }
+
+    public static Inventory getInventoryOfPlayerByType(InventoryType type, Player player) {
+        Inventory op_inv = null;
+        switch (type) {
+            case Inventory -> {
+                op_inv = player.getInventory();
+            }
+            case _Crafting -> {
+                op_inv = player.getCraftingGrid();
+            }
+            case Armour -> {
+                op_inv = player.getArmourInv();
+            }
+            case Electron -> {
+                op_inv = player.getElectronInv();
+            }
+            default -> {
+                throw new IllegalArgumentException("deprecated inventory type of illegal argument is passed or memory fucks leaks");
+            }
+        }
+        return op_inv;
+    }
+
+    public static int getInnerInventorySlotId(int id) {
+        //pray to god if this works
+        if (NumberUtils.isInRange(9, 100, id)) return id - 9;
+        else if (NumberUtils.isInRange(101, 121, id)) return id - 101;
+        else if (NumberUtils.isInRange(122, 172, id)) return id - 122;
+        else if (NumberUtils.isInRange(173, 182, id)) return id - 173;
+        else
+            throw new IllegalArgumentException("inventory id is OUT OF FUCKED UP BOUNDS, MAX VALUE IS 182, GOT INSTEAD:" + id);
+    }
 }

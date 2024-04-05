@@ -110,7 +110,7 @@ public class Entity extends Resource implements Telegraph {
             //damage the entity
             this.health -= health;
         },1,true);
-        LoopManager.scheduleAsyncDelayedTask(1,task);
+        LoopManager.scheduleAsyncDelayedTask(task);
     }
 
     /**

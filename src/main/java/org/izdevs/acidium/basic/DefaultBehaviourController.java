@@ -3,6 +3,7 @@ package org.izdevs.acidium.basic;
 import com.dongbat.walkable.FloatArray;
 import jakarta.annotation.PostConstruct;
 import org.izdevs.acidium.configuration.Config;
+import org.izdevs.acidium.scheduling.DelayedTask;
 import org.izdevs.acidium.scheduling.LoopManager;
 import org.izdevs.acidium.scheduling.ScheduledTask;
 import org.izdevs.acidium.world.Block;
@@ -72,9 +73,9 @@ public class DefaultBehaviourController extends AbstractBehaviourController {
                 controlled.setY(nextStep().get(1));
             }
         };
-        ScheduledTask task = new ScheduledTask(move);
+        DelayedTask task = new DelayedTask(move,1);
 
         //schedule the task...
-        LoopManager.scheduleAsyncDelayedTask(1,task);
+        LoopManager.scheduleAsyncDelayedTask(task);
     }
 }

@@ -61,7 +61,7 @@ public class Config {
             logger.warn("failed to connect to sql...");
             logger.warn("using embedded psql...");
 
-            _this = DataSourceBuilder.create().username("sa").password("password").driverClassName("org.h2.Driver").url("jdbc:h2:file:/data/acidium").build();
+            _this = DataSourceBuilder.create().username("sa").password("password").url("jdbc:h2:file:/data/acidium").build();
         }
 
         logger.info("connection to sql has been verified to be legitimate...");

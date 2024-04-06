@@ -8,6 +8,7 @@ import org.aspectj.lang.annotation.After;
 import org.izdevs.acidium.entity.EntityHolder;
 import org.izdevs.acidium.game.crafting.CraftingRecipeHolder;
 import org.izdevs.acidium.game.equipment.EquipmentHolder;
+import org.izdevs.acidium.security.SessionGenerator;
 import org.izdevs.acidium.serialization.ReflectUtil;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.serialization.ResourceFacade;
@@ -99,6 +100,8 @@ public class AcidiumApplication extends SpringApplication{
 
         //initialize entity holder here
         new EntityHolder();
+
+
     }
 
 

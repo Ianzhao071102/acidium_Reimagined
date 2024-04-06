@@ -88,7 +88,7 @@ dependencies {
 	compileOnly "com.github.xaguzman:pathfinding:0.2.6"
 	implementation "com.github.xaguzman:pathfinding:0.2.6"
 
-	testImplementation group: 'com.h2database', name: 'h2', version: '2.2.224'
+	implementation group: 'com.h2database', name: 'h2', version: '2.2.224'
 
 	implementation 'org.springframework.session:spring-session-data-redis:3.2.2'
 
@@ -96,6 +96,8 @@ dependencies {
 
 	//the jcabi-log bundle utils
 	implementation group: 'com.jcabi', name: 'jcabi-log', version: '0.24.1'
+
+	compileOnly 'com.yworks:yguard:4.1.0'
 }
 
 dependencyManagement {

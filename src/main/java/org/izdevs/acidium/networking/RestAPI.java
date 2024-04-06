@@ -222,7 +222,7 @@ public class RestAPI {
         }
     }
 
-    @PostMapping(consumes = "application/json")
+    @PostMapping(consumes = "application/json",path = "/operations/inventory/move")
     public ResponseEntity<Payload> SwapInventory(HttpServletRequest request) {
         if (request.getSession().getAttribute("session-id") != null && request.getSession().getAttribute("player") != null) {
             //session id
@@ -280,5 +280,10 @@ public class RestAPI {
         } else {
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
+    }
+
+    @PostMapping(path = "/tests/echo")
+    public ResponseEntity<Payload> echo(){
+        return new ResponseEntity<>(new Payload("success"),HttpStatus.OK);
     }
 }

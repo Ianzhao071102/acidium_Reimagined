@@ -16,8 +16,7 @@ public class SessionGenerator {
     public synchronized static void session(){
         UUID uuid = UUID.randomUUID();
         avalibles.add(uuid);
-        //TODO REMOVE THIS!! CAUSE PERFORMANCE PROBLEMS IF NOT IN PRODUCTION
-        logger.info("added session: " + uuid);
+        logger.debug("added session: " + uuid);
     }
     public synchronized static boolean validate(UUID uuid){
         return valid.contains(uuid) || avalibles.contains(uuid);

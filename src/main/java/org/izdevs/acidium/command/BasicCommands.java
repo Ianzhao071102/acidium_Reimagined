@@ -21,6 +21,19 @@ import static org.izdevs.acidium.serialization.NBTParser.registerNBTDef;
 
 @ShellComponent
 public class BasicCommands {
+  
+    @ShellMethod(value = "get version data", key = "version")
+    public String version(){
+      return Config.getVersion();
+    }
+  
+    @ShellMethod(value = "get credits", key = "credits")
+    public String credits(){
+      return Config.getCredits();
+    }
+
+    
+    
     @ShellMethod(value = "sqlTest")
     public String testSqlConnection(){
         try {
@@ -100,4 +113,6 @@ public class BasicCommands {
         builder.append(System.lineSeparator());
         return builder;
     }
+
+    
 }

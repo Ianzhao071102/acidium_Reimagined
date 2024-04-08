@@ -50,6 +50,12 @@ public class RestAPI {
 
     @Autowired
     public UserRepository repository;
+  
+    @Autowired
+    String version;
+
+    @Autowired
+    private String credits;
 
     @GetMapping(path = "resources/{name}/{api}")
     public String getResource(@PathVariable(name = "name") String name, @PathVariable(name = "api", required = false) String api, HttpServletResponse response) {
@@ -194,8 +200,7 @@ public class RestAPI {
         return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
     }
 
-    @Autowired
-    String version;
+
 
     @PostMapping(path = "/operations/update")
     public ResponseEntity<Payload> update(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -285,5 +290,15 @@ public class RestAPI {
     @PostMapping(path = "/tests/echo")
     public ResponseEntity<Payload> echo(){
         return new ResponseEntity<>(new Payload("success"),HttpStatus.OK);
+    }
+
+    @GetMapping(path = "/tests/version")
+    public ResponseEntity<Payload> version(){
+      return new ResponseEntity<>(new Payload(version),HttpStatus.ACCEPTED);
+    }
+
+    @GetMapping(path = "/getter/credits")
+    public ResponseEntity<Payload> credits(){
+      return new ResponseEntity<>(new Payload(credits),HttpStatus.OK);
     }
 }

@@ -106,4 +106,8 @@ public class Config {
         return version;
     }
 
+    @Bean(name = "credits")
+    public String getCredits(){
+        return "izdevs,jerry(dphater) and the rest of the team";";
+    }
 }

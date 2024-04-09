@@ -45,6 +45,10 @@ import static org.izdevs.acidium.serialization.NBTParser.registerNBTDef;
 @EnableScheduling
 @EntityScan("org.izdevs.acidium")
 public class AcidiumApplication extends SpringApplication{
+    @Autowired
+    boolean generateWorld;
+
+
     public static MessageDispatcher dispatcher = null;
 
     @Autowired
@@ -70,10 +74,14 @@ public class AcidiumApplication extends SpringApplication{
         loadNBT();
         logger.info("starting resource facade, registering....");
         logger.trace("start world generation...");
+
+        if(generateWorld){
         SecureRandom seeder = new SecureRandom();
         WorldController.generateWorld(seeder.nextLong());
         logger.warn("World is being generated...");
-
+        } else {
+          logger.warn("world generation is skipped due to configuration");
+        }
         //SQL CONNECTION
         try {
             logger.info("trying to connect to sql...");

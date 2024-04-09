@@ -12,11 +12,25 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class AcidiumApplicationTests {
+  //worlds do not generate
+    @TestBean
+    public static boolean generateWorld() {
+      return falae;
+    }
     @Test
-    public void gson(){
+    public void contextLoads() {
+      Logger logger = LoggerFactory.getLogger(this.getClass());
+
+      logger.warn("world generation is skipped due to explicit test env");
+    }
+    @Test
+    public void taskTest(){
+      DelayedTask task = new DelayedTask(() -> {
         Logger logger = LoggerFactory.getLogger(this.getClass());
 
-        //TODO MAKE POSITION'S NBT DATA(equipment)
-        logger.info(new Gson().toJson(new CraftingRecipe(new CraftingSlot(0,0,new Equipment("electron")),new CraftingSlot(0,1,new Equipment("positron")))));
+        logger.info("logger test of tasking has been sucessful");
+      },1);
+      LoopManager.scheduleAsyncDelayedTask(task);
     }
+  
 }

@@ -32,6 +32,13 @@ import java.util.Objects;
 @Component
 @EnableRedisHttpSession
 public class Config {
+    @Value(value = "$generator.world.generateUponStart")
+    boolean generateWorld;
+  
+    @Bean(name = "generateWorld")
+    public boolean generateWorldUponStart() {
+      return true;
+    }
 
 
     @Autowired
@@ -70,12 +77,6 @@ public class Config {
     }
 
 
-    @Bean(name = "port")
-    @Lazy(false)
-
-    public int port() {
-        return Integer.parseInt(Objects.requireNonNull(env.getProperty("port")));
-    }
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {

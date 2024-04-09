@@ -8,4 +8,12 @@ public class LoggingUtils {
         Logger logger = LoggerFactory.getLogger(caller);
         logger.error(data);
     }
+
+    public static void die(String message,Class<?> caller){
+        Logger logger = LoggerFactory.getLogger(caller);
+
+        logger.error(message);
+        throw new UnsupportedOperationException();
+    }
+  
 }

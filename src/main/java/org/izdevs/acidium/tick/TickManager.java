@@ -2,6 +2,7 @@ package org.izdevs.acidium.tick;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.izdevs.acidium.Metrics;
 import org.izdevs.acidium.configuration.Config;
 import org.izdevs.acidium.scheduling.DelayedTask;
 import org.izdevs.acidium.scheduling.LoopManager;
@@ -11,29 +12,33 @@ import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
 
 public class TickManager {
+    public static int tps;
+    //the tick a second ago
+    public static long old_tick;
 
     public static long tick = 0;
 
     @Getter
     @Setter
     static boolean paused = false;
-    @Scheduled(fixedDelay = 1000/Config.ticksPerSecond)
-    public void stepTick(){
-        if(!paused){
-            for(int i=0;i<=LoopManager.getTasks().size()-1;i++){
+
+    @Scheduled(fixedDelay = 1000 / Config.ticksPerSecond)
+    public static void stepTick() {
+        if (!paused) {
+            for (int i = 0; i <= LoopManager.getTasks().size() - 1; i++) {
                 ScheduledTask task = LoopManager.getTasks().iterator().next();
                 task.exec();
             }
-            if(!LoopManager.getDelayedTasks().isEmpty()){
-                for(int i = 0; i<=LoopManager.getDelayedTasks().size()-1; i++){
+            if (!LoopManager.getDelayedTasks().isEmpty()) {
+                for (int i = 0; i <= LoopManager.getDelayedTasks().size() - 1; i++) {
                     DelayedTask task = LoopManager.getDelayedTasks().iterator().next();
-                    if(task.getDestTick() == tick){
+                    if (task.getDestTick() == tick) {
                         task.exec();
 
                         //is it single timed
-                        if(task.isSingle()) {
+                        if (task.isSingle()) {
                             LoopManager.getDelayedTasks().remove(task);
-                        }else{
+                        } else {
                             //adds the dest tick to make sure the task runs again
                             long dest_tick_added = task.destTick;
                             task.destTick += dest_tick_added;
@@ -43,12 +48,20 @@ public class TickManager {
                 }
             }
             tick++;
+            Metrics.ticksElapsed.increment(1);
         }
-
     }
-    public static void init(){
+
+    public static void init() {
         Logger logger = LoggerFactory.getLogger(TickManager.class);
         logger.info("tick manager has been initialized");
+    }
+
+    @Scheduled(fixedRate = 1000)
+    public void updateTPS() {
+        //conversion is safe
+        tps = (int) (tick - old_tick);
+        old_tick = tick;
     }
 
 }

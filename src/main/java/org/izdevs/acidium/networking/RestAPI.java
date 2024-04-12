@@ -6,6 +6,7 @@ import com.google.re2j.Pattern;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.izdevs.acidium.Metrics;
 import org.izdevs.acidium.api.v1.Error;
 import org.izdevs.acidium.api.v1.Payload;
 import org.izdevs.acidium.api.v1.Player;
@@ -24,6 +25,8 @@ import org.izdevs.acidium.serialization.API;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.serialization.ResourceFacade;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -50,15 +53,15 @@ public class RestAPI {
 
     @Autowired
     public UserRepository repository;
-  
-    @Autowired
-    String version;
+
 
     @Autowired
+    @Qualifier(value = "credits")
     private String credits;
 
     @GetMapping(path = "resources/{name}/{api}")
     public String getResource(@PathVariable(name = "name") String name, @PathVariable(name = "api", required = false) String api, HttpServletResponse response) {
+        Metrics.apiRequests.increment();
         for (int i = 0; i <= ResourceFacade.getResources().size() - 1; i++) {
             Resource resource = ResourceFacade.getResources().get(i);
             if ((name.isEmpty() || name.isBlank()) && (api.isBlank() || api.isEmpty())) {
@@ -98,6 +101,7 @@ public class RestAPI {
 
     @GetMapping(path = "/login/{username}/{password}")
     public ResponseEntity<Payload> login(@PathVariable(name = "username") String username, @PathVariable(name = "password") String password, HttpServletResponse response, HttpServletRequest request) throws SQLException, IOException {
+        Metrics.apiRequests.increment();
         Pattern username_pattern = Pattern.compile("^([a-z]|[A-Z]|[0-9]|[\\-]|[\\_]){5,20}$"); //NOTE: USERNAME LENGTH MUST BE 5-20, ONLY CHARACTERS AND NUMBERS
         Matcher username_match = username_pattern.matcher(username);
 
@@ -105,6 +109,7 @@ public class RestAPI {
         Matcher pwd_match = pwd_pattern.matcher(password);
 
         if (username_match.matches() && pwd_match.matches()) {
+            //query is safe
             ResultSet rs = SQLConnection.createStatement().executeQuery("SELECT username,uuid,passwordhash FROM users WHERE username = " + username);
 
             int size = 0;
@@ -156,6 +161,7 @@ public class RestAPI {
 
     @PostMapping(path = "/operations/move/{degree}", params = "degree")
     public ResponseEntity<Payload> move(@PathVariable(name = "degree") double degree, HttpServletRequest request) {
+        Metrics.apiRequests.increment();
         if (request.getSession().getAttribute("session-id") == null) {
             //fuck no shit
             return new ResponseEntity<>(HttpStatusCode.valueOf(403));
@@ -201,9 +207,9 @@ public class RestAPI {
     }
 
 
-
     @PostMapping(path = "/operations/update")
     public ResponseEntity<Payload> update(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Metrics.apiRequests.increment();
         if (!(request.getSession().getAttribute("session-id") instanceof UUID session) || !(request.getSession().getAttribute("player") instanceof Player)) {
             //handle invalid session
             request.getSession().setAttribute("session-id", SessionGenerator.use().toString());
@@ -217,7 +223,6 @@ public class RestAPI {
                 //the data required to be updated
                 entityMap.put("session-id", session.toString());
                 entityMap.put("timestamp", Instant.now().toString());
-                entityMap.put("version", version);
 
                 Payload response_payload = new Payload(gson.toJson(entityMap));
                 return new ResponseEntity<>(response_payload, HttpStatus.ACCEPTED);
@@ -227,8 +232,9 @@ public class RestAPI {
         }
     }
 
-    @PostMapping(consumes = "application/json",path = "/operations/inventory/move")
+    @PostMapping(consumes = "application/json", path = "/operations/inventory/move")
     public ResponseEntity<Payload> SwapInventory(HttpServletRequest request) {
+        Metrics.apiRequests.increment();
         if (request.getSession().getAttribute("session-id") != null && request.getSession().getAttribute("player") != null) {
             //session id
             if (request.getSession().getAttribute("uuid") instanceof UUID session_id && request.getSession().getAttribute("player") instanceof Player player) {
@@ -288,17 +294,15 @@ public class RestAPI {
     }
 
     @PostMapping(path = "/tests/echo")
-    public ResponseEntity<Payload> echo(){
-        return new ResponseEntity<>(new Payload("success"),HttpStatus.OK);
+    public ResponseEntity<Payload> echo() {
+        Metrics.apiRequests.increment();
+        return new ResponseEntity<>(new Payload("success"), HttpStatus.OK);
     }
 
-    @GetMapping(path = "/tests/version")
-    public ResponseEntity<Payload> version(){
-      return new ResponseEntity<>(new Payload(version),HttpStatus.ACCEPTED);
-    }
 
     @GetMapping(path = "/getter/credits")
-    public ResponseEntity<Payload> credits(){
-      return new ResponseEntity<>(new Payload(credits),HttpStatus.OK);
+    public ResponseEntity<Payload> credits() {
+        Metrics.apiRequests.increment();
+        return new ResponseEntity<>(new Payload(credits), HttpStatus.OK);
     }
 }

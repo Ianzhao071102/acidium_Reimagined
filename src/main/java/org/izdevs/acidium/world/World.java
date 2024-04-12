@@ -12,8 +12,8 @@ import java.util.Map;
 public class World extends TickedWorld{
     @Getter
     @Setter
-    AbstractMobSpawner spawner;
-    Map<Point, Block> map;
+    volatile AbstractMobSpawner spawner;
+    volatile Map<Point, Block> map;
 
     public World(Map<Point, Block> map) {
         super(map);
@@ -28,13 +28,12 @@ public class World extends TickedWorld{
         }
     }
 
-    public Block setBlockAtLoc(Location location, Block block) {
+    public void setBlockAtLoc(Location location, Block block) {
         if (map.containsKey(new Point(location.getX(), location.getY()))) {
-            return map.replace(new Point(location.getX(), location.getY()), block);
+            map.replace(new Point(location.getX(), location.getY()), block);
         } else {
             Point point = new Point(location.x, location.y);
             map.put(point, block);
-            return block;
         }
     }
 

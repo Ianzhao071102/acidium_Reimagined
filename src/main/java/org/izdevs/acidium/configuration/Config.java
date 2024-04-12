@@ -32,12 +32,12 @@ import java.util.Objects;
 @Component
 @EnableRedisHttpSession
 public class Config {
-    @Value(value = "$generator.world.generateUponStart")
+    @Value(value = "${generateUponStart}")
     boolean generateWorld;
   
     @Bean(name = "generateWorld")
     public boolean generateWorldUponStart() {
-      return true;
+        return true;
     }
 
 
@@ -100,15 +100,16 @@ public class Config {
     public int getTicksPerSecond() {
         return ticksPerSecond;
     }
+
     @Value( "${version}" )
-    String version;
-    @Bean
-    public String getVersion(){
+    static String version;
+    @Bean(name = "acidium_version")
+    public static String version(){
         return version;
     }
 
     @Bean(name = "credits")
-    public String getCredits(){
-        return "izdevs,jerry(dphater) and the rest of the team";";
+    public static String getCredits(){
+        return "izdevs,jerry(dphater) and the rest of the team";
     }
 }

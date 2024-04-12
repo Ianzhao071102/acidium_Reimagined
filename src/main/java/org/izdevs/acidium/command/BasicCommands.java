@@ -3,7 +3,6 @@ package org.izdevs.acidium.command;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
-import org.springframework.security.core.parameters.P;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 import org.springframework.shell.standard.ShellOption;
@@ -15,6 +14,7 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import org.izdevs.acidium.configuration.Config;
 
 import static org.izdevs.acidium.AcidiumApplication.SQLConnection;
 import static org.izdevs.acidium.serialization.NBTParser.registerNBTDef;
@@ -24,7 +24,7 @@ public class BasicCommands {
   
     @ShellMethod(value = "get version data", key = "version")
     public String version(){
-      return Config.getVersion();
+      return Config.version();
     }
   
     @ShellMethod(value = "get credits", key = "credits")

@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "generateUponStart",
+      "type": "java.lang.Boolean",
+      "description": "Description for generateUponStart."
+  }
+] }

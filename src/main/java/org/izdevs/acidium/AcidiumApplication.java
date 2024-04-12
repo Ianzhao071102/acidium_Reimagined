@@ -48,7 +48,6 @@ public class AcidiumApplication extends SpringApplication{
     @Autowired
     boolean generateWorld;
 
-
     public static MessageDispatcher dispatcher = null;
 
     @Autowired
@@ -65,7 +64,7 @@ public class AcidiumApplication extends SpringApplication{
     static Logger logger = LoggerFactory.getLogger(AcidiumApplication.class);
     static ArrayList<Resource> resources = new ArrayList<>();
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         SpringApplication.run(AcidiumApplication.class, args);
     }
     @PostConstruct

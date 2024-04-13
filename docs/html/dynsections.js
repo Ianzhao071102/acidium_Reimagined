@@ -157,7 +157,7 @@ let codefold = {
     });
     // add global toggle to first line
     $('span[class=lineno]:first').append('<span class="fold" id="fold_all" '+
-      'onclick="codefold.toggle_all('+relPath+');" '+
+      'onclick="javascript:codefold.toggle_all('+relPath+');" '+
       'style="background-image:'+this.minusImg[relPath]+';"></span>');
     // add vertical lines to other rows
     $('span[class=lineno]').not(':eq(0)').append('<span class="fold"></span>');
@@ -170,7 +170,7 @@ let codefold = {
       const end   = $(this).attr('data-end');
       // replace normal fold span with controls for the first line of a foldable fragment
       $(this).find('span[class=fold]:first').replaceWith('<span class="fold" '+
-                   'onclick="codefold.toggle(\''+id+'\');" '+
+                   'onclick="javascript:codefold.toggle(\''+id+'\');" '+
                    'style="background-image:'+codefold.minusImg[relPath]+';"></span>');
       // append div for folded (closed) representation
       $(this).after('<div id="foldclosed'+id+'" class="foldclosed" style="display:none;"></div>');

@@ -3,5 +3,172 @@
     <info>
     <title>Acidium</title>
     </info>
+    <xi:include href="deprecated.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<chapter>
+    <title>Namespace Documentation</title>
+<xi:include href="namespaceorg_1_1izdevs_1_1acidium.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespaceorg_1_1izdevs_1_1acidium_1_1api_1_1v1.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespaceorg_1_1izdevs_1_1acidium_1_1basic.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespaceorg_1_1izdevs_1_1acidium_1_1command.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespaceorg_1_1izdevs_1_1acidium_1_1configuration.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespaceorg_1_1izdevs_1_1acidium_1_1entity.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespaceorg_1_1izdevs_1_1acidium_1_1game_1_1crafting.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespaceorg_1_1izdevs_1_1acidium_1_1game_1_1equipment.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespaceorg_1_1izdevs_1_1acidium_1_1game_1_1inventory.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespaceorg_1_1izdevs_1_1acidium_1_1networking.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespaceorg_1_1izdevs_1_1acidium_1_1scheduling.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespaceorg_1_1izdevs_1_1acidium_1_1security.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespaceorg_1_1izdevs_1_1acidium_1_1serialization.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespaceorg_1_1izdevs_1_1acidium_1_1tick.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespaceorg_1_1izdevs_1_1acidium_1_1utils.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespaceorg_1_1izdevs_1_1acidium_1_1world.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>Class Documentation</title>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_abstract_behaviour_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1_acidium_application.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_a_p_i.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1security_1_1_authorization_content.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1command_1_1_basic_commands.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="enumorg_1_1izdevs_1_1acidium_1_1basic_1_1_basic_entity_state.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1world_1_1_block.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1world_1_1_block_data_holder.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_block_spec.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="enumorg_1_1izdevs_1_1acidium_1_1world_1_1_block_type.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_command_definition.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_recipe.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_recipe_holder.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_slot.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_default_behaviour_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1world_1_1_default_world_generator.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="enumorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1v1_1_1defined.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_delayed_task.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_electron.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1entity_1_1_entity_holder.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_holder.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_error.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1networking_1_1_health_endpoint.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_i_d_generator.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_initializer.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1game_1_1inventory_1_1_inventory.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="enumorg_1_1izdevs_1_1acidium_1_1game_1_1inventory_1_1_inventory_type.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="enumorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_role_1_1_level.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1world_1_1_location.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1utils_1_1_logging_utils.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_loop_manager.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1_metrics.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1entity_1_1_mob_holder.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_n_b_t_parser.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_neutron.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1utils_1_1_number_utils.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_payload.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_player.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1security_1_1_player_manager.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_reflect_util.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_facade.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1networking_1_1_rest_a_p_i.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_role.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="interfaceorg_1_1izdevs_1_1acidium_1_1security_1_1_role_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1security_1_1_role_manager.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_scheduled_task.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1networking_1_1_server_handler_role_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1security_1_1_session_detail.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1security_1_1_session_generator.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_shell_style_config.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_spec_object.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1utils_1_1_spring_bean_utils.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1_startup_tasks_runner.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="enumorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_scheduled_task_1_1_state.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_structure.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1world_1_1_structure_holder.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1tick_1_1_tick_manager.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_user.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="interfaceorg_1_1izdevs_1_1acidium_1_1basic_1_1_user_repository.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1v1.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1world_1_1_world.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classorg_1_1izdevs_1_1acidium_1_1world_1_1_world_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="interfaceorg_1_1izdevs_1_1acidium_1_1world_1_1_world_generator.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>File Documentation</title>
+    <xi:include href="_acidium_application_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_block_spec_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_command_definition_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_default_spawner_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_error_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_mob_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_payload_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_player_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_role_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_structure_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_user_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="v1_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_abstract_behaviour_controller_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_basic_entity_state_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_default_behaviour_controller_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_entity_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_i_d_generator_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_user_repository_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_basic_commands_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_config_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_initializer_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_shell_style_config_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_abstract_mob_spawner_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_entity_holder_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_mob_holder_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_crafting_recipe_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_crafting_recipe_holder_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_crafting_slot_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_electron_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_equipment_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_equipment_holder_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_neutron_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_inventory_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_inventory_type_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_metrics_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_health_endpoint_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_rest_a_p_i_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_server_handler_role_controller_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_delayed_task_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_loop_manager_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_scheduled_task_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_authorization_content_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_player_manager_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_role_controller_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_role_manager_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_session_detail_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_session_generator_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_a_p_i_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_n_b_t_parser_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_reflect_util_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_resource_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_resource_facade_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_spec_object_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_startup_tasks_runner_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_ticked_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_tick_manager_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_logging_utils_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_number_utils_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_spring_bean_utils_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_block_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_block_data_holder_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_block_type_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_default_world_generator_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_location_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_structure_holder_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_ticked_world_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_world_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_world_controller_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_world_generator_8java.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
 <index/>
 </book>

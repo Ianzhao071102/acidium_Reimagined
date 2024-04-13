@@ -16,4 +16,4 @@ services:
     volumes:
       - ./data/psql:/var/lib/postgresql/data
     environment:
-      - 'POSTGRES_PASSWORD:Yqsz071102'
+      - POSTGRES_PASSWORD=Yqsz071102

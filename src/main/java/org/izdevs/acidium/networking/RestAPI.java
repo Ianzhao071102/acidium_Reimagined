@@ -301,9 +301,14 @@ public class RestAPI {
     }
 
 
-    @GetMapping(path = "/getter/credits")
+    @GetMapping(path = "credits")
     public ResponseEntity<Payload> credits() {
         Metrics.apiRequests.increment();
         return new ResponseEntity<>(new Payload(credits), HttpStatus.OK);
+    }
+    @GetMapping(path = "hello")
+    public ResponseEntity<Payload> hello(){
+        Metrics.apiRequests.increment();
+        return new ResponseEntity<>(new Payload("hello from: " + credits), HttpStatus.OK);
     }
 }

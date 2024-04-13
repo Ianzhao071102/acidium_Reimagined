@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="_scheduled_task_8java" kind="file" language="Java">
+    <compoundname>ScheduledTask.java</compoundname>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_scheduled_task" prot="public">org::izdevs::acidium::scheduling::ScheduledTask</innerclass>
+    <innerclass refid="enumorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_scheduled_task_1_1_state" prot="public">org::izdevs::acidium::scheduling::ScheduledTask::State</innerclass>
+    <innernamespace refid="namespaceorg_1_1izdevs_1_1acidium_1_1scheduling">org::izdevs::acidium::scheduling</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">package<sp/></highlight><highlight class="normal">org.izdevs.acidium.scheduling;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_scheduled_task" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_scheduled_task" kindref="compound">ScheduledTask</ref><sp/></highlight><highlight class="keyword">implements</highlight><highlight class="normal"><sp/>Runnable<sp/>{</highlight></codeline>
+<codeline lineno="7" refid="enumorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_scheduled_task_1_1_state" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="enumorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_scheduled_task_1_1_state" kindref="compound">State</ref>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SCHEDULED_WAITING,</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RUNNING,</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FINISHED,</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EXCEPTION<sp/></highlight><highlight class="comment">//EXIT<sp/>WITH<sp/>EXCEPTION</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="enumorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_scheduled_task_1_1_state" kindref="compound">State</ref><sp/>state;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>@Override</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_scheduled_task_1abed3058790c1d63222ac6d926bc5f6f6" kindref="member">run</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.task.run();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>Runnable<sp/>task;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_scheduled_task_1ac73be431f8ff5bd7bebf4e67a573d52e" kindref="member">ScheduledTask</ref>(Runnable<sp/>task){</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.task<sp/>=<sp/>task;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_scheduled_task_1a7a763ca590c3be5731377d3bbc136330" kindref="member">exec</ref>(){</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/>State.<ref refid="enumorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_scheduled_task_1_1_state_1a6d2edf256221e270b87674dec2b654bd" kindref="member">RUNNING</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.<ref refid="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_scheduled_task_1abed3058790c1d63222ac6d926bc5f6f6" kindref="member">run</ref>();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal">(Exception<sp/>e){</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/>State.<ref refid="enumorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_scheduled_task_1_1_state_1a436a24da2e9812a747d35289c00130e7" kindref="member">EXCEPTION</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>RuntimeException(e);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/>State.<ref refid="enumorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_scheduled_task_1_1_state_1acfca5e369cc0a008210c6c8da0e1212e" kindref="member">FINISHED</ref>;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="org/izdevs/acidium/scheduling/ScheduledTask.java"/>
+  </compounddef>
+</doxygen>

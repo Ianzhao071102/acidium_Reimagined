@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classorg_1_1izdevs_1_1acidium_1_1_acidium_application" xml:lang="en-US">
+<title>org.izdevs.acidium.AcidiumApplication Class Reference</title>
+<indexterm><primary>org.izdevs.acidium.AcidiumApplication</primary></indexterm>
+<para>Inheritance diagram for org.izdevs.acidium.AcidiumApplication:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classorg_1_1izdevs_1_1acidium_1_1_acidium_application.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_classorg_1_1izdevs_1_1acidium_1_1_acidium_application_1a4d4cf16dc9359453dacd28a99f3e343b">distance</link> (double x1, double y1, double x2, double y2)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1_acidium_application_1a5e249564943a0bc28ce4e2e50ea5522c">main</link> (String[] args)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1_acidium_application_1a18fb8361eb589e48984c142987d58e70">loadNBT</link> ()  throws IOException </para>
+</listitem>
+            <listitem><para>static int <link linkend="_classorg_1_1izdevs_1_1acidium_1_1_acidium_application_1a9cbc09c049b4c271242d5d4c3bebacf7">getFreePort</link> ()</para>
+</listitem>
+            <listitem><para>static String <link linkend="_classorg_1_1izdevs_1_1acidium_1_1_acidium_application_1a5275b3f77d7647aa2c5d3079daa639b9">bcrypt</link> (String string)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1_acidium_application_1a0c20780f500f8abd478c66fb70259e6e">readAndPrintNote</link> ()  throws IOException </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1_acidium_application_1a5275b3f77d7647aa2c5d3079daa639b9"/><section>
+    <title>bcrypt()</title>
+<indexterm><primary>bcrypt</primary><secondary>org.izdevs.acidium.AcidiumApplication</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.AcidiumApplication</primary><secondary>bcrypt</secondary></indexterm>
+<para><computeroutput>static String org.izdevs.acidium.AcidiumApplication.bcrypt (String string)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1_acidium_application_1a4d4cf16dc9359453dacd28a99f3e343b"/><section>
+    <title>distance()</title>
+<indexterm><primary>distance</primary><secondary>org.izdevs.acidium.AcidiumApplication</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.AcidiumApplication</primary><secondary>distance</secondary></indexterm>
+<para><computeroutput>double org.izdevs.acidium.AcidiumApplication.distance (double x1, double y1, double x2, double y2)</computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1_acidium_application_1a9cbc09c049b4c271242d5d4c3bebacf7"/><section>
+    <title>getFreePort()</title>
+<indexterm><primary>getFreePort</primary><secondary>org.izdevs.acidium.AcidiumApplication</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.AcidiumApplication</primary><secondary>getFreePort</secondary></indexterm>
+<para><computeroutput>static int org.izdevs.acidium.AcidiumApplication.getFreePort ( )<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1_acidium_application_1a18fb8361eb589e48984c142987d58e70"/><section>
+    <title>loadNBT()</title>
+<indexterm><primary>loadNBT</primary><secondary>org.izdevs.acidium.AcidiumApplication</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.AcidiumApplication</primary><secondary>loadNBT</secondary></indexterm>
+<para><computeroutput>static void org.izdevs.acidium.AcidiumApplication.loadNBT ( ) throws IOException<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1_acidium_application_1a5e249564943a0bc28ce4e2e50ea5522c"/><section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>org.izdevs.acidium.AcidiumApplication</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.AcidiumApplication</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>static void org.izdevs.acidium.AcidiumApplication.main (String[] args)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1_acidium_application_1a0c20780f500f8abd478c66fb70259e6e"/><section>
+    <title>readAndPrintNote()</title>
+<indexterm><primary>readAndPrintNote</primary><secondary>org.izdevs.acidium.AcidiumApplication</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.AcidiumApplication</primary><secondary>readAndPrintNote</secondary></indexterm>
+<para><computeroutput>static void org.izdevs.acidium.AcidiumApplication.readAndPrintNote ( ) throws IOException<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+org/izdevs/acidium/<link linkend="__acidium_application_8java">AcidiumApplication.java</link></section>
+</section>

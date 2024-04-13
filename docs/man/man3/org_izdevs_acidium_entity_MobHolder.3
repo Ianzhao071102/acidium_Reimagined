@@ -1,0 +1,72 @@
+.TH "org.izdevs.acidium.entity.MobHolder" 3 "Version Alpha-0.1" "Acidium" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+org.izdevs.acidium.entity.MobHolder
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBorg\&.izdevs\&.acidium\&.tick\&.Ticked\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBtick\fP ()"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBorg\&.izdevs\&.acidium\&.tick\&.Ticked\fP
+.in +1c
+.ti -1c
+.RI "default void \fBstopTick\fP ()"
+.br
+.ti -1c
+.RI "default void \fBpause\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBregisterMob\fP (\fBMob\fP mob)"
+.br
+.ti -1c
+.RI "static void \fBremoveMob\fP (\fBMob\fP mob)"
+.br
+.ti -1c
+.RI "static void \fBregister\fP (\fBAbstractMobSpawner\fP spawner)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static ArrayList< \fBMob\fP > \fBregisteredMobs\fP = new ArrayList<>()"
+.br
+.ti -1c
+.RI "static ArrayList< \fBAbstractMobSpawner\fP > \fBregisteredSpawners\fP = new ArrayList<>()"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "static void org\&.izdevs\&.acidium\&.entity\&.MobHolder\&.register (\fBAbstractMobSpawner\fP spawner)\fR [static]\fP"
+
+.SS "static void org\&.izdevs\&.acidium\&.entity\&.MobHolder\&.registerMob (\fBMob\fP mob)\fR [static]\fP"
+
+.SS "static void org\&.izdevs\&.acidium\&.entity\&.MobHolder\&.removeMob (\fBMob\fP mob)\fR [static]\fP"
+
+.SS "void org\&.izdevs\&.acidium\&.entity\&.MobHolder\&.tick ()"
+
+.PP
+Implements \fBorg\&.izdevs\&.acidium\&.tick\&.Ticked\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "ArrayList<\fBMob\fP> org\&.izdevs\&.acidium\&.entity\&.MobHolder\&.registeredMobs = new ArrayList<>()\fR [static]\fP"
+
+.SS "ArrayList<\fBAbstractMobSpawner\fP> org\&.izdevs\&.acidium\&.entity\&.MobHolder\&.registeredSpawners = new ArrayList<>()\fR [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Acidium from the source code\&.

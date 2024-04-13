@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_spec_object" kind="class" language="Java" prot="public">
+    <compoundname>org::izdevs::acidium::serialization::SpecObject</compoundname>
+    <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_spec_object_1a5e7a21edaf5e110a63225e46ca35c02a" prot="package" static="no" mutable="no">
+        <type>String</type>
+        <definition>String org.izdevs.acidium.serialization.SpecObject.key</definition>
+        <argsstring></argsstring>
+        <name>key</name>
+        <qualifiedname>org.izdevs.acidium.serialization.SpecObject.key</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/serialization/SpecObject.java" line="9" column="12" bodyfile="org/izdevs/acidium/serialization/SpecObject.java" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_spec_object_1a534ed0983117e23e9673c358c1002c71" prot="package" static="no" mutable="no">
+        <type>Object</type>
+        <definition>Object org.izdevs.acidium.serialization.SpecObject.value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <qualifiedname>org.izdevs.acidium.serialization.SpecObject.value</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/serialization/SpecObject.java" line="10" column="12" bodyfile="org/izdevs/acidium/serialization/SpecObject.java" bodystart="10" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_spec_object_1a683e4456b2382f8663b61eb2617d7a5f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.izdevs.acidium.serialization.SpecObject.SpecObject</definition>
+        <argsstring>(String key, Object value)</argsstring>
+        <name>SpecObject</name>
+        <qualifiedname>org.izdevs.acidium.serialization.SpecObject.SpecObject</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>Object</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/serialization/SpecObject.java" line="11" column="12" bodyfile="org/izdevs/acidium/serialization/SpecObject.java" bodystart="11" bodyend="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="org/izdevs/acidium/serialization/SpecObject.java" line="8" column="7" bodyfile="org/izdevs/acidium/serialization/SpecObject.java" bodystart="8" bodyend="15"/>
+    <listofallmembers>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_spec_object_1a5e7a21edaf5e110a63225e46ca35c02a" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::serialization::SpecObject</scope><name>key</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_spec_object_1a683e4456b2382f8663b61eb2617d7a5f" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::serialization::SpecObject</scope><name>SpecObject</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_spec_object_1a534ed0983117e23e9673c358c1002c71" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::serialization::SpecObject</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

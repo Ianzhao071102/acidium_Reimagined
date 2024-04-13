@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="_number_utils_8java" kind="file" language="Java">
+    <compoundname>NumberUtils.java</compoundname>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1utils_1_1_number_utils" prot="public">org::izdevs::acidium::utils::NumberUtils</innerclass>
+    <innernamespace refid="namespaceorg_1_1izdevs_1_1acidium_1_1utils">org::izdevs::acidium::utils</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">package<sp/></highlight><highlight class="normal">org.izdevs.acidium.utils;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="classorg_1_1izdevs_1_1acidium_1_1utils_1_1_number_utils" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classorg_1_1izdevs_1_1acidium_1_1utils_1_1_number_utils" kindref="compound">NumberUtils</ref><sp/>{</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1utils_1_1_number_utils_1afd3d0a4155ca1845bc34f2eade034adf" kindref="member">isInRange</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>starting,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bound,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a){</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>a<sp/>&gt;=<sp/>starting<sp/>&amp;&amp;<sp/>a<sp/>&lt;=<sp/>bound;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="org/izdevs/acidium/utils/NumberUtils.java"/>
+  </compounddef>
+</doxygen>

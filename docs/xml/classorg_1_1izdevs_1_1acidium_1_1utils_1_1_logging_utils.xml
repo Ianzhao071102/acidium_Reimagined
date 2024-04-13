@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classorg_1_1izdevs_1_1acidium_1_1utils_1_1_logging_utils" kind="class" language="Java" prot="public">
+    <compoundname>org::izdevs::acidium::utils::LoggingUtils</compoundname>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1utils_1_1_logging_utils_1abc68f57fe263cd808f6e4f574dd4d8b7" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void org.izdevs.acidium.utils.LoggingUtils.panic</definition>
+        <argsstring>(String data, Class&lt;?&gt; caller)</argsstring>
+        <name>panic</name>
+        <qualifiedname>org.izdevs.acidium.utils.LoggingUtils.panic</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>Class&lt;?&gt;</type>
+          <declname>caller</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/utils/LoggingUtils.java" line="7" column="24" bodyfile="org/izdevs/acidium/utils/LoggingUtils.java" bodystart="7" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1utils_1_1_logging_utils_1ae79a05527c19be18a730707816209eb4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void org.izdevs.acidium.utils.LoggingUtils.die</definition>
+        <argsstring>(String message, Class&lt;?&gt; caller)</argsstring>
+        <name>die</name>
+        <qualifiedname>org.izdevs.acidium.utils.LoggingUtils.die</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>Class&lt;?&gt;</type>
+          <declname>caller</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/utils/LoggingUtils.java" line="12" column="24" bodyfile="org/izdevs/acidium/utils/LoggingUtils.java" bodystart="12" bodyend="17"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="org/izdevs/acidium/utils/LoggingUtils.java" line="6" column="7" bodyfile="org/izdevs/acidium/utils/LoggingUtils.java" bodystart="6" bodyend="19"/>
+    <listofallmembers>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1utils_1_1_logging_utils_1ae79a05527c19be18a730707816209eb4" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::utils::LoggingUtils</scope><name>die</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1utils_1_1_logging_utils_1abc68f57fe263cd808f6e4f574dd4d8b7" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::utils::LoggingUtils</scope><name>panic</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

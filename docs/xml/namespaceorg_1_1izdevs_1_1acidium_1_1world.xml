@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="namespaceorg_1_1izdevs_1_1acidium_1_1world" kind="namespace" language="Java">
+    <compoundname>org::izdevs::acidium::world</compoundname>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_block" prot="public">org::izdevs::acidium::world::Block</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_block_data_holder" prot="public">org::izdevs::acidium::world::BlockDataHolder</innerclass>
+    <innerclass refid="enumorg_1_1izdevs_1_1acidium_1_1world_1_1_block_type" prot="public">org::izdevs::acidium::world::BlockType</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_default_world_generator" prot="public">org::izdevs::acidium::world::DefaultWorldGenerator</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_location" prot="public">org::izdevs::acidium::world::Location</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_structure_holder" prot="public">org::izdevs::acidium::world::StructureHolder</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world" prot="public">org::izdevs::acidium::world::TickedWorld</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_world" prot="public">org::izdevs::acidium::world::World</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_world_controller" prot="public">org::izdevs::acidium::world::WorldController</innerclass>
+    <innerclass refid="interfaceorg_1_1izdevs_1_1acidium_1_1world_1_1_world_generator" prot="public">org::izdevs::acidium::world::WorldGenerator</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="org/izdevs/acidium/world/Block.java" line="1" column="15"/>
+  </compounddef>
+</doxygen>

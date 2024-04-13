@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="dir_aefd42e6b7ade5e1bbc72ebe26ba4d1b" kind="dir">
+    <compoundname>org/izdevs/acidium/world</compoundname>
+    <innerfile refid="_block_8java">Block.java</innerfile>
+    <innerfile refid="_block_data_holder_8java">BlockDataHolder.java</innerfile>
+    <innerfile refid="_block_type_8java">BlockType.java</innerfile>
+    <innerfile refid="_default_world_generator_8java">DefaultWorldGenerator.java</innerfile>
+    <innerfile refid="_location_8java">Location.java</innerfile>
+    <innerfile refid="_structure_holder_8java">StructureHolder.java</innerfile>
+    <innerfile refid="_ticked_world_8java">TickedWorld.java</innerfile>
+    <innerfile refid="_world_8java">World.java</innerfile>
+    <innerfile refid="_world_controller_8java">WorldController.java</innerfile>
+    <innerfile refid="_world_generator_8java">WorldGenerator.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="org/izdevs/acidium/world/"/>
+  </compounddef>
+</doxygen>

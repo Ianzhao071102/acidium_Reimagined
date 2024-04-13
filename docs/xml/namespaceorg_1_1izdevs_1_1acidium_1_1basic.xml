@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="namespaceorg_1_1izdevs_1_1acidium_1_1basic" kind="namespace" language="Java">
+    <compoundname>org::izdevs::acidium::basic</compoundname>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_abstract_behaviour_controller" prot="public">org::izdevs::acidium::basic::AbstractBehaviourController</innerclass>
+    <innerclass refid="enumorg_1_1izdevs_1_1acidium_1_1basic_1_1_basic_entity_state" prot="public">org::izdevs::acidium::basic::BasicEntityState</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_default_behaviour_controller" prot="public">org::izdevs::acidium::basic::DefaultBehaviourController</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity" prot="public">org::izdevs::acidium::basic::Entity</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_i_d_generator" prot="public">org::izdevs::acidium::basic::IDGenerator</innerclass>
+    <innerclass refid="interfaceorg_1_1izdevs_1_1acidium_1_1basic_1_1_user_repository" prot="public">org::izdevs::acidium::basic::UserRepository</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="org/izdevs/acidium/basic/AbstractBehaviourController.java" line="1" column="15"/>
+  </compounddef>
+</doxygen>

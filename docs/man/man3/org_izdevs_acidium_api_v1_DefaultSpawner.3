@@ -1,0 +1,145 @@
+.TH "org.izdevs.acidium.api.v1.DefaultSpawner" 3 "Version Alpha-0.1" "Acidium" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+org.izdevs.acidium.api.v1.DefaultSpawner
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBorg\&.izdevs\&.acidium\&.serialization\&.Resource\fP, and \fBorg\&.izdevs\&.acidium\&.entity\&.AbstractMobSpawner\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBspawn\fP ()"
+.br
+.ti -1c
+.RI "void \fBtick\fP ()"
+.br
+.ti -1c
+.RI "void \fBspawnManual\fP (\fBMob\fP mob)"
+.br
+.ti -1c
+.RI "\fBDefaultSpawner\fP ()"
+.br
+.ti -1c
+.RI "\fBDefaultSpawner\fP (\fBWorld\fP world)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBorg\&.izdevs\&.acidium\&.serialization\&.Resource\fP
+.in +1c
+.ti -1c
+.RI "\fBResource\fP (String \fBname\fP, ArrayList< \fBSpecObject\fP > objects)"
+.br
+.ti -1c
+.RI "\fBResource\fP (String \fBname\fP, boolean \fBisApi\fP)"
+.br
+.ti -1c
+.RI "void \fBregister\fP ()"
+.br
+.ti -1c
+.RI "String \fBserialize\fP ()"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBorg\&.izdevs\&.acidium\&.tick\&.Ticked\fP
+.in +1c
+.ti -1c
+.RI "default void \fBstopTick\fP ()"
+.br
+.ti -1c
+.RI "default void \fBpause\fP ()"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBorg\&.izdevs\&.acidium\&.entity\&.AbstractMobSpawner\fP
+.in +1c
+.ti -1c
+.RI "default void \fBaddJob\fP (\fBMob\fP mob)"
+.br
+.ti -1c
+.RI "default void \fBdeleteJob\fP (\fBMob\fP mob)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static List< \fBMob\fP > \fBjobQueue\fP = new ArrayList<>()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Member Functions inherited from \fBorg\&.izdevs\&.acidium\&.serialization\&.Resource\fP
+.in +1c
+.ti -1c
+.RI "static \fBResource\fP \fBdeserialize\fP (String serialized)"
+.br
+.in -1c
+
+Public Attributes inherited from \fBorg\&.izdevs\&.acidium\&.serialization\&.Resource\fP
+.in +1c
+.ti -1c
+.RI "boolean \fBunset\fP"
+.br
+.ti -1c
+.RI "boolean \fBisApi\fP"
+.br
+.ti -1c
+.RI "\fBAPI\fP \fBassociatedApi\fP"
+.br
+.ti -1c
+.RI "String \fBtypeName\fP"
+.br
+.ti -1c
+.RI "String \fBname\fP"
+.br
+.ti -1c
+.RI "ArrayList< \fBSpecObject\fP > \fBspec\fP"
+.br
+.in -1c
+
+Public Attributes inherited from \fBorg\&.izdevs\&.acidium\&.entity\&.AbstractMobSpawner\fP
+.in +1c
+.ti -1c
+.RI "List< \fBMob\fP > \fBjobQueue\fP = new ArrayList<>()"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBorg\&.izdevs\&.acidium\&.serialization\&.Resource\fP
+.in +1c
+.ti -1c
+.RI "CompoundTag \fBdata\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "org\&.izdevs\&.acidium\&.api\&.v1\&.DefaultSpawner\&.DefaultSpawner ()"
+
+.SS "org\&.izdevs\&.acidium\&.api\&.v1\&.DefaultSpawner\&.DefaultSpawner (\fBWorld\fP world)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void org\&.izdevs\&.acidium\&.api\&.v1\&.DefaultSpawner\&.spawn ()"
+
+.PP
+Implements \fBorg\&.izdevs\&.acidium\&.entity\&.AbstractMobSpawner\fP\&.
+.SS "void org\&.izdevs\&.acidium\&.api\&.v1\&.DefaultSpawner\&.spawnManual (\fBMob\fP mob)"
+
+.PP
+Implements \fBorg\&.izdevs\&.acidium\&.entity\&.AbstractMobSpawner\fP\&.
+.SS "void org\&.izdevs\&.acidium\&.api\&.v1\&.DefaultSpawner\&.tick ()"
+
+.PP
+Reimplemented from \fBorg\&.izdevs\&.acidium\&.serialization\&.Resource\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "List<\fBMob\fP> org\&.izdevs\&.acidium\&.api\&.v1\&.DefaultSpawner\&.jobQueue = new ArrayList<>()\fR [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Acidium from the source code\&.

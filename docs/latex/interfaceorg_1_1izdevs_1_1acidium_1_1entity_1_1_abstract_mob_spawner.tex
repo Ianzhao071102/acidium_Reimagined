@@ -1,0 +1,96 @@
+\doxysection{org.\+izdevs.\+acidium.\+entity.\+Abstract\+Mob\+Spawner Interface Reference}
+\hypertarget{interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner}{}\label{interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner}\index{org.izdevs.acidium.entity.AbstractMobSpawner@{org.izdevs.acidium.entity.AbstractMobSpawner}}
+Inheritance diagram for org.\+izdevs.\+acidium.\+entity.\+Abstract\+Mob\+Spawner\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner_ad2e071dc6e068eecab7cb67b3ed06a3e}{spawn}} ()
+\item 
+void \mbox{\hyperlink{interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner_a55565bef61455867d5226679f61a6fa9}{tick}} ()
+\item 
+default void \mbox{\hyperlink{interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner_a4e4828d573c6510bab24b64f9f67cd2d}{add\+Job}} (\mbox{\hyperlink{classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob}{Mob}} mob)
+\item 
+default void \mbox{\hyperlink{interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner_aecd0afeabcb31322045dfb30ec99c420}{delete\+Job}} (\mbox{\hyperlink{classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob}{Mob}} mob)
+\item 
+void \mbox{\hyperlink{interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner_adfe27fcb10347d5bd2a031dcdda31f9b}{spawn\+Manual}} (\mbox{\hyperlink{classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob}{Mob}} mob)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked}{org.\+izdevs.\+acidium.\+tick.\+Ticked}}}
+\begin{DoxyCompactItemize}
+\item 
+default void \mbox{\hyperlink{interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_a9b9edb150904e40a51a3764b66e88ba9}{stop\+Tick}} ()
+\item 
+default void \mbox{\hyperlink{interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_a63bde21e89f3b22cdb7339cf9b5273d3}{pause}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob}{Mob}} $>$ \mbox{\hyperlink{interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner_a3e1e4dd92d6cac3358c96bf78b367d20}{job\+Queue}} = new Array\+List$<$$>$()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner_a4e4828d573c6510bab24b64f9f67cd2d}\label{interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner_a4e4828d573c6510bab24b64f9f67cd2d} 
+\index{org.izdevs.acidium.entity.AbstractMobSpawner@{org.izdevs.acidium.entity.AbstractMobSpawner}!addJob@{addJob}}
+\index{addJob@{addJob}!org.izdevs.acidium.entity.AbstractMobSpawner@{org.izdevs.acidium.entity.AbstractMobSpawner}}
+\doxysubsubsection{\texorpdfstring{addJob()}{addJob()}}
+{\footnotesize\ttfamily default void org.\+izdevs.\+acidium.\+entity.\+Abstract\+Mob\+Spawner.\+add\+Job (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob}{Mob}}}]{mob }\end{DoxyParamCaption})}
+
+\Hypertarget{interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner_aecd0afeabcb31322045dfb30ec99c420}\label{interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner_aecd0afeabcb31322045dfb30ec99c420} 
+\index{org.izdevs.acidium.entity.AbstractMobSpawner@{org.izdevs.acidium.entity.AbstractMobSpawner}!deleteJob@{deleteJob}}
+\index{deleteJob@{deleteJob}!org.izdevs.acidium.entity.AbstractMobSpawner@{org.izdevs.acidium.entity.AbstractMobSpawner}}
+\doxysubsubsection{\texorpdfstring{deleteJob()}{deleteJob()}}
+{\footnotesize\ttfamily default void org.\+izdevs.\+acidium.\+entity.\+Abstract\+Mob\+Spawner.\+delete\+Job (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob}{Mob}}}]{mob }\end{DoxyParamCaption})}
+
+\Hypertarget{interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner_ad2e071dc6e068eecab7cb67b3ed06a3e}\label{interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner_ad2e071dc6e068eecab7cb67b3ed06a3e} 
+\index{org.izdevs.acidium.entity.AbstractMobSpawner@{org.izdevs.acidium.entity.AbstractMobSpawner}!spawn@{spawn}}
+\index{spawn@{spawn}!org.izdevs.acidium.entity.AbstractMobSpawner@{org.izdevs.acidium.entity.AbstractMobSpawner}}
+\doxysubsubsection{\texorpdfstring{spawn()}{spawn()}}
+{\footnotesize\ttfamily void org.\+izdevs.\+acidium.\+entity.\+Abstract\+Mob\+Spawner.\+spawn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Implemented in \mbox{\hyperlink{classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_a3b31812d168316cc39f1e91b0180f0d8}{org.\+izdevs.\+acidium.\+api.\+v1.\+Default\+Spawner}}.
+
+\Hypertarget{interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner_adfe27fcb10347d5bd2a031dcdda31f9b}\label{interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner_adfe27fcb10347d5bd2a031dcdda31f9b} 
+\index{org.izdevs.acidium.entity.AbstractMobSpawner@{org.izdevs.acidium.entity.AbstractMobSpawner}!spawnManual@{spawnManual}}
+\index{spawnManual@{spawnManual}!org.izdevs.acidium.entity.AbstractMobSpawner@{org.izdevs.acidium.entity.AbstractMobSpawner}}
+\doxysubsubsection{\texorpdfstring{spawnManual()}{spawnManual()}}
+{\footnotesize\ttfamily void org.\+izdevs.\+acidium.\+entity.\+Abstract\+Mob\+Spawner.\+spawn\+Manual (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob}{Mob}}}]{mob }\end{DoxyParamCaption})}
+
+
+
+Implemented in \mbox{\hyperlink{classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_a8b08e1c6f356fd62131fcb8fdc7b996a}{org.\+izdevs.\+acidium.\+api.\+v1.\+Default\+Spawner}}.
+
+\Hypertarget{interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner_a55565bef61455867d5226679f61a6fa9}\label{interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner_a55565bef61455867d5226679f61a6fa9} 
+\index{org.izdevs.acidium.entity.AbstractMobSpawner@{org.izdevs.acidium.entity.AbstractMobSpawner}!tick@{tick}}
+\index{tick@{tick}!org.izdevs.acidium.entity.AbstractMobSpawner@{org.izdevs.acidium.entity.AbstractMobSpawner}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily void org.\+izdevs.\+acidium.\+entity.\+Abstract\+Mob\+Spawner.\+tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_adca105a95287fc09c9ba288b332be9cd}{org.\+izdevs.\+acidium.\+tick.\+Ticked}}.
+
+
+
+Implemented in \mbox{\hyperlink{classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_afb025f3f8927362ecfc464090cb7c66a}{org.\+izdevs.\+acidium.\+api.\+v1.\+Default\+Spawner}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner_a3e1e4dd92d6cac3358c96bf78b367d20}\label{interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner_a3e1e4dd92d6cac3358c96bf78b367d20} 
+\index{org.izdevs.acidium.entity.AbstractMobSpawner@{org.izdevs.acidium.entity.AbstractMobSpawner}!jobQueue@{jobQueue}}
+\index{jobQueue@{jobQueue}!org.izdevs.acidium.entity.AbstractMobSpawner@{org.izdevs.acidium.entity.AbstractMobSpawner}}
+\doxysubsubsection{\texorpdfstring{jobQueue}{jobQueue}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob}{Mob}}$>$ org.\+izdevs.\+acidium.\+entity.\+Abstract\+Mob\+Spawner.\+job\+Queue = new Array\+List$<$$>$()}
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+org/izdevs/acidium/entity/\mbox{\hyperlink{_abstract_mob_spawner_8java}{Abstract\+Mob\+Spawner.\+java}}\end{DoxyCompactItemize}

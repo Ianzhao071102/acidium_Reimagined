@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classorg_1_1izdevs_1_1acidium_1_1entity_1_1_mob_holder" xml:lang="en-US">
+<title>org.izdevs.acidium.entity.MobHolder Class Reference</title>
+<indexterm><primary>org.izdevs.acidium.entity.MobHolder</primary></indexterm>
+<para>Inheritance diagram for org.izdevs.acidium.entity.MobHolder:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classorg_1_1izdevs_1_1acidium_1_1entity_1_1_mob_holder.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1entity_1_1_mob_holder_1a0d8246483c5656616a342f76a1b6f23a">tick</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Public Member Functions inherited from <link linkend="_interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked">org.izdevs.acidium.tick.Ticked</link>        <itemizedlist>
+            <listitem><para>default void <link linkend="_interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_1a9b9edb150904e40a51a3764b66e88ba9">stopTick</link> ()</para>
+</listitem>
+            <listitem><para>default void <link linkend="_interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_1a63bde21e89f3b22cdb7339cf9b5273d3">pause</link> ()</para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1entity_1_1_mob_holder_1adb8cd64a3bae0d6983fc8e95e6170d14">registerMob</link> (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob">Mob</link> mob)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1entity_1_1_mob_holder_1a9220681de744bbe971b16d333e93660e">removeMob</link> (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob">Mob</link> mob)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1entity_1_1_mob_holder_1ac985e77540022b918a201a4cc975c51d">register</link> (<link linkend="_interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner">AbstractMobSpawner</link> spawner)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>static ArrayList&lt; <link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob">Mob</link> &gt; <link linkend="_classorg_1_1izdevs_1_1acidium_1_1entity_1_1_mob_holder_1a89340cb9ebdd60e89d7fb63133ddccd4">registeredMobs</link> = new ArrayList&lt;&gt;()</para>
+</listitem>
+            <listitem><para>static ArrayList&lt; <link linkend="_interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner">AbstractMobSpawner</link> &gt; <link linkend="_classorg_1_1izdevs_1_1acidium_1_1entity_1_1_mob_holder_1a3ed6effcb312f8089892a8d3289ccf28">registeredSpawners</link> = new ArrayList&lt;&gt;()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1entity_1_1_mob_holder_1ac985e77540022b918a201a4cc975c51d"/><section>
+    <title>register()</title>
+<indexterm><primary>register</primary><secondary>org.izdevs.acidium.entity.MobHolder</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.entity.MobHolder</primary><secondary>register</secondary></indexterm>
+<para><computeroutput>static void org.izdevs.acidium.entity.MobHolder.register (<link linkend="_interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner">AbstractMobSpawner</link> spawner)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1entity_1_1_mob_holder_1adb8cd64a3bae0d6983fc8e95e6170d14"/><section>
+    <title>registerMob()</title>
+<indexterm><primary>registerMob</primary><secondary>org.izdevs.acidium.entity.MobHolder</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.entity.MobHolder</primary><secondary>registerMob</secondary></indexterm>
+<para><computeroutput>static void org.izdevs.acidium.entity.MobHolder.registerMob (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob">Mob</link> mob)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1entity_1_1_mob_holder_1a9220681de744bbe971b16d333e93660e"/><section>
+    <title>removeMob()</title>
+<indexterm><primary>removeMob</primary><secondary>org.izdevs.acidium.entity.MobHolder</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.entity.MobHolder</primary><secondary>removeMob</secondary></indexterm>
+<para><computeroutput>static void org.izdevs.acidium.entity.MobHolder.removeMob (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob">Mob</link> mob)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1entity_1_1_mob_holder_1a0d8246483c5656616a342f76a1b6f23a"/><section>
+    <title>tick()</title>
+<indexterm><primary>tick</primary><secondary>org.izdevs.acidium.entity.MobHolder</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.entity.MobHolder</primary><secondary>tick</secondary></indexterm>
+<para><computeroutput>void org.izdevs.acidium.entity.MobHolder.tick ( )</computeroutput></para><para>
+Implements <link linkend="_interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_1adca105a95287fc09c9ba288b332be9cd">org.izdevs.acidium.tick.Ticked</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1entity_1_1_mob_holder_1a89340cb9ebdd60e89d7fb63133ddccd4"/><section>
+    <title>registeredMobs</title>
+<indexterm><primary>registeredMobs</primary><secondary>org.izdevs.acidium.entity.MobHolder</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.entity.MobHolder</primary><secondary>registeredMobs</secondary></indexterm>
+<para><computeroutput>ArrayList&lt;<link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob">Mob</link>&gt; org.izdevs.acidium.entity.MobHolder.registeredMobs = new ArrayList&lt;&gt;()<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1entity_1_1_mob_holder_1a3ed6effcb312f8089892a8d3289ccf28"/><section>
+    <title>registeredSpawners</title>
+<indexterm><primary>registeredSpawners</primary><secondary>org.izdevs.acidium.entity.MobHolder</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.entity.MobHolder</primary><secondary>registeredSpawners</secondary></indexterm>
+<para><computeroutput>ArrayList&lt;<link linkend="_interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner">AbstractMobSpawner</link>&gt; org.izdevs.acidium.entity.MobHolder.registeredSpawners = new ArrayList&lt;&gt;()<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+org/izdevs/acidium/entity/<link linkend="__mob_holder_8java">MobHolder.java</link></section>
+</section>

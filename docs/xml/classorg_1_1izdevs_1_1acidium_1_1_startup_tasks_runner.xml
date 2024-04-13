@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classorg_1_1izdevs_1_1acidium_1_1_startup_tasks_runner" kind="class" language="Java" prot="public">
+    <compoundname>org::izdevs::acidium::StartupTasksRunner</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">ApplicationRunner</basecompoundref>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1_startup_tasks_runner_1ac7d23f2e7ecdde35dd8aeaf1cf494533" prot="public" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean org.izdevs.acidium.StartupTasksRunner.generateWorld</definition>
+        <argsstring></argsstring>
+        <name>generateWorld</name>
+        <qualifiedname>org.izdevs.acidium.StartupTasksRunner.generateWorld</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/StartupTasksRunner.java" line="29" column="20" bodyfile="org/izdevs/acidium/StartupTasksRunner.java" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1_startup_tasks_runner_1a0fd2739305145c2308483483c5490d39" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int org.izdevs.acidium.StartupTasksRunner.maxPlayers</definition>
+        <argsstring></argsstring>
+        <name>maxPlayers</name>
+        <qualifiedname>org.izdevs.acidium.StartupTasksRunner.maxPlayers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/StartupTasksRunner.java" line="35" column="16" bodyfile="org/izdevs/acidium/StartupTasksRunner.java" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1_startup_tasks_runner_1a124b8d5653e03b72031c45a63ce64a65" prot="public" static="no" mutable="no">
+        <type>DataSource</type>
+        <definition>DataSource org.izdevs.acidium.StartupTasksRunner.dataSource</definition>
+        <argsstring></argsstring>
+        <name>dataSource</name>
+        <qualifiedname>org.izdevs.acidium.StartupTasksRunner.dataSource</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/StartupTasksRunner.java" line="39" column="23" bodyfile="org/izdevs/acidium/StartupTasksRunner.java" bodystart="39" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1_startup_tasks_runner_1aa222638969d405eb8894610245f0d719" prot="public" static="yes" mutable="no">
+        <type>MessageDispatcher</type>
+        <definition>MessageDispatcher org.izdevs.acidium.StartupTasksRunner.dispatcher</definition>
+        <argsstring></argsstring>
+        <name>dispatcher</name>
+        <qualifiedname>org.izdevs.acidium.StartupTasksRunner.dispatcher</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/StartupTasksRunner.java" line="31" column="37" bodyfile="org/izdevs/acidium/StartupTasksRunner.java" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1_startup_tasks_runner_1aab6c8cfa7c6ca4ec5372e855c412e083" prot="public" static="yes" mutable="no">
+        <type>Connection</type>
+        <definition>Connection org.izdevs.acidium.StartupTasksRunner.SQLConnection</definition>
+        <argsstring></argsstring>
+        <name>SQLConnection</name>
+        <qualifiedname>org.izdevs.acidium.StartupTasksRunner.SQLConnection</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/StartupTasksRunner.java" line="41" column="30" bodyfile="org/izdevs/acidium/StartupTasksRunner.java" bodystart="41" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="package-static-attrib">
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1_startup_tasks_runner_1a418705423f17e04f39dd15c4149bf3a7" prot="package" static="yes" mutable="no">
+        <type>Logger</type>
+        <definition>Logger org.izdevs.acidium.StartupTasksRunner.logger</definition>
+        <argsstring></argsstring>
+        <name>logger</name>
+        <qualifiedname>org.izdevs.acidium.StartupTasksRunner.logger</qualifiedname>
+        <initializer>= LoggerFactory.getLogger(StartupTasksRunner.class)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/StartupTasksRunner.java" line="43" column="19" bodyfile="org/izdevs/acidium/StartupTasksRunner.java" bodystart="43" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1_startup_tasks_runner_1a62021fdf9a553dbc6a024e1b46ffeab9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.izdevs.acidium.StartupTasksRunner.run</definition>
+        <argsstring>(ApplicationArguments args)</argsstring>
+        <name>run</name>
+        <qualifiedname>org.izdevs.acidium.StartupTasksRunner.run</qualifiedname>
+        <param>
+          <type>ApplicationArguments</type>
+          <declname>args</declname>
+        </param>
+        <exceptions> throws Exception </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/StartupTasksRunner.java" line="46" column="17" bodyfile="org/izdevs/acidium/StartupTasksRunner.java" bodystart="46" bodyend="85"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>org.izdevs.acidium.StartupTasksRunner</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1_startup_tasks_runner"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ApplicationRunner</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>MessageDispatcher</label>
+      </node>
+      <node id="5">
+        <label>Connection</label>
+      </node>
+      <node id="4">
+        <label>DataSource</label>
+      </node>
+      <node id="1">
+        <label>org.izdevs.acidium.StartupTasksRunner</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1_startup_tasks_runner"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>dispatcher</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>dataSource</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>SQLConnection</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>logger</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>Logger</label>
+      </node>
+      <node id="2">
+        <label>ApplicationRunner</label>
+      </node>
+    </collaborationgraph>
+    <location file="org/izdevs/acidium/StartupTasksRunner.java" line="27" column="7" bodyfile="org/izdevs/acidium/StartupTasksRunner.java" bodystart="27" bodyend="86"/>
+    <listofallmembers>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1_startup_tasks_runner_1a124b8d5653e03b72031c45a63ce64a65" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::StartupTasksRunner</scope><name>dataSource</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1_startup_tasks_runner_1aa222638969d405eb8894610245f0d719" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::StartupTasksRunner</scope><name>dispatcher</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1_startup_tasks_runner_1ac7d23f2e7ecdde35dd8aeaf1cf494533" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::StartupTasksRunner</scope><name>generateWorld</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1_startup_tasks_runner_1a418705423f17e04f39dd15c4149bf3a7" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::StartupTasksRunner</scope><name>logger</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1_startup_tasks_runner_1a0fd2739305145c2308483483c5490d39" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::StartupTasksRunner</scope><name>maxPlayers</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1_startup_tasks_runner_1a62021fdf9a553dbc6a024e1b46ffeab9" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::StartupTasksRunner</scope><name>run</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1_startup_tasks_runner_1aab6c8cfa7c6ca4ec5372e855c412e083" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::StartupTasksRunner</scope><name>SQLConnection</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

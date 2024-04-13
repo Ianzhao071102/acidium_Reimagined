@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classorg_1_1izdevs_1_1acidium_1_1utils_1_1_spring_bean_utils" kind="class" language="Java" prot="public">
+    <compoundname>org::izdevs::acidium::utils::SpringBeanUtils</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">ApplicationContextAware</basecompoundref>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1utils_1_1_spring_bean_utils_1a9419e191a28c62b985badb5bc5f7f8b6" prot="private" static="yes" mutable="no">
+        <type>ApplicationContext</type>
+        <definition>ApplicationContext org.izdevs.acidium.utils.SpringBeanUtils.context</definition>
+        <argsstring></argsstring>
+        <name>context</name>
+        <qualifiedname>org.izdevs.acidium.utils.SpringBeanUtils.context</qualifiedname>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/utils/SpringBeanUtils.java" line="12" column="39" bodyfile="org/izdevs/acidium/utils/SpringBeanUtils.java" bodystart="12" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1utils_1_1_spring_bean_utils_1a1f39cda33a13247be625490bc67507c3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.izdevs.acidium.utils.SpringBeanUtils.setApplicationContext</definition>
+        <argsstring>(ApplicationContext applicationContext)</argsstring>
+        <name>setApplicationContext</name>
+        <qualifiedname>org.izdevs.acidium.utils.SpringBeanUtils.setApplicationContext</qualifiedname>
+        <param>
+          <type>ApplicationContext</type>
+          <declname>applicationContext</declname>
+        </param>
+        <exceptions> throws BeansException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/utils/SpringBeanUtils.java" line="16" column="17" bodyfile="org/izdevs/acidium/utils/SpringBeanUtils.java" bodystart="16" bodyend="18"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1utils_1_1_spring_bean_utils_1ad61f11bb892523df00eeb2060fcbb6c1" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Object</type>
+        <definition>static Object org.izdevs.acidium.utils.SpringBeanUtils.getBean</definition>
+        <argsstring>(String name)</argsstring>
+        <name>getBean</name>
+        <qualifiedname>org.izdevs.acidium.utils.SpringBeanUtils.getBean</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/utils/SpringBeanUtils.java" line="20" column="26" bodyfile="org/izdevs/acidium/utils/SpringBeanUtils.java" bodystart="20" bodyend="22"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>org.izdevs.acidium.utils.SpringBeanUtils</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1utils_1_1_spring_bean_utils"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ApplicationContextAware</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>org.izdevs.acidium.utils.SpringBeanUtils</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1utils_1_1_spring_bean_utils"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ApplicationContextAware</label>
+      </node>
+    </collaborationgraph>
+    <location file="org/izdevs/acidium/utils/SpringBeanUtils.java" line="10" column="7" bodyfile="org/izdevs/acidium/utils/SpringBeanUtils.java" bodystart="10" bodyend="23"/>
+    <listofallmembers>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1utils_1_1_spring_bean_utils_1a9419e191a28c62b985badb5bc5f7f8b6" prot="private" virt="non-virtual"><scope>org::izdevs::acidium::utils::SpringBeanUtils</scope><name>context</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1utils_1_1_spring_bean_utils_1ad61f11bb892523df00eeb2060fcbb6c1" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::utils::SpringBeanUtils</scope><name>getBean</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1utils_1_1_spring_bean_utils_1a1f39cda33a13247be625490bc67507c3" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::utils::SpringBeanUtils</scope><name>setApplicationContext</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

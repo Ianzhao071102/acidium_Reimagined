@@ -1,0 +1,49 @@
+.TH "org.izdevs.acidium.game.inventory.Inventory" 3 "Version Alpha-0.1" "Acidium" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+org.izdevs.acidium.game.inventory.Inventory
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBInventory\fP (\fBInventoryType\fP type)"
+.br
+.ti -1c
+.RI "\fBInventory\fP (\fBInventoryType\fP type, List< \fBEquipment\fP > items)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBInventoryType\fP \fBgetTypeBySlotId\fP (int id)"
+.br
+.ti -1c
+.RI "static \fBInventory\fP \fBgetInventoryOfPlayerByType\fP (\fBInventoryType\fP type, \fBPlayer\fP player)"
+.br
+.ti -1c
+.RI "static int \fBgetInnerInventorySlotId\fP (int id)"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "org\&.izdevs\&.acidium\&.game\&.inventory\&.Inventory\&.Inventory (\fBInventoryType\fP type)"
+here defines the inventory MAX slot sizes 
+.SS "org\&.izdevs\&.acidium\&.game\&.inventory\&.Inventory\&.Inventory (\fBInventoryType\fP type, List< \fBEquipment\fP > items)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "static int org\&.izdevs\&.acidium\&.game\&.inventory\&.Inventory\&.getInnerInventorySlotId (int id)\fR [static]\fP"
+
+.SS "static \fBInventory\fP org\&.izdevs\&.acidium\&.game\&.inventory\&.Inventory\&.getInventoryOfPlayerByType (\fBInventoryType\fP type, \fBPlayer\fP player)\fR [static]\fP"
+
+.SS "static \fBInventoryType\fP org\&.izdevs\&.acidium\&.game\&.inventory\&.Inventory\&.getTypeBySlotId (int id)\fR [static]\fP"
+WELL HERE IS THE INVENTORY SLOT ID SCHEMA: 0-100 INVENTORY (PERSISTS FOREVER AND HAS 100 SLOTS) 101-121 ARMOUR SLOTS 122-172 ELECTRON SLOTS 173-182 CRAFTING SLOTS THAT HAS ONLY 9 SLOTS 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Acidium from the source code\&.

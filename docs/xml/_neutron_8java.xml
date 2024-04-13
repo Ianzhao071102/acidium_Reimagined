@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="_neutron_8java" kind="file" language="Java">
+    <compoundname>Neutron.java</compoundname>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_neutron" prot="public">org::izdevs::acidium::game::equipment::Neutron</innerclass>
+    <innernamespace refid="namespaceorg_1_1izdevs_1_1acidium_1_1game_1_1equipment">org::izdevs::acidium::game::equipment</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">package<sp/></highlight><highlight class="normal">org.izdevs.acidium.game.equipment;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>org.izdevs.acidium.basic.Entity;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>org.izdevs.acidium.game.crafting.CraftingRecipe;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>org.izdevs.acidium.game.inventory.InventoryType;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>org.izdevs.acidium.world.World;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_neutron" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_neutron" kindref="compound">Neutron</ref><sp/></highlight><highlight class="keyword">extends</highlight><highlight class="normal"><sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment" kindref="compound">Equipment</ref><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_neutron_1a5d092506d20e5a7df110801cf05b2f07" kindref="member">Neutron</ref>(<ref refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_world" kindref="compound">World</ref><sp/>world,<sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity" kindref="compound">Entity</ref><sp/>equip)<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//un-craftable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super(world,<sp/></highlight><highlight class="stringliteral">&quot;neutron&quot;</highlight><highlight class="normal">,<sp/>0,<sp/>100,<sp/>1,<sp/>2,<sp/>equip,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_recipe" kindref="compound">CraftingRecipe</ref>());</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.allowedSlots.add(<ref refid="enumorg_1_1izdevs_1_1acidium_1_1game_1_1inventory_1_1_inventory_type" kindref="compound">InventoryType</ref>.<ref refid="enumorg_1_1izdevs_1_1acidium_1_1game_1_1inventory_1_1_inventory_type_1a5a43c6e870ffcec28f2c3437ef79f117" kindref="member">Armour</ref>);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//un-craftable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.recipe<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_recipe" kindref="compound">CraftingRecipe</ref>();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_neutron_1a5d092506d20e5a7df110801cf05b2f07" kindref="member">Neutron</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super(</highlight><highlight class="stringliteral">&quot;neutron&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="org/izdevs/acidium/game/equipment/Neutron.java"/>
+  </compounddef>
+</doxygen>

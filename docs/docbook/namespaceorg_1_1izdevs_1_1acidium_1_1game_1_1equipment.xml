@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespaceorg_1_1izdevs_1_1acidium_1_1game_1_1equipment" xml:lang="en-US">
+<title>Package org.izdevs.acidium.game.equipment</title>
+<indexterm><primary>org.izdevs.acidium.game.equipment</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_electron">Electron</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment">Equipment</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_holder">EquipmentHolder</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_neutron">Neutron</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

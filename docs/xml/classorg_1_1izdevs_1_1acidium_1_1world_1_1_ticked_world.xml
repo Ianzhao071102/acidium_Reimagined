@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world" kind="class" language="Java" prot="public">
+    <compoundname>org::izdevs::acidium::world::TickedWorld</compoundname>
+    <derivedcompoundref refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_world" prot="public" virt="non-virtual">org.izdevs.acidium.world.World</derivedcompoundref>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world_1a1c82b651401a6a9ec40bdb0c76491703" prot="public" static="no" mutable="no">
+        <type>volatile ArrayList&lt; <ref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob" kindref="compound">Mob</ref> &gt;</type>
+        <definition>volatile ArrayList&lt;Mob&gt; org.izdevs.acidium.world.TickedWorld.mobs</definition>
+        <argsstring></argsstring>
+        <name>mobs</name>
+        <qualifiedname>org.izdevs.acidium.world.TickedWorld.mobs</qualifiedname>
+        <initializer>= new ArrayList&lt;&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/world/TickedWorld.java" line="14" column="31" bodyfile="org/izdevs/acidium/world/TickedWorld.java" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world_1a9609d1cb8d0bbf02fb72763ffa96930d" prot="public" static="no" mutable="no">
+        <type>volatile ArrayList&lt; <ref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_player" kindref="compound">Player</ref> &gt;</type>
+        <definition>volatile ArrayList&lt;Player&gt; org.izdevs.acidium.world.TickedWorld.players</definition>
+        <argsstring></argsstring>
+        <name>players</name>
+        <qualifiedname>org.izdevs.acidium.world.TickedWorld.players</qualifiedname>
+        <initializer>= new ArrayList&lt;<ref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_player" kindref="compound">Player</ref>&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/world/TickedWorld.java" line="15" column="31" bodyfile="org/izdevs/acidium/world/TickedWorld.java" bodystart="15" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world_1acf9c6243348e61c9bc8fc621d0d7d185" prot="package" static="no" mutable="no">
+        <type>Map&lt; Point, <ref refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_block" kindref="compound">Block</ref> &gt;</type>
+        <definition>Map&lt;Point, Block&gt; org.izdevs.acidium.world.TickedWorld.map</definition>
+        <argsstring></argsstring>
+        <name>map</name>
+        <qualifiedname>org.izdevs.acidium.world.TickedWorld.map</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/world/TickedWorld.java" line="16" column="9" bodyfile="org/izdevs/acidium/world/TickedWorld.java" bodystart="16" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world_1ae48fdd27c68dec854010460fa6ef4b60" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.izdevs.acidium.world.TickedWorld.TickedWorld</definition>
+        <argsstring>(Map&lt; Point, Block &gt; map)</argsstring>
+        <name>TickedWorld</name>
+        <qualifiedname>org.izdevs.acidium.world.TickedWorld.TickedWorld</qualifiedname>
+        <param>
+          <type>Map&lt; Point, <ref refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_block" kindref="compound">Block</ref> &gt;</type>
+          <declname>map</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/world/TickedWorld.java" line="18" column="12" bodyfile="org/izdevs/acidium/world/TickedWorld.java" bodystart="18" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world_1afc6e0567006999dced399015a402608c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.izdevs.acidium.world.TickedWorld.addPlayer</definition>
+        <argsstring>(Player player)</argsstring>
+        <name>addPlayer</name>
+        <qualifiedname>org.izdevs.acidium.world.TickedWorld.addPlayer</qualifiedname>
+        <param>
+          <type><ref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_player" kindref="compound">Player</ref></type>
+          <declname>player</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/world/TickedWorld.java" line="22" column="17" bodyfile="org/izdevs/acidium/world/TickedWorld.java" bodystart="22" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world_1a6007c9c63296406fbc3c61019509ff25" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.izdevs.acidium.world.TickedWorld.addMob</definition>
+        <argsstring>(Mob mob)</argsstring>
+        <name>addMob</name>
+        <qualifiedname>org.izdevs.acidium.world.TickedWorld.addMob</qualifiedname>
+        <param>
+          <type><ref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob" kindref="compound">Mob</ref></type>
+          <declname>mob</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/world/TickedWorld.java" line="26" column="17" bodyfile="org/izdevs/acidium/world/TickedWorld.java" bodystart="26" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world_1af732506301dd97744d3a61b4100a84f3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.izdevs.acidium.world.TickedWorld.delPlayer</definition>
+        <argsstring>(Player player)</argsstring>
+        <name>delPlayer</name>
+        <qualifiedname>org.izdevs.acidium.world.TickedWorld.delPlayer</qualifiedname>
+        <param>
+          <type><ref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_player" kindref="compound">Player</ref></type>
+          <declname>player</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/world/TickedWorld.java" line="30" column="17" bodyfile="org/izdevs/acidium/world/TickedWorld.java" bodystart="30" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world_1a5daa1bbea5bfde6ba41963f0a361a6f3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.izdevs.acidium.world.TickedWorld.delMob</definition>
+        <argsstring>(Mob mob)</argsstring>
+        <name>delMob</name>
+        <qualifiedname>org.izdevs.acidium.world.TickedWorld.delMob</qualifiedname>
+        <param>
+          <type><ref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob" kindref="compound">Mob</ref></type>
+          <declname>mob</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/world/TickedWorld.java" line="34" column="17" bodyfile="org/izdevs/acidium/world/TickedWorld.java" bodystart="34" bodyend="36"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>org.izdevs.acidium.world.TickedWorld</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world"/>
+      </node>
+      <node id="2">
+        <label>org.izdevs.acidium.world.World</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_world"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ArrayList&lt; org.izdevs.acidium.api.v1.Mob &gt;</label>
+      </node>
+      <node id="3">
+        <label>ArrayList&lt; org.izdevs.acidium.api.v1.Player &gt;</label>
+      </node>
+      <node id="4">
+        <label>Map&lt; Point, org.izdevs.acidium.world.Block &gt;</label>
+      </node>
+      <node id="1">
+        <label>org.izdevs.acidium.world.TickedWorld</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>mobs</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>players</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>map</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="org/izdevs/acidium/world/TickedWorld.java" line="13" column="7" bodyfile="org/izdevs/acidium/world/TickedWorld.java" bodystart="13" bodyend="37"/>
+    <listofallmembers>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world_1a6007c9c63296406fbc3c61019509ff25" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::world::TickedWorld</scope><name>addMob</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world_1afc6e0567006999dced399015a402608c" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::world::TickedWorld</scope><name>addPlayer</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world_1a5daa1bbea5bfde6ba41963f0a361a6f3" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::world::TickedWorld</scope><name>delMob</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world_1af732506301dd97744d3a61b4100a84f3" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::world::TickedWorld</scope><name>delPlayer</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world_1acf9c6243348e61c9bc8fc621d0d7d185" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::world::TickedWorld</scope><name>map</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world_1a1c82b651401a6a9ec40bdb0c76491703" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::world::TickedWorld</scope><name>mobs</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world_1a9609d1cb8d0bbf02fb72763ffa96930d" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::world::TickedWorld</scope><name>players</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world_1ae48fdd27c68dec854010460fa6ef4b60" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::world::TickedWorld</scope><name>TickedWorld</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

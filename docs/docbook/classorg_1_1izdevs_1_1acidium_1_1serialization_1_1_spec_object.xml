@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_spec_object" xml:lang="en-US">
+<title>org.izdevs.acidium.serialization.SpecObject Class Reference</title>
+<indexterm><primary>org.izdevs.acidium.serialization.SpecObject</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_spec_object_1a683e4456b2382f8663b61eb2617d7a5f">SpecObject</link> (String key, Object value)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_spec_object_1a683e4456b2382f8663b61eb2617d7a5f"/><section>
+    <title>SpecObject()</title>
+<indexterm><primary>SpecObject</primary><secondary>org.izdevs.acidium.serialization.SpecObject</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.serialization.SpecObject</primary><secondary>SpecObject</secondary></indexterm>
+<para><computeroutput>org.izdevs.acidium.serialization.SpecObject.SpecObject (String key, Object value)</computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+org/izdevs/acidium/serialization/<link linkend="__spec_object_8java">SpecObject.java</link></section>
+</section>

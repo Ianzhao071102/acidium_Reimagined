@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="_command_definition_8java" kind="file" language="Java">
+    <compoundname>CommandDefinition.java</compoundname>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_command_definition" prot="public">org::izdevs::acidium::api::v1::CommandDefinition</innerclass>
+    <innernamespace refid="namespaceorg_1_1izdevs_1_1acidium_1_1api_1_1v1">org::izdevs::acidium::api::v1</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">package<sp/></highlight><highlight class="normal">org.izdevs.acidium.api.v1;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>org.izdevs.acidium.serialization.Resource;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_command_definition" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_command_definition" kindref="compound">CommandDefinition</ref><sp/></highlight><highlight class="keyword">extends</highlight><highlight class="normal"><sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource" kindref="compound">Resource</ref><sp/>{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_command_definition_1a4a5876de5bec644ac680c6c208341a28" kindref="member">CommandDefinition</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super(</highlight><highlight class="stringliteral">&quot;CommandDefinition&quot;</highlight><highlight class="normal">,</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_command_definition_1a4a5876de5bec644ac680c6c208341a28" kindref="member">CommandDefinition</ref>(String<sp/>command)<sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super(</highlight><highlight class="stringliteral">&quot;CommandDefinition&quot;</highlight><highlight class="normal"><sp/>+<sp/>command,</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="org/izdevs/acidium/api/v1/CommandDefinition.java"/>
+  </compounddef>
+</doxygen>

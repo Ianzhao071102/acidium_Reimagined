@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="namespaceorg_1_1izdevs_1_1acidium_1_1serialization" kind="namespace" language="Java">
+    <compoundname>org::izdevs::acidium::serialization</compoundname>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_a_p_i" prot="public">org::izdevs::acidium::serialization::API</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_n_b_t_parser" prot="public">org::izdevs::acidium::serialization::NBTParser</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_reflect_util" prot="public">org::izdevs::acidium::serialization::ReflectUtil</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource" prot="public">org::izdevs::acidium::serialization::Resource</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_facade" prot="public">org::izdevs::acidium::serialization::ResourceFacade</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_spec_object" prot="public">org::izdevs::acidium::serialization::SpecObject</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="org/izdevs/acidium/serialization/API.java" line="1" column="15"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config" kind="class" language="Java" prot="public">
+    <compoundname>org::izdevs::acidium::configuration::Config</compoundname>
+    <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a81b6bee98076b7a89e6a8f35a622dfe4" prot="package" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean org.izdevs.acidium.configuration.Config.generateWorld</definition>
+        <argsstring></argsstring>
+        <name>generateWorld</name>
+        <qualifiedname>org.izdevs.acidium.configuration.Config.generateWorld</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/configuration/Config.java" line="36" column="13" bodyfile="org/izdevs/acidium/configuration/Config.java" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a4ff9d82981f24021aecdf2dc2099d4ab" prot="package" static="no" mutable="no">
+        <type>Environment</type>
+        <definition>Environment org.izdevs.acidium.configuration.Config.env</definition>
+        <argsstring></argsstring>
+        <name>env</name>
+        <qualifiedname>org.izdevs.acidium.configuration.Config.env</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/configuration/Config.java" line="45" column="17" bodyfile="org/izdevs/acidium/configuration/Config.java" bodystart="45" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a240342a2960c55a1b368948d8399366e" prot="public" static="yes" mutable="no">
+        <type>final int</type>
+        <definition>final int org.izdevs.acidium.configuration.Config.ticksPerSecond</definition>
+        <argsstring></argsstring>
+        <name>ticksPerSecond</name>
+        <qualifiedname>org.izdevs.acidium.configuration.Config.ticksPerSecond</qualifiedname>
+        <initializer>= 20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/configuration/Config.java" line="47" column="29" bodyfile="org/izdevs/acidium/configuration/Config.java" bodystart="47" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="package-static-attrib">
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a4ec8d5c1cb0d42efce7e3b569a5cc5fe" prot="package" static="yes" mutable="no">
+        <type>String</type>
+        <definition>String org.izdevs.acidium.configuration.Config.version</definition>
+        <argsstring></argsstring>
+        <name>version</name>
+        <qualifiedname>org.izdevs.acidium.configuration.Config.version</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/configuration/Config.java" line="105" column="19" bodyfile="org/izdevs/acidium/configuration/Config.java" bodystart="105" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a59d989bc4ece57cc3fb00788f07e78a3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean org.izdevs.acidium.configuration.Config.generateWorldUponStart</definition>
+        <argsstring>()</argsstring>
+        <name>generateWorldUponStart</name>
+        <qualifiedname>org.izdevs.acidium.configuration.Config.generateWorldUponStart</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/configuration/Config.java" line="39" column="20" bodyfile="org/izdevs/acidium/configuration/Config.java" bodystart="39" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1afb9c2923a3e81c1924c07536f7f8fcd9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>DataSource</type>
+        <definition>DataSource org.izdevs.acidium.configuration.Config.getDataSource</definition>
+        <argsstring>()</argsstring>
+        <name>getDataSource</name>
+        <qualifiedname>org.izdevs.acidium.configuration.Config.getDataSource</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/configuration/Config.java" line="57" column="23" bodyfile="org/izdevs/acidium/configuration/Config.java" bodystart="57" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a4059c3cd22e3d5e51653c0d690755eea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>SecurityFilterChain</type>
+        <definition>SecurityFilterChain org.izdevs.acidium.configuration.Config.filterChain</definition>
+        <argsstring>(HttpSecurity http)</argsstring>
+        <name>filterChain</name>
+        <qualifiedname>org.izdevs.acidium.configuration.Config.filterChain</qualifiedname>
+        <param>
+          <type>HttpSecurity</type>
+          <declname>http</declname>
+        </param>
+        <exceptions> throws Exception </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/configuration/Config.java" line="82" column="32" bodyfile="org/izdevs/acidium/configuration/Config.java" bodystart="82" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a7eea17c1847c7952374248dd9bcac4bb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>LettuceConnectionFactory</type>
+        <definition>LettuceConnectionFactory org.izdevs.acidium.configuration.Config.connectionFactory</definition>
+        <argsstring>()</argsstring>
+        <name>connectionFactory</name>
+        <qualifiedname>org.izdevs.acidium.configuration.Config.connectionFactory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/configuration/Config.java" line="90" column="37" bodyfile="org/izdevs/acidium/configuration/Config.java" bodystart="90" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1ac4b312762e66f6bb8dcb3c07ffb55dfa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>HttpSessionIdResolver</type>
+        <definition>HttpSessionIdResolver org.izdevs.acidium.configuration.Config.httpSessionIdResolver</definition>
+        <argsstring>()</argsstring>
+        <name>httpSessionIdResolver</name>
+        <qualifiedname>org.izdevs.acidium.configuration.Config.httpSessionIdResolver</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/configuration/Config.java" line="95" column="34" bodyfile="org/izdevs/acidium/configuration/Config.java" bodystart="95" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a09feec244a656f72959a990964d4f71c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int org.izdevs.acidium.configuration.Config.getTicksPerSecond</definition>
+        <argsstring>()</argsstring>
+        <name>getTicksPerSecond</name>
+        <qualifiedname>org.izdevs.acidium.configuration.Config.getTicksPerSecond</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/configuration/Config.java" line="100" column="16" bodyfile="org/izdevs/acidium/configuration/Config.java" bodystart="100" bodyend="102"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a688abc0a00f17627d4a11bf0abafc670" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int org.izdevs.acidium.configuration.Config.getMaxPlayers</definition>
+        <argsstring>()</argsstring>
+        <name>getMaxPlayers</name>
+        <qualifiedname>org.izdevs.acidium.configuration.Config.getMaxPlayers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/configuration/Config.java" line="51" column="23" bodyfile="org/izdevs/acidium/configuration/Config.java" bodystart="51" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1ac52b05436c2a42a421d099de1e4ee26e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>static String org.izdevs.acidium.configuration.Config.version</definition>
+        <argsstring>()</argsstring>
+        <name>version</name>
+        <qualifiedname>org.izdevs.acidium.configuration.Config.version</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/configuration/Config.java" line="107" column="26" bodyfile="org/izdevs/acidium/configuration/Config.java" bodystart="107" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a680619f1d54bac5f4255e57b5a4a3b10" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>static String org.izdevs.acidium.configuration.Config.getCredits</definition>
+        <argsstring>()</argsstring>
+        <name>getCredits</name>
+        <qualifiedname>org.izdevs.acidium.configuration.Config.getCredits</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/configuration/Config.java" line="112" column="26" bodyfile="org/izdevs/acidium/configuration/Config.java" bodystart="112" bodyend="114"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>org.izdevs.acidium.configuration.Config</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>env</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Environment</label>
+      </node>
+    </collaborationgraph>
+    <location file="org/izdevs/acidium/configuration/Config.java" line="34" column="7" bodyfile="org/izdevs/acidium/configuration/Config.java" bodystart="34" bodyend="115"/>
+    <listofallmembers>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a7eea17c1847c7952374248dd9bcac4bb" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::configuration::Config</scope><name>connectionFactory</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a4ff9d82981f24021aecdf2dc2099d4ab" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::configuration::Config</scope><name>env</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a4059c3cd22e3d5e51653c0d690755eea" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::configuration::Config</scope><name>filterChain</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a81b6bee98076b7a89e6a8f35a622dfe4" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::configuration::Config</scope><name>generateWorld</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a59d989bc4ece57cc3fb00788f07e78a3" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::configuration::Config</scope><name>generateWorldUponStart</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a680619f1d54bac5f4255e57b5a4a3b10" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::configuration::Config</scope><name>getCredits</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1afb9c2923a3e81c1924c07536f7f8fcd9" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::configuration::Config</scope><name>getDataSource</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a688abc0a00f17627d4a11bf0abafc670" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::configuration::Config</scope><name>getMaxPlayers</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a09feec244a656f72959a990964d4f71c" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::configuration::Config</scope><name>getTicksPerSecond</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1ac4b312762e66f6bb8dcb3c07ffb55dfa" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::configuration::Config</scope><name>httpSessionIdResolver</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a240342a2960c55a1b368948d8399366e" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::configuration::Config</scope><name>ticksPerSecond</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a4ec8d5c1cb0d42efce7e3b569a5cc5fe" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::configuration::Config</scope><name>version</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1ac52b05436c2a42a421d099de1e4ee26e" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::configuration::Config</scope><name>version</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

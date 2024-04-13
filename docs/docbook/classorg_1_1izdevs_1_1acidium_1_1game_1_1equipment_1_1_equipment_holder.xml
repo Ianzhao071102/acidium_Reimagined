@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_holder" xml:lang="en-US">
+<title>org.izdevs.acidium.game.equipment.EquipmentHolder Class Reference</title>
+<indexterm><primary>org.izdevs.acidium.game.equipment.EquipmentHolder</primary></indexterm>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_holder_1a044ef8f18f5047bc37c928bd58a2ab3d">register</link> (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment">Equipment</link> equipment)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_holder_1ac9643e5ffcb2961a4ab36e9cfb0c7cec">init</link> ()  throws InstantiationException, IllegalAccessException </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_holder_1ac9643e5ffcb2961a4ab36e9cfb0c7cec"/><section>
+    <title>init()</title>
+<indexterm><primary>init</primary><secondary>org.izdevs.acidium.game.equipment.EquipmentHolder</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.game.equipment.EquipmentHolder</primary><secondary>init</secondary></indexterm>
+<para><computeroutput>static void org.izdevs.acidium.game.equipment.EquipmentHolder.init ( ) throws InstantiationException, IllegalAccessException<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_holder_1a044ef8f18f5047bc37c928bd58a2ab3d"/><section>
+    <title>register()</title>
+<indexterm><primary>register</primary><secondary>org.izdevs.acidium.game.equipment.EquipmentHolder</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.game.equipment.EquipmentHolder</primary><secondary>register</secondary></indexterm>
+<para><computeroutput>static void org.izdevs.acidium.game.equipment.EquipmentHolder.register (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment">Equipment</link> equipment)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+org/izdevs/acidium/game/equipment/<link linkend="__equipment_holder_8java">EquipmentHolder.java</link></section>
+</section>

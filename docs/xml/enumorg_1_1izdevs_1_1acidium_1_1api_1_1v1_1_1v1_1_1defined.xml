@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="enumorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1v1_1_1defined" kind="enum" language="Java" prot="public">
+    <compoundname>org::izdevs::acidium::api::v1::v1::defined</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="enumorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1v1_1_1defined_1a7cd4ebf0026abd3ddb9212b8aa0241c9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>org.izdevs.acidium.api.v1.v1.defined.USER</definition>
+        <argsstring></argsstring>
+        <name>USER</name>
+        <qualifiedname>org.izdevs.acidium.api.v1.v1.defined.USER</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/api/v1/v1.java" line="19" column="1" bodyfile="org/izdevs/acidium/api/v1/v1.java" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="enumorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1v1_1_1defined_1a61dc34fe01cfa2e2e5c3ce4e2909f0ce" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>org.izdevs.acidium.api.v1.v1.defined.PLAYER</definition>
+        <argsstring></argsstring>
+        <name>PLAYER</name>
+        <qualifiedname>org.izdevs.acidium.api.v1.v1.defined.PLAYER</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/api/v1/v1.java" line="19" column="1" bodyfile="org/izdevs/acidium/api/v1/v1.java" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="enumorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1v1_1_1defined_1acc777dee332c6f76753f6b7d22941c60" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>org.izdevs.acidium.api.v1.v1.defined.MOB</definition>
+        <argsstring></argsstring>
+        <name>MOB</name>
+        <qualifiedname>org.izdevs.acidium.api.v1.v1.defined.MOB</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/api/v1/v1.java" line="19" column="1" bodyfile="org/izdevs/acidium/api/v1/v1.java" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="enumorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1v1_1_1defined_1a0809dbe0f7753239ab2df73e9120eea0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>org.izdevs.acidium.api.v1.v1.defined.ENTITY</definition>
+        <argsstring></argsstring>
+        <name>ENTITY</name>
+        <qualifiedname>org.izdevs.acidium.api.v1.v1.defined.ENTITY</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/api/v1/v1.java" line="19" column="1" bodyfile="org/izdevs/acidium/api/v1/v1.java" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="enumorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1v1_1_1defined_1a11597285adaaf15f820b84cd323df430" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>org.izdevs.acidium.api.v1.v1.defined.DEFAULT_SPAWNER</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT_SPAWNER</name>
+        <qualifiedname>org.izdevs.acidium.api.v1.v1.defined.DEFAULT_SPAWNER</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/api/v1/v1.java" line="20" column="1" bodyfile="org/izdevs/acidium/api/v1/v1.java" bodystart="19" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="org/izdevs/acidium/api/v1/v1.java" line="18" column="11" bodyfile="org/izdevs/acidium/api/v1/v1.java" bodystart="18" bodyend="20"/>
+    <listofallmembers>
+      <member refid="enumorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1v1_1_1defined_1a11597285adaaf15f820b84cd323df430" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::v1::defined</scope><name>DEFAULT_SPAWNER</name></member>
+      <member refid="enumorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1v1_1_1defined_1a0809dbe0f7753239ab2df73e9120eea0" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::v1::defined</scope><name>ENTITY</name></member>
+      <member refid="enumorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1v1_1_1defined_1acc777dee332c6f76753f6b7d22941c60" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::v1::defined</scope><name>MOB</name></member>
+      <member refid="enumorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1v1_1_1defined_1a61dc34fe01cfa2e2e5c3ce4e2909f0ce" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::v1::defined</scope><name>PLAYER</name></member>
+      <member refid="enumorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1v1_1_1defined_1a7cd4ebf0026abd3ddb9212b8aa0241c9" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::v1::defined</scope><name>USER</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

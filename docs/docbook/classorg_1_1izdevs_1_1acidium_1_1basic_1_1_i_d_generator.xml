@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classorg_1_1izdevs_1_1acidium_1_1basic_1_1_i_d_generator" xml:lang="en-US">
+<title>org.izdevs.acidium.basic.IDGenerator Class Reference</title>
+<indexterm><primary>org.izdevs.acidium.basic.IDGenerator</primary></indexterm>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static synchronized int <link linkend="_classorg_1_1izdevs_1_1acidium_1_1basic_1_1_i_d_generator_1abc2fe68c8c1ad5f07033d54906150420">createId</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1basic_1_1_i_d_generator_1abc2fe68c8c1ad5f07033d54906150420"/><section>
+    <title>createId()</title>
+<indexterm><primary>createId</primary><secondary>org.izdevs.acidium.basic.IDGenerator</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.basic.IDGenerator</primary><secondary>createId</secondary></indexterm>
+<para><computeroutput>static synchronized int org.izdevs.acidium.basic.IDGenerator.createId ( )<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+org/izdevs/acidium/basic/<link linkend="__i_d_generator_8java">IDGenerator.java</link></section>
+</section>

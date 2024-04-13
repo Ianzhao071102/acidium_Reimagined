@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespaceorg_1_1izdevs_1_1acidium" xml:lang="en-US">
+<title>Package org.izdevs.acidium</title>
+<indexterm><primary>org.izdevs.acidium</primary></indexterm>
+<simplesect>
+    <title>Packages    </title>
+        <itemizedlist>
+            <listitem><para>package <link linkend="_namespaceorg_1_1izdevs_1_1acidium_1_1basic">basic</link></para>
+</listitem>
+            <listitem><para>package <link linkend="_namespaceorg_1_1izdevs_1_1acidium_1_1command">command</link></para>
+</listitem>
+            <listitem><para>package <link linkend="_namespaceorg_1_1izdevs_1_1acidium_1_1configuration">configuration</link></para>
+</listitem>
+            <listitem><para>package <link linkend="_namespaceorg_1_1izdevs_1_1acidium_1_1entity">entity</link></para>
+</listitem>
+            <listitem><para>package <link linkend="_namespaceorg_1_1izdevs_1_1acidium_1_1networking">networking</link></para>
+</listitem>
+            <listitem><para>package <link linkend="_namespaceorg_1_1izdevs_1_1acidium_1_1scheduling">scheduling</link></para>
+</listitem>
+            <listitem><para>package <link linkend="_namespaceorg_1_1izdevs_1_1acidium_1_1security">security</link></para>
+</listitem>
+            <listitem><para>package <link linkend="_namespaceorg_1_1izdevs_1_1acidium_1_1serialization">serialization</link></para>
+</listitem>
+            <listitem><para>package <link linkend="_namespaceorg_1_1izdevs_1_1acidium_1_1tick">tick</link></para>
+</listitem>
+            <listitem><para>package <link linkend="_namespaceorg_1_1izdevs_1_1acidium_1_1utils">utils</link></para>
+</listitem>
+            <listitem><para>package <link linkend="_namespaceorg_1_1izdevs_1_1acidium_1_1world">world</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classorg_1_1izdevs_1_1acidium_1_1_acidium_application">AcidiumApplication</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classorg_1_1izdevs_1_1acidium_1_1_metrics">Metrics</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classorg_1_1izdevs_1_1acidium_1_1_startup_tasks_runner">StartupTasksRunner</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="_user_repository_8java" kind="file" language="Java">
+    <compoundname>UserRepository.java</compoundname>
+    <innerclass refid="interfaceorg_1_1izdevs_1_1acidium_1_1basic_1_1_user_repository" prot="public">org::izdevs::acidium::basic::UserRepository</innerclass>
+    <innernamespace refid="namespaceorg_1_1izdevs_1_1acidium_1_1basic">org::izdevs::acidium::basic</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">package<sp/></highlight><highlight class="normal">org.izdevs.acidium.basic;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>jakarta.persistence.Entity;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>jakarta.persistence.GeneratedValue;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>jakarta.persistence.Id;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>jakarta.persistence.Table;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>org.izdevs.acidium.api.v1.Role;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>org.izdevs.acidium.api.v1.User;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>org.springframework.data.repository.Repository;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="interfaceorg_1_1izdevs_1_1acidium_1_1basic_1_1_user_repository" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">interface<sp/></highlight><highlight class="normal"><ref refid="interfaceorg_1_1izdevs_1_1acidium_1_1basic_1_1_user_repository" kindref="compound">UserRepository</ref><sp/></highlight><highlight class="keyword">extends</highlight><highlight class="normal"><sp/>Repository&lt;User,Integer&gt;<sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_user" kindref="compound">User</ref><sp/><ref refid="interfaceorg_1_1izdevs_1_1acidium_1_1basic_1_1_user_repository_1a6d8981b465ad96d621c0313694a2fb92" kindref="member">findById</ref>(Long<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_user" kindref="compound">User</ref><sp/><ref refid="interfaceorg_1_1izdevs_1_1acidium_1_1basic_1_1_user_repository_1a0dfe42130533e80311115fda39300567" kindref="member">findUserByRole</ref>(<ref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_role" kindref="compound">Role</ref><sp/>role);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="org/izdevs/acidium/basic/UserRepository.java"/>
+  </compounddef>
+</doxygen>

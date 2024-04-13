@@ -1,0 +1,102 @@
+.TH "org.izdevs.acidium.api.v1.User" 3 "Version Alpha-0.1" "Acidium" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+org.izdevs.acidium.api.v1.User
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBorg\&.izdevs\&.acidium\&.serialization\&.Resource\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBUser\fP (String username, UUID uuid)"
+.br
+.ti -1c
+.RI "\fBUser\fP ()"
+.br
+.ti -1c
+.RI "\fBUser\fP (String \fBname\fP, String passwordHash)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBorg\&.izdevs\&.acidium\&.serialization\&.Resource\fP
+.in +1c
+.ti -1c
+.RI "\fBResource\fP (String \fBname\fP, ArrayList< \fBSpecObject\fP > objects)"
+.br
+.ti -1c
+.RI "\fBResource\fP (String \fBname\fP, boolean \fBisApi\fP)"
+.br
+.ti -1c
+.RI "void \fBregister\fP ()"
+.br
+.ti -1c
+.RI "String \fBserialize\fP ()"
+.br
+.ti -1c
+.RI "void \fBtick\fP ()"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBorg\&.izdevs\&.acidium\&.tick\&.Ticked\fP
+.in +1c
+.ti -1c
+.RI "default void \fBstopTick\fP ()"
+.br
+.ti -1c
+.RI "default void \fBpause\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Member Functions inherited from \fBorg\&.izdevs\&.acidium\&.serialization\&.Resource\fP
+.in +1c
+.ti -1c
+.RI "static \fBResource\fP \fBdeserialize\fP (String serialized)"
+.br
+.in -1c
+
+Public Attributes inherited from \fBorg\&.izdevs\&.acidium\&.serialization\&.Resource\fP
+.in +1c
+.ti -1c
+.RI "boolean \fBunset\fP"
+.br
+.ti -1c
+.RI "boolean \fBisApi\fP"
+.br
+.ti -1c
+.RI "\fBAPI\fP \fBassociatedApi\fP"
+.br
+.ti -1c
+.RI "String \fBtypeName\fP"
+.br
+.ti -1c
+.RI "String \fBname\fP"
+.br
+.ti -1c
+.RI "ArrayList< \fBSpecObject\fP > \fBspec\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBorg\&.izdevs\&.acidium\&.serialization\&.Resource\fP
+.in +1c
+.ti -1c
+.RI "CompoundTag \fBdata\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "org\&.izdevs\&.acidium\&.api\&.v1\&.User\&.User (String username, UUID uuid)"
+
+.SS "org\&.izdevs\&.acidium\&.api\&.v1\&.User\&.User ()"
+
+.SS "org\&.izdevs\&.acidium\&.api\&.v1\&.User\&.User (String name, String passwordHash)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Acidium from the source code\&.

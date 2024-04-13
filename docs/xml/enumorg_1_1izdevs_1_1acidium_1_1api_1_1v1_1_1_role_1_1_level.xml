@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="enumorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_role_1_1_level" kind="enum" language="Java" prot="public">
+    <compoundname>org::izdevs::acidium::api::v1::Role::Level</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="enumorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_role_1_1_level_1a3a75c8e57b5415b1b8b2be3d949aab63" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>org.izdevs.acidium.api.v1.Role.Level.ADMIN</definition>
+        <argsstring></argsstring>
+        <name>ADMIN</name>
+        <qualifiedname>org.izdevs.acidium.api.v1.Role.Level.ADMIN</qualifiedname>
+        <initializer>=(0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/api/v1/Role.java" line="40" column="1" bodyfile="org/izdevs/acidium/api/v1/Role.java" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="enumorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_role_1_1_level_1ae4fd1aefcd87fa95e7da5b39906c01dc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>org.izdevs.acidium.api.v1.Role.Level.MODERATOR</definition>
+        <argsstring></argsstring>
+        <name>MODERATOR</name>
+        <qualifiedname>org.izdevs.acidium.api.v1.Role.Level.MODERATOR</qualifiedname>
+        <initializer>=(1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/api/v1/Role.java" line="41" column="1" bodyfile="org/izdevs/acidium/api/v1/Role.java" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="enumorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_role_1_1_level_1aaaf145ed75c02f08da8d66c71abba6ac" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>org.izdevs.acidium.api.v1.Role.Level.PLAYER</definition>
+        <argsstring></argsstring>
+        <name>PLAYER</name>
+        <qualifiedname>org.izdevs.acidium.api.v1.Role.Level.PLAYER</qualifiedname>
+        <initializer>=(2)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/api/v1/Role.java" line="43" column="1" bodyfile="org/izdevs/acidium/api/v1/Role.java" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="enumorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_role_1_1_level_1ad14135a2a0fe05c324e3f9246e233e81" prot="public" static="no" mutable="no">
+        <type>final int</type>
+        <definition>final int org.izdevs.acidium.api.v1.Role.Level.id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <qualifiedname>org.izdevs.acidium.api.v1.Role.Level.id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/api/v1/Role.java" line="44" column="19" bodyfile="org/izdevs/acidium/api/v1/Role.java" bodystart="44" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="enumorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_role_1_1_level_1ab2dff3fa7f44f006d8f6216ca798879f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.izdevs.acidium.api.v1.Role.Level.Level</definition>
+        <argsstring>(int id)</argsstring>
+        <name>Level</name>
+        <qualifiedname>org.izdevs.acidium.api.v1.Role.Level.Level</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/api/v1/Role.java" line="45" column="9" bodyfile="org/izdevs/acidium/api/v1/Role.java" bodystart="45" bodyend="47"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="org/izdevs/acidium/api/v1/Role.java" line="39" column="11" bodyfile="org/izdevs/acidium/api/v1/Role.java" bodystart="39" bodyend="48"/>
+    <listofallmembers>
+      <member refid="enumorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_role_1_1_level_1a3a75c8e57b5415b1b8b2be3d949aab63" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Role::Level</scope><name>ADMIN</name></member>
+      <member refid="enumorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_role_1_1_level_1ad14135a2a0fe05c324e3f9246e233e81" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Role::Level</scope><name>id</name></member>
+      <member refid="enumorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_role_1_1_level_1ab2dff3fa7f44f006d8f6216ca798879f" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Role::Level</scope><name>Level</name></member>
+      <member refid="enumorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_role_1_1_level_1ae4fd1aefcd87fa95e7da5b39906c01dc" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Role::Level</scope><name>MODERATOR</name></member>
+      <member refid="enumorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_role_1_1_level_1aaaf145ed75c02f08da8d66c71abba6ac" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Role::Level</scope><name>PLAYER</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_structure_holder" xml:lang="en-US">
+<title>org.izdevs.acidium.world.StructureHolder Class Reference</title>
+<indexterm><primary>org.izdevs.acidium.world.StructureHolder</primary></indexterm>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_structure_holder_1a292e84fd71e9bfc99d3a1b4b5217d660">register</link> (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_structure">Structure</link> structure)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>static volatile ArrayList&lt; <link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_structure">Structure</link> &gt; <link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_structure_holder_1a288dc7d308138b1726a412f4c774dbf9">structures</link> = new ArrayList&lt;&gt;()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_structure_holder_1a292e84fd71e9bfc99d3a1b4b5217d660"/><section>
+    <title>register()</title>
+<indexterm><primary>register</primary><secondary>org.izdevs.acidium.world.StructureHolder</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.world.StructureHolder</primary><secondary>register</secondary></indexterm>
+<para><computeroutput>static void org.izdevs.acidium.world.StructureHolder.register (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_structure">Structure</link> structure)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_structure_holder_1a288dc7d308138b1726a412f4c774dbf9"/><section>
+    <title>structures</title>
+<indexterm><primary>structures</primary><secondary>org.izdevs.acidium.world.StructureHolder</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.world.StructureHolder</primary><secondary>structures</secondary></indexterm>
+<para><computeroutput>volatile ArrayList&lt;<link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_structure">Structure</link>&gt; org.izdevs.acidium.world.StructureHolder.structures = new ArrayList&lt;&gt;()<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+org/izdevs/acidium/world/<link linkend="__structure_holder_8java">StructureHolder.java</link></section>
+</section>

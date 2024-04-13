@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classorg_1_1izdevs_1_1acidium_1_1security_1_1_player_manager" xml:lang="en-US">
+<title>org.izdevs.acidium.security.PlayerManager Class Reference</title>
+<indexterm><primary>org.izdevs.acidium.security.PlayerManager</primary></indexterm>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1security_1_1_player_manager_1a40f73ad5c399a8ee9d801e6d5a98846c">add</link> (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_player">Player</link> player)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1security_1_1_player_manager_1ab4453bcd84f0444f6a86cc18723f61d0">remove</link> (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_player">Player</link> player)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>static Set&lt; <link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_player">Player</link> &gt; <link linkend="_classorg_1_1izdevs_1_1acidium_1_1security_1_1_player_manager_1aa79d2169f9e6e5bd5fa48d81838ea7e3">players</link> = new HashSet&lt;&gt;()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1security_1_1_player_manager_1a40f73ad5c399a8ee9d801e6d5a98846c"/><section>
+    <title>add()</title>
+<indexterm><primary>add</primary><secondary>org.izdevs.acidium.security.PlayerManager</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.security.PlayerManager</primary><secondary>add</secondary></indexterm>
+<para><computeroutput>static void org.izdevs.acidium.security.PlayerManager.add (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_player">Player</link> player)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1security_1_1_player_manager_1ab4453bcd84f0444f6a86cc18723f61d0"/><section>
+    <title>remove()</title>
+<indexterm><primary>remove</primary><secondary>org.izdevs.acidium.security.PlayerManager</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.security.PlayerManager</primary><secondary>remove</secondary></indexterm>
+<para><computeroutput>static void org.izdevs.acidium.security.PlayerManager.remove (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_player">Player</link> player)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1security_1_1_player_manager_1aa79d2169f9e6e5bd5fa48d81838ea7e3"/><section>
+    <title>players</title>
+<indexterm><primary>players</primary><secondary>org.izdevs.acidium.security.PlayerManager</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.security.PlayerManager</primary><secondary>players</secondary></indexterm>
+<para><computeroutput>Set&lt;<link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_player">Player</link>&gt; org.izdevs.acidium.security.PlayerManager.players = new HashSet&lt;&gt;()<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+org/izdevs/acidium/security/<link linkend="__player_manager_8java">PlayerManager.java</link></section>
+</section>

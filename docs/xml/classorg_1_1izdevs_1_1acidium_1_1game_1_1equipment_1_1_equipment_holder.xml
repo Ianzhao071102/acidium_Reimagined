@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_holder" kind="class" language="Java" prot="public">
+    <compoundname>org::izdevs::acidium::game::equipment::EquipmentHolder</compoundname>
+    <sectiondef kind="package-static-attrib">
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_holder_1a6cb6d2ebe8f4b53bade16bc032cb1e61" prot="package" static="yes" mutable="no">
+        <type>Set&lt; <ref refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment" kindref="compound">Equipment</ref> &gt;</type>
+        <definition>Set&lt;Equipment&gt; org.izdevs.acidium.game.equipment.EquipmentHolder.equipments</definition>
+        <argsstring></argsstring>
+        <name>equipments</name>
+        <qualifiedname>org.izdevs.acidium.game.equipment.EquipmentHolder.equipments</qualifiedname>
+        <initializer>= new HashSet&lt;&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/game/equipment/EquipmentHolder.java" line="17" column="16" bodyfile="org/izdevs/acidium/game/equipment/EquipmentHolder.java" bodystart="17" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_holder_1a044ef8f18f5047bc37c928bd58a2ab3d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void org.izdevs.acidium.game.equipment.EquipmentHolder.register</definition>
+        <argsstring>(Equipment equipment)</argsstring>
+        <name>register</name>
+        <qualifiedname>org.izdevs.acidium.game.equipment.EquipmentHolder.register</qualifiedname>
+        <param>
+          <type><ref refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment" kindref="compound">Equipment</ref></type>
+          <declname>equipment</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/game/equipment/EquipmentHolder.java" line="18" column="24" bodyfile="org/izdevs/acidium/game/equipment/EquipmentHolder.java" bodystart="18" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_holder_1ac9643e5ffcb2961a4ab36e9cfb0c7cec" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void org.izdevs.acidium.game.equipment.EquipmentHolder.init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <qualifiedname>org.izdevs.acidium.game.equipment.EquipmentHolder.init</qualifiedname>
+        <exceptions> throws InstantiationException, IllegalAccessException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/game/equipment/EquipmentHolder.java" line="22" column="24" bodyfile="org/izdevs/acidium/game/equipment/EquipmentHolder.java" bodystart="22" bodyend="32"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>Set&lt; org.izdevs.acidium.game.equipment.Equipment &gt;</label>
+      </node>
+      <node id="1">
+        <label>org.izdevs.acidium.game.equipment.EquipmentHolder</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_holder"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>equipments</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="org/izdevs/acidium/game/equipment/EquipmentHolder.java" line="14" column="7" bodyfile="org/izdevs/acidium/game/equipment/EquipmentHolder.java" bodystart="14" bodyend="33"/>
+    <listofallmembers>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_holder_1a6cb6d2ebe8f4b53bade16bc032cb1e61" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::EquipmentHolder</scope><name>equipments</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_holder_1ac9643e5ffcb2961a4ab36e9cfb0c7cec" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::EquipmentHolder</scope><name>init</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_holder_1a044ef8f18f5047bc37c928bd58a2ab3d" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::EquipmentHolder</scope><name>register</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

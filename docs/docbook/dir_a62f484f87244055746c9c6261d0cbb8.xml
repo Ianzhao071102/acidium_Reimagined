@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_a62f484f87244055746c9c6261d0cbb8" xml:lang="en-US">
+<title>org/izdevs/acidium/security Directory Reference</title>
+<indexterm><primary>org/izdevs/acidium/security Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="__authorization_content_8java">AuthorizationContent.java</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__player_manager_8java">PlayerManager.java</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__role_controller_8java">RoleController.java</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__role_manager_8java">RoleManager.java</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__session_detail_8java">SessionDetail.java</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__session_generator_8java">SessionGenerator.java</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

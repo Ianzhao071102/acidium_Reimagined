@@ -1,0 +1,288 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner" kind="class" language="Java" prot="public">
+    <compoundname>org::izdevs::acidium::api::v1::DefaultSpawner</compoundname>
+    <basecompoundref refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource" prot="public" virt="non-virtual">org.izdevs.acidium.serialization.Resource</basecompoundref>
+    <basecompoundref refid="interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner" prot="public" virt="non-virtual">org.izdevs.acidium.entity.AbstractMobSpawner</basecompoundref>
+    <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_1aaa0fd19133b37e3a40d4f4429df35c42" prot="package" static="no" mutable="no">
+        <type><ref refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_world" kindref="compound">World</ref></type>
+        <definition>World org.izdevs.acidium.api.v1.DefaultSpawner.world</definition>
+        <argsstring></argsstring>
+        <name>world</name>
+        <qualifiedname>org.izdevs.acidium.api.v1.DefaultSpawner.world</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/api/v1/DefaultSpawner.java" line="19" column="11" bodyfile="org/izdevs/acidium/api/v1/DefaultSpawner.java" bodystart="19" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_1a0c24381b258e10331a1fc596d9b2d2ba" prot="public" static="yes" mutable="no">
+        <type>List&lt; <ref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob" kindref="compound">Mob</ref> &gt;</type>
+        <definition>List&lt;Mob&gt; org.izdevs.acidium.api.v1.DefaultSpawner.jobQueue</definition>
+        <argsstring></argsstring>
+        <name>jobQueue</name>
+        <qualifiedname>org.izdevs.acidium.api.v1.DefaultSpawner.jobQueue</qualifiedname>
+        <initializer>= new ArrayList&lt;&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/api/v1/DefaultSpawner.java" line="20" column="24" bodyfile="org/izdevs/acidium/api/v1/DefaultSpawner.java" bodystart="20" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_1a3b31812d168316cc39f1e91b0180f0d8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.izdevs.acidium.api.v1.DefaultSpawner.spawn</definition>
+        <argsstring>()</argsstring>
+        <name>spawn</name>
+        <qualifiedname>org.izdevs.acidium.api.v1.DefaultSpawner.spawn</qualifiedname>
+        <reimplements refid="interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner_1ad2e071dc6e068eecab7cb67b3ed06a3e">spawn</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/api/v1/DefaultSpawner.java" line="22" column="17" bodyfile="org/izdevs/acidium/api/v1/DefaultSpawner.java" bodystart="22" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_1afb025f3f8927362ecfc464090cb7c66a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.izdevs.acidium.api.v1.DefaultSpawner.tick</definition>
+        <argsstring>()</argsstring>
+        <name>tick</name>
+        <qualifiedname>org.izdevs.acidium.api.v1.DefaultSpawner.tick</qualifiedname>
+        <reimplements refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1ad44cb29834bf78042ea08624bf9a8579">tick</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/api/v1/DefaultSpawner.java" line="32" column="17" bodyfile="org/izdevs/acidium/api/v1/DefaultSpawner.java" bodystart="32" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_1a8b08e1c6f356fd62131fcb8fdc7b996a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.izdevs.acidium.api.v1.DefaultSpawner.spawnManual</definition>
+        <argsstring>(Mob mob)</argsstring>
+        <name>spawnManual</name>
+        <qualifiedname>org.izdevs.acidium.api.v1.DefaultSpawner.spawnManual</qualifiedname>
+        <reimplements refid="interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner_1adfe27fcb10347d5bd2a031dcdda31f9b">spawnManual</reimplements>
+        <param>
+          <type><ref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob" kindref="compound">Mob</ref></type>
+          <declname>mob</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/api/v1/DefaultSpawner.java" line="47" column="17" bodyfile="org/izdevs/acidium/api/v1/DefaultSpawner.java" bodystart="47" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_1ac0d080cf394f788d864e8c197e7004e2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.izdevs.acidium.api.v1.DefaultSpawner.DefaultSpawner</definition>
+        <argsstring>()</argsstring>
+        <name>DefaultSpawner</name>
+        <qualifiedname>org.izdevs.acidium.api.v1.DefaultSpawner.DefaultSpawner</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/api/v1/DefaultSpawner.java" line="51" column="12" bodyfile="org/izdevs/acidium/api/v1/DefaultSpawner.java" bodystart="51" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_1ae487772910d08688975279db7348b045" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.izdevs.acidium.api.v1.DefaultSpawner.DefaultSpawner</definition>
+        <argsstring>(World world)</argsstring>
+        <name>DefaultSpawner</name>
+        <qualifiedname>org.izdevs.acidium.api.v1.DefaultSpawner.DefaultSpawner</qualifiedname>
+        <param>
+          <type><ref refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_world" kindref="compound">World</ref></type>
+          <declname>world</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/api/v1/DefaultSpawner.java" line="58" column="12" bodyfile="org/izdevs/acidium/api/v1/DefaultSpawner.java" bodystart="58" bodyend="61"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>org.izdevs.acidium.api.v1.DefaultSpawner</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>org.izdevs.acidium.entity.AbstractMobSpawner</label>
+        <link refid="interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>org.izdevs.acidium.serialization.Resource</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>org.izdevs.acidium.tick.Ticked</label>
+        <link refid="interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="6">
+        <label>ArrayList&lt; org.izdevs.acidium.serialization.org.izdevs.acidium.serialization.Resource &gt;</label>
+      </node>
+      <node id="13">
+        <label>ArrayList&lt; org.izdevs.acidium.api.v1.Mob &gt;</label>
+      </node>
+      <node id="14">
+        <label>ArrayList&lt; org.izdevs.acidium.api.v1.Player &gt;</label>
+      </node>
+      <node id="7">
+        <label>ArrayList&lt; org.izdevs.acidium.serialization.SpecObject &gt;</label>
+      </node>
+      <node id="4">
+        <label>List&lt; String &gt;</label>
+      </node>
+      <node id="10">
+        <label>List&lt; org.izdevs.acidium.api.v1.Mob &gt;</label>
+      </node>
+      <node id="15">
+        <label>Map&lt; Point, org.izdevs.acidium.world.Block &gt;</label>
+      </node>
+      <node id="8">
+        <label>CompoundTag</label>
+      </node>
+      <node id="1">
+        <label>org.izdevs.acidium.api.v1.DefaultSpawner</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>world</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>jobQueue</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>org.izdevs.acidium.entity.AbstractMobSpawner</label>
+        <link refid="interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>jobQueue</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>org.izdevs.acidium.serialization.API</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_a_p_i"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>resources</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>org.izdevs.acidium.serialization.Resource</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>flags</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>associatedApi</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>spec</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>org.izdevs.acidium.tick.Ticked</label>
+        <link refid="interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked"/>
+      </node>
+      <node id="12">
+        <label>org.izdevs.acidium.world.TickedWorld</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world"/>
+        <childnode refid="13" relation="usage">
+          <edgelabel>mobs</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>players</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>map</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>org.izdevs.acidium.world.World</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_world"/>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>spawner</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>map</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="org/izdevs/acidium/api/v1/DefaultSpawner.java" line="18" column="7" bodyfile="org/izdevs/acidium/api/v1/DefaultSpawner.java" bodystart="18" bodyend="62"/>
+    <listofallmembers>
+      <member refid="interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner_1a4e4828d573c6510bab24b64f9f67cd2d" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::DefaultSpawner</scope><name>addJob</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1ad0d3f44f8acefcfbddd0fa7fb1932e9f" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::DefaultSpawner</scope><name>associatedApi</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a144bc7e47869f072a7c73de69b79a692" prot="protected" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::DefaultSpawner</scope><name>data</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_1ac0d080cf394f788d864e8c197e7004e2" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::DefaultSpawner</scope><name>DefaultSpawner</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_1ae487772910d08688975279db7348b045" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::DefaultSpawner</scope><name>DefaultSpawner</name></member>
+      <member refid="interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner_1aecd0afeabcb31322045dfb30ec99c420" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::DefaultSpawner</scope><name>deleteJob</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a6efcff05516ad5e72adfbb551661c55c" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::DefaultSpawner</scope><name>deserialize</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a5d5ba600eed132ef2c162435d8224089" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::DefaultSpawner</scope><name>flags</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1af9fe4f85b4f96665a923115659f6f7d9" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::DefaultSpawner</scope><name>isApi</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_1a0c24381b258e10331a1fc596d9b2d2ba" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::DefaultSpawner</scope><name>jobQueue</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1abf18cab08c368a891577b690dadd0dbf" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::DefaultSpawner</scope><name>name</name></member>
+      <member refid="interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_1a63bde21e89f3b22cdb7339cf9b5273d3" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::DefaultSpawner</scope><name>pause</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1afade681ca6717ccad248bd959265b6ee" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::DefaultSpawner</scope><name>register</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a16acb5661ffb22692600432742d99377" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::DefaultSpawner</scope><name>Resource</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a352f73d7686be3b801ca64ad533bf9ff" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::DefaultSpawner</scope><name>Resource</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1aaa419bc8d735c4a399270b271a1f8544" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::DefaultSpawner</scope><name>serialize</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_1a3b31812d168316cc39f1e91b0180f0d8" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::DefaultSpawner</scope><name>spawn</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_1a8b08e1c6f356fd62131fcb8fdc7b996a" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::DefaultSpawner</scope><name>spawnManual</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1af4c8ae34bc7cfba3d931180a1b87732c" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::DefaultSpawner</scope><name>spec</name></member>
+      <member refid="interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_1a9b9edb150904e40a51a3764b66e88ba9" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::DefaultSpawner</scope><name>stopTick</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_1afb025f3f8927362ecfc464090cb7c66a" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::DefaultSpawner</scope><name>tick</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a2219c8ab43b89ceb1baa8d81f1ee1ae6" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::DefaultSpawner</scope><name>ticked</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a2c9a3debdfd3ae73331dde74e1388fd3" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::DefaultSpawner</scope><name>tickRun</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a679f102509a380319eb8eb387c69c976" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::DefaultSpawner</scope><name>typeName</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a0f37c2e1a0b76afa70eec77e622fa51d" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::DefaultSpawner</scope><name>unset</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_1aaa0fd19133b37e3a40d4f4429df35c42" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::DefaultSpawner</scope><name>world</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

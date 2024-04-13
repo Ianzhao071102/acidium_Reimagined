@@ -1,0 +1,490 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment" kind="class" language="Java" prot="public">
+    <compoundname>org::izdevs::acidium::game::equipment::Equipment</compoundname>
+    <basecompoundref refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity" prot="public" virt="non-virtual">org.izdevs.acidium.basic.Entity</basecompoundref>
+    <derivedcompoundref refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_electron" prot="public" virt="non-virtual">org.izdevs.acidium.game.equipment.Electron</derivedcompoundref>
+    <derivedcompoundref refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_neutron" prot="public" virt="non-virtual">org.izdevs.acidium.game.equipment.Neutron</derivedcompoundref>
+    <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_1a7e213a68ed9193bc236e114884306c04" prot="package" static="no" mutable="no">
+        <type><ref refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_recipe" kindref="compound">CraftingRecipe</ref></type>
+        <definition>CraftingRecipe org.izdevs.acidium.game.equipment.Equipment.recipe</definition>
+        <argsstring></argsstring>
+        <name>recipe</name>
+        <qualifiedname>org.izdevs.acidium.game.equipment.Equipment.recipe</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/game/equipment/Equipment.java" line="19" column="20" bodyfile="org/izdevs/acidium/game/equipment/Equipment.java" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_1a8fb56684e1ab61945b867c5098f71cb2" prot="package" static="no" mutable="no">
+        <type>int</type>
+        <definition>int org.izdevs.acidium.game.equipment.Equipment.id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <qualifiedname>org.izdevs.acidium.game.equipment.Equipment.id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/game/equipment/Equipment.java" line="22" column="9" bodyfile="org/izdevs/acidium/game/equipment/Equipment.java" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_1a45d28459b46b02920f68473f2bf7175d" prot="package" static="no" mutable="no">
+        <type><ref refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity" kindref="compound">Entity</ref></type>
+        <definition>Entity org.izdevs.acidium.game.equipment.Equipment.equipEntity</definition>
+        <argsstring></argsstring>
+        <name>equipEntity</name>
+        <qualifiedname>org.izdevs.acidium.game.equipment.Equipment.equipEntity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/game/equipment/Equipment.java" line="24" column="12" bodyfile="org/izdevs/acidium/game/equipment/Equipment.java" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_1acbdff54e2134e04bdb70b614085e517e" prot="package" static="no" mutable="no">
+        <type>Set&lt; <ref refid="enumorg_1_1izdevs_1_1acidium_1_1game_1_1inventory_1_1_inventory_type" kindref="compound">InventoryType</ref> &gt;</type>
+        <definition>Set&lt;InventoryType&gt; org.izdevs.acidium.game.equipment.Equipment.allowedSlots</definition>
+        <argsstring></argsstring>
+        <name>allowedSlots</name>
+        <qualifiedname>org.izdevs.acidium.game.equipment.Equipment.allowedSlots</qualifiedname>
+        <initializer>= new HashSet&lt;&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>slots that is allowed to be placed on defaults to: inventory </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/game/equipment/Equipment.java" line="32" column="9" bodyfile="org/izdevs/acidium/game/equipment/Equipment.java" bodystart="32" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_1a05dce32599e9a5981b5738ec3117388b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.izdevs.acidium.game.equipment.Equipment.Equipment</definition>
+        <argsstring>(World world, String name, double movementSpeed, int health, int hitboxRadius, int bDamage, Entity equip, CraftingRecipe recipe)</argsstring>
+        <name>Equipment</name>
+        <qualifiedname>org.izdevs.acidium.game.equipment.Equipment.Equipment</qualifiedname>
+        <param>
+          <type><ref refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_world" kindref="compound">World</ref></type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>movementSpeed</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>health</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>hitboxRadius</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bDamage</declname>
+        </param>
+        <param>
+          <type><ref refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity" kindref="compound">Entity</ref></type>
+          <declname>equip</declname>
+        </param>
+        <param>
+          <type><ref refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_recipe" kindref="compound">CraftingRecipe</ref></type>
+          <declname>recipe</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/game/equipment/Equipment.java" line="34" column="12" bodyfile="org/izdevs/acidium/game/equipment/Equipment.java" bodystart="34" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_1a5a97cc976e721f9e1c1b9a46f5c9aa38" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.izdevs.acidium.game.equipment.Equipment.equipElectronSlot</definition>
+        <argsstring>(int slotId, String name)</argsstring>
+        <name>equipElectronSlot</name>
+        <qualifiedname>org.izdevs.acidium.game.equipment.Equipment.equipElectronSlot</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>slotId</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>equip current equipment to its owner&apos;s electron slot </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/game/equipment/Equipment.java" line="46" column="17" bodyfile="org/izdevs/acidium/game/equipment/Equipment.java" bodystart="46" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_1aa2cf425df84bf6a69a8d0d2a7c4485d9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.izdevs.acidium.game.equipment.Equipment.equipArmorSlot</definition>
+        <argsstring>(int slotId)</argsstring>
+        <name>equipArmorSlot</name>
+        <qualifiedname>org.izdevs.acidium.game.equipment.Equipment.equipArmorSlot</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>slotId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>equip current equipment to its owner&apos;s armor slot </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/game/equipment/Equipment.java" line="60" column="17" bodyfile="org/izdevs/acidium/game/equipment/Equipment.java" bodystart="60" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_1a4cdb4462535589016835e6d251416750" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.izdevs.acidium.game.equipment.Equipment.Equipment</definition>
+        <argsstring>(String name)</argsstring>
+        <name>Equipment</name>
+        <qualifiedname>org.izdevs.acidium.game.equipment.Equipment.Equipment</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/game/equipment/Equipment.java" line="70" column="12" bodyfile="org/izdevs/acidium/game/equipment/Equipment.java" bodystart="70" bodyend="75"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="5">
+        <label>Telegraph</label>
+      </node>
+      <node id="1">
+        <label>org.izdevs.acidium.game.equipment.Equipment</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>org.izdevs.acidium.basic.Entity</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>org.izdevs.acidium.game.equipment.Electron</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_electron"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>org.izdevs.acidium.game.equipment.Neutron</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_neutron"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>org.izdevs.acidium.serialization.Resource</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>org.izdevs.acidium.tick.Ticked</label>
+        <link refid="interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="7">
+        <label>ArrayList&lt; org.izdevs.acidium.serialization.org.izdevs.acidium.serialization.Resource &gt;</label>
+      </node>
+      <node id="18">
+        <label>ArrayList&lt; org.izdevs.acidium.api.v1.Mob &gt;</label>
+      </node>
+      <node id="19">
+        <label>ArrayList&lt; org.izdevs.acidium.api.v1.Player &gt;</label>
+      </node>
+      <node id="8">
+        <label>ArrayList&lt; org.izdevs.acidium.serialization.SpecObject &gt;</label>
+      </node>
+      <node id="5">
+        <label>List&lt; String &gt;</label>
+      </node>
+      <node id="22">
+        <label>List&lt; org.izdevs.acidium.api.v1.Mob &gt;</label>
+      </node>
+      <node id="13">
+        <label>List&lt; org.izdevs.acidium.game.equipment.Equipment &gt;</label>
+      </node>
+      <node id="20">
+        <label>Map&lt; Point, org.izdevs.acidium.world.Block &gt;</label>
+      </node>
+      <node id="27">
+        <label>Runnable</label>
+      </node>
+      <node id="30">
+        <label>Set&lt; org.izdevs.acidium.game.crafting.CraftingSlot &gt;</label>
+      </node>
+      <node id="31">
+        <label>Set&lt; org.izdevs.acidium.game.inventory.InventoryType &gt;</label>
+      </node>
+      <node id="23">
+        <label>StateMachine&lt; org.izdevs.acidium.basic.Entity, org.izdevs.acidium.basic.BasicEntityState &gt;</label>
+      </node>
+      <node id="25">
+        <label>State&lt; Entity &gt;</label>
+      </node>
+      <node id="10">
+        <label>Telegraph</label>
+      </node>
+      <node id="15">
+        <label>FloatArray</label>
+      </node>
+      <node id="9">
+        <label>CompoundTag</label>
+      </node>
+      <node id="1">
+        <label>org.izdevs.acidium.game.equipment.Equipment</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="29" relation="usage">
+          <edgelabel>recipe</edgelabel>
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>equipEntity</edgelabel>
+        </childnode>
+        <childnode refid="31" relation="usage">
+          <edgelabel>allowedSlots</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>org.izdevs.acidium.basic.AbstractBehaviourController</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_abstract_behaviour_controller"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>controlled</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>current</edgelabel>
+          <edgelabel>goal</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>world</edgelabel>
+        </childnode>
+      </node>
+      <node id="24">
+        <label>org.izdevs.acidium.basic.BasicEntityState</label>
+        <link refid="enumorg_1_1izdevs_1_1acidium_1_1basic_1_1_basic_entity_state"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>org.izdevs.acidium.basic.Entity</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>armourInv</edgelabel>
+          <edgelabel>electronInv</edgelabel>
+          <edgelabel>inventory</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>controller</edgelabel>
+        </childnode>
+        <childnode refid="23" relation="usage">
+          <edgelabel>stateMachine</edgelabel>
+        </childnode>
+        <childnode refid="24" relation="usage">
+          <edgelabel>state</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>world</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>pathFinderGoal</edgelabel>
+        </childnode>
+        <childnode refid="26" relation="usage">
+          <edgelabel>task</edgelabel>
+        </childnode>
+      </node>
+      <node id="21">
+        <label>org.izdevs.acidium.entity.AbstractMobSpawner</label>
+        <link refid="interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="22" relation="usage">
+          <edgelabel>jobQueue</edgelabel>
+        </childnode>
+      </node>
+      <node id="29">
+        <label>org.izdevs.acidium.game.crafting.CraftingRecipe</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_recipe"/>
+        <childnode refid="30" relation="usage">
+          <edgelabel>slots</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>org.izdevs.acidium.game.inventory.Inventory</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1inventory_1_1_inventory"/>
+        <childnode refid="12" relation="usage">
+          <edgelabel>type</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>items</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>org.izdevs.acidium.game.inventory.InventoryType</label>
+        <link refid="enumorg_1_1izdevs_1_1acidium_1_1game_1_1inventory_1_1_inventory_type"/>
+      </node>
+      <node id="26">
+        <label>org.izdevs.acidium.scheduling.ScheduledTask</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_scheduled_task"/>
+        <childnode refid="27" relation="public-inheritance">
+        </childnode>
+        <childnode refid="28" relation="usage">
+          <edgelabel>state</edgelabel>
+        </childnode>
+      </node>
+      <node id="28">
+        <label>org.izdevs.acidium.scheduling.ScheduledTask.State</label>
+        <link refid="enumorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_scheduled_task_1_1_state"/>
+      </node>
+      <node id="6">
+        <label>org.izdevs.acidium.serialization.API</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_a_p_i"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>resources</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>org.izdevs.acidium.serialization.Resource</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>flags</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>associatedApi</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>spec</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>org.izdevs.acidium.tick.Ticked</label>
+        <link refid="interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked"/>
+      </node>
+      <node id="17">
+        <label>org.izdevs.acidium.world.TickedWorld</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world"/>
+        <childnode refid="18" relation="usage">
+          <edgelabel>mobs</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>players</edgelabel>
+        </childnode>
+        <childnode refid="20" relation="usage">
+          <edgelabel>map</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
+        <label>org.izdevs.acidium.world.World</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_world"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+        <childnode refid="21" relation="usage">
+          <edgelabel>spawner</edgelabel>
+        </childnode>
+        <childnode refid="20" relation="usage">
+          <edgelabel>map</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="org/izdevs/acidium/game/equipment/Equipment.java" line="16" column="7" bodyfile="org/izdevs/acidium/game/equipment/Equipment.java" bodystart="16" bodyend="76"/>
+    <listofallmembers>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1a9a3d8e949b060fa2c0ae64f0d99d8c5c" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>alive</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_1acbdff54e2134e04bdb70b614085e517e" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>allowedSlots</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1a80275006127021b8cdccdecb7d5afdef" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>armourInv</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1ad0d3f44f8acefcfbddd0fa7fb1932e9f" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>associatedApi</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1a12132ec2f2efd9ddc29f9fd1eb8c4683" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>attackBehaviour</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1ae3721a4668fcee601351c75dc8400f43" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>bDamage</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1a130ab929eb3ce43f71561fd2642aa18a" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>controller</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1a9b5f9afe8704cc905a90baef45ca4118" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>damage</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a144bc7e47869f072a7c73de69b79a692" prot="protected" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>data</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a6efcff05516ad5e72adfbb551661c55c" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>deserialize</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1a42c6ba06ffb2f889e4ecfa22e84e4e10" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>electronInv</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1a6e9d3f7d088cd95ef68abbbac4542a41" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>Entity</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1a4dfff9bfacb1b9e0052e8487d4f4d84f" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>Entity</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_1aa2cf425df84bf6a69a8d0d2a7c4485d9" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>equipArmorSlot</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_1a5a97cc976e721f9e1c1b9a46f5c9aa38" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>equipElectronSlot</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_1a45d28459b46b02920f68473f2bf7175d" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>equipEntity</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_1a05dce32599e9a5981b5738ec3117388b" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>Equipment</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_1a4cdb4462535589016835e6d251416750" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>Equipment</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a5d5ba600eed132ef2c162435d8224089" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>flags</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1abf319c7c3e0a67d7f1f661017f48419f" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>handleMessage</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1a063c50b95c29b6cccbe9ad53bb91f896" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>health</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1ab537887375f0ff6a3a2348e22af77158" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>hitboxRadius</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_1a8fb56684e1ab61945b867c5098f71cb2" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>id</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1ab7dec2235f7fdd5a2172007d8e80667b" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>inventory</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1a474970db1749756bb830095d9dd2b1c4" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>invincible</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1af9fe4f85b4f96665a923115659f6f7d9" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>isApi</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1a1b4dfa88d5b81e126700bd131f4ff0fd" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>isColliding</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1a58e5db7a6cad5f7aff3ebb1c5ad3ceb3" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>isColliding</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1ab0cda4d442b9d710f11e19cb87c30125" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>movementSpeed</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1a036b8b8b614eb1ca6c1b7cf3d29c1239" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>name</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1aeb4091cda22c06e536af4ffb928781ef" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>pathFinderGoal</name></member>
+      <member refid="interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_1a63bde21e89f3b22cdb7339cf9b5273d3" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>pause</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment_1a7e213a68ed9193bc236e114884306c04" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>recipe</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1afade681ca6717ccad248bd959265b6ee" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>register</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a16acb5661ffb22692600432742d99377" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>Resource</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a352f73d7686be3b801ca64ad533bf9ff" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>Resource</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1aaa419bc8d735c4a399270b271a1f8544" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>serialize</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1af4c8ae34bc7cfba3d931180a1b87732c" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>spec</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1ac25c72fa41bbc6eb262dbc60910372a1" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>state</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1aeb72fa42ce5b91f7a309745ae213c7a3" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>stateMachine</name></member>
+      <member refid="interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_1a9b9edb150904e40a51a3764b66e88ba9" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>stopTick</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1ab2bb8247e2930fbf9b2da318b38ec9ac" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>task</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1ad44cb29834bf78042ea08624bf9a8579" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>tick</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a2219c8ab43b89ceb1baa8d81f1ee1ae6" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>ticked</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a2c9a3debdfd3ae73331dde74e1388fd3" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>tickRun</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a679f102509a380319eb8eb387c69c976" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>typeName</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a0f37c2e1a0b76afa70eec77e622fa51d" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>unset</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1adcd8ce9d78c6cd7e4482f0eec7b965a1" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>world</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1a60e143ff9852ef9b29993440469439f4" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>x</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1a7ad4ba90c9989aea5951e4d563887de3" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::equipment::Equipment</scope><name>y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

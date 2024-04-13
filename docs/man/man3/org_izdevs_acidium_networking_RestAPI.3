@@ -1,0 +1,73 @@
+.TH "org.izdevs.acidium.networking.RestAPI" 3 "Version Alpha-0.1" "Acidium" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+org.izdevs.acidium.networking.RestAPI
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "String \fBgetResource\fP (@PathVariable(name='name') String name, @PathVariable(name='api', required=false) String api, HttpServletResponse response)"
+.br
+.ti -1c
+.RI "ResponseEntity< \fBPayload\fP > \fBlogin\fP (@PathVariable(name='username') String username, @PathVariable(name='password') String password, HttpServletResponse response, HttpServletRequest request)  throws SQLException, IOException "
+.br
+.ti -1c
+.RI "ResponseEntity< \fBPayload\fP > \fBmove\fP (@PathVariable(name='degree') double degree, HttpServletRequest request)"
+.br
+.ti -1c
+.RI "ResponseEntity< \fBPayload\fP > \fBupdate\fP (HttpServletRequest request, HttpServletResponse response)  throws IOException "
+.br
+.ti -1c
+.RI "ResponseEntity< \fBPayload\fP > \fBSwapInventory\fP (HttpServletRequest request)"
+.br
+.ti -1c
+.RI "ResponseEntity< \fBPayload\fP > \fBecho\fP ()"
+.br
+.ti -1c
+.RI "ResponseEntity< \fBPayload\fP > \fBcredits\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUserRepository\fP \fBrepository\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static int \fBplayersOnline\fP = 0"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "ResponseEntity< \fBPayload\fP > org\&.izdevs\&.acidium\&.networking\&.RestAPI\&.credits ()"
+
+.SS "ResponseEntity< \fBPayload\fP > org\&.izdevs\&.acidium\&.networking\&.RestAPI\&.echo ()"
+
+.SS "String org\&.izdevs\&.acidium\&.networking\&.RestAPI\&.getResource (@PathVariable(name='name') String name, @PathVariable(name='api', required=false) String api, HttpServletResponse response)"
+
+.SS "ResponseEntity< \fBPayload\fP > org\&.izdevs\&.acidium\&.networking\&.RestAPI\&.login (@PathVariable(name='username') String username, @PathVariable(name='password') String password, HttpServletResponse response, HttpServletRequest request) throws SQLException, IOException"
+
+.SS "ResponseEntity< \fBPayload\fP > org\&.izdevs\&.acidium\&.networking\&.RestAPI\&.move (@PathVariable(name='degree') double degree, HttpServletRequest request)"
+
+.SS "ResponseEntity< \fBPayload\fP > org\&.izdevs\&.acidium\&.networking\&.RestAPI\&.SwapInventory (HttpServletRequest request)"
+
+.SS "ResponseEntity< \fBPayload\fP > org\&.izdevs\&.acidium\&.networking\&.RestAPI\&.update (HttpServletRequest request, HttpServletResponse response) throws IOException"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "int org\&.izdevs\&.acidium\&.networking\&.RestAPI\&.playersOnline = 0\fR [static]\fP"
+
+.SS "\fBUserRepository\fP org\&.izdevs\&.acidium\&.networking\&.RestAPI\&.repository"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Acidium from the source code\&.

@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked" kind="interface" language="Java" prot="public">
+    <compoundname>org::izdevs::acidium::tick::Ticked</compoundname>
+    <derivedcompoundref refid="interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner" prot="public" virt="non-virtual">org.izdevs.acidium.entity.AbstractMobSpawner</derivedcompoundref>
+    <derivedcompoundref refid="classorg_1_1izdevs_1_1acidium_1_1entity_1_1_mob_holder" prot="public" virt="non-virtual">org.izdevs.acidium.entity.MobHolder</derivedcompoundref>
+    <derivedcompoundref refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource" prot="public" virt="non-virtual">org.izdevs.acidium.serialization.Resource</derivedcompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_1adca105a95287fc09c9ba288b332be9cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.izdevs.acidium.tick.Ticked.tick</definition>
+        <argsstring>()</argsstring>
+        <name>tick</name>
+        <qualifiedname>org.izdevs.acidium.tick.Ticked.tick</qualifiedname>
+        <reimplementedby refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_1afb025f3f8927362ecfc464090cb7c66a">tick</reimplementedby>
+        <reimplementedby refid="interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner_1a55565bef61455867d5226679f61a6fa9">tick</reimplementedby>
+        <reimplementedby refid="classorg_1_1izdevs_1_1acidium_1_1entity_1_1_mob_holder_1a0d8246483c5656616a342f76a1b6f23a">tick</reimplementedby>
+        <reimplementedby refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1ad44cb29834bf78042ea08624bf9a8579">tick</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/tick/Ticked.java" line="7" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_1a9b9edb150904e40a51a3764b66e88ba9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>default void</type>
+        <definition>default void org.izdevs.acidium.tick.Ticked.stopTick</definition>
+        <argsstring>()</argsstring>
+        <name>stopTick</name>
+        <qualifiedname>org.izdevs.acidium.tick.Ticked.stopTick</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/tick/Ticked.java" line="8" column="18" bodyfile="org/izdevs/acidium/tick/Ticked.java" bodystart="8" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_1a63bde21e89f3b22cdb7339cf9b5273d3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>default void</type>
+        <definition>default void org.izdevs.acidium.tick.Ticked.pause</definition>
+        <argsstring>()</argsstring>
+        <name>pause</name>
+        <qualifiedname>org.izdevs.acidium.tick.Ticked.pause</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/tick/Ticked.java" line="11" column="18" bodyfile="org/izdevs/acidium/tick/Ticked.java" bodystart="11" bodyend="13"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>org.izdevs.acidium.tick.Ticked</label>
+        <link refid="interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked"/>
+      </node>
+      <node id="6">
+        <label>org.izdevs.acidium.api.v1.BlockSpec</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_block_spec"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>org.izdevs.acidium.api.v1.CommandDefinition</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_command_definition"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>org.izdevs.acidium.api.v1.DefaultSpawner</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>org.izdevs.acidium.api.v1.Error</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_error"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>org.izdevs.acidium.api.v1.Mob</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>org.izdevs.acidium.api.v1.Payload</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_payload"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>org.izdevs.acidium.api.v1.Player</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_player"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>org.izdevs.acidium.api.v1.Structure</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_structure"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>org.izdevs.acidium.api.v1.User</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_user"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>org.izdevs.acidium.api.v1.v1</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1v1"/>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>org.izdevs.acidium.basic.Entity</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>org.izdevs.acidium.entity.AbstractMobSpawner</label>
+        <link refid="interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>org.izdevs.acidium.entity.MobHolder</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1entity_1_1_mob_holder"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>org.izdevs.acidium.game.equipment.Electron</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_electron"/>
+        <childnode refid="16" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>org.izdevs.acidium.game.equipment.Equipment</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>org.izdevs.acidium.game.equipment.Neutron</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_neutron"/>
+        <childnode refid="16" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>org.izdevs.acidium.security.AuthorizationContent</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1security_1_1_authorization_content"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>org.izdevs.acidium.serialization.API</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_a_p_i"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>org.izdevs.acidium.serialization.Resource</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="org/izdevs/acidium/tick/Ticked.java" line="5" column="18" bodyfile="org/izdevs/acidium/tick/Ticked.java" bodystart="5" bodyend="15"/>
+    <listofallmembers>
+      <member refid="interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_1a63bde21e89f3b22cdb7339cf9b5273d3" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::tick::Ticked</scope><name>pause</name></member>
+      <member refid="interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_1a9b9edb150904e40a51a3764b66e88ba9" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::tick::Ticked</scope><name>stopTick</name></member>
+      <member refid="interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_1adca105a95287fc09c9ba288b332be9cd" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::tick::Ticked</scope><name>tick</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

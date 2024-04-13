@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_recipe" kind="class" language="Java" prot="public">
+    <compoundname>org::izdevs::acidium::game::crafting::CraftingRecipe</compoundname>
+    <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_recipe_1a40f1d847cbe03c3b9db63bf0696b69f3" prot="package" static="no" mutable="no">
+        <type>String</type>
+        <definition>String org.izdevs.acidium.game.crafting.CraftingRecipe.name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <qualifiedname>org.izdevs.acidium.game.crafting.CraftingRecipe.name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/game/crafting/CraftingRecipe.java" line="13" column="12" bodyfile="org/izdevs/acidium/game/crafting/CraftingRecipe.java" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_recipe_1a1e2f1e761a79c53b4bf9a4021c35a038" prot="package" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean org.izdevs.acidium.game.crafting.CraftingRecipe.ordered</definition>
+        <argsstring></argsstring>
+        <name>ordered</name>
+        <qualifiedname>org.izdevs.acidium.game.crafting.CraftingRecipe.ordered</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/game/crafting/CraftingRecipe.java" line="14" column="13" bodyfile="org/izdevs/acidium/game/crafting/CraftingRecipe.java" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_recipe_1a67c98099c52f00c155189d5fe920e393" prot="package" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean org.izdevs.acidium.game.crafting.CraftingRecipe.craftable</definition>
+        <argsstring></argsstring>
+        <name>craftable</name>
+        <qualifiedname>org.izdevs.acidium.game.crafting.CraftingRecipe.craftable</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/game/crafting/CraftingRecipe.java" line="15" column="13" bodyfile="org/izdevs/acidium/game/crafting/CraftingRecipe.java" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_recipe_1a9c3515f5a81f3a0c40423347b4572da9" prot="package" static="no" mutable="no">
+        <type>Set&lt; <ref refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_slot" kindref="compound">CraftingSlot</ref> &gt;</type>
+        <definition>Set&lt;CraftingSlot&gt; org.izdevs.acidium.game.crafting.CraftingRecipe.slots</definition>
+        <argsstring></argsstring>
+        <name>slots</name>
+        <qualifiedname>org.izdevs.acidium.game.crafting.CraftingRecipe.slots</qualifiedname>
+        <initializer>= new HashSet&lt;&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/game/crafting/CraftingRecipe.java" line="16" column="9" bodyfile="org/izdevs/acidium/game/crafting/CraftingRecipe.java" bodystart="16" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_recipe_1a458f50bb603d8e2333ccfa14543fbe6b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.izdevs.acidium.game.crafting.CraftingRecipe.CraftingRecipe</definition>
+        <argsstring>(CraftingSlot... craftingSlots)</argsstring>
+        <name>CraftingRecipe</name>
+        <qualifiedname>org.izdevs.acidium.game.crafting.CraftingRecipe.CraftingRecipe</qualifiedname>
+        <param>
+          <type>CraftingSlot...</type>
+          <declname>craftingSlots</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/game/crafting/CraftingRecipe.java" line="18" column="12" bodyfile="org/izdevs/acidium/game/crafting/CraftingRecipe.java" bodystart="18" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_recipe_1a031979a7254e53ba5f9ca9e8d4698180" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.izdevs.acidium.game.crafting.CraftingRecipe.CraftingRecipe</definition>
+        <argsstring>(String name)</argsstring>
+        <name>CraftingRecipe</name>
+        <qualifiedname>org.izdevs.acidium.game.crafting.CraftingRecipe.CraftingRecipe</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/game/crafting/CraftingRecipe.java" line="21" column="12" bodyfile="org/izdevs/acidium/game/crafting/CraftingRecipe.java" bodystart="21" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_recipe_1aafdab4f814f4132cf1bba9a0234bf1f3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean org.izdevs.acidium.game.crafting.CraftingRecipe.validate</definition>
+        <argsstring>(CraftingRecipe input)</argsstring>
+        <name>validate</name>
+        <qualifiedname>org.izdevs.acidium.game.crafting.CraftingRecipe.validate</qualifiedname>
+        <param>
+          <type><ref refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_recipe" kindref="compound">CraftingRecipe</ref></type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/game/crafting/CraftingRecipe.java" line="24" column="20" bodyfile="org/izdevs/acidium/game/crafting/CraftingRecipe.java" bodystart="24" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_recipe_1a1aec07730a48fead92f850e3b3abf3fe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.izdevs.acidium.game.crafting.CraftingRecipe.CraftingRecipe</definition>
+        <argsstring>()</argsstring>
+        <name>CraftingRecipe</name>
+        <qualifiedname>org.izdevs.acidium.game.crafting.CraftingRecipe.CraftingRecipe</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>constructors for un-craft-able items </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/game/crafting/CraftingRecipe.java" line="35" column="12" bodyfile="org/izdevs/acidium/game/crafting/CraftingRecipe.java" bodystart="35" bodyend="37"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>Set&lt; org.izdevs.acidium.game.crafting.CraftingSlot &gt;</label>
+      </node>
+      <node id="1">
+        <label>org.izdevs.acidium.game.crafting.CraftingRecipe</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_recipe"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>slots</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="org/izdevs/acidium/game/crafting/CraftingRecipe.java" line="12" column="7" bodyfile="org/izdevs/acidium/game/crafting/CraftingRecipe.java" bodystart="12" bodyend="38"/>
+    <listofallmembers>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_recipe_1a67c98099c52f00c155189d5fe920e393" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::crafting::CraftingRecipe</scope><name>craftable</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_recipe_1a458f50bb603d8e2333ccfa14543fbe6b" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::crafting::CraftingRecipe</scope><name>CraftingRecipe</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_recipe_1a031979a7254e53ba5f9ca9e8d4698180" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::crafting::CraftingRecipe</scope><name>CraftingRecipe</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_recipe_1a1aec07730a48fead92f850e3b3abf3fe" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::crafting::CraftingRecipe</scope><name>CraftingRecipe</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_recipe_1a40f1d847cbe03c3b9db63bf0696b69f3" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::crafting::CraftingRecipe</scope><name>name</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_recipe_1a1e2f1e761a79c53b4bf9a4021c35a038" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::crafting::CraftingRecipe</scope><name>ordered</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_recipe_1a9c3515f5a81f3a0c40423347b4572da9" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::crafting::CraftingRecipe</scope><name>slots</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_recipe_1aafdab4f814f4132cf1bba9a0234bf1f3" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::crafting::CraftingRecipe</scope><name>validate</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

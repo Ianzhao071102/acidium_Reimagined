@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_42849946004144c5bce6dfb66fb413cb" xml:lang="en-US">
+<title>org/izdevs/acidium/game Directory Reference</title>
+<indexterm><primary>org/izdevs/acidium/game Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Directories    </title>
+        <itemizedlist>
+            <listitem><para>directory <link linkend="_dir_f8ecffa87e1fdd0b6d44adc178488115">crafting</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_04950e147cd7a70058f3ccc75300d688">equipment</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_580ccb479e831d7db7e752c708b148ab">inventory</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

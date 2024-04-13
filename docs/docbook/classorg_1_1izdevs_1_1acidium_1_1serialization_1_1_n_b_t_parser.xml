@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_n_b_t_parser" xml:lang="en-US">
+<title>org.izdevs.acidium.serialization.NBTParser Class Reference</title>
+<indexterm><primary>org.izdevs.acidium.serialization.NBTParser</primary></indexterm>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_n_b_t_parser_1a6a03683a6c85124f361c64e575da5fec">registerNBTDef</link> (InputStream raw)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>static ArrayList&lt; <link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_command_definition">CommandDefinition</link> &gt; <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_n_b_t_parser_1a38f2d0059d8c2118b624d0f3aae287e1">definitions</link> = new ArrayList&lt;&gt;()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_n_b_t_parser_1a6a03683a6c85124f361c64e575da5fec"/><section>
+    <title>registerNBTDef()</title>
+<indexterm><primary>registerNBTDef</primary><secondary>org.izdevs.acidium.serialization.NBTParser</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.serialization.NBTParser</primary><secondary>registerNBTDef</secondary></indexterm>
+<para><computeroutput>static void org.izdevs.acidium.serialization.NBTParser.registerNBTDef (InputStream raw)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_n_b_t_parser_1a38f2d0059d8c2118b624d0f3aae287e1"/><section>
+    <title>definitions</title>
+<indexterm><primary>definitions</primary><secondary>org.izdevs.acidium.serialization.NBTParser</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.serialization.NBTParser</primary><secondary>definitions</secondary></indexterm>
+<para><computeroutput>ArrayList&lt;<link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_command_definition">CommandDefinition</link>&gt; org.izdevs.acidium.serialization.NBTParser.definitions = new ArrayList&lt;&gt;()<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+org/izdevs/acidium/serialization/<link linkend="__n_b_t_parser_8java">NBTParser.java</link></section>
+</section>

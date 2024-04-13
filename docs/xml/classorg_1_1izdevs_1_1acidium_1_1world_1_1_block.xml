@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classorg_1_1izdevs_1_1acidium_1_1world_1_1_block" kind="class" language="Java" prot="public">
+    <compoundname>org::izdevs::acidium::world::Block</compoundname>
+    <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1world_1_1_block_1a8ba5921eaeb4403ae1b579700fc071aa" prot="package" static="no" mutable="no">
+        <type>int</type>
+        <definition>int org.izdevs.acidium.world.Block.x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>org.izdevs.acidium.world.Block.x</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/world/Block.java" line="15" column="9" bodyfile="org/izdevs/acidium/world/Block.java" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1world_1_1_block_1a6a5c0a2e264f324c350c7db782ef51ed" prot="package" static="no" mutable="no">
+        <type>int</type>
+        <definition>int org.izdevs.acidium.world.Block.y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <qualifiedname>org.izdevs.acidium.world.Block.y</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/world/Block.java" line="16" column="9" bodyfile="org/izdevs/acidium/world/Block.java" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1world_1_1_block_1a58ccfeaee78456b21ec13aef0128563d" prot="package" static="no" mutable="no">
+        <type><ref refid="enumorg_1_1izdevs_1_1acidium_1_1world_1_1_block_type" kindref="compound">BlockType</ref></type>
+        <definition>BlockType org.izdevs.acidium.world.Block.type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>org.izdevs.acidium.world.Block.type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/world/Block.java" line="17" column="15" bodyfile="org/izdevs/acidium/world/Block.java" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1world_1_1_block_1a2fd4039d23fa1ce59a93ab734242dc80" prot="package" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean org.izdevs.acidium.world.Block.walkable</definition>
+        <argsstring></argsstring>
+        <name>walkable</name>
+        <qualifiedname>org.izdevs.acidium.world.Block.walkable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/world/Block.java" line="18" column="13" bodyfile="org/izdevs/acidium/world/Block.java" bodystart="18" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1world_1_1_block_1afb9fc19f2196f05359dad84877ee0e18" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.izdevs.acidium.world.Block.Block</definition>
+        <argsstring>(int x, int y, BlockType type, boolean walkable)</argsstring>
+        <name>Block</name>
+        <qualifiedname>org.izdevs.acidium.world.Block.Block</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type><ref refid="enumorg_1_1izdevs_1_1acidium_1_1world_1_1_block_type" kindref="compound">BlockType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>boolean</type>
+          <declname>walkable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/world/Block.java" line="19" column="12" bodyfile="org/izdevs/acidium/world/Block.java" bodystart="19" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1world_1_1_block_1a187e6b78b2ceb5763f02ec58fd8789fa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String org.izdevs.acidium.world.Block.toString</definition>
+        <argsstring>()</argsstring>
+        <name>toString</name>
+        <qualifiedname>org.izdevs.acidium.world.Block.toString</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/world/Block.java" line="26" column="19" bodyfile="org/izdevs/acidium/world/Block.java" bodystart="26" bodyend="29"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>org.izdevs.acidium.world.Block</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_block"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>type</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>org.izdevs.acidium.world.BlockType</label>
+        <link refid="enumorg_1_1izdevs_1_1acidium_1_1world_1_1_block_type"/>
+      </node>
+    </collaborationgraph>
+    <location file="org/izdevs/acidium/world/Block.java" line="13" column="7" bodyfile="org/izdevs/acidium/world/Block.java" bodystart="13" bodyend="30"/>
+    <listofallmembers>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_block_1afb9fc19f2196f05359dad84877ee0e18" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::world::Block</scope><name>Block</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_block_1a187e6b78b2ceb5763f02ec58fd8789fa" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::world::Block</scope><name>toString</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_block_1a58ccfeaee78456b21ec13aef0128563d" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::world::Block</scope><name>type</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_block_1a2fd4039d23fa1ce59a93ab734242dc80" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::world::Block</scope><name>walkable</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_block_1a8ba5921eaeb4403ae1b579700fc071aa" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::world::Block</scope><name>x</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_block_1a6a5c0a2e264f324c350c7db782ef51ed" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::world::Block</scope><name>y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_world" xml:lang="en-US">
+<title>org.izdevs.acidium.world.World Class Reference</title>
+<indexterm><primary>org.izdevs.acidium.world.World</primary></indexterm>
+<para>Inheritance diagram for org.izdevs.acidium.world.World:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classorg_1_1izdevs_1_1acidium_1_1world_1_1_world.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_world_1a57d56a1e240fc9f9eb0929d1cbe3c59b">World</link> (Map&lt; Point, <link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_block">Block</link> &gt; map)</para>
+</listitem>
+            <listitem><para><link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_block">Block</link> <link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_world_1a2afdd04813b1d6f4eae8fc3926fd3390">getBlockAtLoc</link> (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_location">Location</link> location)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_world_1ae7b86abe4b60d36dfa6a80b2cc7d5d02">setBlockAtLoc</link> (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_location">Location</link> location, <link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_block">Block</link> block)</para>
+</listitem>
+            <listitem><para>String <link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_world_1aa889be400f595d93d9e08235351cc8df">toString</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Public Member Functions inherited from <link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world">org.izdevs.acidium.world.TickedWorld</link>        <itemizedlist>
+            <listitem><para><link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world_1ae48fdd27c68dec854010460fa6ef4b60">TickedWorld</link> (Map&lt; Point, <link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_block">Block</link> &gt; map)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world_1afc6e0567006999dced399015a402608c">addPlayer</link> (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_player">Player</link> player)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world_1a6007c9c63296406fbc3c61019509ff25">addMob</link> (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob">Mob</link> mob)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world_1af732506301dd97744d3a61b4100a84f3">delPlayer</link> (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_player">Player</link> player)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world_1a5daa1bbea5bfde6ba41963f0a361a6f3">delMob</link> (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob">Mob</link> mob)</para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+Public Attributes inherited from <link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world">org.izdevs.acidium.world.TickedWorld</link>        <itemizedlist>
+            <listitem><para>volatile ArrayList&lt; <link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob">Mob</link> &gt; <link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world_1a1c82b651401a6a9ec40bdb0c76491703">mobs</link> = new ArrayList&lt;&gt;()</para>
+</listitem>
+            <listitem><para>volatile ArrayList&lt; <link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_player">Player</link> &gt; <link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world_1a9609d1cb8d0bbf02fb72763ffa96930d">players</link> = new ArrayList&lt;<link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_player">Player</link>&gt;()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_world_1a57d56a1e240fc9f9eb0929d1cbe3c59b"/><section>
+    <title>World()</title>
+<indexterm><primary>World</primary><secondary>org.izdevs.acidium.world.World</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.world.World</primary><secondary>World</secondary></indexterm>
+<para><computeroutput>org.izdevs.acidium.world.World.World (Map&lt; Point, <link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_block">Block</link> &gt; map)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_world_1a2afdd04813b1d6f4eae8fc3926fd3390"/><section>
+    <title>getBlockAtLoc()</title>
+<indexterm><primary>getBlockAtLoc</primary><secondary>org.izdevs.acidium.world.World</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.world.World</primary><secondary>getBlockAtLoc</secondary></indexterm>
+<para><computeroutput><link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_block">Block</link> org.izdevs.acidium.world.World.getBlockAtLoc (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_location">Location</link> location)</computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_world_1ae7b86abe4b60d36dfa6a80b2cc7d5d02"/><section>
+    <title>setBlockAtLoc()</title>
+<indexterm><primary>setBlockAtLoc</primary><secondary>org.izdevs.acidium.world.World</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.world.World</primary><secondary>setBlockAtLoc</secondary></indexterm>
+<para><computeroutput>void org.izdevs.acidium.world.World.setBlockAtLoc (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_location">Location</link> location, <link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_block">Block</link> block)</computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_world_1aa889be400f595d93d9e08235351cc8df"/><section>
+    <title>toString()</title>
+<indexterm><primary>toString</primary><secondary>org.izdevs.acidium.world.World</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.world.World</primary><secondary>toString</secondary></indexterm>
+<para><computeroutput>String org.izdevs.acidium.world.World.toString ( )</computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+org/izdevs/acidium/world/<link linkend="__world_8java">World.java</link></section>
+</section>

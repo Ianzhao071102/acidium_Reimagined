@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="dir_04950e147cd7a70058f3ccc75300d688" kind="dir">
+    <compoundname>org/izdevs/acidium/game/equipment</compoundname>
+    <innerfile refid="_electron_8java">Electron.java</innerfile>
+    <innerfile refid="_equipment_8java">Equipment.java</innerfile>
+    <innerfile refid="_equipment_holder_8java">EquipmentHolder.java</innerfile>
+    <innerfile refid="_neutron_8java">Neutron.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="org/izdevs/acidium/game/equipment/"/>
+  </compounddef>
+</doxygen>

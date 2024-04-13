@@ -1,0 +1,139 @@
+.TH "org.izdevs.acidium.game.equipment.Electron" 3 "Version Alpha-0.1" "Acidium" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+org.izdevs.acidium.game.equipment.Electron
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBorg\&.izdevs\&.acidium\&.game\&.equipment\&.Equipment\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBElectron\fP (\fBWorld\fP world, \fBEntity\fP equip)"
+.br
+.ti -1c
+.RI "\fBElectron\fP ()"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBorg\&.izdevs\&.acidium\&.game\&.equipment\&.Equipment\fP
+.in +1c
+.ti -1c
+.RI "\fBEquipment\fP (\fBWorld\fP world, String name, double movementSpeed, int health, int hitboxRadius, int bDamage, \fBEntity\fP equip, \fBCraftingRecipe\fP recipe)"
+.br
+.ti -1c
+.RI "void \fBequipElectronSlot\fP (int slotId, String name)"
+.br
+.ti -1c
+.RI "void \fBequipArmorSlot\fP (int slotId)"
+.br
+.ti -1c
+.RI "\fBEquipment\fP (String name)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBorg\&.izdevs\&.acidium\&.basic\&.Entity\fP
+.in +1c
+.ti -1c
+.RI "\fBEntity\fP (String name, double movementSpeed, int health, int hitboxRadius, int bDamage)"
+.br
+.ti -1c
+.RI "\fBEntity\fP (\fBWorld\fP world, String name, double movementSpeed, int health, int hitboxRadius, int bDamage)"
+.br
+.ti -1c
+.RI "boolean \fBhandleMessage\fP (Telegram telegram)"
+.br
+.ti -1c
+.RI "void \fBdamage\fP (int health)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBorg\&.izdevs\&.acidium\&.serialization\&.Resource\fP
+.in +1c
+.ti -1c
+.RI "\fBResource\fP (String \fBname\fP, ArrayList< \fBSpecObject\fP > objects)"
+.br
+.ti -1c
+.RI "\fBResource\fP (String \fBname\fP, boolean \fBisApi\fP)"
+.br
+.ti -1c
+.RI "void \fBregister\fP ()"
+.br
+.ti -1c
+.RI "String \fBserialize\fP ()"
+.br
+.ti -1c
+.RI "void \fBtick\fP ()"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBorg\&.izdevs\&.acidium\&.tick\&.Ticked\fP
+.in +1c
+.ti -1c
+.RI "default void \fBstopTick\fP ()"
+.br
+.ti -1c
+.RI "default void \fBpause\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Member Functions inherited from \fBorg\&.izdevs\&.acidium\&.basic\&.Entity\fP
+.in +1c
+.ti -1c
+.RI "static boolean \fBisColliding\fP (\fBEntity\fP a, \fBEntity\fP b)"
+.br
+.ti -1c
+.RI "static boolean \fBisColliding\fP (\fBMob\fP a, \fBEntity\fP b)"
+.br
+.in -1c
+
+Static Public Member Functions inherited from \fBorg\&.izdevs\&.acidium\&.serialization\&.Resource\fP
+.in +1c
+.ti -1c
+.RI "static \fBResource\fP \fBdeserialize\fP (String serialized)"
+.br
+.in -1c
+
+Public Attributes inherited from \fBorg\&.izdevs\&.acidium\&.serialization\&.Resource\fP
+.in +1c
+.ti -1c
+.RI "boolean \fBunset\fP"
+.br
+.ti -1c
+.RI "boolean \fBisApi\fP"
+.br
+.ti -1c
+.RI "\fBAPI\fP \fBassociatedApi\fP"
+.br
+.ti -1c
+.RI "String \fBtypeName\fP"
+.br
+.ti -1c
+.RI "String \fBname\fP"
+.br
+.ti -1c
+.RI "ArrayList< \fBSpecObject\fP > \fBspec\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBorg\&.izdevs\&.acidium\&.serialization\&.Resource\fP
+.in +1c
+.ti -1c
+.RI "CompoundTag \fBdata\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "org\&.izdevs\&.acidium\&.game\&.equipment\&.Electron\&.Electron (\fBWorld\fP world, \fBEntity\fP equip)"
+an electron has health of 20 movement speed of 0\&.2 hitbox radius of 1 body_damage of 5 
+.SS "org\&.izdevs\&.acidium\&.game\&.equipment\&.Electron\&.Electron ()"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Acidium from the source code\&.

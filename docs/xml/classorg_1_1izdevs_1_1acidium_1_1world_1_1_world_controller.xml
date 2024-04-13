@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classorg_1_1izdevs_1_1acidium_1_1world_1_1_world_controller" kind="class" language="Java" prot="public">
+    <compoundname>org::izdevs::acidium::world::WorldController</compoundname>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1world_1_1_world_controller_1a4084faa3eaecdeb8bfd54f1a73b5d832" prot="public" static="yes" mutable="no">
+        <type>ArrayList&lt; <ref refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_world" kindref="compound">World</ref> &gt;</type>
+        <definition>ArrayList&lt;World&gt; org.izdevs.acidium.world.WorldController.worlds</definition>
+        <argsstring></argsstring>
+        <name>worlds</name>
+        <qualifiedname>org.izdevs.acidium.world.WorldController.worlds</qualifiedname>
+        <initializer>= new ArrayList&lt;&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/world/WorldController.java" line="8" column="29" bodyfile="org/izdevs/acidium/world/WorldController.java" bodystart="8" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1world_1_1_world_controller_1aaf516c8a593a94d2779925758c559c03" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void org.izdevs.acidium.world.WorldController.generateWorld</definition>
+        <argsstring>(long seed)</argsstring>
+        <name>generateWorld</name>
+        <qualifiedname>org.izdevs.acidium.world.WorldController.generateWorld</qualifiedname>
+        <param>
+          <type>long</type>
+          <declname>seed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/world/WorldController.java" line="10" column="24" bodyfile="org/izdevs/acidium/world/WorldController.java" bodystart="10" bodyend="16"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>ArrayList&lt; org.izdevs.acidium.world.World &gt;</label>
+      </node>
+      <node id="1">
+        <label>org.izdevs.acidium.world.WorldController</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_world_controller"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>worlds</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="org/izdevs/acidium/world/WorldController.java" line="7" column="7" bodyfile="org/izdevs/acidium/world/WorldController.java" bodystart="7" bodyend="17"/>
+    <listofallmembers>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_world_controller_1aaf516c8a593a94d2779925758c559c03" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::world::WorldController</scope><name>generateWorld</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_world_controller_1a4084faa3eaecdeb8bfd54f1a73b5d832" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::world::WorldController</scope><name>worlds</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="dir_98aa5d11f3be26dcf21276e3b5434fed" kind="dir">
+    <compoundname>org/izdevs/acidium/entity</compoundname>
+    <innerfile refid="_abstract_mob_spawner_8java">AbstractMobSpawner.java</innerfile>
+    <innerfile refid="_entity_holder_8java">EntityHolder.java</innerfile>
+    <innerfile refid="_mob_holder_8java">MobHolder.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="org/izdevs/acidium/entity/"/>
+  </compounddef>
+</doxygen>

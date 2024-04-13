@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_block" xml:lang="en-US">
+<title>org.izdevs.acidium.world.Block Class Reference</title>
+<indexterm><primary>org.izdevs.acidium.world.Block</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_block_1afb9fc19f2196f05359dad84877ee0e18">Block</link> (int x, int y, <link linkend="_enumorg_1_1izdevs_1_1acidium_1_1world_1_1_block_type">BlockType</link> type, boolean walkable)</para>
+</listitem>
+            <listitem><para>String <link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_block_1a187e6b78b2ceb5763f02ec58fd8789fa">toString</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_block_1afb9fc19f2196f05359dad84877ee0e18"/><section>
+    <title>Block()</title>
+<indexterm><primary>Block</primary><secondary>org.izdevs.acidium.world.Block</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.world.Block</primary><secondary>Block</secondary></indexterm>
+<para><computeroutput>org.izdevs.acidium.world.Block.Block (int x, int y, <link linkend="_enumorg_1_1izdevs_1_1acidium_1_1world_1_1_block_type">BlockType</link> type, boolean walkable)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_block_1a187e6b78b2ceb5763f02ec58fd8789fa"/><section>
+    <title>toString()</title>
+<indexterm><primary>toString</primary><secondary>org.izdevs.acidium.world.Block</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.world.Block</primary><secondary>toString</secondary></indexterm>
+<para><computeroutput>String org.izdevs.acidium.world.Block.toString ( )</computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+org/izdevs/acidium/world/<link linkend="__block_8java">Block.java</link></section>
+</section>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="namespaceorg_1_1izdevs_1_1acidium_1_1game" kind="namespace" language="Java">
+    <compoundname>org::izdevs::acidium::game</compoundname>
+    <innernamespace refid="namespaceorg_1_1izdevs_1_1acidium_1_1game_1_1crafting">org::izdevs::acidium::game::crafting</innernamespace>
+    <innernamespace refid="namespaceorg_1_1izdevs_1_1acidium_1_1game_1_1equipment">org::izdevs::acidium::game::equipment</innernamespace>
+    <innernamespace refid="namespaceorg_1_1izdevs_1_1acidium_1_1game_1_1inventory">org::izdevs::acidium::game::inventory</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="[generated]" line="1" column="1"/>
+  </compounddef>
+</doxygen>

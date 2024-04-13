@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="namespaceorg_1_1izdevs_1_1acidium_1_1api_1_1v1" kind="namespace" language="Java">
+    <compoundname>org::izdevs::acidium::api::v1</compoundname>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_block_spec" prot="public">org::izdevs::acidium::api::v1::BlockSpec</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_command_definition" prot="public">org::izdevs::acidium::api::v1::CommandDefinition</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner" prot="public">org::izdevs::acidium::api::v1::DefaultSpawner</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_error" prot="public">org::izdevs::acidium::api::v1::Error</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob" prot="public">org::izdevs::acidium::api::v1::Mob</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_payload" prot="public">org::izdevs::acidium::api::v1::Payload</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_player" prot="public">org::izdevs::acidium::api::v1::Player</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_role" prot="public">org::izdevs::acidium::api::v1::Role</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_structure" prot="public">org::izdevs::acidium::api::v1::Structure</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_user" prot="public">org::izdevs::acidium::api::v1::User</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1v1" prot="public">org::izdevs::acidium::api::v1::v1</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="org/izdevs/acidium/api/v1/BlockSpec.java" line="1" column="15"/>
+  </compounddef>
+</doxygen>

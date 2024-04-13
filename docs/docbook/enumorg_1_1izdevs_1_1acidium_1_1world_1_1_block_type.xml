@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_enumorg_1_1izdevs_1_1acidium_1_1world_1_1_block_type" xml:lang="en-US">
+<title>org.izdevs.acidium.world.BlockType Enum Reference</title>
+<indexterm><primary>org.izdevs.acidium.world.BlockType</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_enumorg_1_1izdevs_1_1acidium_1_1world_1_1_block_type_1a8cd15c667a5141976ea28c50ba5e89d6">VOID</link></para>
+</listitem>
+            <listitem><para><link linkend="_enumorg_1_1izdevs_1_1acidium_1_1world_1_1_block_type_1a5911b1a5c3dc77cb4700840bb1129ab1">CREDIT_BLOCK</link></para>
+</listitem>
+            <listitem><para><link linkend="_enumorg_1_1izdevs_1_1acidium_1_1world_1_1_block_type_1a6ed49f83a8bdc9e1af96b50bba8f27ca">WOOD</link></para>
+</listitem>
+            <listitem><para><link linkend="_enumorg_1_1izdevs_1_1acidium_1_1world_1_1_block_type_1a253c53468b366b9b55c274149d876962">STONE</link></para>
+</listitem>
+            <listitem><para><link linkend="_enumorg_1_1izdevs_1_1acidium_1_1world_1_1_block_type_1aa3b400e091b73824685711bc34153bd8">SPAWNER</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_enumorg_1_1izdevs_1_1acidium_1_1world_1_1_block_type_1a5911b1a5c3dc77cb4700840bb1129ab1"/><section>
+    <title>CREDIT_BLOCK</title>
+<indexterm><primary>CREDIT_BLOCK</primary><secondary>org.izdevs.acidium.world.BlockType</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.world.BlockType</primary><secondary>CREDIT_BLOCK</secondary></indexterm>
+<para><computeroutput>org.izdevs.acidium.world.BlockType.CREDIT_BLOCK</computeroutput></para></section>
+<anchor xml:id="_enumorg_1_1izdevs_1_1acidium_1_1world_1_1_block_type_1aa3b400e091b73824685711bc34153bd8"/><section>
+    <title>SPAWNER</title>
+<indexterm><primary>SPAWNER</primary><secondary>org.izdevs.acidium.world.BlockType</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.world.BlockType</primary><secondary>SPAWNER</secondary></indexterm>
+<para><computeroutput>org.izdevs.acidium.world.BlockType.SPAWNER</computeroutput></para></section>
+<anchor xml:id="_enumorg_1_1izdevs_1_1acidium_1_1world_1_1_block_type_1a253c53468b366b9b55c274149d876962"/><section>
+    <title>STONE</title>
+<indexterm><primary>STONE</primary><secondary>org.izdevs.acidium.world.BlockType</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.world.BlockType</primary><secondary>STONE</secondary></indexterm>
+<para><computeroutput>org.izdevs.acidium.world.BlockType.STONE</computeroutput></para></section>
+<anchor xml:id="_enumorg_1_1izdevs_1_1acidium_1_1world_1_1_block_type_1a8cd15c667a5141976ea28c50ba5e89d6"/><section>
+    <title>VOID</title>
+<indexterm><primary>VOID</primary><secondary>org.izdevs.acidium.world.BlockType</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.world.BlockType</primary><secondary>VOID</secondary></indexterm>
+<para><computeroutput>org.izdevs.acidium.world.BlockType.VOID</computeroutput></para></section>
+<anchor xml:id="_enumorg_1_1izdevs_1_1acidium_1_1world_1_1_block_type_1a6ed49f83a8bdc9e1af96b50bba8f27ca"/><section>
+    <title>WOOD</title>
+<indexterm><primary>WOOD</primary><secondary>org.izdevs.acidium.world.BlockType</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.world.BlockType</primary><secondary>WOOD</secondary></indexterm>
+<para><computeroutput>org.izdevs.acidium.world.BlockType.WOOD</computeroutput></para></section>
+<para>
+The documentation for this enum was generated from the following file:</para>
+org/izdevs/acidium/world/<link linkend="__block_type_8java">BlockType.java</link></section>
+</section>

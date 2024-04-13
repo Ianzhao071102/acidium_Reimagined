@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config" xml:lang="en-US">
+<title>org.izdevs.acidium.configuration.Config Class Reference</title>
+<indexterm><primary>org.izdevs.acidium.configuration.Config</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>boolean <link linkend="_classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a59d989bc4ece57cc3fb00788f07e78a3">generateWorldUponStart</link> ()</para>
+</listitem>
+            <listitem><para>DataSource <link linkend="_classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1afb9c2923a3e81c1924c07536f7f8fcd9">getDataSource</link> ()</para>
+</listitem>
+            <listitem><para>SecurityFilterChain <link linkend="_classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a4059c3cd22e3d5e51653c0d690755eea">filterChain</link> (HttpSecurity http)  throws Exception </para>
+</listitem>
+            <listitem><para>LettuceConnectionFactory <link linkend="_classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a7eea17c1847c7952374248dd9bcac4bb">connectionFactory</link> ()</para>
+</listitem>
+            <listitem><para>HttpSessionIdResolver <link linkend="_classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1ac4b312762e66f6bb8dcb3c07ffb55dfa">httpSessionIdResolver</link> ()</para>
+</listitem>
+            <listitem><para>int <link linkend="_classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a09feec244a656f72959a990964d4f71c">getTicksPerSecond</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static int <link linkend="_classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a688abc0a00f17627d4a11bf0abafc670">getMaxPlayers</link> ()</para>
+</listitem>
+            <listitem><para>static String <link linkend="_classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1ac52b05436c2a42a421d099de1e4ee26e">version</link> ()</para>
+</listitem>
+            <listitem><para>static String <link linkend="_classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a680619f1d54bac5f4255e57b5a4a3b10">getCredits</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>static final int <link linkend="_classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a240342a2960c55a1b368948d8399366e">ticksPerSecond</link> = 20</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a7eea17c1847c7952374248dd9bcac4bb"/><section>
+    <title>connectionFactory()</title>
+<indexterm><primary>connectionFactory</primary><secondary>org.izdevs.acidium.configuration.Config</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.configuration.Config</primary><secondary>connectionFactory</secondary></indexterm>
+<para><computeroutput>LettuceConnectionFactory org.izdevs.acidium.configuration.Config.connectionFactory ( )</computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a4059c3cd22e3d5e51653c0d690755eea"/><section>
+    <title>filterChain()</title>
+<indexterm><primary>filterChain</primary><secondary>org.izdevs.acidium.configuration.Config</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.configuration.Config</primary><secondary>filterChain</secondary></indexterm>
+<para><computeroutput>SecurityFilterChain org.izdevs.acidium.configuration.Config.filterChain (HttpSecurity http) throws Exception</computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a59d989bc4ece57cc3fb00788f07e78a3"/><section>
+    <title>generateWorldUponStart()</title>
+<indexterm><primary>generateWorldUponStart</primary><secondary>org.izdevs.acidium.configuration.Config</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.configuration.Config</primary><secondary>generateWorldUponStart</secondary></indexterm>
+<para><computeroutput>boolean org.izdevs.acidium.configuration.Config.generateWorldUponStart ( )</computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a680619f1d54bac5f4255e57b5a4a3b10"/><section>
+    <title>getCredits()</title>
+<indexterm><primary>getCredits</primary><secondary>org.izdevs.acidium.configuration.Config</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.configuration.Config</primary><secondary>getCredits</secondary></indexterm>
+<para><computeroutput>static String org.izdevs.acidium.configuration.Config.getCredits ( )<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1afb9c2923a3e81c1924c07536f7f8fcd9"/><section>
+    <title>getDataSource()</title>
+<indexterm><primary>getDataSource</primary><secondary>org.izdevs.acidium.configuration.Config</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.configuration.Config</primary><secondary>getDataSource</secondary></indexterm>
+<para><computeroutput>DataSource org.izdevs.acidium.configuration.Config.getDataSource ( )</computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a688abc0a00f17627d4a11bf0abafc670"/><section>
+    <title>getMaxPlayers()</title>
+<indexterm><primary>getMaxPlayers</primary><secondary>org.izdevs.acidium.configuration.Config</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.configuration.Config</primary><secondary>getMaxPlayers</secondary></indexterm>
+<para><computeroutput>static int org.izdevs.acidium.configuration.Config.getMaxPlayers ( )<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a09feec244a656f72959a990964d4f71c"/><section>
+    <title>getTicksPerSecond()</title>
+<indexterm><primary>getTicksPerSecond</primary><secondary>org.izdevs.acidium.configuration.Config</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.configuration.Config</primary><secondary>getTicksPerSecond</secondary></indexterm>
+<para><computeroutput>int org.izdevs.acidium.configuration.Config.getTicksPerSecond ( )</computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1ac4b312762e66f6bb8dcb3c07ffb55dfa"/><section>
+    <title>httpSessionIdResolver()</title>
+<indexterm><primary>httpSessionIdResolver</primary><secondary>org.izdevs.acidium.configuration.Config</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.configuration.Config</primary><secondary>httpSessionIdResolver</secondary></indexterm>
+<para><computeroutput>HttpSessionIdResolver org.izdevs.acidium.configuration.Config.httpSessionIdResolver ( )</computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1ac52b05436c2a42a421d099de1e4ee26e"/><section>
+    <title>version()</title>
+<indexterm><primary>version</primary><secondary>org.izdevs.acidium.configuration.Config</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.configuration.Config</primary><secondary>version</secondary></indexterm>
+<para><computeroutput>static String org.izdevs.acidium.configuration.Config.version ( )<computeroutput>[static]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_config_1a240342a2960c55a1b368948d8399366e"/><section>
+    <title>ticksPerSecond</title>
+<indexterm><primary>ticksPerSecond</primary><secondary>org.izdevs.acidium.configuration.Config</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.configuration.Config</primary><secondary>ticksPerSecond</secondary></indexterm>
+<para><computeroutput>final int org.izdevs.acidium.configuration.Config.ticksPerSecond = 20<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+org/izdevs/acidium/configuration/<link linkend="__config_8java">Config.java</link></section>
+</section>

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_98aa5d11f3be26dcf21276e3b5434fed" xml:lang="en-US">
+<title>org/izdevs/acidium/entity Directory Reference</title>
+<indexterm><primary>org/izdevs/acidium/entity Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="__abstract_mob_spawner_8java">AbstractMobSpawner.java</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__entity_holder_8java">EntityHolder.java</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__mob_holder_8java">MobHolder.java</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

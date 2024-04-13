@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_7fb1f7943cb9971089aa4ff13a6676c7" xml:lang="en-US">
+<title>org/izdevs/acidium/networking Directory Reference</title>
+<indexterm><primary>org/izdevs/acidium/networking Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="__health_endpoint_8java">HealthEndpoint.java</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__rest_a_p_i_8java">RestAPI.java</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__server_handler_role_controller_8java">ServerHandlerRoleController.java</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

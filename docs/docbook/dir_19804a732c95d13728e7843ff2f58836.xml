@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_19804a732c95d13728e7843ff2f58836" xml:lang="en-US">
+<title>org/izdevs/acidium Directory Reference</title>
+<indexterm><primary>org/izdevs/acidium Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Directories    </title>
+        <itemizedlist>
+            <listitem><para>directory <link linkend="_dir_a004fdcb629a5b977db66b6336b46f8f">api</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_2920dbd9a30b07bd63404c5cd6f794da">basic</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_ae15f012fd74ba7a11fcd238657a9ab8">command</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_645c71bef7fa5df731038e5a5fa0f763">configuration</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_98aa5d11f3be26dcf21276e3b5434fed">entity</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_42849946004144c5bce6dfb66fb413cb">game</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_7fb1f7943cb9971089aa4ff13a6676c7">networking</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_99f533f1e47eaa6bd9e4ec8a10d0d976">scheduling</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_a62f484f87244055746c9c6261d0cbb8">security</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_514c35f31740c89b0996de52ce4fa8d6">serialization</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_a2aa72e0850811ac53d45adc58c79d9e">tick</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_52a976509c2d3b1f396466b157badefd">utils</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_aefd42e6b7ade5e1bbc72ebe26ba4d1b">world</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="__acidium_application_8java">AcidiumApplication.java</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__metrics_8java">Metrics.java</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__startup_tasks_runner_8java">StartupTasksRunner.java</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

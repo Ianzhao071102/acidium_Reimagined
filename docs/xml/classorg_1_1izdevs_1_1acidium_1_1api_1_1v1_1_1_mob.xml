@@ -1,0 +1,284 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob" kind="class" language="Java" prot="public">
+    <compoundname>org::izdevs::acidium::api::v1::Mob</compoundname>
+    <basecompoundref refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource" prot="public" virt="non-virtual">org.izdevs.acidium.serialization.Resource</basecompoundref>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob_1aafa225bf6a65b46093b493a3e90c44ff" prot="public" static="no" mutable="no">
+        <type>Set&lt; <ref refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment" kindref="compound">Equipment</ref> &gt;</type>
+        <definition>Set&lt;Equipment&gt; org.izdevs.acidium.api.v1.Mob.equipments</definition>
+        <argsstring></argsstring>
+        <name>equipments</name>
+        <qualifiedname>org.izdevs.acidium.api.v1.Mob.equipments</qualifiedname>
+        <initializer>= new HashSet&lt;&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/api/v1/Mob.java" line="20" column="16" bodyfile="org/izdevs/acidium/api/v1/Mob.java" bodystart="20" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob_1a80f2a97e8bbd0d989c43e0593d9f6c30" prot="package" static="no" mutable="no">
+        <type>int</type>
+        <definition>int org.izdevs.acidium.api.v1.Mob.id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <qualifiedname>org.izdevs.acidium.api.v1.Mob.id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/api/v1/Mob.java" line="25" column="9" bodyfile="org/izdevs/acidium/api/v1/Mob.java" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob_1a78b74ed3285fbbb9b9bf7701f6be41c3" prot="package" static="no" mutable="no">
+        <type>int</type>
+        <definition>int org.izdevs.acidium.api.v1.Mob.x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>org.izdevs.acidium.api.v1.Mob.x</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/api/v1/Mob.java" line="27" column="9" bodyfile="org/izdevs/acidium/api/v1/Mob.java" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob_1a4c9117695dab2d02d3bdba7d229e3d94" prot="package" static="no" mutable="no">
+        <type>int</type>
+        <definition>int org.izdevs.acidium.api.v1.Mob.y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <qualifiedname>org.izdevs.acidium.api.v1.Mob.y</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/api/v1/Mob.java" line="27" column="11" bodyfile="org/izdevs/acidium/api/v1/Mob.java" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob_1a480845874b4a08603e1ce6b232cc4e83" prot="package" static="no" mutable="no">
+        <type>double</type>
+        <definition>double org.izdevs.acidium.api.v1.Mob.speed</definition>
+        <argsstring></argsstring>
+        <name>speed</name>
+        <qualifiedname>org.izdevs.acidium.api.v1.Mob.speed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/api/v1/Mob.java" line="29" column="12" bodyfile="org/izdevs/acidium/api/v1/Mob.java" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob_1ad5de63921faa222fb644161b1cb38373" prot="package" static="no" mutable="no">
+        <type>int</type>
+        <definition>int org.izdevs.acidium.api.v1.Mob.health</definition>
+        <argsstring></argsstring>
+        <name>health</name>
+        <qualifiedname>org.izdevs.acidium.api.v1.Mob.health</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/api/v1/Mob.java" line="31" column="9" bodyfile="org/izdevs/acidium/api/v1/Mob.java" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob_1a9350701ae1a0fd111b8a2fbf47ff0af9" prot="package" static="no" mutable="no">
+        <type>int</type>
+        <definition>int org.izdevs.acidium.api.v1.Mob.hitboxRadius</definition>
+        <argsstring></argsstring>
+        <name>hitboxRadius</name>
+        <qualifiedname>org.izdevs.acidium.api.v1.Mob.hitboxRadius</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/api/v1/Mob.java" line="32" column="9" bodyfile="org/izdevs/acidium/api/v1/Mob.java" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob_1a2567d3f6f2d147f52ac45df61f6fd9b0" prot="package" static="no" mutable="no">
+        <type>int</type>
+        <definition>int org.izdevs.acidium.api.v1.Mob.bDamage</definition>
+        <argsstring></argsstring>
+        <name>bDamage</name>
+        <qualifiedname>org.izdevs.acidium.api.v1.Mob.bDamage</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/api/v1/Mob.java" line="33" column="9" bodyfile="org/izdevs/acidium/api/v1/Mob.java" bodystart="33" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob_1ab918558582f2d379f1dd4a6e3d494f69" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.izdevs.acidium.api.v1.Mob.Mob</definition>
+        <argsstring>(String name, double speed, int health, int bDamage, int hitboxRadius)</argsstring>
+        <name>Mob</name>
+        <qualifiedname>org.izdevs.acidium.api.v1.Mob.Mob</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>speed</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>health</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bDamage</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>hitboxRadius</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/api/v1/Mob.java" line="35" column="12" bodyfile="org/izdevs/acidium/api/v1/Mob.java" bodystart="35" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob_1aee374fd6c729d66e51d1a8db8d17aaf0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.izdevs.acidium.api.v1.Mob.Mob</definition>
+        <argsstring>()</argsstring>
+        <name>Mob</name>
+        <qualifiedname>org.izdevs.acidium.api.v1.Mob.Mob</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/api/v1/Mob.java" line="46" column="12" bodyfile="org/izdevs/acidium/api/v1/Mob.java" bodystart="46" bodyend="53"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>org.izdevs.acidium.api.v1.Mob</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>org.izdevs.acidium.serialization.Resource</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>org.izdevs.acidium.tick.Ticked</label>
+        <link refid="interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="6">
+        <label>ArrayList&lt; org.izdevs.acidium.serialization.org.izdevs.acidium.serialization.Resource &gt;</label>
+      </node>
+      <node id="7">
+        <label>ArrayList&lt; org.izdevs.acidium.serialization.SpecObject &gt;</label>
+      </node>
+      <node id="4">
+        <label>List&lt; String &gt;</label>
+      </node>
+      <node id="9">
+        <label>Set&lt; org.izdevs.acidium.game.equipment.Equipment &gt;</label>
+      </node>
+      <node id="8">
+        <label>CompoundTag</label>
+      </node>
+      <node id="1">
+        <label>org.izdevs.acidium.api.v1.Mob</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>equipments</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>org.izdevs.acidium.serialization.API</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_a_p_i"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>resources</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>org.izdevs.acidium.serialization.Resource</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>flags</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>associatedApi</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>spec</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>org.izdevs.acidium.tick.Ticked</label>
+        <link refid="interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked"/>
+      </node>
+    </collaborationgraph>
+    <location file="org/izdevs/acidium/api/v1/Mob.java" line="18" column="7" bodyfile="org/izdevs/acidium/api/v1/Mob.java" bodystart="18" bodyend="54"/>
+    <listofallmembers>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1ad0d3f44f8acefcfbddd0fa7fb1932e9f" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Mob</scope><name>associatedApi</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob_1a2567d3f6f2d147f52ac45df61f6fd9b0" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Mob</scope><name>bDamage</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a144bc7e47869f072a7c73de69b79a692" prot="protected" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Mob</scope><name>data</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a6efcff05516ad5e72adfbb551661c55c" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Mob</scope><name>deserialize</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob_1aafa225bf6a65b46093b493a3e90c44ff" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Mob</scope><name>equipments</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a5d5ba600eed132ef2c162435d8224089" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Mob</scope><name>flags</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob_1ad5de63921faa222fb644161b1cb38373" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Mob</scope><name>health</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob_1a9350701ae1a0fd111b8a2fbf47ff0af9" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Mob</scope><name>hitboxRadius</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob_1a80f2a97e8bbd0d989c43e0593d9f6c30" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Mob</scope><name>id</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1af9fe4f85b4f96665a923115659f6f7d9" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Mob</scope><name>isApi</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob_1ab918558582f2d379f1dd4a6e3d494f69" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Mob</scope><name>Mob</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob_1aee374fd6c729d66e51d1a8db8d17aaf0" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Mob</scope><name>Mob</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1abf18cab08c368a891577b690dadd0dbf" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Mob</scope><name>name</name></member>
+      <member refid="interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_1a63bde21e89f3b22cdb7339cf9b5273d3" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Mob</scope><name>pause</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1afade681ca6717ccad248bd959265b6ee" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Mob</scope><name>register</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a16acb5661ffb22692600432742d99377" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Mob</scope><name>Resource</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a352f73d7686be3b801ca64ad533bf9ff" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Mob</scope><name>Resource</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1aaa419bc8d735c4a399270b271a1f8544" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Mob</scope><name>serialize</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1af4c8ae34bc7cfba3d931180a1b87732c" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Mob</scope><name>spec</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob_1a480845874b4a08603e1ce6b232cc4e83" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Mob</scope><name>speed</name></member>
+      <member refid="interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_1a9b9edb150904e40a51a3764b66e88ba9" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Mob</scope><name>stopTick</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1ad44cb29834bf78042ea08624bf9a8579" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Mob</scope><name>tick</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a2219c8ab43b89ceb1baa8d81f1ee1ae6" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Mob</scope><name>ticked</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a2c9a3debdfd3ae73331dde74e1388fd3" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Mob</scope><name>tickRun</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a679f102509a380319eb8eb387c69c976" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Mob</scope><name>typeName</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a0f37c2e1a0b76afa70eec77e622fa51d" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Mob</scope><name>unset</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob_1a78b74ed3285fbbb9b9bf7701f6be41c3" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Mob</scope><name>x</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob_1a4c9117695dab2d02d3bdba7d229e3d94" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::api::v1::Mob</scope><name>y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

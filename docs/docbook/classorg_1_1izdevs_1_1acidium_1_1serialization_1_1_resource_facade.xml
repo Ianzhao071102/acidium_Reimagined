@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_facade" xml:lang="en-US">
+<title>org.izdevs.acidium.serialization.ResourceFacade Class Reference</title>
+<indexterm><primary>org.izdevs.acidium.serialization.ResourceFacade</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource">Resource</link> <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_facade_1af83d75378346edae103c7d57e1f000db">findByNameAndApiIs</link> (String name, boolean api)</para>
+</listitem>
+            <listitem><para><link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource">Resource</link> <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_facade_1aa6020f19b09fe298d517c3b975f07d6c">findByNameAndAssociatedApi</link> (String name, <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_a_p_i">API</link> api)</para>
+</listitem>
+            <listitem><para><link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource">Resource</link> <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_facade_1a0d2780a5135167b5c9e062c768089479">findResource</link> (String name, String api)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_facade_1a3d65e2cd8ee76c0c4ae3c42c0d917ef9">registerAPI</link> (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_a_p_i">API</link> api)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_facade_1a4b7d64367a6f46bf80ce0d7a305de4b1">registerResource</link> (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource">Resource</link> resource)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_facade_1a8534bc3bd0750ce34bb3b1c1234ec648">start</link> ()  throws InstantiationException, IllegalAccessException </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_facade_1af83d75378346edae103c7d57e1f000db"/><section>
+    <title>findByNameAndApiIs()</title>
+<indexterm><primary>findByNameAndApiIs</primary><secondary>org.izdevs.acidium.serialization.ResourceFacade</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.serialization.ResourceFacade</primary><secondary>findByNameAndApiIs</secondary></indexterm>
+<para><computeroutput><link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource">Resource</link> org.izdevs.acidium.serialization.ResourceFacade.findByNameAndApiIs (String name, boolean api)</computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_facade_1aa6020f19b09fe298d517c3b975f07d6c"/><section>
+    <title>findByNameAndAssociatedApi()</title>
+<indexterm><primary>findByNameAndAssociatedApi</primary><secondary>org.izdevs.acidium.serialization.ResourceFacade</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.serialization.ResourceFacade</primary><secondary>findByNameAndAssociatedApi</secondary></indexterm>
+<para><computeroutput><link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource">Resource</link> org.izdevs.acidium.serialization.ResourceFacade.findByNameAndAssociatedApi (String name, <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_a_p_i">API</link> api)</computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_facade_1a0d2780a5135167b5c9e062c768089479"/><section>
+    <title>findResource()</title>
+<indexterm><primary>findResource</primary><secondary>org.izdevs.acidium.serialization.ResourceFacade</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.serialization.ResourceFacade</primary><secondary>findResource</secondary></indexterm>
+<para><computeroutput><link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource">Resource</link> org.izdevs.acidium.serialization.ResourceFacade.findResource (String name, String api)</computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_facade_1a3d65e2cd8ee76c0c4ae3c42c0d917ef9"/><section>
+    <title>registerAPI()</title>
+<indexterm><primary>registerAPI</primary><secondary>org.izdevs.acidium.serialization.ResourceFacade</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.serialization.ResourceFacade</primary><secondary>registerAPI</secondary></indexterm>
+<para><computeroutput>static void org.izdevs.acidium.serialization.ResourceFacade.registerAPI (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_a_p_i">API</link> api)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_facade_1a4b7d64367a6f46bf80ce0d7a305de4b1"/><section>
+    <title>registerResource()</title>
+<indexterm><primary>registerResource</primary><secondary>org.izdevs.acidium.serialization.ResourceFacade</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.serialization.ResourceFacade</primary><secondary>registerResource</secondary></indexterm>
+<para><computeroutput>static void org.izdevs.acidium.serialization.ResourceFacade.registerResource (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource">Resource</link> resource)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_facade_1a8534bc3bd0750ce34bb3b1c1234ec648"/><section>
+    <title>start()</title>
+<indexterm><primary>start</primary><secondary>org.izdevs.acidium.serialization.ResourceFacade</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.serialization.ResourceFacade</primary><secondary>start</secondary></indexterm>
+<para><computeroutput>static void org.izdevs.acidium.serialization.ResourceFacade.start ( ) throws InstantiationException, IllegalAccessException<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+org/izdevs/acidium/serialization/<link linkend="__resource_facade_8java">ResourceFacade.java</link></section>
+</section>

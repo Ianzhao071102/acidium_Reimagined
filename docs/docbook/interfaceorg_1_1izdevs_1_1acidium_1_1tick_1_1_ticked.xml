@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked" xml:lang="en-US">
+<title>org.izdevs.acidium.tick.Ticked Interface Reference</title>
+<indexterm><primary>org.izdevs.acidium.tick.Ticked</primary></indexterm>
+<para>Inheritance diagram for org.izdevs.acidium.tick.Ticked:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_1adca105a95287fc09c9ba288b332be9cd">tick</link> ()</para>
+</listitem>
+            <listitem><para>default void <link linkend="_interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_1a9b9edb150904e40a51a3764b66e88ba9">stopTick</link> ()</para>
+</listitem>
+            <listitem><para>default void <link linkend="_interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_1a63bde21e89f3b22cdb7339cf9b5273d3">pause</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_1a63bde21e89f3b22cdb7339cf9b5273d3"/><section>
+    <title>pause()</title>
+<indexterm><primary>pause</primary><secondary>org.izdevs.acidium.tick.Ticked</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.tick.Ticked</primary><secondary>pause</secondary></indexterm>
+<para><computeroutput>default void org.izdevs.acidium.tick.Ticked.pause ( )</computeroutput></para></section>
+<anchor xml:id="_interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_1a9b9edb150904e40a51a3764b66e88ba9"/><section>
+    <title>stopTick()</title>
+<indexterm><primary>stopTick</primary><secondary>org.izdevs.acidium.tick.Ticked</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.tick.Ticked</primary><secondary>stopTick</secondary></indexterm>
+<para><computeroutput>default void org.izdevs.acidium.tick.Ticked.stopTick ( )</computeroutput></para></section>
+<anchor xml:id="_interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_1adca105a95287fc09c9ba288b332be9cd"/><section>
+    <title>tick()</title>
+<indexterm><primary>tick</primary><secondary>org.izdevs.acidium.tick.Ticked</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.tick.Ticked</primary><secondary>tick</secondary></indexterm>
+<para><computeroutput>void org.izdevs.acidium.tick.Ticked.tick ( )</computeroutput></para><para>
+Implemented in <link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_1afb025f3f8927362ecfc464090cb7c66a">org.izdevs.acidium.api.v1.DefaultSpawner</link>, <link linkend="_interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner_1a55565bef61455867d5226679f61a6fa9">org.izdevs.acidium.entity.AbstractMobSpawner</link>, <link linkend="_classorg_1_1izdevs_1_1acidium_1_1entity_1_1_mob_holder_1a0d8246483c5656616a342f76a1b6f23a">org.izdevs.acidium.entity.MobHolder</link>, and <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1ad44cb29834bf78042ea08624bf9a8579">org.izdevs.acidium.serialization.Resource</link>.</para>
+</section>
+<para>
+The documentation for this interface was generated from the following file:</para>
+org/izdevs/acidium/tick/<link linkend="__ticked_8java">Ticked.java</link></section>
+</section>

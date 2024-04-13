@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="_structure_8java" kind="file" language="Java">
+    <compoundname>Structure.java</compoundname>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_structure" prot="public">org::izdevs::acidium::api::v1::Structure</innerclass>
+    <innernamespace refid="namespaceorg_1_1izdevs_1_1acidium_1_1api_1_1v1">org::izdevs::acidium::api::v1</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">package<sp/></highlight><highlight class="normal">org.izdevs.acidium.api.v1;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>com.esri.core.geometry.Point;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>lombok.Getter;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>lombok.Setter;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>org.izdevs.acidium.serialization.Resource;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>org.izdevs.acidium.world.Block;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>org.izdevs.acidium.world.StructureHolder;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>java.util.HashMap;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>java.util.Map;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">@Getter</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">@Setter</highlight></codeline>
+<codeline lineno="15" refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_structure" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_structure" kindref="compound">Structure</ref><sp/></highlight><highlight class="keyword">extends</highlight><highlight class="normal"><sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource" kindref="compound">Resource</ref><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//TODO<sp/>FINISH<sp/>SOME<sp/>STRUCTURES<sp/>IN<sp/>THIS<sp/>FORM<sp/>AND<sp/>ALSO<sp/>SERIALIZATION<sp/>TO<sp/>AND<sp/>FROM<sp/>NBT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_structure_1a9e1808246bb1db1383fa7ad2ab2f5058" kindref="member">Structure</ref>(String<sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1abf18cab08c368a891577b690dadd0dbf" kindref="member">name</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super(<ref refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1abf18cab08c368a891577b690dadd0dbf" kindref="member">name</ref>,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>Map&lt;Point,<sp/>Block&gt;<sp/>description<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>HashMap&lt;&gt;();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_structure_1aeb30133e4e285dc353e5c4dddc4ade64" kindref="member">registerToHolder</ref>(){</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_structure_holder" kindref="compound">StructureHolder</ref>.<ref refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_structure_holder_1a292e84fd71e9bfc99d3a1b4b5217d660" kindref="member">register</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="org/izdevs/acidium/api/v1/Structure.java"/>
+  </compounddef>
+</doxygen>

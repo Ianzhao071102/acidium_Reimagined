@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="namespaceorg_1_1izdevs_1_1acidium_1_1security" kind="namespace" language="Java">
+    <compoundname>org::izdevs::acidium::security</compoundname>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1security_1_1_authorization_content" prot="public">org::izdevs::acidium::security::AuthorizationContent</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1security_1_1_player_manager" prot="public">org::izdevs::acidium::security::PlayerManager</innerclass>
+    <innerclass refid="interfaceorg_1_1izdevs_1_1acidium_1_1security_1_1_role_controller" prot="public">org::izdevs::acidium::security::RoleController</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1security_1_1_role_manager" prot="public">org::izdevs::acidium::security::RoleManager</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1security_1_1_session_detail" prot="public">org::izdevs::acidium::security::SessionDetail</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1security_1_1_session_generator" prot="public">org::izdevs::acidium::security::SessionGenerator</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="org/izdevs/acidium/security/AuthorizationContent.java" line="1" column="15"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,73 @@
+.TH "org.izdevs.acidium.world.World" 3 "Version Alpha-0.1" "Acidium" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+org.izdevs.acidium.world.World
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBorg\&.izdevs\&.acidium\&.world\&.TickedWorld\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBWorld\fP (Map< Point, \fBBlock\fP > map)"
+.br
+.ti -1c
+.RI "\fBBlock\fP \fBgetBlockAtLoc\fP (\fBLocation\fP location)"
+.br
+.ti -1c
+.RI "void \fBsetBlockAtLoc\fP (\fBLocation\fP location, \fBBlock\fP block)"
+.br
+.ti -1c
+.RI "String \fBtoString\fP ()"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBorg\&.izdevs\&.acidium\&.world\&.TickedWorld\fP
+.in +1c
+.ti -1c
+.RI "\fBTickedWorld\fP (Map< Point, \fBBlock\fP > map)"
+.br
+.ti -1c
+.RI "void \fBaddPlayer\fP (\fBPlayer\fP player)"
+.br
+.ti -1c
+.RI "void \fBaddMob\fP (\fBMob\fP mob)"
+.br
+.ti -1c
+.RI "void \fBdelPlayer\fP (\fBPlayer\fP player)"
+.br
+.ti -1c
+.RI "void \fBdelMob\fP (\fBMob\fP mob)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBorg\&.izdevs\&.acidium\&.world\&.TickedWorld\fP
+.in +1c
+.ti -1c
+.RI "volatile ArrayList< \fBMob\fP > \fBmobs\fP = new ArrayList<>()"
+.br
+.ti -1c
+.RI "volatile ArrayList< \fBPlayer\fP > \fBplayers\fP = new ArrayList<\fBPlayer\fP>()"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "org\&.izdevs\&.acidium\&.world\&.World\&.World (Map< Point, \fBBlock\fP > map)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBBlock\fP org\&.izdevs\&.acidium\&.world\&.World\&.getBlockAtLoc (\fBLocation\fP location)"
+
+.SS "void org\&.izdevs\&.acidium\&.world\&.World\&.setBlockAtLoc (\fBLocation\fP location, \fBBlock\fP block)"
+
+.SS "String org\&.izdevs\&.acidium\&.world\&.World\&.toString ()"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Acidium from the source code\&.

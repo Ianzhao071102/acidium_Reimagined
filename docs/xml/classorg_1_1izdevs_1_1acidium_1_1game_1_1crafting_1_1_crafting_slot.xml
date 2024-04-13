@@ -1,0 +1,346 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_slot" kind="class" language="Java" prot="public">
+    <compoundname>org::izdevs::acidium::game::crafting::CraftingSlot</compoundname>
+    <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_slot_1aaaf13ef619501be7726df3e485444349" prot="package" static="no" mutable="no">
+        <type><ref refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment" kindref="compound">Equipment</ref></type>
+        <definition>Equipment org.izdevs.acidium.game.crafting.CraftingSlot.content</definition>
+        <argsstring></argsstring>
+        <name>content</name>
+        <qualifiedname>org.izdevs.acidium.game.crafting.CraftingSlot.content</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/game/crafting/CraftingSlot.java" line="8" column="15" bodyfile="org/izdevs/acidium/game/crafting/CraftingSlot.java" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_slot_1aff7ec12ba3e8a9c8032417035478993d" prot="package" static="no" mutable="no">
+        <type>int</type>
+        <definition>int org.izdevs.acidium.game.crafting.CraftingSlot.x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>org.izdevs.acidium.game.crafting.CraftingSlot.x</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/game/crafting/CraftingSlot.java" line="9" column="9" bodyfile="org/izdevs/acidium/game/crafting/CraftingSlot.java" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_slot_1a12d08d59304ddc20e411f7e68f31aa22" prot="package" static="no" mutable="no">
+        <type>int</type>
+        <definition>int org.izdevs.acidium.game.crafting.CraftingSlot.y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <qualifiedname>org.izdevs.acidium.game.crafting.CraftingSlot.y</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/game/crafting/CraftingSlot.java" line="9" column="11" bodyfile="org/izdevs/acidium/game/crafting/CraftingSlot.java" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_slot_1a87126516c8b10240b37b9d23e0c23e25" prot="package" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean org.izdevs.acidium.game.crafting.CraftingSlot.disordered</definition>
+        <argsstring></argsstring>
+        <name>disordered</name>
+        <qualifiedname>org.izdevs.acidium.game.crafting.CraftingSlot.disordered</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/game/crafting/CraftingSlot.java" line="10" column="13" bodyfile="org/izdevs/acidium/game/crafting/CraftingSlot.java" bodystart="10" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_slot_1adb7dbe7d81a46255f3b7a908fca0a90f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.izdevs.acidium.game.crafting.CraftingSlot.CraftingSlot</definition>
+        <argsstring>(int x, int y, Equipment equipment)</argsstring>
+        <name>CraftingSlot</name>
+        <qualifiedname>org.izdevs.acidium.game.crafting.CraftingSlot.CraftingSlot</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type><ref refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment" kindref="compound">Equipment</ref></type>
+          <declname>equipment</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/game/crafting/CraftingSlot.java" line="11" column="12" bodyfile="org/izdevs/acidium/game/crafting/CraftingSlot.java" bodystart="11" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_slot_1a85291439684167f38fe38206023fd79e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.izdevs.acidium.game.crafting.CraftingSlot.CraftingSlot</definition>
+        <argsstring>(Equipment equipment)</argsstring>
+        <name>CraftingSlot</name>
+        <qualifiedname>org.izdevs.acidium.game.crafting.CraftingSlot.CraftingSlot</qualifiedname>
+        <param>
+          <type><ref refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment" kindref="compound">Equipment</ref></type>
+          <declname>equipment</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/game/crafting/CraftingSlot.java" line="17" column="12" bodyfile="org/izdevs/acidium/game/crafting/CraftingSlot.java" bodystart="17" bodyend="20"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="8">
+        <label>ArrayList&lt; org.izdevs.acidium.serialization.org.izdevs.acidium.serialization.Resource &gt;</label>
+      </node>
+      <node id="19">
+        <label>ArrayList&lt; org.izdevs.acidium.api.v1.Mob &gt;</label>
+      </node>
+      <node id="20">
+        <label>ArrayList&lt; org.izdevs.acidium.api.v1.Player &gt;</label>
+      </node>
+      <node id="9">
+        <label>ArrayList&lt; org.izdevs.acidium.serialization.SpecObject &gt;</label>
+      </node>
+      <node id="6">
+        <label>List&lt; String &gt;</label>
+      </node>
+      <node id="23">
+        <label>List&lt; org.izdevs.acidium.api.v1.Mob &gt;</label>
+      </node>
+      <node id="14">
+        <label>List&lt; org.izdevs.acidium.game.equipment.Equipment &gt;</label>
+      </node>
+      <node id="21">
+        <label>Map&lt; Point, org.izdevs.acidium.world.Block &gt;</label>
+      </node>
+      <node id="28">
+        <label>Runnable</label>
+      </node>
+      <node id="31">
+        <label>Set&lt; org.izdevs.acidium.game.crafting.CraftingSlot &gt;</label>
+      </node>
+      <node id="32">
+        <label>Set&lt; org.izdevs.acidium.game.inventory.InventoryType &gt;</label>
+      </node>
+      <node id="24">
+        <label>StateMachine&lt; org.izdevs.acidium.basic.Entity, org.izdevs.acidium.basic.BasicEntityState &gt;</label>
+      </node>
+      <node id="26">
+        <label>State&lt; Entity &gt;</label>
+      </node>
+      <node id="11">
+        <label>Telegraph</label>
+      </node>
+      <node id="16">
+        <label>FloatArray</label>
+      </node>
+      <node id="10">
+        <label>CompoundTag</label>
+      </node>
+      <node id="1">
+        <label>org.izdevs.acidium.game.crafting.CraftingSlot</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_slot"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>content</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>org.izdevs.acidium.basic.AbstractBehaviourController</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_abstract_behaviour_controller"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>controlled</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>current</edgelabel>
+          <edgelabel>goal</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>world</edgelabel>
+        </childnode>
+      </node>
+      <node id="25">
+        <label>org.izdevs.acidium.basic.BasicEntityState</label>
+        <link refid="enumorg_1_1izdevs_1_1acidium_1_1basic_1_1_basic_entity_state"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>org.izdevs.acidium.basic.Entity</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>armourInv</edgelabel>
+          <edgelabel>electronInv</edgelabel>
+          <edgelabel>inventory</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>controller</edgelabel>
+        </childnode>
+        <childnode refid="24" relation="usage">
+          <edgelabel>stateMachine</edgelabel>
+        </childnode>
+        <childnode refid="25" relation="usage">
+          <edgelabel>state</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>world</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>pathFinderGoal</edgelabel>
+        </childnode>
+        <childnode refid="27" relation="usage">
+          <edgelabel>task</edgelabel>
+        </childnode>
+      </node>
+      <node id="22">
+        <label>org.izdevs.acidium.entity.AbstractMobSpawner</label>
+        <link refid="interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="23" relation="usage">
+          <edgelabel>jobQueue</edgelabel>
+        </childnode>
+      </node>
+      <node id="30">
+        <label>org.izdevs.acidium.game.crafting.CraftingRecipe</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_recipe"/>
+        <childnode refid="31" relation="usage">
+          <edgelabel>slots</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>org.izdevs.acidium.game.equipment.Equipment</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="30" relation="usage">
+          <edgelabel>recipe</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>equipEntity</edgelabel>
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>allowedSlots</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>org.izdevs.acidium.game.inventory.Inventory</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1inventory_1_1_inventory"/>
+        <childnode refid="13" relation="usage">
+          <edgelabel>type</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>items</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>org.izdevs.acidium.game.inventory.InventoryType</label>
+        <link refid="enumorg_1_1izdevs_1_1acidium_1_1game_1_1inventory_1_1_inventory_type"/>
+      </node>
+      <node id="27">
+        <label>org.izdevs.acidium.scheduling.ScheduledTask</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_scheduled_task"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+        <childnode refid="29" relation="usage">
+          <edgelabel>state</edgelabel>
+        </childnode>
+      </node>
+      <node id="29">
+        <label>org.izdevs.acidium.scheduling.ScheduledTask.State</label>
+        <link refid="enumorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_scheduled_task_1_1_state"/>
+      </node>
+      <node id="7">
+        <label>org.izdevs.acidium.serialization.API</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_a_p_i"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>resources</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>org.izdevs.acidium.serialization.Resource</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>flags</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>associatedApi</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>spec</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>org.izdevs.acidium.tick.Ticked</label>
+        <link refid="interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked"/>
+      </node>
+      <node id="18">
+        <label>org.izdevs.acidium.world.TickedWorld</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_ticked_world"/>
+        <childnode refid="19" relation="usage">
+          <edgelabel>mobs</edgelabel>
+        </childnode>
+        <childnode refid="20" relation="usage">
+          <edgelabel>players</edgelabel>
+        </childnode>
+        <childnode refid="21" relation="usage">
+          <edgelabel>map</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
+        <label>org.izdevs.acidium.world.World</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_world"/>
+        <childnode refid="18" relation="public-inheritance">
+        </childnode>
+        <childnode refid="22" relation="usage">
+          <edgelabel>spawner</edgelabel>
+        </childnode>
+        <childnode refid="21" relation="usage">
+          <edgelabel>map</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="org/izdevs/acidium/game/crafting/CraftingSlot.java" line="7" column="7" bodyfile="org/izdevs/acidium/game/crafting/CraftingSlot.java" bodystart="7" bodyend="21"/>
+    <listofallmembers>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_slot_1aaaf13ef619501be7726df3e485444349" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::crafting::CraftingSlot</scope><name>content</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_slot_1adb7dbe7d81a46255f3b7a908fca0a90f" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::crafting::CraftingSlot</scope><name>CraftingSlot</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_slot_1a85291439684167f38fe38206023fd79e" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::game::crafting::CraftingSlot</scope><name>CraftingSlot</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_slot_1a87126516c8b10240b37b9d23e0c23e25" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::crafting::CraftingSlot</scope><name>disordered</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_slot_1aff7ec12ba3e8a9c8032417035478993d" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::crafting::CraftingSlot</scope><name>x</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1crafting_1_1_crafting_slot_1a12d08d59304ddc20e411f7e68f31aa22" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::game::crafting::CraftingSlot</scope><name>y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

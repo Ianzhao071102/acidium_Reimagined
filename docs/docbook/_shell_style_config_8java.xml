@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__shell_style_config_8java" xml:lang="en-US">
+<title>org/izdevs/acidium/configuration/ShellStyleConfig.java File Reference</title>
+<indexterm><primary>org/izdevs/acidium/configuration/ShellStyleConfig.java</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_shell_style_config">org.izdevs.acidium.configuration.ShellStyleConfig</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Packages    </title>
+        <itemizedlist>
+            <listitem><para>package <link linkend="_namespaceorg_1_1izdevs_1_1acidium_1_1configuration">org.izdevs.acidium.configuration</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

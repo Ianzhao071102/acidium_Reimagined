@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__role_controller_8java" xml:lang="en-US">
+<title>org/izdevs/acidium/security/RoleController.java File Reference</title>
+<indexterm><primary>org/izdevs/acidium/security/RoleController.java</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>interface <link linkend="_interfaceorg_1_1izdevs_1_1acidium_1_1security_1_1_role_controller">org.izdevs.acidium.security.RoleController</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Packages    </title>
+        <itemizedlist>
+            <listitem><para>package <link linkend="_namespaceorg_1_1izdevs_1_1acidium_1_1security">org.izdevs.acidium.security</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

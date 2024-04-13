@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_n_b_t_parser" kind="class" language="Java" prot="public">
+    <compoundname>org::izdevs::acidium::serialization::NBTParser</compoundname>
+    <sectiondef kind="package-static-attrib">
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_n_b_t_parser_1aaf6d73cb1a2bf43a469eb2f5f3ba17ef" prot="package" static="yes" mutable="no">
+        <type>Logger</type>
+        <definition>Logger org.izdevs.acidium.serialization.NBTParser.logger</definition>
+        <argsstring></argsstring>
+        <name>logger</name>
+        <qualifiedname>org.izdevs.acidium.serialization.NBTParser.logger</qualifiedname>
+        <initializer>= LoggerFactory.getLogger(NBTParser.class)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/serialization/NBTParser.java" line="36" column="19" bodyfile="org/izdevs/acidium/serialization/NBTParser.java" bodystart="36" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_n_b_t_parser_1a38f2d0059d8c2118b624d0f3aae287e1" prot="public" static="yes" mutable="no">
+        <type>ArrayList&lt; <ref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_command_definition" kindref="compound">CommandDefinition</ref> &gt;</type>
+        <definition>ArrayList&lt;CommandDefinition&gt; org.izdevs.acidium.serialization.NBTParser.definitions</definition>
+        <argsstring></argsstring>
+        <name>definitions</name>
+        <qualifiedname>org.izdevs.acidium.serialization.NBTParser.definitions</qualifiedname>
+        <initializer>= new ArrayList&lt;&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/serialization/NBTParser.java" line="37" column="29" bodyfile="org/izdevs/acidium/serialization/NBTParser.java" bodystart="37" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_n_b_t_parser_1a6a03683a6c85124f361c64e575da5fec" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void org.izdevs.acidium.serialization.NBTParser.registerNBTDef</definition>
+        <argsstring>(InputStream raw)</argsstring>
+        <name>registerNBTDef</name>
+        <qualifiedname>org.izdevs.acidium.serialization.NBTParser.registerNBTDef</qualifiedname>
+        <param>
+          <type>InputStream</type>
+          <declname>raw</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/serialization/NBTParser.java" line="39" column="24" bodyfile="org/izdevs/acidium/serialization/NBTParser.java" bodystart="39" bodyend="219"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>ArrayList&lt; org.izdevs.acidium.api.v1.CommandDefinition &gt;</label>
+      </node>
+      <node id="1">
+        <label>org.izdevs.acidium.serialization.NBTParser</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_n_b_t_parser"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>logger</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>definitions</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Logger</label>
+      </node>
+    </collaborationgraph>
+    <location file="org/izdevs/acidium/serialization/NBTParser.java" line="35" column="7" bodyfile="org/izdevs/acidium/serialization/NBTParser.java" bodystart="35" bodyend="221"/>
+    <listofallmembers>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_n_b_t_parser_1a38f2d0059d8c2118b624d0f3aae287e1" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::serialization::NBTParser</scope><name>definitions</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_n_b_t_parser_1aaf6d73cb1a2bf43a469eb2f5f3ba17ef" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::serialization::NBTParser</scope><name>logger</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_n_b_t_parser_1a6a03683a6c85124f361c64e575da5fec" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::serialization::NBTParser</scope><name>registerNBTDef</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

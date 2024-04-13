@@ -1,0 +1,117 @@
+.TH "org.izdevs.acidium.serialization.Resource" 3 "Version Alpha-0.1" "Acidium" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+org.izdevs.acidium.serialization.Resource
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBorg\&.izdevs\&.acidium\&.tick\&.Ticked\fP\&.
+.PP
+Inherited by \fBorg\&.izdevs\&.acidium\&.api\&.v1\&.BlockSpec\fP, \fBorg\&.izdevs\&.acidium\&.api\&.v1\&.CommandDefinition\fP, \fBorg\&.izdevs\&.acidium\&.api\&.v1\&.DefaultSpawner\fP, \fBorg\&.izdevs\&.acidium\&.api\&.v1\&.Error\fP, \fBorg\&.izdevs\&.acidium\&.api\&.v1\&.Mob\fP, \fBorg\&.izdevs\&.acidium\&.api\&.v1\&.Payload\fP, \fBorg\&.izdevs\&.acidium\&.api\&.v1\&.Structure\fP, \fBorg\&.izdevs\&.acidium\&.api\&.v1\&.User\fP, \fBorg\&.izdevs\&.acidium\&.basic\&.Entity\fP, and \fBorg\&.izdevs\&.acidium\&.serialization\&.API\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBResource\fP (String \fBname\fP, ArrayList< \fBSpecObject\fP > objects)"
+.br
+.ti -1c
+.RI "\fBResource\fP (String \fBname\fP, boolean \fBisApi\fP)"
+.br
+.ti -1c
+.RI "void \fBregister\fP ()"
+.br
+.ti -1c
+.RI "String \fBserialize\fP ()"
+.br
+.ti -1c
+.RI "void \fBtick\fP ()"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBorg\&.izdevs\&.acidium\&.tick\&.Ticked\fP
+.in +1c
+.ti -1c
+.RI "default void \fBstopTick\fP ()"
+.br
+.ti -1c
+.RI "default void \fBpause\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBResource\fP \fBdeserialize\fP (String serialized)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "boolean \fBunset\fP"
+.br
+.ti -1c
+.RI "boolean \fBisApi\fP"
+.br
+.ti -1c
+.RI "\fBAPI\fP \fBassociatedApi\fP"
+.br
+.ti -1c
+.RI "String \fBtypeName\fP"
+.br
+.ti -1c
+.RI "String \fBname\fP"
+.br
+.ti -1c
+.RI "ArrayList< \fBSpecObject\fP > \fBspec\fP"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "CompoundTag \fBdata\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "org\&.izdevs\&.acidium\&.serialization\&.Resource\&.Resource (String name, ArrayList< \fBSpecObject\fP > objects)"
+
+.SS "org\&.izdevs\&.acidium\&.serialization\&.Resource\&.Resource (String name, boolean isApi)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "static \fBResource\fP org\&.izdevs\&.acidium\&.serialization\&.Resource\&.deserialize (String serialized)\fR [static]\fP"
+
+.SS "void org\&.izdevs\&.acidium\&.serialization\&.Resource\&.register ()"
+
+.SS "String org\&.izdevs\&.acidium\&.serialization\&.Resource\&.serialize ()"
+
+.SS "void org\&.izdevs\&.acidium\&.serialization\&.Resource\&.tick ()"
+
+.PP
+Implements \fBorg\&.izdevs\&.acidium\&.tick\&.Ticked\fP\&.
+.PP
+Reimplemented in \fBorg\&.izdevs\&.acidium\&.api\&.v1\&.DefaultSpawner\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBAPI\fP org\&.izdevs\&.acidium\&.serialization\&.Resource\&.associatedApi"
+
+.SS "CompoundTag org\&.izdevs\&.acidium\&.serialization\&.Resource\&.data\fR [protected]\fP"
+
+.SS "boolean org\&.izdevs\&.acidium\&.serialization\&.Resource\&.isApi"
+
+.SS "String org\&.izdevs\&.acidium\&.serialization\&.Resource\&.name"
+
+.SS "ArrayList<\fBSpecObject\fP> org\&.izdevs\&.acidium\&.serialization\&.Resource\&.spec"
+
+.SS "String org\&.izdevs\&.acidium\&.serialization\&.Resource\&.typeName"
+
+.SS "boolean org\&.izdevs\&.acidium\&.serialization\&.Resource\&.unset"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Acidium from the source code\&.

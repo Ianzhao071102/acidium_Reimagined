@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classorg_1_1izdevs_1_1acidium_1_1networking_1_1_health_endpoint" xml:lang="en-US">
+<title>org.izdevs.acidium.networking.HealthEndpoint Class Reference</title>
+<indexterm><primary>org.izdevs.acidium.networking.HealthEndpoint</primary></indexterm>
+<para>Inheritance diagram for org.izdevs.acidium.networking.HealthEndpoint:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classorg_1_1izdevs_1_1acidium_1_1networking_1_1_health_endpoint.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1networking_1_1_health_endpoint_1a50f512897f291f9672b5682d7b4fc76d">doGet</link> (HttpServletRequest req, HttpServletResponse resp)  throws ServletException, IOException </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1networking_1_1_health_endpoint_1a50f512897f291f9672b5682d7b4fc76d"/><section>
+    <title>doGet()</title>
+<indexterm><primary>doGet</primary><secondary>org.izdevs.acidium.networking.HealthEndpoint</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.networking.HealthEndpoint</primary><secondary>doGet</secondary></indexterm>
+<para><computeroutput>void org.izdevs.acidium.networking.HealthEndpoint.doGet (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+org/izdevs/acidium/networking/<link linkend="__health_endpoint_8java">HealthEndpoint.java</link></section>
+</section>

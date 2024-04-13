@@ -1,0 +1,71 @@
+.TH "org.izdevs.acidium.scheduling.DelayedTask" 3 "Version Alpha-0.1" "Acidium" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+org.izdevs.acidium.scheduling.DelayedTask
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBorg\&.izdevs\&.acidium\&.scheduling\&.ScheduledTask\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDelayedTask\fP (Runnable task, long \fBdestTick\fP)"
+.br
+.ti -1c
+.RI "\fBDelayedTask\fP (Runnable task, long \fBdestTick\fP, boolean single)"
+.br
+.ti -1c
+.RI "\fBDelayedTask\fP (Runnable task, long \fBdestTick\fP, boolean single, Runnable update)"
+.br
+.ti -1c
+.RI "\fBDelayedTask\fP (Runnable task, long \fBdestTick\fP, Runnable update)"
+.br
+.ti -1c
+.RI "void \fBupdate\fP ()"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBorg\&.izdevs\&.acidium\&.scheduling\&.ScheduledTask\fP
+.in +1c
+.ti -1c
+.RI "void \fBrun\fP ()"
+.br
+.ti -1c
+.RI "\fBScheduledTask\fP (Runnable task)"
+.br
+.ti -1c
+.RI "void \fBexec\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "long \fBdestTick\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "org\&.izdevs\&.acidium\&.scheduling\&.DelayedTask\&.DelayedTask (Runnable task, long destTick)"
+
+.SS "org\&.izdevs\&.acidium\&.scheduling\&.DelayedTask\&.DelayedTask (Runnable task, long destTick, boolean single)"
+
+.SS "org\&.izdevs\&.acidium\&.scheduling\&.DelayedTask\&.DelayedTask (Runnable task, long destTick, boolean single, Runnable update)"
+
+.SS "org\&.izdevs\&.acidium\&.scheduling\&.DelayedTask\&.DelayedTask (Runnable task, long destTick, Runnable update)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void org\&.izdevs\&.acidium\&.scheduling\&.DelayedTask\&.update ()"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "long org\&.izdevs\&.acidium\&.scheduling\&.DelayedTask\&.destTick"
+the ticks it should wait before being executed 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Acidium from the source code\&.

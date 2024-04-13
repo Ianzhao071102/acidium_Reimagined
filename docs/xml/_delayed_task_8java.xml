@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="_delayed_task_8java" kind="file" language="Java">
+    <compoundname>DelayedTask.java</compoundname>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_delayed_task" prot="public">org::izdevs::acidium::scheduling::DelayedTask</innerclass>
+    <innernamespace refid="namespaceorg_1_1izdevs_1_1acidium_1_1scheduling">org::izdevs::acidium::scheduling</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="namespaceorg_1_1izdevs_1_1acidium_1_1scheduling" refkind="compound"><highlight class="keyword">package<sp/></highlight><highlight class="normal">org.izdevs.acidium.scheduling;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>lombok.Getter;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>lombok.Setter;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal">@Getter</highlight></codeline>
+<codeline lineno="7" refid="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_delayed_task" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_delayed_task" kindref="compound">DelayedTask</ref><sp/></highlight><highlight class="keyword">extends</highlight><highlight class="normal"><sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_scheduled_task" kindref="compound">ScheduledTask</ref>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>Runnable<sp/>update;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>@Getter</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>@Setter</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/>single;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_delayed_task_1a4391bf65464f327540e8868517cebd76" kindref="member">destTick</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_delayed_task_1a95172cd6ee48ced7d3a3dc8a316ae8fc" kindref="member">DelayedTask</ref>(Runnable<sp/>task,</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_delayed_task_1a4391bf65464f327540e8868517cebd76" kindref="member">destTick</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super(task);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.destTick<sp/>=<sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_delayed_task_1a4391bf65464f327540e8868517cebd76" kindref="member">destTick</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_delayed_task_1a95172cd6ee48ced7d3a3dc8a316ae8fc" kindref="member">DelayedTask</ref>(Runnable<sp/>task,</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_delayed_task_1a4391bf65464f327540e8868517cebd76" kindref="member">destTick</ref>,</highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/>single)<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super(task);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.destTick<sp/>=<sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_delayed_task_1a4391bf65464f327540e8868517cebd76" kindref="member">destTick</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.single<sp/>=<sp/>single;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_delayed_task_1a95172cd6ee48ced7d3a3dc8a316ae8fc" kindref="member">DelayedTask</ref>(Runnable<sp/>task,</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_delayed_task_1a4391bf65464f327540e8868517cebd76" kindref="member">destTick</ref>,</highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/>single,<sp/>Runnable<sp/>update)<sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super(task);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.destTick<sp/>=<sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_delayed_task_1a4391bf65464f327540e8868517cebd76" kindref="member">destTick</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.single<sp/>=<sp/>single;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.update<sp/>=<sp/>update;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_delayed_task_1a95172cd6ee48ced7d3a3dc8a316ae8fc" kindref="member">DelayedTask</ref>(Runnable<sp/>task,</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_delayed_task_1a4391bf65464f327540e8868517cebd76" kindref="member">destTick</ref>,<sp/>Runnable<sp/>update)<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super(task);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.destTick<sp/>=<sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_delayed_task_1a4391bf65464f327540e8868517cebd76" kindref="member">destTick</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.update<sp/>=<sp/>update;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>update(){</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(this.update<sp/>!=<sp/></highlight><highlight class="keyword">null</highlight><highlight class="normal">)<sp/>this.update.run();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="org/izdevs/acidium/scheduling/DelayedTask.java"/>
+  </compounddef>
+</doxygen>

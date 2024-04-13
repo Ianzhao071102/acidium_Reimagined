@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="deprecated" kind="page">
+    <compoundname>deprecated</compoundname>
+    <title>Deprecated List</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><variablelist>
+<varlistentry><term>Member <ref refid="enumorg_1_1izdevs_1_1acidium_1_1game_1_1inventory_1_1_inventory_type_1ac967bcdc6f0506d51d74a378664de97b" kindref="member">org.izdevs.acidium.game.inventory.InventoryType._Graphics</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000001"/> graphics rendering implementation </para>
+</listitem>
+</variablelist>
+</para>
+    </detaileddescription>
+    <location file="deprecated"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="_world_generator_8java" kind="file" language="Java">
+    <compoundname>WorldGenerator.java</compoundname>
+    <innerclass refid="interfaceorg_1_1izdevs_1_1acidium_1_1world_1_1_world_generator" prot="public">org::izdevs::acidium::world::WorldGenerator</innerclass>
+    <innernamespace refid="namespaceorg_1_1izdevs_1_1acidium_1_1world">org::izdevs::acidium::world</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">package<sp/></highlight><highlight class="normal">org.izdevs.acidium.world;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="interfaceorg_1_1izdevs_1_1acidium_1_1world_1_1_world_generator" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">interface<sp/></highlight><highlight class="normal"><ref refid="interfaceorg_1_1izdevs_1_1acidium_1_1world_1_1_world_generator" kindref="compound">WorldGenerator</ref><sp/>{</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_world" kindref="compound">World</ref><sp/><ref refid="interfaceorg_1_1izdevs_1_1acidium_1_1world_1_1_world_generator_1a27a1534656139fbb31ad6dbc20639752" kindref="member">generate</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="interfaceorg_1_1izdevs_1_1acidium_1_1world_1_1_world_generator_1a623e091b40a1c871f1ae8aa718ea3c11" kindref="member">seed</ref>);</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/>String<sp/><ref refid="interfaceorg_1_1izdevs_1_1acidium_1_1world_1_1_world_generator_1a623e091b40a1c871f1ae8aa718ea3c11" kindref="member">seed</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/>String<sp/><ref refid="interfaceorg_1_1izdevs_1_1acidium_1_1world_1_1_world_generator_1a555ccf43d11cd605756677e8e9c58ed7" kindref="member">type</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="org/izdevs/acidium/world/WorldGenerator.java"/>
+  </compounddef>
+</doxygen>

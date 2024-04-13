@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="dir_645c71bef7fa5df731038e5a5fa0f763" kind="dir">
+    <compoundname>org/izdevs/acidium/configuration</compoundname>
+    <innerfile refid="_config_8java">Config.java</innerfile>
+    <innerfile refid="_initializer_8java">Initializer.java</innerfile>
+    <innerfile refid="_shell_style_config_8java">ShellStyleConfig.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="org/izdevs/acidium/configuration/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_reflect_util" kind="class" language="Java" prot="public">
+    <compoundname>org::izdevs::acidium::serialization::ReflectUtil</compoundname>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_reflect_util_1acbffc4f33d45fe16c06a737b60c9b227" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource" kindref="compound">Resource</ref>[]</type>
+        <definition>static Resource[] org.izdevs.acidium.serialization.ReflectUtil.getResources</definition>
+        <argsstring>()</argsstring>
+        <name>getResources</name>
+        <qualifiedname>org.izdevs.acidium.serialization.ReflectUtil.getResources</qualifiedname>
+        <exceptions> throws IOException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/serialization/ReflectUtil.java" line="9" column="28" bodyfile="org/izdevs/acidium/serialization/ReflectUtil.java" bodystart="9" bodyend="12"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="org/izdevs/acidium/serialization/ReflectUtil.java" line="8" column="7" bodyfile="org/izdevs/acidium/serialization/ReflectUtil.java" bodystart="8" bodyend="13"/>
+    <listofallmembers>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_reflect_util_1acbffc4f33d45fe16c06a737b60c9b227" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::serialization::ReflectUtil</scope><name>getResources</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

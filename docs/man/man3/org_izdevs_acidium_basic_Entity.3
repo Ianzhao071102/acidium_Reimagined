@@ -1,0 +1,125 @@
+.TH "org.izdevs.acidium.basic.Entity" 3 "Version Alpha-0.1" "Acidium" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+org.izdevs.acidium.basic.Entity
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBorg\&.izdevs\&.acidium\&.serialization\&.Resource\fP, and Telegraph\&.
+.PP
+Inherited by \fBorg\&.izdevs\&.acidium\&.api\&.v1\&.Player\fP, and \fBorg\&.izdevs\&.acidium\&.game\&.equipment\&.Equipment\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEntity\fP (String name, double movementSpeed, int health, int hitboxRadius, int bDamage)"
+.br
+.ti -1c
+.RI "\fBEntity\fP (\fBWorld\fP world, String name, double movementSpeed, int health, int hitboxRadius, int bDamage)"
+.br
+.ti -1c
+.RI "boolean \fBhandleMessage\fP (Telegram telegram)"
+.br
+.ti -1c
+.RI "void \fBdamage\fP (int health)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBorg\&.izdevs\&.acidium\&.serialization\&.Resource\fP
+.in +1c
+.ti -1c
+.RI "\fBResource\fP (String \fBname\fP, ArrayList< \fBSpecObject\fP > objects)"
+.br
+.ti -1c
+.RI "\fBResource\fP (String \fBname\fP, boolean \fBisApi\fP)"
+.br
+.ti -1c
+.RI "void \fBregister\fP ()"
+.br
+.ti -1c
+.RI "String \fBserialize\fP ()"
+.br
+.ti -1c
+.RI "void \fBtick\fP ()"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBorg\&.izdevs\&.acidium\&.tick\&.Ticked\fP
+.in +1c
+.ti -1c
+.RI "default void \fBstopTick\fP ()"
+.br
+.ti -1c
+.RI "default void \fBpause\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static boolean \fBisColliding\fP (\fBEntity\fP a, \fBEntity\fP b)"
+.br
+.ti -1c
+.RI "static boolean \fBisColliding\fP (\fBMob\fP a, \fBEntity\fP b)"
+.br
+.in -1c
+
+Static Public Member Functions inherited from \fBorg\&.izdevs\&.acidium\&.serialization\&.Resource\fP
+.in +1c
+.ti -1c
+.RI "static \fBResource\fP \fBdeserialize\fP (String serialized)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Attributes inherited from \fBorg\&.izdevs\&.acidium\&.serialization\&.Resource\fP
+.in +1c
+.ti -1c
+.RI "boolean \fBunset\fP"
+.br
+.ti -1c
+.RI "boolean \fBisApi\fP"
+.br
+.ti -1c
+.RI "\fBAPI\fP \fBassociatedApi\fP"
+.br
+.ti -1c
+.RI "String \fBtypeName\fP"
+.br
+.ti -1c
+.RI "String \fBname\fP"
+.br
+.ti -1c
+.RI "ArrayList< \fBSpecObject\fP > \fBspec\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBorg\&.izdevs\&.acidium\&.serialization\&.Resource\fP
+.in +1c
+.ti -1c
+.RI "CompoundTag \fBdata\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "org\&.izdevs\&.acidium\&.basic\&.Entity\&.Entity (String name, double movementSpeed, int health, int hitboxRadius, int bDamage)"
+
+.SS "org\&.izdevs\&.acidium\&.basic\&.Entity\&.Entity (\fBWorld\fP world, String name, double movementSpeed, int health, int hitboxRadius, int bDamage)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void org\&.izdevs\&.acidium\&.basic\&.Entity\&.damage (int health)"
+damages the entity one tick later 
+.SS "boolean org\&.izdevs\&.acidium\&.basic\&.Entity\&.handleMessage (Telegram telegram)"
+
+.SS "static boolean org\&.izdevs\&.acidium\&.basic\&.Entity\&.isColliding (\fBEntity\fP a, \fBEntity\fP b)\fR [static]\fP"
+check if two entities are colliding 
+.SS "static boolean org\&.izdevs\&.acidium\&.basic\&.Entity\&.isColliding (\fBMob\fP a, \fBEntity\fP b)\fR [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Acidium from the source code\&.

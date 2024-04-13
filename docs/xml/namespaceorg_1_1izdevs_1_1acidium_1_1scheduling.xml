@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="namespaceorg_1_1izdevs_1_1acidium_1_1scheduling" kind="namespace" language="Java">
+    <compoundname>org::izdevs::acidium::scheduling</compoundname>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_delayed_task" prot="public">org::izdevs::acidium::scheduling::DelayedTask</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_loop_manager" prot="public">org::izdevs::acidium::scheduling::LoopManager</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1scheduling_1_1_scheduled_task" prot="public">org::izdevs::acidium::scheduling::ScheduledTask</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="org/izdevs/acidium/scheduling/DelayedTask.java" line="1" column="15"/>
+  </compounddef>
+</doxygen>

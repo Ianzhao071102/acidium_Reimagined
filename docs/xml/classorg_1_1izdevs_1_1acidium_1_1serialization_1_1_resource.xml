@@ -1,0 +1,469 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource" kind="class" language="Java" prot="public">
+    <compoundname>org::izdevs::acidium::serialization::Resource</compoundname>
+    <basecompoundref refid="interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked" prot="public" virt="non-virtual">org.izdevs.acidium.tick.Ticked</basecompoundref>
+    <derivedcompoundref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_block_spec" prot="public" virt="non-virtual">org.izdevs.acidium.api.v1.BlockSpec</derivedcompoundref>
+    <derivedcompoundref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_command_definition" prot="public" virt="non-virtual">org.izdevs.acidium.api.v1.CommandDefinition</derivedcompoundref>
+    <derivedcompoundref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner" prot="public" virt="non-virtual">org.izdevs.acidium.api.v1.DefaultSpawner</derivedcompoundref>
+    <derivedcompoundref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_error" prot="public" virt="non-virtual">org.izdevs.acidium.api.v1.Error</derivedcompoundref>
+    <derivedcompoundref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob" prot="public" virt="non-virtual">org.izdevs.acidium.api.v1.Mob</derivedcompoundref>
+    <derivedcompoundref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_payload" prot="public" virt="non-virtual">org.izdevs.acidium.api.v1.Payload</derivedcompoundref>
+    <derivedcompoundref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_structure" prot="public" virt="non-virtual">org.izdevs.acidium.api.v1.Structure</derivedcompoundref>
+    <derivedcompoundref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_user" prot="public" virt="non-virtual">org.izdevs.acidium.api.v1.User</derivedcompoundref>
+    <derivedcompoundref refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity" prot="public" virt="non-virtual">org.izdevs.acidium.basic.Entity</derivedcompoundref>
+    <derivedcompoundref refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_a_p_i" prot="public" virt="non-virtual">org.izdevs.acidium.serialization.API</derivedcompoundref>
+    <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a2c9a3debdfd3ae73331dde74e1388fd3" prot="package" static="no" mutable="no">
+        <type>Runnable</type>
+        <definition>Runnable org.izdevs.acidium.serialization.Resource.tickRun</definition>
+        <argsstring></argsstring>
+        <name>tickRun</name>
+        <qualifiedname>org.izdevs.acidium.serialization.Resource.tickRun</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/serialization/Resource.java" line="19" column="14" bodyfile="org/izdevs/acidium/serialization/Resource.java" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a2219c8ab43b89ceb1baa8d81f1ee1ae6" prot="package" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean org.izdevs.acidium.serialization.Resource.ticked</definition>
+        <argsstring></argsstring>
+        <name>ticked</name>
+        <qualifiedname>org.izdevs.acidium.serialization.Resource.ticked</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/serialization/Resource.java" line="21" column="13" bodyfile="org/izdevs/acidium/serialization/Resource.java" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a5d5ba600eed132ef2c162435d8224089" prot="package" static="no" mutable="no">
+        <type>List&lt; String &gt;</type>
+        <definition>List&lt;String&gt; org.izdevs.acidium.serialization.Resource.flags</definition>
+        <argsstring></argsstring>
+        <name>flags</name>
+        <qualifiedname>org.izdevs.acidium.serialization.Resource.flags</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/serialization/Resource.java" line="24" column="10" bodyfile="org/izdevs/acidium/serialization/Resource.java" bodystart="24" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a0f37c2e1a0b76afa70eec77e622fa51d" prot="public" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean org.izdevs.acidium.serialization.Resource.unset</definition>
+        <argsstring></argsstring>
+        <name>unset</name>
+        <qualifiedname>org.izdevs.acidium.serialization.Resource.unset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/serialization/Resource.java" line="27" column="20" bodyfile="org/izdevs/acidium/serialization/Resource.java" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1af9fe4f85b4f96665a923115659f6f7d9" prot="public" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean org.izdevs.acidium.serialization.Resource.isApi</definition>
+        <argsstring></argsstring>
+        <name>isApi</name>
+        <qualifiedname>org.izdevs.acidium.serialization.Resource.isApi</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/serialization/Resource.java" line="29" column="20" bodyfile="org/izdevs/acidium/serialization/Resource.java" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1ad0d3f44f8acefcfbddd0fa7fb1932e9f" prot="public" static="no" mutable="no">
+        <type><ref refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_a_p_i" kindref="compound">API</ref></type>
+        <definition>API org.izdevs.acidium.serialization.Resource.associatedApi</definition>
+        <argsstring></argsstring>
+        <name>associatedApi</name>
+        <qualifiedname>org.izdevs.acidium.serialization.Resource.associatedApi</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/serialization/Resource.java" line="31" column="16" bodyfile="org/izdevs/acidium/serialization/Resource.java" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a679f102509a380319eb8eb387c69c976" prot="public" static="no" mutable="no">
+        <type>String</type>
+        <definition>String org.izdevs.acidium.serialization.Resource.typeName</definition>
+        <argsstring></argsstring>
+        <name>typeName</name>
+        <qualifiedname>org.izdevs.acidium.serialization.Resource.typeName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/serialization/Resource.java" line="35" column="19" bodyfile="org/izdevs/acidium/serialization/Resource.java" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1abf18cab08c368a891577b690dadd0dbf" prot="public" static="no" mutable="no">
+        <type>String</type>
+        <definition>String org.izdevs.acidium.serialization.Resource.name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <qualifiedname>org.izdevs.acidium.serialization.Resource.name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/serialization/Resource.java" line="38" column="19" bodyfile="org/izdevs/acidium/serialization/Resource.java" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1af4c8ae34bc7cfba3d931180a1b87732c" prot="public" static="no" mutable="no">
+        <type>ArrayList&lt; <ref refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_spec_object" kindref="compound">SpecObject</ref> &gt;</type>
+        <definition>ArrayList&lt;SpecObject&gt; org.izdevs.acidium.serialization.Resource.spec</definition>
+        <argsstring></argsstring>
+        <name>spec</name>
+        <qualifiedname>org.izdevs.acidium.serialization.Resource.spec</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/serialization/Resource.java" line="41" column="22" bodyfile="org/izdevs/acidium/serialization/Resource.java" bodystart="41" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a144bc7e47869f072a7c73de69b79a692" prot="protected" static="no" mutable="no">
+        <type>CompoundTag</type>
+        <definition>CompoundTag org.izdevs.acidium.serialization.Resource.data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <qualifiedname>org.izdevs.acidium.serialization.Resource.data</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/serialization/Resource.java" line="70" column="27" bodyfile="org/izdevs/acidium/serialization/Resource.java" bodystart="70" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a16acb5661ffb22692600432742d99377" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.izdevs.acidium.serialization.Resource.Resource</definition>
+        <argsstring>(String name, ArrayList&lt; SpecObject &gt; objects)</argsstring>
+        <name>Resource</name>
+        <qualifiedname>org.izdevs.acidium.serialization.Resource.Resource</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>ArrayList&lt; <ref refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_spec_object" kindref="compound">SpecObject</ref> &gt;</type>
+          <declname>objects</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/serialization/Resource.java" line="42" column="12" bodyfile="org/izdevs/acidium/serialization/Resource.java" bodystart="42" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a352f73d7686be3b801ca64ad533bf9ff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>org.izdevs.acidium.serialization.Resource.Resource</definition>
+        <argsstring>(String name, boolean isApi)</argsstring>
+        <name>Resource</name>
+        <qualifiedname>org.izdevs.acidium.serialization.Resource.Resource</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>boolean</type>
+          <declname>isApi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/serialization/Resource.java" line="46" column="12" bodyfile="org/izdevs/acidium/serialization/Resource.java" bodystart="46" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1afade681ca6717ccad248bd959265b6ee" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.izdevs.acidium.serialization.Resource.register</definition>
+        <argsstring>()</argsstring>
+        <name>register</name>
+        <qualifiedname>org.izdevs.acidium.serialization.Resource.register</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/serialization/Resource.java" line="50" column="17" bodyfile="org/izdevs/acidium/serialization/Resource.java" bodystart="50" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1aaa419bc8d735c4a399270b271a1f8544" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String org.izdevs.acidium.serialization.Resource.serialize</definition>
+        <argsstring>()</argsstring>
+        <name>serialize</name>
+        <qualifiedname>org.izdevs.acidium.serialization.Resource.serialize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/serialization/Resource.java" line="58" column="19" bodyfile="org/izdevs/acidium/serialization/Resource.java" bodystart="58" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1ad44cb29834bf78042ea08624bf9a8579" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.izdevs.acidium.serialization.Resource.tick</definition>
+        <argsstring>()</argsstring>
+        <name>tick</name>
+        <qualifiedname>org.izdevs.acidium.serialization.Resource.tick</qualifiedname>
+        <reimplements refid="interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_1adca105a95287fc09c9ba288b332be9cd">tick</reimplements>
+        <reimplementedby refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_1afb025f3f8927362ecfc464090cb7c66a">tick</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/serialization/Resource.java" line="65" column="17" bodyfile="org/izdevs/acidium/serialization/Resource.java" bodystart="65" bodyend="69"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a6efcff05516ad5e72adfbb551661c55c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource" kindref="compound">Resource</ref></type>
+        <definition>static Resource org.izdevs.acidium.serialization.Resource.deserialize</definition>
+        <argsstring>(String serialized)</argsstring>
+        <name>deserialize</name>
+        <qualifiedname>org.izdevs.acidium.serialization.Resource.deserialize</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>serialized</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/serialization/Resource.java" line="53" column="28" bodyfile="org/izdevs/acidium/serialization/Resource.java" bodystart="53" bodyend="57"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>org.izdevs.acidium.serialization.Resource</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>org.izdevs.acidium.api.v1.BlockSpec</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_block_spec"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>org.izdevs.acidium.api.v1.CommandDefinition</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_command_definition"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>org.izdevs.acidium.api.v1.DefaultSpawner</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>org.izdevs.acidium.api.v1.Error</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_error"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>org.izdevs.acidium.api.v1.Mob</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>org.izdevs.acidium.api.v1.Payload</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_payload"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>org.izdevs.acidium.api.v1.Player</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_player"/>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>org.izdevs.acidium.api.v1.Structure</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_structure"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>org.izdevs.acidium.api.v1.User</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_user"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>org.izdevs.acidium.api.v1.v1</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1v1"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>org.izdevs.acidium.basic.Entity</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>org.izdevs.acidium.game.equipment.Electron</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_electron"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>org.izdevs.acidium.game.equipment.Equipment</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_equipment"/>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>org.izdevs.acidium.game.equipment.Neutron</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1game_1_1equipment_1_1_neutron"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>org.izdevs.acidium.security.AuthorizationContent</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1security_1_1_authorization_content"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>org.izdevs.acidium.serialization.API</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_a_p_i"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>org.izdevs.acidium.tick.Ticked</label>
+        <link refid="interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="8">
+        <label>ArrayList&lt; org.izdevs.acidium.serialization.org.izdevs.acidium.serialization.Resource &gt;</label>
+      </node>
+      <node id="6">
+        <label>ArrayList&lt; org.izdevs.acidium.serialization.SpecObject &gt;</label>
+      </node>
+      <node id="3">
+        <label>List&lt; String &gt;</label>
+      </node>
+      <node id="7">
+        <label>CompoundTag</label>
+      </node>
+      <node id="1">
+        <label>org.izdevs.acidium.serialization.Resource</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>flags</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>associatedApi</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>spec</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>org.izdevs.acidium.serialization.API</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_a_p_i"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>resources</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>org.izdevs.acidium.serialization.Resource</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>flags</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>associatedApi</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>spec</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>org.izdevs.acidium.tick.Ticked</label>
+        <link refid="interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked"/>
+      </node>
+    </collaborationgraph>
+    <location file="org/izdevs/acidium/serialization/Resource.java" line="16" column="7" bodyfile="org/izdevs/acidium/serialization/Resource.java" bodystart="16" bodyend="72"/>
+    <listofallmembers>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1ad0d3f44f8acefcfbddd0fa7fb1932e9f" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::serialization::Resource</scope><name>associatedApi</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a144bc7e47869f072a7c73de69b79a692" prot="protected" virt="non-virtual"><scope>org::izdevs::acidium::serialization::Resource</scope><name>data</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a6efcff05516ad5e72adfbb551661c55c" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::serialization::Resource</scope><name>deserialize</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a5d5ba600eed132ef2c162435d8224089" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::serialization::Resource</scope><name>flags</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1af9fe4f85b4f96665a923115659f6f7d9" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::serialization::Resource</scope><name>isApi</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1abf18cab08c368a891577b690dadd0dbf" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::serialization::Resource</scope><name>name</name></member>
+      <member refid="interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_1a63bde21e89f3b22cdb7339cf9b5273d3" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::serialization::Resource</scope><name>pause</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1afade681ca6717ccad248bd959265b6ee" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::serialization::Resource</scope><name>register</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a16acb5661ffb22692600432742d99377" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::serialization::Resource</scope><name>Resource</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a352f73d7686be3b801ca64ad533bf9ff" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::serialization::Resource</scope><name>Resource</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1aaa419bc8d735c4a399270b271a1f8544" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::serialization::Resource</scope><name>serialize</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1af4c8ae34bc7cfba3d931180a1b87732c" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::serialization::Resource</scope><name>spec</name></member>
+      <member refid="interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_1a9b9edb150904e40a51a3764b66e88ba9" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::serialization::Resource</scope><name>stopTick</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1ad44cb29834bf78042ea08624bf9a8579" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::serialization::Resource</scope><name>tick</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a2219c8ab43b89ceb1baa8d81f1ee1ae6" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::serialization::Resource</scope><name>ticked</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a2c9a3debdfd3ae73331dde74e1388fd3" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::serialization::Resource</scope><name>tickRun</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a679f102509a380319eb8eb387c69c976" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::serialization::Resource</scope><name>typeName</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a0f37c2e1a0b76afa70eec77e622fa51d" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::serialization::Resource</scope><name>unset</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

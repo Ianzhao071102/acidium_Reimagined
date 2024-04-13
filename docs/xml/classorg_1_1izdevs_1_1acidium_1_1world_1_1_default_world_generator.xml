@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classorg_1_1izdevs_1_1acidium_1_1world_1_1_default_world_generator" kind="class" language="Java" prot="public">
+    <compoundname>org::izdevs::acidium::world::DefaultWorldGenerator</compoundname>
+    <basecompoundref refid="interfaceorg_1_1izdevs_1_1acidium_1_1world_1_1_world_generator" prot="public" virt="non-virtual">org.izdevs.acidium.world.WorldGenerator</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1world_1_1_default_world_generator_1a5d22cddbfda3d93b0ef09548ec16b445" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_world" kindref="compound">World</ref></type>
+        <definition>World org.izdevs.acidium.world.DefaultWorldGenerator.generate</definition>
+        <argsstring>(long seed)</argsstring>
+        <name>generate</name>
+        <qualifiedname>org.izdevs.acidium.world.DefaultWorldGenerator.generate</qualifiedname>
+        <reimplements refid="interfaceorg_1_1izdevs_1_1acidium_1_1world_1_1_world_generator_1a27a1534656139fbb31ad6dbc20639752">generate</reimplements>
+        <param>
+          <type>long</type>
+          <declname>seed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/world/DefaultWorldGenerator.java" line="13" column="18" bodyfile="org/izdevs/acidium/world/DefaultWorldGenerator.java" bodystart="13" bodyend="38"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>org.izdevs.acidium.world.DefaultWorldGenerator</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_default_world_generator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>org.izdevs.acidium.world.WorldGenerator</label>
+        <link refid="interfaceorg_1_1izdevs_1_1acidium_1_1world_1_1_world_generator"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>org.izdevs.acidium.world.DefaultWorldGenerator</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_default_world_generator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>org.izdevs.acidium.world.WorldGenerator</label>
+        <link refid="interfaceorg_1_1izdevs_1_1acidium_1_1world_1_1_world_generator"/>
+      </node>
+    </collaborationgraph>
+    <location file="org/izdevs/acidium/world/DefaultWorldGenerator.java" line="11" column="7" bodyfile="org/izdevs/acidium/world/DefaultWorldGenerator.java" bodystart="11" bodyend="40"/>
+    <listofallmembers>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_default_world_generator_1a5d22cddbfda3d93b0ef09548ec16b445" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::world::DefaultWorldGenerator</scope><name>generate</name></member>
+      <member refid="interfaceorg_1_1izdevs_1_1acidium_1_1world_1_1_world_generator_1a623e091b40a1c871f1ae8aa718ea3c11" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::world::DefaultWorldGenerator</scope><name>seed</name></member>
+      <member refid="interfaceorg_1_1izdevs_1_1acidium_1_1world_1_1_world_generator_1a555ccf43d11cd605756677e8e9c58ed7" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::world::DefaultWorldGenerator</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_reflect_util" xml:lang="en-US">
+<title>org.izdevs.acidium.serialization.ReflectUtil Class Reference</title>
+<indexterm><primary>org.izdevs.acidium.serialization.ReflectUtil</primary></indexterm>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource">Resource</link>[] <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_reflect_util_1acbffc4f33d45fe16c06a737b60c9b227">getResources</link> ()  throws IOException </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_reflect_util_1acbffc4f33d45fe16c06a737b60c9b227"/><section>
+    <title>getResources()</title>
+<indexterm><primary>getResources</primary><secondary>org.izdevs.acidium.serialization.ReflectUtil</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.serialization.ReflectUtil</primary><secondary>getResources</secondary></indexterm>
+<para><computeroutput>static <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource">Resource</link>[] org.izdevs.acidium.serialization.ReflectUtil.getResources ( ) throws IOException<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+org/izdevs/acidium/serialization/<link linkend="__reflect_util_8java">ReflectUtil.java</link></section>
+</section>

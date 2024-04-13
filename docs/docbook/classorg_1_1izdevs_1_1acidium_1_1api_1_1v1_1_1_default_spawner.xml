@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner" xml:lang="en-US">
+<title>org.izdevs.acidium.api.v1.DefaultSpawner Class Reference</title>
+<indexterm><primary>org.izdevs.acidium.api.v1.DefaultSpawner</primary></indexterm>
+<para>Inheritance diagram for org.izdevs.acidium.api.v1.DefaultSpawner:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_1a3b31812d168316cc39f1e91b0180f0d8">spawn</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_1afb025f3f8927362ecfc464090cb7c66a">tick</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_1a8b08e1c6f356fd62131fcb8fdc7b996a">spawnManual</link> (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob">Mob</link> mob)</para>
+</listitem>
+            <listitem><para><link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_1ac0d080cf394f788d864e8c197e7004e2">DefaultSpawner</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_1ae487772910d08688975279db7348b045">DefaultSpawner</link> (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_world">World</link> world)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Public Member Functions inherited from <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource">org.izdevs.acidium.serialization.Resource</link>        <itemizedlist>
+            <listitem><para><link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a16acb5661ffb22692600432742d99377">Resource</link> (String <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1abf18cab08c368a891577b690dadd0dbf">name</link>, ArrayList&lt; <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_spec_object">SpecObject</link> &gt; objects)</para>
+</listitem>
+            <listitem><para><link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a352f73d7686be3b801ca64ad533bf9ff">Resource</link> (String <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1abf18cab08c368a891577b690dadd0dbf">name</link>, boolean <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1af9fe4f85b4f96665a923115659f6f7d9">isApi</link>)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1afade681ca6717ccad248bd959265b6ee">register</link> ()</para>
+</listitem>
+            <listitem><para>String <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1aaa419bc8d735c4a399270b271a1f8544">serialize</link> ()</para>
+</listitem>
+        </itemizedlist>
+Public Member Functions inherited from <link linkend="_interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked">org.izdevs.acidium.tick.Ticked</link>        <itemizedlist>
+            <listitem><para>default void <link linkend="_interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_1a9b9edb150904e40a51a3764b66e88ba9">stopTick</link> ()</para>
+</listitem>
+            <listitem><para>default void <link linkend="_interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_1a63bde21e89f3b22cdb7339cf9b5273d3">pause</link> ()</para>
+</listitem>
+        </itemizedlist>
+Public Member Functions inherited from <link linkend="_interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner">org.izdevs.acidium.entity.AbstractMobSpawner</link>        <itemizedlist>
+            <listitem><para>default void <link linkend="_interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner_1a4e4828d573c6510bab24b64f9f67cd2d">addJob</link> (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob">Mob</link> mob)</para>
+</listitem>
+            <listitem><para>default void <link linkend="_interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner_1aecd0afeabcb31322045dfb30ec99c420">deleteJob</link> (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob">Mob</link> mob)</para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Static Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>static List&lt; <link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob">Mob</link> &gt; <link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_1a0c24381b258e10331a1fc596d9b2d2ba">jobQueue</link> = new ArrayList&lt;&gt;()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+Static Public Member Functions inherited from <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource">org.izdevs.acidium.serialization.Resource</link>        <itemizedlist>
+            <listitem><para>static <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource">Resource</link> <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a6efcff05516ad5e72adfbb551661c55c">deserialize</link> (String serialized)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Public Attributes inherited from <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource">org.izdevs.acidium.serialization.Resource</link>        <itemizedlist>
+            <listitem><para>boolean <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a0f37c2e1a0b76afa70eec77e622fa51d">unset</link></para>
+</listitem>
+            <listitem><para>boolean <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1af9fe4f85b4f96665a923115659f6f7d9">isApi</link></para>
+</listitem>
+            <listitem><para><link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_a_p_i">API</link> <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1ad0d3f44f8acefcfbddd0fa7fb1932e9f">associatedApi</link></para>
+</listitem>
+            <listitem><para>String <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a679f102509a380319eb8eb387c69c976">typeName</link></para>
+</listitem>
+            <listitem><para>String <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1abf18cab08c368a891577b690dadd0dbf">name</link></para>
+</listitem>
+            <listitem><para>ArrayList&lt; <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_spec_object">SpecObject</link> &gt; <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1af4c8ae34bc7cfba3d931180a1b87732c">spec</link></para>
+</listitem>
+        </itemizedlist>
+Public Attributes inherited from <link linkend="_interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner">org.izdevs.acidium.entity.AbstractMobSpawner</link>        <itemizedlist>
+            <listitem><para>List&lt; <link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob">Mob</link> &gt; <link linkend="_interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner_1a3e1e4dd92d6cac3358c96bf78b367d20">jobQueue</link> = new ArrayList&lt;&gt;()</para>
+</listitem>
+        </itemizedlist>
+Protected Attributes inherited from <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource">org.izdevs.acidium.serialization.Resource</link>        <itemizedlist>
+            <listitem><para>CompoundTag <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a144bc7e47869f072a7c73de69b79a692">data</link></para>
+</listitem>
+        </itemizedlist>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_1ac0d080cf394f788d864e8c197e7004e2"/><section>
+    <title>DefaultSpawner()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>DefaultSpawner</primary><secondary>org.izdevs.acidium.api.v1.DefaultSpawner</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.api.v1.DefaultSpawner</primary><secondary>DefaultSpawner</secondary></indexterm>
+<para><computeroutput>org.izdevs.acidium.api.v1.DefaultSpawner.DefaultSpawner ( )</computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_1ae487772910d08688975279db7348b045"/><section>
+    <title>DefaultSpawner()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>DefaultSpawner</primary><secondary>org.izdevs.acidium.api.v1.DefaultSpawner</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.api.v1.DefaultSpawner</primary><secondary>DefaultSpawner</secondary></indexterm>
+<para><computeroutput>org.izdevs.acidium.api.v1.DefaultSpawner.DefaultSpawner (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_world">World</link> world)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_1a3b31812d168316cc39f1e91b0180f0d8"/><section>
+    <title>spawn()</title>
+<indexterm><primary>spawn</primary><secondary>org.izdevs.acidium.api.v1.DefaultSpawner</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.api.v1.DefaultSpawner</primary><secondary>spawn</secondary></indexterm>
+<para><computeroutput>void org.izdevs.acidium.api.v1.DefaultSpawner.spawn ( )</computeroutput></para><para>
+Implements <link linkend="_interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner_1ad2e071dc6e068eecab7cb67b3ed06a3e">org.izdevs.acidium.entity.AbstractMobSpawner</link>.</para>
+</section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_1a8b08e1c6f356fd62131fcb8fdc7b996a"/><section>
+    <title>spawnManual()</title>
+<indexterm><primary>spawnManual</primary><secondary>org.izdevs.acidium.api.v1.DefaultSpawner</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.api.v1.DefaultSpawner</primary><secondary>spawnManual</secondary></indexterm>
+<para><computeroutput>void org.izdevs.acidium.api.v1.DefaultSpawner.spawnManual (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob">Mob</link> mob)</computeroutput></para><para>
+Implements <link linkend="_interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner_1adfe27fcb10347d5bd2a031dcdda31f9b">org.izdevs.acidium.entity.AbstractMobSpawner</link>.</para>
+</section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_1afb025f3f8927362ecfc464090cb7c66a"/><section>
+    <title>tick()</title>
+<indexterm><primary>tick</primary><secondary>org.izdevs.acidium.api.v1.DefaultSpawner</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.api.v1.DefaultSpawner</primary><secondary>tick</secondary></indexterm>
+<para><computeroutput>void org.izdevs.acidium.api.v1.DefaultSpawner.tick ( )</computeroutput></para><para>
+Reimplemented from <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1ad44cb29834bf78042ea08624bf9a8579">org.izdevs.acidium.serialization.Resource</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_default_spawner_1a0c24381b258e10331a1fc596d9b2d2ba"/><section>
+    <title>jobQueue</title>
+<indexterm><primary>jobQueue</primary><secondary>org.izdevs.acidium.api.v1.DefaultSpawner</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.api.v1.DefaultSpawner</primary><secondary>jobQueue</secondary></indexterm>
+<para><computeroutput>List&lt;<link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob">Mob</link>&gt; org.izdevs.acidium.api.v1.DefaultSpawner.jobQueue = new ArrayList&lt;&gt;()<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+org/izdevs/acidium/api/v1/<link linkend="__default_spawner_8java">DefaultSpawner.java</link></section>
+</section>

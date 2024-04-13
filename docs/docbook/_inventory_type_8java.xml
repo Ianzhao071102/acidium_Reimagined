@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__inventory_type_8java" xml:lang="en-US">
+<title>org/izdevs/acidium/game/inventory/InventoryType.java File Reference</title>
+<indexterm><primary>org/izdevs/acidium/game/inventory/InventoryType.java</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="_enumorg_1_1izdevs_1_1acidium_1_1game_1_1inventory_1_1_inventory_type">org.izdevs.acidium.game.inventory.InventoryType</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Packages    </title>
+        <itemizedlist>
+            <listitem><para>package <link linkend="_namespaceorg_1_1izdevs_1_1acidium_1_1game_1_1inventory">org.izdevs.acidium.game.inventory</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="namespaceorg_1_1izdevs_1_1acidium_1_1utils" kind="namespace" language="Java">
+    <compoundname>org::izdevs::acidium::utils</compoundname>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1utils_1_1_logging_utils" prot="public">org::izdevs::acidium::utils::LoggingUtils</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1utils_1_1_number_utils" prot="public">org::izdevs::acidium::utils::NumberUtils</innerclass>
+    <innerclass refid="classorg_1_1izdevs_1_1acidium_1_1utils_1_1_spring_bean_utils" prot="public">org::izdevs::acidium::utils::SpringBeanUtils</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="org/izdevs/acidium/utils/LoggingUtils.java" line="1" column="15"/>
+  </compounddef>
+</doxygen>

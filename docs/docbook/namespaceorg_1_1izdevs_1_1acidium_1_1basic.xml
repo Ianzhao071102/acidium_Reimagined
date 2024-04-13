@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespaceorg_1_1izdevs_1_1acidium_1_1basic" xml:lang="en-US">
+<title>Package org.izdevs.acidium.basic</title>
+<indexterm><primary>org.izdevs.acidium.basic</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classorg_1_1izdevs_1_1acidium_1_1basic_1_1_abstract_behaviour_controller">AbstractBehaviourController</link></para>
+</listitem>
+            <listitem><para>enum <link linkend="_enumorg_1_1izdevs_1_1acidium_1_1basic_1_1_basic_entity_state">BasicEntityState</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classorg_1_1izdevs_1_1acidium_1_1basic_1_1_default_behaviour_controller">DefaultBehaviourController</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity">Entity</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classorg_1_1izdevs_1_1acidium_1_1basic_1_1_i_d_generator">IDGenerator</link></para>
+</listitem>
+            <listitem><para>interface <link linkend="_interfaceorg_1_1izdevs_1_1acidium_1_1basic_1_1_user_repository">UserRepository</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

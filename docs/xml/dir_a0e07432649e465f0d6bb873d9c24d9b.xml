@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="dir_a0e07432649e465f0d6bb873d9c24d9b" kind="dir">
+    <compoundname>org/izdevs/acidium/api/v1</compoundname>
+    <innerfile refid="_block_spec_8java">BlockSpec.java</innerfile>
+    <innerfile refid="_command_definition_8java">CommandDefinition.java</innerfile>
+    <innerfile refid="_default_spawner_8java">DefaultSpawner.java</innerfile>
+    <innerfile refid="_error_8java">Error.java</innerfile>
+    <innerfile refid="_mob_8java">Mob.java</innerfile>
+    <innerfile refid="_payload_8java">Payload.java</innerfile>
+    <innerfile refid="_player_8java">Player.java</innerfile>
+    <innerfile refid="_role_8java">Role.java</innerfile>
+    <innerfile refid="_structure_8java">Structure.java</innerfile>
+    <innerfile refid="_user_8java">User.java</innerfile>
+    <innerfile refid="v1_8java">v1.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="org/izdevs/acidium/api/v1/"/>
+  </compounddef>
+</doxygen>

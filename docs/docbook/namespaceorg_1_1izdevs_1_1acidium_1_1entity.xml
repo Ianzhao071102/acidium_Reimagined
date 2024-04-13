@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespaceorg_1_1izdevs_1_1acidium_1_1entity" xml:lang="en-US">
+<title>Package org.izdevs.acidium.entity</title>
+<indexterm><primary>org.izdevs.acidium.entity</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>interface <link linkend="_interfaceorg_1_1izdevs_1_1acidium_1_1entity_1_1_abstract_mob_spawner">AbstractMobSpawner</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classorg_1_1izdevs_1_1acidium_1_1entity_1_1_entity_holder">EntityHolder</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classorg_1_1izdevs_1_1acidium_1_1entity_1_1_mob_holder">MobHolder</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

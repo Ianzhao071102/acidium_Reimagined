@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_a2aa72e0850811ac53d45adc58c79d9e" xml:lang="en-US">
+<title>org/izdevs/acidium/tick Directory Reference</title>
+<indexterm><primary>org/izdevs/acidium/tick Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="__ticked_8java">Ticked.java</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__tick_manager_8java">TickManager.java</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

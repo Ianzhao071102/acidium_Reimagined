@@ -1,0 +1,108 @@
+.TH "org.izdevs.acidium.api.v1.Mob" 3 "Version Alpha-0.1" "Acidium" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+org.izdevs.acidium.api.v1.Mob
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBorg\&.izdevs\&.acidium\&.serialization\&.Resource\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMob\fP (String \fBname\fP, double speed, int health, int bDamage, int hitboxRadius)"
+.br
+.ti -1c
+.RI "\fBMob\fP ()"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBorg\&.izdevs\&.acidium\&.serialization\&.Resource\fP
+.in +1c
+.ti -1c
+.RI "\fBResource\fP (String \fBname\fP, ArrayList< \fBSpecObject\fP > objects)"
+.br
+.ti -1c
+.RI "\fBResource\fP (String \fBname\fP, boolean \fBisApi\fP)"
+.br
+.ti -1c
+.RI "void \fBregister\fP ()"
+.br
+.ti -1c
+.RI "String \fBserialize\fP ()"
+.br
+.ti -1c
+.RI "void \fBtick\fP ()"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBorg\&.izdevs\&.acidium\&.tick\&.Ticked\fP
+.in +1c
+.ti -1c
+.RI "default void \fBstopTick\fP ()"
+.br
+.ti -1c
+.RI "default void \fBpause\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "Set< \fBEquipment\fP > \fBequipments\fP = new HashSet<>()"
+.br
+.in -1c
+
+Public Attributes inherited from \fBorg\&.izdevs\&.acidium\&.serialization\&.Resource\fP
+.in +1c
+.ti -1c
+.RI "boolean \fBunset\fP"
+.br
+.ti -1c
+.RI "boolean \fBisApi\fP"
+.br
+.ti -1c
+.RI "\fBAPI\fP \fBassociatedApi\fP"
+.br
+.ti -1c
+.RI "String \fBtypeName\fP"
+.br
+.ti -1c
+.RI "String \fBname\fP"
+.br
+.ti -1c
+.RI "ArrayList< \fBSpecObject\fP > \fBspec\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Static Public Member Functions inherited from \fBorg\&.izdevs\&.acidium\&.serialization\&.Resource\fP
+.in +1c
+.ti -1c
+.RI "static \fBResource\fP \fBdeserialize\fP (String serialized)"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBorg\&.izdevs\&.acidium\&.serialization\&.Resource\fP
+.in +1c
+.ti -1c
+.RI "CompoundTag \fBdata\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "org\&.izdevs\&.acidium\&.api\&.v1\&.Mob\&.Mob (String name, double speed, int health, int bDamage, int hitboxRadius)"
+
+.SS "org\&.izdevs\&.acidium\&.api\&.v1\&.Mob\&.Mob ()"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "Set<\fBEquipment\fP> org\&.izdevs\&.acidium\&.api\&.v1\&.Mob\&.equipments = new HashSet<>()"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Acidium from the source code\&.

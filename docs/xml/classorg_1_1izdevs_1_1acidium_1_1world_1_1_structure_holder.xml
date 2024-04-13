@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classorg_1_1izdevs_1_1acidium_1_1world_1_1_structure_holder" kind="class" language="Java" prot="public">
+    <compoundname>org::izdevs::acidium::world::StructureHolder</compoundname>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1world_1_1_structure_holder_1a288dc7d308138b1726a412f4c774dbf9" prot="public" static="yes" mutable="no">
+        <type>volatile ArrayList&lt; <ref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_structure" kindref="compound">Structure</ref> &gt;</type>
+        <definition>volatile ArrayList&lt;Structure&gt; org.izdevs.acidium.world.StructureHolder.structures</definition>
+        <argsstring></argsstring>
+        <name>structures</name>
+        <qualifiedname>org.izdevs.acidium.world.StructureHolder.structures</qualifiedname>
+        <initializer>= new ArrayList&lt;&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/world/StructureHolder.java" line="9" column="38" bodyfile="org/izdevs/acidium/world/StructureHolder.java" bodystart="9" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1world_1_1_structure_holder_1a292e84fd71e9bfc99d3a1b4b5217d660" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void org.izdevs.acidium.world.StructureHolder.register</definition>
+        <argsstring>(Structure structure)</argsstring>
+        <name>register</name>
+        <qualifiedname>org.izdevs.acidium.world.StructureHolder.register</qualifiedname>
+        <param>
+          <type><ref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_structure" kindref="compound">Structure</ref></type>
+          <declname>structure</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/world/StructureHolder.java" line="10" column="24" bodyfile="org/izdevs/acidium/world/StructureHolder.java" bodystart="10" bodyend="13"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>ArrayList&lt; org.izdevs.acidium.api.v1.Structure &gt;</label>
+      </node>
+      <node id="1">
+        <label>org.izdevs.acidium.world.StructureHolder</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_structure_holder"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>structures</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="org/izdevs/acidium/world/StructureHolder.java" line="8" column="7" bodyfile="org/izdevs/acidium/world/StructureHolder.java" bodystart="8" bodyend="15"/>
+    <listofallmembers>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_structure_holder_1a292e84fd71e9bfc99d3a1b4b5217d660" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::world::StructureHolder</scope><name>register</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1world_1_1_structure_holder_1a288dc7d308138b1726a412f4c774dbf9" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::world::StructureHolder</scope><name>structures</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

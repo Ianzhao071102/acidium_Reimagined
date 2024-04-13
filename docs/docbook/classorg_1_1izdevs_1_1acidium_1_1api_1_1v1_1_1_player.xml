@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_player" xml:lang="en-US">
+<title>org.izdevs.acidium.api.v1.Player Class Reference</title>
+<indexterm><primary>org.izdevs.acidium.api.v1.Player</primary></indexterm>
+<para>Inheritance diagram for org.izdevs.acidium.api.v1.Player:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_player.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_player_1a3d4220251670ba4c40212eeb67c7a3d7">Player</link> (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_user">User</link> user, double movementSpeed, int health, int bDamage)</para>
+</listitem>
+            <listitem><para><link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_player_1a3cd0d3f092983493b598ea6197a6783d">Player</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_player_1a5af55ecd3cc8803790f13f731b1581c5">Player</link> (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_user">User</link> user, <link linkend="_classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity">Entity</link> entity)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Public Member Functions inherited from <link linkend="_classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity">org.izdevs.acidium.basic.Entity</link>        <itemizedlist>
+            <listitem><para><link linkend="_classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1a6e9d3f7d088cd95ef68abbbac4542a41">Entity</link> (String name, double movementSpeed, int health, int hitboxRadius, int bDamage)</para>
+</listitem>
+            <listitem><para><link linkend="_classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1a4dfff9bfacb1b9e0052e8487d4f4d84f">Entity</link> (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_world">World</link> world, String name, double movementSpeed, int health, int hitboxRadius, int bDamage)</para>
+</listitem>
+            <listitem><para>boolean <link linkend="_classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1abf319c7c3e0a67d7f1f661017f48419f">handleMessage</link> (Telegram telegram)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1a9b5f9afe8704cc905a90baef45ca4118">damage</link> (int health)</para>
+</listitem>
+        </itemizedlist>
+Public Member Functions inherited from <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource">org.izdevs.acidium.serialization.Resource</link>        <itemizedlist>
+            <listitem><para><link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a16acb5661ffb22692600432742d99377">Resource</link> (String <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1abf18cab08c368a891577b690dadd0dbf">name</link>, ArrayList&lt; <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_spec_object">SpecObject</link> &gt; objects)</para>
+</listitem>
+            <listitem><para><link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a352f73d7686be3b801ca64ad533bf9ff">Resource</link> (String <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1abf18cab08c368a891577b690dadd0dbf">name</link>, boolean <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1af9fe4f85b4f96665a923115659f6f7d9">isApi</link>)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1afade681ca6717ccad248bd959265b6ee">register</link> ()</para>
+</listitem>
+            <listitem><para>String <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1aaa419bc8d735c4a399270b271a1f8544">serialize</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1ad44cb29834bf78042ea08624bf9a8579">tick</link> ()</para>
+</listitem>
+        </itemizedlist>
+Public Member Functions inherited from <link linkend="_interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked">org.izdevs.acidium.tick.Ticked</link>        <itemizedlist>
+            <listitem><para>default void <link linkend="_interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_1a9b9edb150904e40a51a3764b66e88ba9">stopTick</link> ()</para>
+</listitem>
+            <listitem><para>default void <link linkend="_interfaceorg_1_1izdevs_1_1acidium_1_1tick_1_1_ticked_1a63bde21e89f3b22cdb7339cf9b5273d3">pause</link> ()</para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+Static Public Member Functions inherited from <link linkend="_classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity">org.izdevs.acidium.basic.Entity</link>        <itemizedlist>
+            <listitem><para>static boolean <link linkend="_classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1a1b4dfa88d5b81e126700bd131f4ff0fd">isColliding</link> (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity">Entity</link> a, <link linkend="_classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity">Entity</link> b)</para>
+</listitem>
+            <listitem><para>static boolean <link linkend="_classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity_1a58e5db7a6cad5f7aff3ebb1c5ad3ceb3">isColliding</link> (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_mob">Mob</link> a, <link linkend="_classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity">Entity</link> b)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Static Public Member Functions inherited from <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource">org.izdevs.acidium.serialization.Resource</link>        <itemizedlist>
+            <listitem><para>static <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource">Resource</link> <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a6efcff05516ad5e72adfbb551661c55c">deserialize</link> (String serialized)</para>
+</listitem>
+        </itemizedlist>
+Public Attributes inherited from <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource">org.izdevs.acidium.serialization.Resource</link>        <itemizedlist>
+            <listitem><para>boolean <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a0f37c2e1a0b76afa70eec77e622fa51d">unset</link></para>
+</listitem>
+            <listitem><para>boolean <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1af9fe4f85b4f96665a923115659f6f7d9">isApi</link></para>
+</listitem>
+            <listitem><para><link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_a_p_i">API</link> <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1ad0d3f44f8acefcfbddd0fa7fb1932e9f">associatedApi</link></para>
+</listitem>
+            <listitem><para>String <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a679f102509a380319eb8eb387c69c976">typeName</link></para>
+</listitem>
+            <listitem><para>String <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1abf18cab08c368a891577b690dadd0dbf">name</link></para>
+</listitem>
+            <listitem><para>ArrayList&lt; <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_spec_object">SpecObject</link> &gt; <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1af4c8ae34bc7cfba3d931180a1b87732c">spec</link></para>
+</listitem>
+        </itemizedlist>
+Protected Attributes inherited from <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource">org.izdevs.acidium.serialization.Resource</link>        <itemizedlist>
+            <listitem><para>CompoundTag <link linkend="_classorg_1_1izdevs_1_1acidium_1_1serialization_1_1_resource_1a144bc7e47869f072a7c73de69b79a692">data</link></para>
+</listitem>
+        </itemizedlist>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_player_1a3d4220251670ba4c40212eeb67c7a3d7"/><section>
+    <title>Player()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>Player</primary><secondary>org.izdevs.acidium.api.v1.Player</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.api.v1.Player</primary><secondary>Player</secondary></indexterm>
+<para><computeroutput>org.izdevs.acidium.api.v1.Player.Player (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_user">User</link> user, double movementSpeed, int health, int bDamage)</computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_player_1a3cd0d3f092983493b598ea6197a6783d"/><section>
+    <title>Player()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>Player</primary><secondary>org.izdevs.acidium.api.v1.Player</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.api.v1.Player</primary><secondary>Player</secondary></indexterm>
+<para><computeroutput>org.izdevs.acidium.api.v1.Player.Player ( )</computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_player_1a5af55ecd3cc8803790f13f731b1581c5"/><section>
+    <title>Player()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>Player</primary><secondary>org.izdevs.acidium.api.v1.Player</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.api.v1.Player</primary><secondary>Player</secondary></indexterm>
+<para><computeroutput>org.izdevs.acidium.api.v1.Player.Player (<link linkend="_classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_user">User</link> user, <link linkend="_classorg_1_1izdevs_1_1acidium_1_1basic_1_1_entity">Entity</link> entity)</computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+org/izdevs/acidium/api/v1/<link linkend="__player_8java">Player.java</link></section>
+</section>

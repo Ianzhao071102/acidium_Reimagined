@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="dir_7830b5d6c8952832bce4af7431e2cc6f" kind="dir">
+    <compoundname>org</compoundname>
+    <innerdir refid="dir_829b88bdf1c88d2e5eb23b5357339c88">org/izdevs</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="org/"/>
+  </compounddef>
+</doxygen>

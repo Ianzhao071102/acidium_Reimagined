@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_2920dbd9a30b07bd63404c5cd6f794da" xml:lang="en-US">
+<title>org/izdevs/acidium/basic Directory Reference</title>
+<indexterm><primary>org/izdevs/acidium/basic Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="__abstract_behaviour_controller_8java">AbstractBehaviourController.java</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__basic_entity_state_8java">BasicEntityState.java</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__default_behaviour_controller_8java">DefaultBehaviourController.java</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__entity_8java">Entity.java</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__i_d_generator_8java">IDGenerator.java</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__user_repository_8java">UserRepository.java</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

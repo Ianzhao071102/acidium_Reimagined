@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classorg_1_1izdevs_1_1acidium_1_1tick_1_1_tick_manager" kind="class" language="Java" prot="public">
+    <compoundname>org::izdevs::acidium::tick::TickManager</compoundname>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1tick_1_1_tick_manager_1a3c9f2a792c7c25de91c12dda26104ada" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int org.izdevs.acidium.tick.TickManager.tps</definition>
+        <argsstring></argsstring>
+        <name>tps</name>
+        <qualifiedname>org.izdevs.acidium.tick.TickManager.tps</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/tick/TickManager.java" line="15" column="23" bodyfile="org/izdevs/acidium/tick/TickManager.java" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1tick_1_1_tick_manager_1a0cfaee0f28d1b14bc10f70c7a789a92e" prot="public" static="yes" mutable="no">
+        <type>long</type>
+        <definition>long org.izdevs.acidium.tick.TickManager.old_tick</definition>
+        <argsstring></argsstring>
+        <name>old_tick</name>
+        <qualifiedname>org.izdevs.acidium.tick.TickManager.old_tick</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/tick/TickManager.java" line="17" column="24" bodyfile="org/izdevs/acidium/tick/TickManager.java" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1tick_1_1_tick_manager_1af8633a260cb99c963c7eb23d591a893f" prot="public" static="yes" mutable="no">
+        <type>long</type>
+        <definition>long org.izdevs.acidium.tick.TickManager.tick</definition>
+        <argsstring></argsstring>
+        <name>tick</name>
+        <qualifiedname>org.izdevs.acidium.tick.TickManager.tick</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/tick/TickManager.java" line="19" column="24" bodyfile="org/izdevs/acidium/tick/TickManager.java" bodystart="19" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="package-static-attrib">
+      <memberdef kind="variable" id="classorg_1_1izdevs_1_1acidium_1_1tick_1_1_tick_manager_1a2646b8a853b232e441ad40bcece5dccd" prot="package" static="yes" mutable="no">
+        <type>boolean</type>
+        <definition>boolean org.izdevs.acidium.tick.TickManager.paused</definition>
+        <argsstring></argsstring>
+        <name>paused</name>
+        <qualifiedname>org.izdevs.acidium.tick.TickManager.paused</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/tick/TickManager.java" line="23" column="20" bodyfile="org/izdevs/acidium/tick/TickManager.java" bodystart="23" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1tick_1_1_tick_manager_1a62f58b90fce36a988305cebc9ccccfac" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void org.izdevs.acidium.tick.TickManager.stepTick</definition>
+        <argsstring>()</argsstring>
+        <name>stepTick</name>
+        <qualifiedname>org.izdevs.acidium.tick.TickManager.stepTick</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/tick/TickManager.java" line="26" column="24" bodyfile="org/izdevs/acidium/tick/TickManager.java" bodystart="26" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1tick_1_1_tick_manager_1af8b1acdface52c48eacb556db47d7be4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void org.izdevs.acidium.tick.TickManager.init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <qualifiedname>org.izdevs.acidium.tick.TickManager.init</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/tick/TickManager.java" line="55" column="24" bodyfile="org/izdevs/acidium/tick/TickManager.java" bodystart="55" bodyend="58"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1tick_1_1_tick_manager_1af30d5a610c5ab7ffb5f3686a33bf2536" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void org.izdevs.acidium.tick.TickManager.updateTPS</definition>
+        <argsstring>()</argsstring>
+        <name>updateTPS</name>
+        <qualifiedname>org.izdevs.acidium.tick.TickManager.updateTPS</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/tick/TickManager.java" line="61" column="17" bodyfile="org/izdevs/acidium/tick/TickManager.java" bodystart="61" bodyend="65"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="org/izdevs/acidium/tick/TickManager.java" line="14" column="7" bodyfile="org/izdevs/acidium/tick/TickManager.java" bodystart="14" bodyend="67"/>
+    <listofallmembers>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1tick_1_1_tick_manager_1af8b1acdface52c48eacb556db47d7be4" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::tick::TickManager</scope><name>init</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1tick_1_1_tick_manager_1a0cfaee0f28d1b14bc10f70c7a789a92e" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::tick::TickManager</scope><name>old_tick</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1tick_1_1_tick_manager_1a2646b8a853b232e441ad40bcece5dccd" prot="package" virt="non-virtual"><scope>org::izdevs::acidium::tick::TickManager</scope><name>paused</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1tick_1_1_tick_manager_1a62f58b90fce36a988305cebc9ccccfac" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::tick::TickManager</scope><name>stepTick</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1tick_1_1_tick_manager_1af8633a260cb99c963c7eb23d591a893f" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::tick::TickManager</scope><name>tick</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1tick_1_1_tick_manager_1a3c9f2a792c7c25de91c12dda26104ada" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::tick::TickManager</scope><name>tps</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1tick_1_1_tick_manager_1af30d5a610c5ab7ffb5f3686a33bf2536" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::tick::TickManager</scope><name>updateTPS</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

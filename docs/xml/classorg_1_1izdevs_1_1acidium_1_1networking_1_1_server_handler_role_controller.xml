@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classorg_1_1izdevs_1_1acidium_1_1networking_1_1_server_handler_role_controller" kind="class" language="Java" prot="public">
+    <compoundname>org::izdevs::acidium::networking::ServerHandlerRoleController</compoundname>
+    <basecompoundref refid="interfaceorg_1_1izdevs_1_1acidium_1_1security_1_1_role_controller" prot="public" virt="non-virtual">org.izdevs.acidium.security.RoleController</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1networking_1_1_server_handler_role_controller_1ac551efcfd30edb64f94270f8c5c65987" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean org.izdevs.acidium.networking.ServerHandlerRoleController.checkIfGranted</definition>
+        <argsstring>(Role role)</argsstring>
+        <name>checkIfGranted</name>
+        <qualifiedname>org.izdevs.acidium.networking.ServerHandlerRoleController.checkIfGranted</qualifiedname>
+        <reimplements refid="interfaceorg_1_1izdevs_1_1acidium_1_1security_1_1_role_controller_1a305e45870c8ff7b9a8aba1151a634e08">checkIfGranted</reimplements>
+        <param>
+          <type><ref refid="classorg_1_1izdevs_1_1acidium_1_1api_1_1v1_1_1_role" kindref="compound">Role</ref></type>
+          <declname>role</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/networking/ServerHandlerRoleController.java" line="8" column="20" bodyfile="org/izdevs/acidium/networking/ServerHandlerRoleController.java" bodystart="8" bodyend="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>org.izdevs.acidium.networking.ServerHandlerRoleController</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1networking_1_1_server_handler_role_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>org.izdevs.acidium.security.RoleController</label>
+        <link refid="interfaceorg_1_1izdevs_1_1acidium_1_1security_1_1_role_controller"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>org.izdevs.acidium.networking.ServerHandlerRoleController</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1networking_1_1_server_handler_role_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>org.izdevs.acidium.security.RoleController</label>
+        <link refid="interfaceorg_1_1izdevs_1_1acidium_1_1security_1_1_role_controller"/>
+      </node>
+    </collaborationgraph>
+    <location file="org/izdevs/acidium/networking/ServerHandlerRoleController.java" line="6" column="7" bodyfile="org/izdevs/acidium/networking/ServerHandlerRoleController.java" bodystart="6" bodyend="11"/>
+    <listofallmembers>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1networking_1_1_server_handler_role_controller_1ac551efcfd30edb64f94270f8c5c65987" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::networking::ServerHandlerRoleController</scope><name>checkIfGranted</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

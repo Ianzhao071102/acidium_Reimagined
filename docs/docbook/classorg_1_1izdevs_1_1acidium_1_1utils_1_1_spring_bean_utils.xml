@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classorg_1_1izdevs_1_1acidium_1_1utils_1_1_spring_bean_utils" xml:lang="en-US">
+<title>org.izdevs.acidium.utils.SpringBeanUtils Class Reference</title>
+<indexterm><primary>org.izdevs.acidium.utils.SpringBeanUtils</primary></indexterm>
+<para>Inheritance diagram for org.izdevs.acidium.utils.SpringBeanUtils:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classorg_1_1izdevs_1_1acidium_1_1utils_1_1_spring_bean_utils.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classorg_1_1izdevs_1_1acidium_1_1utils_1_1_spring_bean_utils_1a1f39cda33a13247be625490bc67507c3">setApplicationContext</link> (ApplicationContext applicationContext)  throws BeansException </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static Object <link linkend="_classorg_1_1izdevs_1_1acidium_1_1utils_1_1_spring_bean_utils_1ad61f11bb892523df00eeb2060fcbb6c1">getBean</link> (String name)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1utils_1_1_spring_bean_utils_1ad61f11bb892523df00eeb2060fcbb6c1"/><section>
+    <title>getBean()</title>
+<indexterm><primary>getBean</primary><secondary>org.izdevs.acidium.utils.SpringBeanUtils</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.utils.SpringBeanUtils</primary><secondary>getBean</secondary></indexterm>
+<para><computeroutput>static Object org.izdevs.acidium.utils.SpringBeanUtils.getBean (String name)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1utils_1_1_spring_bean_utils_1a1f39cda33a13247be625490bc67507c3"/><section>
+    <title>setApplicationContext()</title>
+<indexterm><primary>setApplicationContext</primary><secondary>org.izdevs.acidium.utils.SpringBeanUtils</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.utils.SpringBeanUtils</primary><secondary>setApplicationContext</secondary></indexterm>
+<para><computeroutput>void org.izdevs.acidium.utils.SpringBeanUtils.setApplicationContext (ApplicationContext applicationContext) throws BeansException</computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+org/izdevs/acidium/utils/<link linkend="__spring_bean_utils_8java">SpringBeanUtils.java</link></section>
+</section>

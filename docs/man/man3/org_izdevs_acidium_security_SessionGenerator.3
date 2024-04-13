@@ -1,0 +1,54 @@
+.TH "org.izdevs.acidium.security.SessionGenerator" 3 "Version Alpha-0.1" "Acidium" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+org.izdevs.acidium.security.SessionGenerator
+.SH SYNOPSIS
+.br
+.PP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static synchronized void \fBsession\fP ()"
+.br
+.ti -1c
+.RI "static synchronized boolean \fBvalidate\fP (UUID uuid)"
+.br
+.ti -1c
+.RI "static synchronized UUID \fBuse\fP ()"
+.br
+.ti -1c
+.RI "static synchronized void \fBdestroy\fP (UUID uuid)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static volatile Set< UUID > \fBavalibles\fP = new HashSet<>()"
+.br
+.ti -1c
+.RI "static volatile Set< UUID > \fBvalid\fP = new HashSet<>()"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "static synchronized void org\&.izdevs\&.acidium\&.security\&.SessionGenerator\&.destroy (UUID uuid)\fR [static]\fP"
+
+.SS "static synchronized void org\&.izdevs\&.acidium\&.security\&.SessionGenerator\&.session ()\fR [static]\fP"
+
+.SS "static synchronized UUID org\&.izdevs\&.acidium\&.security\&.SessionGenerator\&.use ()\fR [static]\fP"
+
+.SS "static synchronized boolean org\&.izdevs\&.acidium\&.security\&.SessionGenerator\&.validate (UUID uuid)\fR [static]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "volatile Set<UUID> org\&.izdevs\&.acidium\&.security\&.SessionGenerator\&.avalibles = new HashSet<>()\fR [static]\fP"
+
+.SS "volatile Set<UUID> org\&.izdevs\&.acidium\&.security\&.SessionGenerator\&.valid = new HashSet<>()\fR [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Acidium from the source code\&.

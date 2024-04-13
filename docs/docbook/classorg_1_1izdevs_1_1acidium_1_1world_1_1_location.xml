@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_location" xml:lang="en-US">
+<title>org.izdevs.acidium.world.Location Class Reference</title>
+<indexterm><primary>org.izdevs.acidium.world.Location</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_location_1a87c0382f2463795ee847beaac3fdce23">Location</link> (int x, int y)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classorg_1_1izdevs_1_1acidium_1_1world_1_1_location_1a87c0382f2463795ee847beaac3fdce23"/><section>
+    <title>Location()</title>
+<indexterm><primary>Location</primary><secondary>org.izdevs.acidium.world.Location</secondary></indexterm>
+<indexterm><primary>org.izdevs.acidium.world.Location</primary><secondary>Location</secondary></indexterm>
+<para><computeroutput>org.izdevs.acidium.world.Location.Location (int x, int y)</computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+org/izdevs/acidium/world/<link linkend="__location_8java">Location.java</link></section>
+</section>

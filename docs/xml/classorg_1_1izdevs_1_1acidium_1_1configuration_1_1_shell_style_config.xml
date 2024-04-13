@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_shell_style_config" kind="class" language="Java" prot="public">
+    <compoundname>org::izdevs::acidium::configuration::ShellStyleConfig</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">StyleSettings</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_shell_style_config_1a79bbfab24b1de9951a770f8729259bc1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String org.izdevs.acidium.configuration.ShellStyleConfig.highlight</definition>
+        <argsstring>()</argsstring>
+        <name>highlight</name>
+        <qualifiedname>org.izdevs.acidium.configuration.ShellStyleConfig.highlight</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/configuration/ShellStyleConfig.java" line="7" column="19" bodyfile="org/izdevs/acidium/configuration/ShellStyleConfig.java" bodystart="7" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_shell_style_config_1a6bff3b9132c2d2817247a981894d2699" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String org.izdevs.acidium.configuration.ShellStyleConfig.background</definition>
+        <argsstring>()</argsstring>
+        <name>background</name>
+        <qualifiedname>org.izdevs.acidium.configuration.ShellStyleConfig.background</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="org/izdevs/acidium/configuration/ShellStyleConfig.java" line="12" column="19" bodyfile="org/izdevs/acidium/configuration/ShellStyleConfig.java" bodystart="12" bodyend="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>org.izdevs.acidium.configuration.ShellStyleConfig</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_shell_style_config"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>StyleSettings</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>org.izdevs.acidium.configuration.ShellStyleConfig</label>
+        <link refid="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_shell_style_config"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>StyleSettings</label>
+      </node>
+    </collaborationgraph>
+    <location file="org/izdevs/acidium/configuration/ShellStyleConfig.java" line="5" column="7" bodyfile="org/izdevs/acidium/configuration/ShellStyleConfig.java" bodystart="5" bodyend="15"/>
+    <listofallmembers>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_shell_style_config_1a6bff3b9132c2d2817247a981894d2699" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::configuration::ShellStyleConfig</scope><name>background</name></member>
+      <member refid="classorg_1_1izdevs_1_1acidium_1_1configuration_1_1_shell_style_config_1a79bbfab24b1de9951a770f8729259bc1" prot="public" virt="non-virtual"><scope>org::izdevs::acidium::configuration::ShellStyleConfig</scope><name>highlight</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

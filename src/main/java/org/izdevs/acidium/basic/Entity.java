@@ -29,6 +29,7 @@ import static com.esri.core.geometry.Point2D.distance;
 @Getter
 
 public class Entity extends Resource implements Telegraph {
+    boolean invincible = false;
     boolean alive = true;
     Inventory inventory = new Inventory(InventoryType.Inventory);
     Inventory electronInv = new Inventory(InventoryType.Electron);
@@ -61,6 +62,7 @@ public class Entity extends Resource implements Telegraph {
     FloatArray pathFinderGoal = new FloatArray(2);
     ScheduledTask task = new ScheduledTask(
             () -> {
+                Logger logger = LoggerFactory.getLogger(this.getClass());
                 if (this.getHealth() <= 0) this.alive = false;
                 World current_world = this.getWorld();
 
@@ -69,10 +71,13 @@ public class Entity extends Resource implements Telegraph {
                         Mob mob = current_world.mobs.get(i);
 
                         if (isColliding(mob, this)) {
-                            mob.setHealth(mob.getHealth() - this.getBDamage());
-                            Logger logger = LoggerFactory.getLogger(this.getClass());
-
-                            logger.debug("entity damage is triggered...");
+                            if (invincible) {
+                                logger.debug("entity is invincible, stopped damage");
+                            } else {
+                                mob.setHealth(mob.getHealth() - this.getBDamage());
+                                this.damage(mob.getBDamage());
+                                logger.debug("entity damage is triggered, amount:" + this.getBDamage());
+                            }
                         }
                     }
                 }

@@ -1,6 +1,7 @@
 package org.izdevs.acidium.command;
 
 import jakarta.validation.constraints.NotNull;
+import org.izdevs.acidium.configuration.Config;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.shell.standard.ShellComponent;
@@ -14,9 +15,8 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
-import org.izdevs.acidium.configuration.Config;
 
-import static org.izdevs.acidium.AcidiumApplication.SQLConnection;
+import static org.izdevs.acidium.StartupTasksRunner.SQLConnection;
 import static org.izdevs.acidium.serialization.NBTParser.registerNBTDef;
 
 @ShellComponent

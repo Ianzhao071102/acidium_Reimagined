@@ -4,18 +4,21 @@ import com.google.gson.Gson;
 import org.izdevs.acidium.game.crafting.CraftingRecipe;
 import org.izdevs.acidium.game.crafting.CraftingSlot;
 import org.izdevs.acidium.game.equipment.Equipment;
+import org.izdevs.acidium.scheduling.DelayedTask;
+import org.izdevs.acidium.scheduling.LoopManager;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Bean;
 
 
 @SpringBootTest
 class AcidiumApplicationTests {
   //worlds do not generate
-    @TestBean
+    @Bean(name = "generateWorld")
     public static boolean generateWorld() {
-      return falae;
+      return false;
     }
     @Test
     public void contextLoads() {
@@ -28,7 +31,7 @@ class AcidiumApplicationTests {
       DelayedTask task = new DelayedTask(() -> {
         Logger logger = LoggerFactory.getLogger(this.getClass());
 
-        logger.info("logger test of tasking has been sucessful");
+        logger.info("logger test of tasking has been successful");
       },1);
       LoopManager.scheduleAsyncDelayedTask(task);
     }

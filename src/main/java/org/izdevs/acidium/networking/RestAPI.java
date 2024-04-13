@@ -41,8 +41,9 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicReference;
 
-import static org.izdevs.acidium.AcidiumApplication.SQLConnection;
+
 import static org.izdevs.acidium.AcidiumApplication.bcrypt;
+import static org.izdevs.acidium.StartupTasksRunner.SQLConnection;
 import static org.izdevs.acidium.game.inventory.Inventory.getInventoryOfPlayerByType;
 import static org.izdevs.acidium.game.inventory.Inventory.getTypeBySlotId;
 

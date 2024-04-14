@@ -18,6 +18,7 @@ import org.izdevs.acidium.entity.MobHolder;
 import org.izdevs.acidium.game.crafting.CraftingRecipe;
 import org.izdevs.acidium.game.crafting.CraftingRecipeHolder;
 import org.izdevs.acidium.game.crafting.CraftingSlot;
+import org.izdevs.acidium.game.equipment.DropTable;
 import org.izdevs.acidium.game.equipment.Equipment;
 import org.izdevs.acidium.game.equipment.EquipmentHolder;
 import org.izdevs.acidium.game.inventory.InventoryType;
@@ -49,9 +50,16 @@ public class NBTParser {
                     int health = spec.getInt("health");
                     double speed = spec.getDouble("speed");
                     int hitboxRadius = spec.getInt("hitboxRadius");
+                    String dropTable = spec.getString("dropTable");
                     if (apiVersion.matches("^v+\\d")) {
                         //api version legit
                         Mob mob = new Mob(name, speed, health, bDamage, hitboxRadius);
+
+
+                        //enables drop table
+                        DropTable table = new Gson().fromJson(dropTable, DropTable.class);
+                        mob.setDropTable(table);
+
                         logger.info(mob + " was successfully loaded and is now being registered");
                         MobHolder.registerMob(mob);
                         if (MobHolder.registeredMobs.contains(mob)) logger.info(mob + " was registered");

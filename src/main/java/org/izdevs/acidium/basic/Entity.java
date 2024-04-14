@@ -9,6 +9,7 @@ import com.esri.core.geometry.Point2D;
 import lombok.Getter;
 import lombok.Setter;
 import org.izdevs.acidium.api.v1.Mob;
+import org.izdevs.acidium.game.equipment.DropTable;
 import org.izdevs.acidium.game.inventory.Inventory;
 import org.izdevs.acidium.game.inventory.InventoryType;
 import org.izdevs.acidium.scheduling.DelayedTask;

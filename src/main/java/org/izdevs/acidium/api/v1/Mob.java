@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
+import org.izdevs.acidium.game.equipment.DropTable;
 import org.izdevs.acidium.game.equipment.Equipment;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.serialization.SpecObject;
@@ -16,6 +17,12 @@ import java.util.Set;
 
 @Getter
 public class Mob extends Resource {
+    /**
+     * no default drop table for entity without this
+     */
+    @Setter
+    DropTable dropTable = null;
+
     @Setter
     public Set<Equipment> equipments = new HashSet<>();
 

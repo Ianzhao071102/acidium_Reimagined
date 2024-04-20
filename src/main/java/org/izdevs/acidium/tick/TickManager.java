@@ -9,13 +9,31 @@ import org.izdevs.acidium.scheduling.LoopManager;
 import org.izdevs.acidium.scheduling.ScheduledTask;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
+import org.springframework.util.ReflectionUtils;
 
+import java.lang.reflect.Method;
+
+@Component
+@ComponentScan(basePackages = "org.izdevs.acidium")
 public class TickManager {
+    /**
+     * newly collected ticks per second value
+     */
     public static int tps;
-    //the tick a second ago
+
+    /**
+        the tick per second collected a second ago
+     */
     public static long old_tick;
 
+    /**
+        the current tick
+     */
     public static long tick = 0;
 
     @Getter
@@ -25,6 +43,7 @@ public class TickManager {
     @Scheduled(fixedDelay = 1000 / Config.ticksPerSecond)
     public static void stepTick() {
         if (!paused) {
+            runTickedMethods();
             for (int i = 0; i <= LoopManager.getTasks().size() - 1; i++) {
                 ScheduledTask task = LoopManager.getTasks().iterator().next();
                 task.exec();

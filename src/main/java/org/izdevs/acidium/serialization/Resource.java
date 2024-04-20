@@ -5,82 +5,81 @@ import com.google.gson.annotations.Expose;
 import lombok.Getter;
 import lombok.Setter;
 import net.forthecrown.nbt.CompoundTag;
-import org.izdevs.acidium.configuration.Config;
-import org.izdevs.acidium.tick.Ticked;
-import org.springframework.scheduling.annotation.Scheduled;
+import org.izdevs.acidium.scheduling.LoopManager;
+import org.izdevs.acidium.scheduling.ScheduledTask;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.izdevs.acidium.serialization.ResourceFacade.registerResource;
 
-public class Resource implements Ticked {
-    @Expose(serialize = false,deserialize = false)
+public class Resource {
     @Getter
     @Setter
-    Runnable tickRun;
-    @Getter
-    @Expose(serialize = false,deserialize = false)
-    boolean ticked;
-    @Getter
-    @Setter
-    @Expose(serialize = false,deserialize = false)
-    List<String> flags;
-    @Getter
-    @Setter
-    @Expose(serialize = false,deserialize = false)
+    @Expose(serialize = false, deserialize = false)
     public boolean unset;
     @Getter
-    @Expose(serialize = false,deserialize = false)
+    @Expose(serialize = false, deserialize = false)
     public boolean isApi;
     @Setter
-    @Expose(serialize = false,deserialize = false)
+    @Expose(serialize = false, deserialize = false)
 
     public API associatedApi;
     @Setter
     @Getter
     @Deprecated
-    @Expose(serialize = false,deserialize = false)
+    @Expose(serialize = false, deserialize = false)
 
     public String typeName;
     @Getter
     @Setter
-    @Expose(serialize = false,deserialize = false)
+    @Expose(serialize = false, deserialize = false)
 
     public String name;
     @Setter
     @Getter
-    @Expose(serialize = false,deserialize = false)
+    @Expose(serialize = false, deserialize = false)
 
     public ArrayList<SpecObject> spec;
-    public Resource(String name, ArrayList<SpecObject> objects){
+    protected CompoundTag data;
+    @Expose(serialize = false, deserialize = false)
+    @Getter
+    @Setter
+    Runnable tickRun;
+    @Getter
+    @Expose(serialize = false, deserialize = false)
+    boolean ticked;
+    @Getter
+    @Setter
+    @Expose(serialize = false, deserialize = false)
+    List<String> flags;
+
+    public Resource(String name, ArrayList<SpecObject> objects) {
         this.name = name;
         this.spec = objects;
+        LoopManager.registerTask(new ScheduledTask(tickRun));
     }
-    public Resource(String name,boolean isApi){
+
+    public Resource(String name, boolean isApi) {
         this.name = name;
         this.isApi = isApi;
+        LoopManager.registerTask(new ScheduledTask(tickRun));
     }
-    public void register(){
+
+    public void register() {
         registerResource(this);
     }
-    public static Resource deserialize(String serialized){
-        Gson gson = new Gson();
-        //inline
-        return gson.fromJson(serialized,Resource.class);
-    }
-    public String serialize(){
+
+    public String serialize() {
         Gson gson = new Gson();
         return gson.toJson(this);
     }
-    //IDEA: THIS COULD BE SERIALIZED TO NBT IF COULD
-    @Scheduled(fixedDelay = 1000/Config.ticksPerSecond)
-    @Override
+
+
     public void tick() {
-        if(tickRun != null){
+        if (tickRun != null) {
             tickRun.run();
         }
     }
-    protected CompoundTag data;
 
 }

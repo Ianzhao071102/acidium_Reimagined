@@ -6,7 +6,8 @@ import org.izdevs.acidium.tick.Ticked;
 import java.util.ArrayList;
 import java.util.List;
 
-public interface AbstractMobSpawner extends Ticked{
+@Ticked
+public interface AbstractMobSpawner{
     void spawn();
     void tick();
     List<Mob> jobQueue = new ArrayList<>();

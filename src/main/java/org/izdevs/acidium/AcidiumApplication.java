@@ -49,15 +49,6 @@ public class AcidiumApplication extends SpringApplication {
     }
 
 
-    public static int getFreePort() {
-        try (ServerSocket socket = new ServerSocket(0)) {
-            socket.setReuseAddress(true);
-            return socket.getLocalPort();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     public static String bcrypt(String string) {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
         return encoder.encode(string);
@@ -76,13 +67,4 @@ public class AcidiumApplication extends SpringApplication {
             logger.info("---------- END NOTE -----------");
         }
     }
-
-    public double distance(
-            double x1,
-            double y1,
-            double x2,
-            double y2) {
-        return Math.sqrt((y2 - y1) * (y2 - y1) + (x2 - x1) * (x2 - x1));
-    }
-
 }

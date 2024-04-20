@@ -1,4 +1,4 @@
-package org.izdevs.acidium.serialization;
+package org.izdevs.acidium.utils;
 
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;

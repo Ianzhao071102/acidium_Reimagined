@@ -9,7 +9,7 @@ import java.util.Map;
 
 @Setter
 @Getter
-public class World extends TickedWorld{
+public class World extends TickedWorld {
     @Getter
     @Setter
     volatile AbstractMobSpawner spawner;

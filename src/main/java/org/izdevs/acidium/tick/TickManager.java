@@ -43,7 +43,6 @@ public class TickManager {
     @Scheduled(fixedDelay = 1000 / Config.ticksPerSecond)
     public static void stepTick() {
         if (!paused) {
-            runTickedMethods();
             for (int i = 0; i <= LoopManager.getTasks().size() - 1; i++) {
                 ScheduledTask task = LoopManager.getTasks().iterator().next();
                 task.exec();

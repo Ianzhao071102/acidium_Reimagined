@@ -5,9 +5,11 @@ import lombok.Getter;
 import lombok.Setter;
 import net.forthecrown.nbt.CompoundTag;
 import org.izdevs.acidium.serialization.Resource;
+import org.springframework.stereotype.Component;
 
 @Getter
 @Setter
+@Component
 public class BlockSpec extends Resource {
     int id;
     boolean walkable;

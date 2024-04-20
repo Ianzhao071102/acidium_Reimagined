@@ -2,7 +2,6 @@ package org.izdevs.acidium.world;
 
 import com.esri.core.geometry.Point;
 import lombok.Getter;
-import lombok.Synchronized;
 import org.izdevs.acidium.api.v1.Mob;
 import org.izdevs.acidium.api.v1.Player;
 

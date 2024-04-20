@@ -4,5 +4,11 @@
       "name": "generateUponStart",
       "type": "java.lang.Boolean",
       "description": "Description for generateUponStart."
-  }
-] }
+    },
+    {
+      "name": "misc.print_license",
+      "type": "java.lang.String",
+      "description": "should it print license."
+    }
+  ]
+}

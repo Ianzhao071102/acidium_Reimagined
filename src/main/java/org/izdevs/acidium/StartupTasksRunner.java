@@ -6,7 +6,6 @@ import org.izdevs.acidium.game.crafting.CraftingRecipeHolder;
 import org.izdevs.acidium.game.equipment.EquipmentHolder;
 import org.izdevs.acidium.serialization.ResourceFacade;
 import org.izdevs.acidium.tick.TickManager;
-import org.izdevs.acidium.utils.ReflectUtil;
 import org.izdevs.acidium.world.WorldController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,16 +13,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
-import org.springframework.core.io.Resource;
 import org.springframework.jdbc.datasource.DataSourceUtils;
 import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.security.SecureRandom;
 import java.sql.Connection;
-import java.util.List;
 
 import static org.izdevs.acidium.AcidiumApplication.loadNBT;
 import static org.izdevs.acidium.AcidiumApplication.readAndPrintNote;
@@ -47,6 +42,15 @@ public class StartupTasksRunner implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
+        /*
+            credits below
+         */
+        logger.info("MADE BY: " + credits);
+        logger.info("OPENSOURCE ON GITHUB: https://github.com/Ianzhao071102/acidium_Reimagined");
+        logger.info("using spring framework...");
+        logger.info("Thanks for dphater for inspiring this project...");
+
+        //initialization below
         TickManager.init();
         loadNBT();
         logger.info("starting resource facade, registering....");
@@ -84,24 +88,7 @@ public class StartupTasksRunner implements ApplicationRunner {
         EquipmentHolder.init();
 
 
-        /*
-            credits below
-         */
-        logger.info("MADE BY: " + credits);
-        logger.info("OPENSOURCE ON GITHUB: https://github.com/Ianzhao071102/acidium_Reimagined");
-        logger.info("using spring framework...");
-        logger.info("Thanks for dphater for inspiring this project...");
 
-        Resource[] resources = ReflectUtil.getResources();
-        for (Resource resource : resources) {
-            if (resource.getFile().getName().equals("welcome.txt")) {
-                List<String> lines = Files.readAllLines(Path.of(resource.getURI()));
-                for (String line : lines) {
-                    logger.info(line);
-                }
-            }
-            break;
-        }
 
     }
 }

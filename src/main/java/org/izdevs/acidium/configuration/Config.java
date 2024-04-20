@@ -112,4 +112,11 @@ public class Config {
     public static String getCredits(){
         return "izdevs,jerry(dphater) and the rest of the team";
     }
+
+    @Value("${misc.print_license}")
+    static boolean license;
+    @Bean(name = "license")
+    public static boolean generateLicense(){
+        return license;
+    }
 }

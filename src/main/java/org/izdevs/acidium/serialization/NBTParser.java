@@ -151,14 +151,18 @@ public class NBTParser {
                     ListTag ingredients = tag.getList("ingredients");
                     boolean ordered = tag.getInt("ordered") >= 1;
                     boolean creatable = tag.getInt("craftable") >= 1;
-                    //todo finish recipe construction method impl
-
+                    String destination_def = tag.getString("destination");
                     if (ingredients.isEmpty()) {
                         throw new IllegalArgumentException("invalid compound ingredients: list 'ingredients' is EMPTY");
                     }
 
                     Set<CraftingSlot> slots = new HashSet<>();
-
+                    Equipment destination = new Gson().fromJson(destination_def,Equipment.class);
+                    if(EquipmentHolder.getEquipments().contains(destination)){
+                        logger.debug("equipment is registered in holder: " + destination_def);
+                    }else{
+                        logger.debug("equipment is not registered yet, maybe later...");
+                    }
                     //item initialized should be -1 based on testings
                     int x = -1, y = -1;
                     for (int i = 0; i <= ingredients.size() - 1; i++) {
@@ -186,7 +190,8 @@ public class NBTParser {
 
                         }
                     }
-                    CraftingRecipe recipe = new CraftingRecipe(recipe_name,ordered, creatable, slots);
+
+                    CraftingRecipe recipe = new CraftingRecipe(destination,recipe_name,ordered, creatable, slots);
                     CraftingRecipeHolder.registerRecipe(recipe);
                 }
 

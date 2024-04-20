@@ -8,6 +8,6 @@ import java.io.IOException;
 public class ReflectUtil {
     public static Resource[] getResources() throws IOException {
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        return resolver.getResources("classpath*:/*.nbt");
+        return resolver.getResources("classpath*:*/*.nbt");
     }
 }

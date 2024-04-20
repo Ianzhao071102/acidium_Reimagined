@@ -45,7 +45,10 @@ public class Resource {
     @Expose(serialize = false, deserialize = false)
     @Getter
     @Setter
-    Runnable tickRun;
+
+    Runnable tickRun = () -> {
+
+    };
     @Getter
     @Expose(serialize = false, deserialize = false)
     boolean ticked;
@@ -76,10 +79,5 @@ public class Resource {
     }
 
 
-    public void tick() {
-        if (tickRun != null) {
-            tickRun.run();
-        }
-    }
 
 }

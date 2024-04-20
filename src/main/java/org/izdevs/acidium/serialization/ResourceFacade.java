@@ -1,18 +1,12 @@
 package org.izdevs.acidium.serialization;
 
 import lombok.Getter;
-import org.apache.kafka.common.errors.ResourceNotFoundException;
-import org.izdevs.acidium.tick.Ticked;
+import org.izdevs.acidium.serialization.exceptions.ResourceNotFoundException;
 import org.reflections.Reflections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Sort;
 
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Set;
 
 import static org.reflections.scanners.Scanners.SubTypes;

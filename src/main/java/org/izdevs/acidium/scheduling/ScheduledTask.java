@@ -1,6 +1,6 @@
 package org.izdevs.acidium.scheduling;
 
-public class ScheduledTask implements Runnable {
+public class ScheduledTask{
     /**
      * Basic state representation of a scheduled task
      */
@@ -16,10 +16,7 @@ public class ScheduledTask implements Runnable {
 
     State state;
 
-    @Override
-    public void run() {
-        this.task.run();
-    }
+
 
     /**
      * What is should run
@@ -39,7 +36,7 @@ public class ScheduledTask implements Runnable {
         state = State.RUNNING;
 
         try{
-            this.run();
+            this.task.run();
         } catch(Exception e){
             state = State.EXCEPTION;
             throw new RuntimeException(e);

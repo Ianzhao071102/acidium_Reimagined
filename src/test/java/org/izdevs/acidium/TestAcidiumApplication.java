@@ -16,14 +16,9 @@ import org.testcontainers.utility.DockerImageName;
 @TestConfiguration(proxyBeanMethods = false)
 public class TestAcidiumApplication {
 
-	@Bean
-	@ServiceConnection
-	KafkaContainer kafkaContainer() {
-		return new KafkaContainer(DockerImageName.parse("confluentinc/cp-kafka:latest"));
-	}
 
 	public static void main(String[] args) {
 		//TODO MAKE POSITION'S NBT DATA(equipment)
-		System.out.println(new Gson().toJson(new CraftingRecipe(new CraftingSlot(0,0,new Equipment("electron")),new CraftingSlot(0,1,new Equipment("positron")))));
-    }
+		SpringApplication.from(AcidiumApplication::main).with(TestAcidiumApplication.class).run(args);
+	}
 }

@@ -32,7 +32,7 @@ public class Inventory {
                 items = new ArrayList<>(50);
             }
             case _Crafting -> {
-                items = new ArrayList<>(9);
+                items = new ArrayList<>(10);
             }
         }
     }
@@ -55,13 +55,13 @@ public class Inventory {
      * 0-100 INVENTORY (PERSISTS FOREVER AND HAS 100 SLOTS)
      * 101-121 ARMOUR SLOTS
      * 122-172 ELECTRON SLOTS
-     * 173-182 CRAFTING SLOTS THAT HAS ONLY 9 SLOTS
+     * 173-183 CRAFTING SLOTS THAT HAS ONLY 9 SLOTS WITH A CRAFTING SLOT
      */
     public static InventoryType getTypeBySlotId(int id) {
         if (NumberUtils.isInRange(9, 100, id)) return InventoryType.Inventory;
         else if (NumberUtils.isInRange(101, 121, id)) return InventoryType.Armour;
         else if (NumberUtils.isInRange(122, 172, id)) return InventoryType.Electron;
-        else if (NumberUtils.isInRange(173, 182, id)) return InventoryType._Crafting;
+        else if (NumberUtils.isInRange(173, 183, id)) return InventoryType._Crafting;
         else throw new IllegalArgumentException("inventory id is OUT OF BOUNDS, MAX VALUE IS 182, GOT INSTEAD:" + id);
     }
 
@@ -92,8 +92,9 @@ public class Inventory {
         if (NumberUtils.isInRange(9, 100, id)) return id - 9;
         else if (NumberUtils.isInRange(101, 121, id)) return id - 101;
         else if (NumberUtils.isInRange(122, 172, id)) return id - 122;
-        else if (NumberUtils.isInRange(173, 182, id)) return id - 173;
+        else if (NumberUtils.isInRange(173, 183, id)) return id - 173;
         else
-            throw new IllegalArgumentException("inventory id is OUT OF FUCKED UP BOUNDS, MAX VALUE IS 182, GOT INSTEAD:" + id);
+            throw new IllegalArgumentException("inventory id is OUT OF BOUNDS, MAX VALUE IS 182, GOT INSTEAD:" + id);
     }
+
 }

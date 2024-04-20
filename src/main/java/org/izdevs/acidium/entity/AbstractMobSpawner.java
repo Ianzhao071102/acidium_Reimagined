@@ -9,7 +9,6 @@ import java.util.List;
 @Ticked
 public interface AbstractMobSpawner{
     void spawn();
-    void tick();
     List<Mob> jobQueue = new ArrayList<>();
     default void addJob(Mob mob){
         jobQueue.add(mob);

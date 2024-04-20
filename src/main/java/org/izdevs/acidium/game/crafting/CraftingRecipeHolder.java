@@ -1,5 +1,6 @@
 package org.izdevs.acidium.game.crafting;
 
+import jakarta.annotation.PostConstruct;
 import lombok.Getter;
 import org.izdevs.acidium.game.equipment.Equipment;
 import org.izdevs.acidium.game.equipment.EquipmentHolder;
@@ -19,6 +20,7 @@ public class CraftingRecipeHolder {
     public static void registerRecipe(CraftingRecipe recipe){
         recipes.add(recipe);
     }
+    @PostConstruct
     public static void init() throws InstantiationException, IllegalAccessException {
         Logger logger = LoggerFactory.getLogger(CraftingRecipeHolder.class);
         Reflections reflections = new Reflections("org.izdevs.acidium.game");
@@ -30,4 +32,6 @@ public class CraftingRecipeHolder {
             logger.debug(subType.newInstance().toString());
         }
     }
+
+
 }

@@ -26,7 +26,6 @@ import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.serialization.ResourceFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Scope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -40,7 +39,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicReference;
-
 
 import static org.izdevs.acidium.AcidiumApplication.bcrypt;
 import static org.izdevs.acidium.StartupTasksRunner.SQLConnection;
@@ -310,6 +308,23 @@ public class RestAPI {
     public ResponseEntity<Payload> hello(){
         Metrics.apiRequests.increment();
         return new ResponseEntity<>(new Payload("hello from: " + credits), HttpStatus.OK);
+    }
+
+    @PostMapping
+    public ResponseEntity<Payload> register(HttpServletRequest request){
+        if(request.getParameter("username") != null && request.getParameter("password") != null){
+            String username = request.getParameter("username");
+            String password = request.getParameter("password");
+
+            if(repository.findUserByUsername(username) != null){
+                return new ResponseEntity<>(new Payload("username taken"),HttpStatus.NOT_ACCEPTABLE);
+            }else {
+                User user = new User(username,bcrypt(password));
+                repository.save(user);
+                return new ResponseEntity<>(new Payload(new Gson().toJson(user)),HttpStatus.ACCEPTED);
+            }
+        }
+        return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
     }
 
 }

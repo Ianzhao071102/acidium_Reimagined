@@ -17,4 +17,5 @@ public interface AbstractMobSpawner{
         jobQueue.remove(mob);
     }
     void spawnManual(Mob mob);
+
 }

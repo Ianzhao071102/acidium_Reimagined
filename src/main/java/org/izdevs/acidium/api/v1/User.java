@@ -33,11 +33,13 @@ public class User extends Resource {
 
     public User() {
         super("USER", false);
+        this.uuid = UUID.randomUUID();
         this.register();
     }
 
     public User(String name, String passwordHash) {
         super("USER", false);
+        this.uuid = UUID.randomUUID();
         this.passwordHash = passwordHash;
         this.username = name;
     }

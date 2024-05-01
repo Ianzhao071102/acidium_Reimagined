@@ -65,9 +65,6 @@ public class AcidiumApplication extends SpringApplication {
     public static void readAndPrintNote() throws IOException {
         org.springframework.core.io.Resource[] resources = new PathMatchingResourcePatternResolver().getResources("classpath*:/*.note");
         printResource(resources);
-
-        resources = new PathMatchingResourcePatternResolver().getResources("classpath*:/*.txt");
-        printResource(resources);
     }
 
 

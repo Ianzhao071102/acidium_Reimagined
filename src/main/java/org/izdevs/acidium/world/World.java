@@ -15,6 +15,8 @@ public class World extends TickedWorld {
     volatile AbstractMobSpawner spawner;
     volatile Map<Point, Block> map;
 
+
+
     public World(Map<Point, Block> map) {
         super(map);
         this.map = map;

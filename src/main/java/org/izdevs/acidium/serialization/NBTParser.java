@@ -93,7 +93,7 @@ public class NBTParser {
                 }
 
                 case "structure" -> {
-                    ListTag blocks = tag.getList("blocks");
+                    ListTag blocks = tag.getList("nbt/blocks");
                     Map<Point, Block> current = new HashMap<>();
                     for (int i = 0; i <= blocks.size() - 1; i++) {
                         String plr = blocks.getString(i);

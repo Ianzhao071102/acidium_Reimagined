@@ -33,6 +33,6 @@ public class MobHolder{
 
     @PostConstruct
     public void init(){
-        LoopManager.registerTask(new ScheduledTask(this::tick));
+        LoopManager.registerRepeatingTask(new ScheduledTask(this::tick));
     }
 }

@@ -60,13 +60,13 @@ public class Resource {
     public Resource(String name, ArrayList<SpecObject> objects) {
         this.name = name;
         this.spec = objects;
-        LoopManager.registerTask(new ScheduledTask(tickRun));
+        LoopManager.registerRepeatingTask(new ScheduledTask(tickRun));
     }
 
     public Resource(String name, boolean isApi) {
         this.name = name;
         this.isApi = isApi;
-        LoopManager.registerTask(new ScheduledTask(tickRun));
+        LoopManager.registerRepeatingTask(new ScheduledTask(tickRun));
     }
 
     public void register() {

@@ -7,4 +7,6 @@ public abstract class EventHandler{
    abstract boolean onEventFire();
    abstract boolean onEventCancel();
    EventHandlerPriorities priority = EventHandlerPriorities.DEFAULT;
+   Event associated;
+
 }

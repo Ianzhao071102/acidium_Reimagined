@@ -67,14 +67,14 @@ public class Player extends Entity {
         this.uuid = uuid;
         this.username = username;
 
-        LoopManager.registerTask(new ScheduledTask(() -> this.inventoryChecker.run()));
+        LoopManager.registerRepeatingTask(new ScheduledTask(() -> this.inventoryChecker.run()));
     }
 
     public Player() {
         super("unset", 0, 20, 2, 0);
         this.username = "unset";
         this.uuid = UUID.randomUUID();
-        LoopManager.registerTask(new ScheduledTask(() -> this.inventoryChecker.run()));
+        LoopManager.registerRepeatingTask(new ScheduledTask(() -> this.inventoryChecker.run()));
     }
 
     public Player(User user, Entity entity) {
@@ -96,6 +96,6 @@ public class Player extends Entity {
         this.uuid = uuid;
         this.username = username;
         this.entity = entity;
-        LoopManager.registerTask(new ScheduledTask(() -> this.inventoryChecker.run()));
+        LoopManager.registerRepeatingTask(new ScheduledTask(() -> this.inventoryChecker.run()));
     }
 }

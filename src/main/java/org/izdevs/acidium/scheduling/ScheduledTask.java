@@ -1,6 +1,22 @@
 package org.izdevs.acidium.scheduling;
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.Getter;
+
 public class ScheduledTask{
+    @Getter
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    int id;
+
+    public boolean async = false;
+    /**
+     * the ticks it should wait before being executed
+     */
+    public long destTick;
+
     /**
      * Basic state representation of a scheduled task
      */
@@ -10,10 +26,10 @@ public class ScheduledTask{
         FINISHED,
         EXCEPTION //EXIT WITH EXCEPTION
     }
-    /**
-     * Runs this operation.
-     */
 
+    /**
+     * The current state of the task
+     */
     State state;
 
 

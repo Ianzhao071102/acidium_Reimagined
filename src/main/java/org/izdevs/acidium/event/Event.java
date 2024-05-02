@@ -8,13 +8,21 @@ import org.izdevs.acidium.scheduling.LoopManager;
 import java.util.*;
 
 public abstract class Event {
+    /**
+     * The current state of the event
+     */
+    @Getter
+    @Setter
+    Result result = Result.DEFAULT;
     @Getter
     public final boolean async;
     public String name;
     @Getter
     @Setter
     boolean cancelled = false;
-    Comparator<EventHandler> compare_based_on_priority = new Comparator() {
+
+
+    public static final Comparator<EventHandler> compare_based_on_priority = new Comparator() {
         @Override
         public int compare(Object o1, Object o2) {
             assert o1 instanceof EventHandler && o2 instanceof EventHandler;
@@ -25,11 +33,11 @@ public abstract class Event {
     };
 
     public Event(String name, boolean isAsync) {
+        this.name = name;
         this.async = isAsync;
     }
 
     /**
-     *
      * @return fires All the shit at loop manager to let it call the handlers that the event has been cancelled
      */
     public boolean cancel() {

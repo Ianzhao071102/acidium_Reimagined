@@ -99,10 +99,10 @@ public class RestAPI {
     @GetMapping(path = "/login/{username}/{password}")
     public ResponseEntity<Payload> login(@PathVariable(name = "username") String username, @PathVariable(name = "password") String password, HttpServletResponse response, HttpServletRequest request) throws SQLException, IOException {
         Metrics.apiRequests.increment();
-        Pattern username_pattern = Pattern.compile("^([a-z]|[A-Z]|[0-9]|[\\-]|[\\_]){5,20}$"); //NOTE: USERNAME LENGTH MUST BE 5-20, ONLY CHARACTERS AND NUMBERS
+        Pattern username_pattern = Pattern.compile("^[a-zA-Z!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]{5,30}$"); //NOTE: USERNAME LENGTH MUST BE 5-20, ONLY CHARACTERS AND NUMBERS
         Matcher username_match = username_pattern.matcher(username);
 
-        Pattern pwd_pattern = Pattern.compile("^[a-z]|[A-Z]|[0-9]{8,80}$"); //NOTE: PASSWORD LENGTH MUST BE 8-80, ONLY CHARACTERS AND NUMBERS
+        Pattern pwd_pattern = Pattern.compile("^[a-zA-Z!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]{8,80}$"); //NOTE: PASSWORD LENGTH MUST BE 8-80, ONLY CHARACTERS AND NUMBERS
         Matcher pwd_match = pwd_pattern.matcher(password);
 
         if (username_match.matches() && pwd_match.matches()) {

@@ -4,8 +4,8 @@ import lombok.Getter;
 
 @Getter
 public abstract class EventHandler{
-   abstract boolean onEventFire();
-   abstract boolean onEventCancel();
+   abstract void onEventFire();
+   abstract void onEventCancel();
    EventHandlerPriorities priority = EventHandlerPriorities.DEFAULT;
    Event associated;
 

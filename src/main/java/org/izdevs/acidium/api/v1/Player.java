@@ -8,6 +8,7 @@ import org.izdevs.acidium.game.crafting.CraftingRecipeHolder;
 import org.izdevs.acidium.game.crafting.CraftingSlot;
 import org.izdevs.acidium.game.inventory.Inventory;
 import org.izdevs.acidium.game.inventory.InventoryType;
+import org.izdevs.acidium.game.inventory.PlayerInventory;
 import org.izdevs.acidium.scheduling.LoopManager;
 import org.izdevs.acidium.scheduling.ScheduledTask;
 import org.izdevs.acidium.serialization.Resource;
@@ -19,16 +20,13 @@ import java.util.UUID;
 
 @Getter
 public class Player extends Entity {
-
-    volatile Inventory electronInv = new Inventory(InventoryType.Electron);
-    volatile Inventory armourInv = new Inventory(InventoryType.Armour);
-    volatile Inventory craftingGrid = new Inventory(InventoryType._Crafting);
+    volatile PlayerInventory inventory;
     @Setter
     Entity entity;
     String username;
     UUID uuid;
     Runnable inventoryChecker = () -> {
-        if (!craftingGrid.getItems().isEmpty()) {
+        if (!inventory.getCrafting().get().getItems().isEmpty()) {
             CraftingRecipe recipe_ = null;
             boolean found = false;
             for (CraftingRecipe recipe : CraftingRecipeHolder.getRecipes()) {
@@ -40,9 +38,8 @@ public class Player extends Entity {
             }
             //if crafting recipe valid
             if (found) {
-                //based on inventory definition: Inventory.java
-                int slot_id = 183;
-                this.craftingGrid.getItems().set(slot_id,recipe_.getDestination());
+                int slot_id = 9; //(10-1)
+                this.getInventory().getCrafting().get().getItems().set(slot_id,recipe_.getDestination());
             }
         }
     };

@@ -16,6 +16,7 @@ import org.izdevs.acidium.basic.UserRepository;
 import org.izdevs.acidium.game.equipment.Equipment;
 import org.izdevs.acidium.game.inventory.Inventory;
 import org.izdevs.acidium.game.inventory.InventoryType;
+import org.izdevs.acidium.game.inventory.PlayerInventory;
 import org.izdevs.acidium.scheduling.DelayedTask;
 import org.izdevs.acidium.scheduling.LoopManager;
 import org.izdevs.acidium.security.AuthorizationContent;
@@ -32,6 +33,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.lang.ref.Reference;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.Instant;
@@ -235,49 +237,47 @@ public class RestAPI {
     public ResponseEntity<Payload> SwapInventory(HttpServletRequest request) {
         Metrics.apiRequests.increment();
         if (request.getSession().getAttribute("session-id") != null && request.getSession().getAttribute("player") != null) {
+            String _op_slot = request.getParameter("op_slot");
+            String _dest_slot =  request.getParameter("dest_slot");
+            String _inv_type = request.getParameter("op_inv_type");
+            String _dest_inv_type = request.getParameter("dest_inv_type");
             //session id
             if (request.getSession().getAttribute("uuid") instanceof UUID session_id && request.getSession().getAttribute("player") instanceof Player player) {
-                if (request.getParameter("op_slot") != null && request.getParameter("dest_slot") != null) {
-                    //the slot to be operated is not null
-                    int op_slot = 0;
-                    int dest_slot = 0;
-                    try {
-                        op_slot = Integer.parseInt(request.getParameter("op_slot"));
-                        dest_slot = Integer.parseInt(request.getParameter("dest_slot"));
-                    } catch (IllegalArgumentException e) {
-                        return new ResponseEntity<>(new Payload(e.getMessage()), HttpStatus.UNPROCESSABLE_ENTITY);
-                    }
+                if(!SessionGenerator.validate(session_id)) return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+                else if (_op_slot != null && _dest_slot != null && _inv_type != null) {
+                    try{
+                        int op_slot = Integer.parseInt(_op_slot);
+                        int dest_slot = Integer.parseInt(_dest_slot);
 
-                    InventoryType type_of_op_slot;
-                    InventoryType type_of_dest_slot;
-                    try {
-                        type_of_op_slot = getTypeBySlotId(op_slot);
-                        type_of_dest_slot = getTypeBySlotId(dest_slot);
-                    } catch (IllegalArgumentException e) {
-                        return new ResponseEntity<>(new Payload(e.getMessage()), HttpStatus.UNPROCESSABLE_ENTITY);
-                    }
+                        InventoryType op_inv_type = null;
+                        InventoryType dest_inv_type = null;
+                        for(InventoryType type: InventoryType.values()){
+                            if(type.toString().equalsIgnoreCase(_inv_type)){
+                                op_inv_type = type;
+                            }else if(type.toString().equalsIgnoreCase(_dest_inv_type)){
+                                dest_inv_type = type;
+                            }
+                        }
 
-                    try {
-                        //ATOMIC OPERATIONS FOR SETTER FOR VOLATILE VALUES IN A PLAYER'S DEFINITION
-                        AtomicReference<Inventory> op_inv = new AtomicReference<>();
-                        op_inv.set(getInventoryOfPlayerByType(type_of_op_slot, player));
-                        AtomicReference<Inventory> dest_inv = new AtomicReference<>();
-                        dest_inv.set(getInventoryOfPlayerByType(type_of_dest_slot, player));
 
-                        Equipment a = op_inv.get().getItems().get(Inventory.getInnerInventorySlotId(op_slot));
-                        Equipment b = dest_inv.get().getItems().get(Inventory.getInnerInventorySlotId(dest_slot));
+                        if(op_inv_type == null && dest_inv_type == null){
+                            return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
+                        }else{
+                            assert op_inv_type != null && dest_inv_type != null;
+                            AtomicReference<Inventory> op_inv = player.getInventory().getInventoryReference(op_inv_type);
+                            AtomicReference<Inventory> dest_inv = player.getInventory().getInventoryReference(dest_inv_type);
 
-                        //swap the slots in next tick
-                        Inventory finalOp_inv = op_inv.get();
-                        Inventory finalDest_inv = dest_inv.get();
-                        DelayedTask task = new DelayedTask(() -> {
-                            finalOp_inv.getItems().remove(a);
-                            finalDest_inv.getItems().remove(b);
+                            Inventory new_op_inv = op_inv.get();
+                            Equipment move_e = new_op_inv.getItems().get(op_slot);
+                            new_op_inv.getItems().remove(op_slot);
 
-                            op_inv.set(finalOp_inv);
-                            dest_inv.set(finalDest_inv);
-                        }, 1, true);
-                        LoopManager.scheduleAsyncDelayedTask(task);
+                            Inventory new_dest_inv = dest_inv.get();
+                            new_dest_inv.getItems().add(move_e);
+
+
+                            op_inv.set(new_op_inv);
+                            dest_inv.set(new_dest_inv);
+                        }
                     } catch (Exception e) {
                         return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
                     }

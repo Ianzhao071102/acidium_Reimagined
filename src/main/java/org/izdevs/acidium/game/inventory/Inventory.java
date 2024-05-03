@@ -18,7 +18,7 @@ public class Inventory {
 
 
     /**
-     * here defines the inventory MAX slot sizes
+     * here defines the primary_inventory MAX slot sizes
      */
     public Inventory(InventoryType type) {
         this.type = type;
@@ -43,8 +43,8 @@ public class Inventory {
         for (int i = 0; i <= items.size() - 1; i++) {
             Equipment _this = items.get(i);
             if (!_this.getAllowedSlots().contains(type)) {
-                //it is not allowed to be in this type of inventory
-                throw new IllegalArgumentException("inventory type not supported:" + _this.getAllowedSlots() + "inventory type:" + this.type);
+                //it is not allowed to be in this type of primary_inventory
+                throw new IllegalArgumentException("primary_inventory type not supported:" + _this.getAllowedSlots() + "primary_inventory type:" + this.type);
             } else {
                 this.items = items;
             }

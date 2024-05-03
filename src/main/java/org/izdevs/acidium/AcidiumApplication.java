@@ -2,6 +2,8 @@ package org.izdevs.acidium;
 
 
 import org.apache.naming.factory.ResourceFactory;
+import org.izdevs.acidium.scheduling.LoopManager;
+import org.izdevs.acidium.scheduling.ScheduledTask;
 import org.izdevs.acidium.utils.ReflectUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,6 +40,10 @@ public class AcidiumApplication extends SpringApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(AcidiumApplication.class, args);
+
+        LoopManager.registerRepeatingTask(new ScheduledTask(() -> {
+            logger.info("test from task");
+        }));
     }
 
 

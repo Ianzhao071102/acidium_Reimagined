@@ -6,8 +6,6 @@ import org.izdevs.acidium.basic.Entity;
 import org.izdevs.acidium.game.crafting.CraftingRecipe;
 import org.izdevs.acidium.game.crafting.CraftingRecipeHolder;
 import org.izdevs.acidium.game.crafting.CraftingSlot;
-import org.izdevs.acidium.game.inventory.Inventory;
-import org.izdevs.acidium.game.inventory.InventoryType;
 import org.izdevs.acidium.game.inventory.PlayerInventory;
 import org.izdevs.acidium.scheduling.LoopManager;
 import org.izdevs.acidium.scheduling.ScheduledTask;
@@ -20,7 +18,7 @@ import java.util.UUID;
 
 @Getter
 public class Player extends Entity {
-    volatile PlayerInventory inventory;
+    volatile PlayerInventory inventory = new PlayerInventory();
     @Setter
     Entity entity;
     String username;

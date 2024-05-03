@@ -25,7 +25,7 @@ public class Equipment extends Entity {
 
     /**
      * slots that is allowed to be placed on
-     * defaults to: inventory
+     * defaults to: primary_inventory
      */
     @Getter
     @Setter
@@ -45,10 +45,10 @@ public class Equipment extends Entity {
      */
     public void equipElectronSlot(int slotId,String name) {
         this.setName(name);
-        if (this.equipEntity.getInventory().getItems().contains(this)) {
-            this.equipEntity.getInventory().getItems().remove(this);
+        if (this.equipEntity.getPrimary_inventory().getItems().contains(this)) {
+            this.equipEntity.getPrimary_inventory().getItems().remove(this);
         } else {
-            throw new IllegalArgumentException("the item to be equipped is not in inventory...");
+            throw new IllegalArgumentException("the item to be equipped is not in primary_inventory...");
         }
         this.equipEntity.getElectronInv().getItems().add(this);
 
@@ -58,10 +58,10 @@ public class Equipment extends Entity {
      * equip current equipment to its owner's armor slot
      */
     public void equipArmorSlot(int slotId) {
-        if (this.equipEntity.getInventory().getItems().contains(this)) {
-            this.equipEntity.getInventory().getItems().remove(this);
+        if (this.equipEntity.getPrimary_inventory().getItems().contains(this)) {
+            this.equipEntity.getPrimary_inventory().getItems().remove(this);
         } else {
-            throw new IllegalArgumentException("the item to be equipped is not in inventory...");
+            throw new IllegalArgumentException("the item to be equipped is not in primary_inventory...");
         }
         this.equipEntity.getArmourInv().getItems().add(this);
 

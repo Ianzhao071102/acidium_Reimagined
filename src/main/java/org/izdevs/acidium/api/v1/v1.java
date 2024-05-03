@@ -7,7 +7,7 @@ import static org.izdevs.acidium.serialization.ResourceFacade.registerAPI;
 
 public class v1 extends API {
     public v1() {
-        super("v1","v1",new User(),new Player(),new Mob(),new DefaultSpawner(),new BlockSpec(),new Error(),new Payload());
+        super("v1","v1",new User(),new Player(),new Mob(),new DefaultSpawner(),new BlockSpec(),new Error());
         this.isApi = true;
         this.setName("v1");
 

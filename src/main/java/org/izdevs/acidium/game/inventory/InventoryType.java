@@ -1,11 +1,11 @@
 package org.izdevs.acidium.game.inventory;
 
 /**
- * inventory types indicator
+ * primary_inventory types indicator
  */
 public enum InventoryType {
     /**
-     * basic inventory: that stores item forever and has no effects to player's nbt except for its storage
+     * basic primary_inventory: that stores item forever and has no effects to player's nbt except for its storage
      */
     Inventory,
     /**
@@ -13,7 +13,7 @@ public enum InventoryType {
      */
     Electron,
     /**
-     * internal inventory that supports the implementation of crafting
+     * internal primary_inventory that supports the implementation of crafting
      */
     _Crafting,
     /**

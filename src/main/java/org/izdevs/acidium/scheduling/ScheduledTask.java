@@ -30,7 +30,7 @@ public class ScheduledTask{
     /**
      * The current state of the task
      */
-    State state;
+    State state = State.SCHEDULED_WAITING;
 
 
 

@@ -16,7 +16,6 @@ import org.izdevs.acidium.basic.UserRepository;
 import org.izdevs.acidium.game.equipment.Equipment;
 import org.izdevs.acidium.game.inventory.Inventory;
 import org.izdevs.acidium.game.inventory.InventoryType;
-import org.izdevs.acidium.game.inventory.PlayerInventory;
 import org.izdevs.acidium.scheduling.DelayedTask;
 import org.izdevs.acidium.scheduling.LoopManager;
 import org.izdevs.acidium.security.AuthorizationContent;
@@ -33,7 +32,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.lang.ref.Reference;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.Instant;
@@ -44,8 +42,6 @@ import java.util.concurrent.atomic.AtomicReference;
 
 import static org.izdevs.acidium.AcidiumApplication.bcrypt;
 import static org.izdevs.acidium.StartupTasksRunner.SQLConnection;
-import static org.izdevs.acidium.game.inventory.Inventory.getInventoryOfPlayerByType;
-import static org.izdevs.acidium.game.inventory.Inventory.getTypeBySlotId;
 
 @RestController
 @RequestMapping("v1") //RESOURCE GETTER API V1

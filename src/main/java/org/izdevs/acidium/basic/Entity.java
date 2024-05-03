@@ -31,7 +31,7 @@ import static com.esri.core.geometry.Point2D.distance;
 public class Entity extends Resource implements Telegraph {
     boolean invincible = false;
     boolean alive = true;
-    Inventory inventory = new Inventory(InventoryType.Inventory);
+    Inventory primary_inventory = new Inventory(InventoryType.Inventory);
     Inventory electronInv = new Inventory(InventoryType.Electron);
     Inventory armourInv = new Inventory(InventoryType.Armour);
 

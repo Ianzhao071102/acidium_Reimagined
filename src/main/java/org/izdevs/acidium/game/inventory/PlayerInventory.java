@@ -29,6 +29,6 @@ public class PlayerInventory {
                 return primary;
             }
         }
-        throw new RuntimeException("deprecated _graphics should not be used as a inventory type");
+        throw new RuntimeException("deprecated _graphics should not be used as a primary_inventory type");
     }
 }

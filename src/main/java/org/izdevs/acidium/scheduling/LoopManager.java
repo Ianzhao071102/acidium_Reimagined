@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 import org.izdevs.acidium.configuration.Config;
 import org.izdevs.acidium.tick.TickManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -49,6 +51,7 @@ public class LoopManager {
 
     @Scheduled(fixedDelay = pulse_interval)
     public void pulse() throws Exception {
+        Logger logger = LoggerFactory.getLogger(this.getClass());
         for (ScheduledTask task : delayedTasks) {
             if (task.state == ScheduledTask.State.FINISHED) {
                 delayedTasks.remove(task);
@@ -59,15 +62,35 @@ public class LoopManager {
                             async_executor.submit(task.task);
                         } else {
                             task.exec();
+                            delayedTasks.remove(task);
                         }
                     } else {
                         task.destTick--;
                     }
                 } else {
                     if (task.state == ScheduledTask.State.EXCEPTION) {
+                        delayedTasks.remove(task);
                         throw new Exception("Task:" + task.getId() + "thrown an exception while executing");
                     }
                 }
+            }
+        }
+
+        for(ScheduledTask task: repeating_tasks){
+            if(task.state == ScheduledTask.State.SCHEDULED_WAITING){
+                if (task.destTick == 0) {
+                    if (task.async) {
+                        async_executor.submit(task.task);
+                    } else {
+                        task.exec();
+                    }
+                } else {
+                    task.destTick--;
+                }
+            }
+            else if(task.state == ScheduledTask.State.EXCEPTION){
+                repeating_tasks.remove(task);
+                throw new Exception("Repeating Task:" + task.getId() + "Exited with exception");
             }
         }
     }

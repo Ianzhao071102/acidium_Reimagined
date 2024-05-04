@@ -24,6 +24,7 @@ import org.izdevs.acidium.security.SessionGenerator;
 import org.izdevs.acidium.serialization.API;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.serialization.ResourceFacade;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
@@ -32,16 +33,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.time.Instant;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
 import static org.izdevs.acidium.AcidiumApplication.bcrypt;
-import static org.izdevs.acidium.StartupTasksRunner.SQLConnection;
 
 @RestController
 @RequestMapping("v1") //RESOURCE GETTER API V1
@@ -57,7 +53,7 @@ public class RestAPI {
     private String credits;
 
     @GetMapping(path = "resources/{name}/{api}")
-    public String getResource(@PathVariable(name = "name") String name, @PathVariable(name = "api", required = false) String api, HttpServletResponse response) {
+    public String getResource(@PathVariable(name = "name") String name, @PathVariable(name = "api", required = false) String api) {
         Metrics.apiRequests.increment();
         for (int i = 0; i <= ResourceFacade.getResources().size() - 1; i++) {
             Resource resource = ResourceFacade.getResources().get(i);
@@ -97,61 +93,42 @@ public class RestAPI {
     }
 
     @GetMapping(path = "/login/{username}/{password}")
-    public ResponseEntity<Payload> login(@PathVariable(name = "username") String username, @PathVariable(name = "password") String password, HttpServletResponse response, HttpServletRequest request) throws SQLException, IOException {
+    public ResponseEntity<Payload> login(@PathVariable(name = "username") String username, @PathVariable(name = "password") String password, HttpServletResponse response, HttpServletRequest request) {
         Metrics.apiRequests.increment();
-        Pattern username_pattern = Pattern.compile("^[a-zA-Z!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]{5,30}$"); //NOTE: USERNAME LENGTH MUST BE 5-20, ONLY CHARACTERS AND NUMBERS
+        Pattern username_pattern = Pattern.compile("^[a-zA-Z0-9](?:[._]?[a-zA-Z0-9]){5,17}[a-zA-Z0-9]$"); //NOTE: USERNAME LENGTH MUST BE 5-20, ONLY CHARACTERS AND NUMBERS
         Matcher username_match = username_pattern.matcher(username);
 
-        Pattern pwd_pattern = Pattern.compile("^[a-zA-Z!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]{8,80}$"); //NOTE: PASSWORD LENGTH MUST BE 8-80, ONLY CHARACTERS AND NUMBERS
+        Pattern pwd_pattern = Pattern.compile("^[a-zA-Z0-9](?:[._]?[a-zA-Z0-9]){6,30}[a-zA-Z0-9]$"); //NOTE: PASSWORD LENGTH MUST BE 8-80, ONLY CHARACTERS AND NUMBERS
         Matcher pwd_match = pwd_pattern.matcher(password);
 
         if (username_match.matches() && pwd_match.matches()) {
             //query is safe
-            ResultSet rs = SQLConnection.createStatement().executeQuery("SELECT username,uuid,passwordhash FROM users WHERE username = " + username);
 
-            int size = 0;
-            if (rs != null) {
-                rs.last(); // moves cursor to the last row
-                size = rs.getRow(); // get row id
+            User user = repository.findUserByUsername(username);
+            if(user == null){
+                return new ResponseEntity<>(new Payload("user is not found"),HttpStatus.UNPROCESSABLE_ENTITY);
             }
-
-            if (size != 1) {
-                response.getWriter().write("illegal username or password");
-                response.getWriter().flush();
-                return new ResponseEntity<>(new Payload("illegal parameter"), HttpStatusCode.valueOf(403));
-            } else {
-                //username and password are only one row
-                if (username.equals(rs.getString("username")) && bcrypt(password).equals(rs.getString("passwordhash"))) {
-                    String playerUUID = rs.getString("uuid");
-                    UUID sid = SessionGenerator.use();
-
-                    User user = new User(username, playerUUID);
-
-                    response.addCookie(new Cookie("session", String.valueOf(sid)));
-                    response.addCookie(new Cookie("user", user.toString()));
-
-                    //initial value of player
-                    request.getSession().setAttribute("player", new Player(user, new Entity(username, 1, 20, 0, 20)));
-                    request.getSession().setAttribute("session-id", sid);
-                    return new ResponseEntity<>(
-                            new Payload(
-                                    new Gson().toJson(
-                                            new AuthorizationContent(
-                                                    playerUUID,
-                                                    new SessionDetail(String.valueOf(sid))
-                                            )
-                                    )), HttpStatusCode.valueOf(200)
-                    );
-                } else {
-                    response.getWriter().write("illegal username or password");
-                    response.getWriter().flush();
-                    return new ResponseEntity<>(new Payload("illegal parameter"), HttpStatusCode.valueOf(403));
-                }
+            else if(!Objects.equals(user.getPasswordHash(), bcrypt(password))){
+                return new ResponseEntity<>(new Payload("incorrect password or username"),HttpStatus.UNAUTHORIZED);
             }
+            response.addCookie(new Cookie("user", user.toString()));
+
+            UUID sid = SessionGenerator.use();
+            UUID playerUUID = user.getUuid();
+            //initial value of player
+            request.getSession().setAttribute("player", new Player(user, new Entity(username, 1, 20, 0, 20)));
+            request.getSession().setAttribute("session-id", sid);
+            return new ResponseEntity<>(
+                    new Payload(
+                            new Gson().toJson(
+                                    new AuthorizationContent(
+                                            playerUUID.toString(),
+                                            new SessionDetail(String.valueOf(sid))
+                                    )
+                            )), HttpStatusCode.valueOf(200)
+            );
+
         } else {
-            //username or password is illegal
-            response.getWriter().write("illegal username or password");
-            response.getWriter().flush();
             return new ResponseEntity<>(new Payload("illegal parameter"), HttpStatusCode.valueOf(403));
         }
     }
@@ -234,43 +211,51 @@ public class RestAPI {
         Metrics.apiRequests.increment();
         if (request.getSession().getAttribute("session-id") != null && request.getSession().getAttribute("player") != null) {
             String _op_slot = request.getParameter("op_slot");
-            String _dest_slot =  request.getParameter("dest_slot");
+            String _dest_slot = request.getParameter("dest_slot");
             String _inv_type = request.getParameter("op_inv_type");
             String _dest_inv_type = request.getParameter("dest_inv_type");
             //session id
             if (request.getSession().getAttribute("uuid") instanceof UUID session_id && request.getSession().getAttribute("player") instanceof Player player) {
-                if(!SessionGenerator.validate(session_id)) return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+                if (!SessionGenerator.validate(session_id)) return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
                 else if (_op_slot != null && _dest_slot != null && _inv_type != null) {
-                    try{
+                    try {
                         int op_slot = Integer.parseInt(_op_slot);
                         int dest_slot = Integer.parseInt(_dest_slot);
 
                         InventoryType op_inv_type = null;
                         InventoryType dest_inv_type = null;
-                        for(InventoryType type: InventoryType.values()){
-                            if(type.toString().equalsIgnoreCase(_inv_type)){
+                        for (InventoryType type : InventoryType.values()) {
+                            if (type.toString().equalsIgnoreCase(_inv_type)) {
                                 op_inv_type = type;
-                            }else if(type.toString().equalsIgnoreCase(_dest_inv_type)){
+                            } else if (type.toString().equalsIgnoreCase(_dest_inv_type)) {
                                 dest_inv_type = type;
                             }
                         }
 
 
-                        if(op_inv_type == null && dest_inv_type == null){
+                        if (op_inv_type == null && dest_inv_type == null) {
                             return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
-                        }else{
+                        } else {
                             assert op_inv_type != null && dest_inv_type != null;
                             AtomicReference<Inventory> op_inv = player.getInventory().getInventoryReference(op_inv_type);
                             AtomicReference<Inventory> dest_inv = player.getInventory().getInventoryReference(dest_inv_type);
 
                             Inventory new_op_inv = op_inv.get();
-                            Equipment move_e = new_op_inv.getItems().get(op_slot);
-                            new_op_inv.getItems().remove(op_slot);
-
                             Inventory new_dest_inv = dest_inv.get();
-                            new_dest_inv.getItems().add(move_e);
+                            Equipment op_eq = new_op_inv.getItems().get(op_slot);
+                            Equipment dest_eq = new_dest_inv.getItems().get(dest_slot);
 
+                            Equipment third;
 
+                            //swap them
+                            third = op_eq;
+                            op_eq = dest_eq;
+                            dest_eq = third;
+
+                            new_op_inv.items.set(op_slot,op_eq);
+                            new_dest_inv.items.set(dest_slot,dest_eq);
+
+                            //commit the changes
                             op_inv.set(new_op_inv);
                             dest_inv.set(new_dest_inv);
                         }
@@ -300,24 +285,25 @@ public class RestAPI {
         Metrics.apiRequests.increment();
         return new ResponseEntity<>(new Payload(credits), HttpStatus.OK);
     }
+
     @GetMapping(path = "hello")
-    public ResponseEntity<Payload> hello(){
+    public ResponseEntity<Payload> hello() {
         Metrics.apiRequests.increment();
         return new ResponseEntity<>(new Payload("hello from: " + credits), HttpStatus.OK);
     }
 
     @PostMapping
-    public ResponseEntity<Payload> register(HttpServletRequest request){
-        if(request.getParameter("username") != null && request.getParameter("password") != null){
+    public ResponseEntity<Payload> register(HttpServletRequest request) {
+        if (request.getParameter("username") != null && request.getParameter("password") != null) {
             String username = request.getParameter("username");
             String password = request.getParameter("password");
 
-            if(repository.findUserByUsername(username) != null){
-                return new ResponseEntity<>(new Payload("username taken"),HttpStatus.NOT_ACCEPTABLE);
-            }else {
-                User user = new User(username,bcrypt(password));
+            if (repository.findUserByUsername(username) != null) {
+                return new ResponseEntity<>(new Payload("username taken"), HttpStatus.NOT_ACCEPTABLE);
+            } else {
+                User user = new User(username, bcrypt(password));
                 repository.save(user);
-                return new ResponseEntity<>(new Payload(new Gson().toJson(user)),HttpStatus.ACCEPTED);
+                return new ResponseEntity<>(new Payload(new Gson().toJson(user)), HttpStatus.ACCEPTED);
             }
         }
         return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);

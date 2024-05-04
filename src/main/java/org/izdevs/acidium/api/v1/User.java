@@ -10,6 +10,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "users")
+@Getter
 public class User extends Resource {
     String username;
     UUID uuid;

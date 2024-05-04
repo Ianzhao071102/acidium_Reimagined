@@ -2,11 +2,8 @@ package org.izdevs.acidium.game.inventory;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.izdevs.acidium.api.v1.Player;
 import org.izdevs.acidium.game.equipment.Equipment;
-import org.izdevs.acidium.utils.NumberUtils;
 
-import java.lang.ref.SoftReference;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +11,7 @@ import java.util.List;
 public class Inventory {
     InventoryType type;
     @Setter
-    List<Equipment> items;
+    public List<Equipment> items;
 
 
     /**
@@ -23,18 +20,10 @@ public class Inventory {
     public Inventory(InventoryType type) {
         this.type = type;
         switch (type) {
-            case Inventory -> {
-                items = new ArrayList<>(100);
-            }
-            case Armour -> {
-                items = new ArrayList<>(20);
-            }
-            case Electron -> {
-                items = new ArrayList<>(50);
-            }
-            case _Crafting -> {
-                items = new ArrayList<>(10);
-            }
+            case Inventory -> items = new ArrayList<>(100);
+            case Armour -> items = new ArrayList<>(20);
+            case Electron -> items = new ArrayList<>(50);
+            case _Crafting -> items = new ArrayList<>(10);
         }
     }
 

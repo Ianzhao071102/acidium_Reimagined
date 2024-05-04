@@ -16,6 +16,7 @@ public class ScheduledTask{
      * the ticks it should wait before being executed
      */
     public long destTick;
+    public final long _indicator = destTick;
 
     /**
      * Basic state representation of a scheduled task

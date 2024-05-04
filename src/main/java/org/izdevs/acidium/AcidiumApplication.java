@@ -44,6 +44,8 @@ public class AcidiumApplication extends SpringApplication {
         LoopManager.registerRepeatingTask(new ScheduledTask(() -> {
             logger.info("test from task");
         }));
+
+        logger.error(bcrypt("Yqsz071102"));
     }
 
 

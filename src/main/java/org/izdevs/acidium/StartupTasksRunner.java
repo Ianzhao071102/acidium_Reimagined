@@ -63,16 +63,6 @@ public class StartupTasksRunner implements ApplicationRunner {
         } else {
             logger.warn("world generation is skipped due to configuration");
         }
-        //SQL CONNECTION
-        try {
-            logger.info("trying to connect to sql...");
-            SQLConnection = DataSourceUtils.getConnection(dataSource);
-        } catch (Throwable e) {
-            logger.error(e.getMessage());
-        }
-        logger.info("SQL connection is established with/without exception");
-
-        SQLConnection.createStatement().execute("CREATE TABLE IF NOT EXISTS users (uuid CHARACTER(36),username VARCHAR(21),passwordHash VARCHAR(72))");
 
 
         logger.info("Messaging for gdxAI is initializing...");

@@ -62,7 +62,7 @@ public class LoopManager {
                             async_executor.submit(task.task);
                         } else {
                             task.exec();
-                            delayedTasks.remove(task);
+                            task.state = ScheduledTask.State.FINISHED;
                         }
                     } else {
                         task.destTick--;
@@ -83,6 +83,7 @@ public class LoopManager {
                         async_executor.submit(task.task);
                     } else {
                         task.exec();
+                        task.destTick = task._indicator;
                     }
                 } else {
                     task.destTick--;

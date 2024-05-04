@@ -15,4 +15,6 @@ public interface UserRepository extends JpaRepository<User,Integer> {
     User findUsersByUsernameContainingIgnoreCase(String param);
 
     void deleteUserByUsername(String username);
+
+    
 }

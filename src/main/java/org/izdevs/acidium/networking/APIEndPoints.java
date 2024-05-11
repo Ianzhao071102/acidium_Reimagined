@@ -41,7 +41,7 @@ import static org.izdevs.acidium.AcidiumApplication.bcrypt;
 
 @RestController
 @RequestMapping("v1") //RESOURCE GETTER API V1
-public class RestAPI {
+public class APIEndPoints {
     public static int playersOnline = 0;
 
     @Autowired
@@ -138,7 +138,7 @@ public class RestAPI {
         Metrics.apiRequests.increment();
         if (request.getSession().getAttribute("session-id") == null) {
             //fuck no shit
-            return new ResponseEntity<>(HttpStatusCode.valueOf(403));
+            return new ResponseEntity<>(HttpStatus.FORBIDDEN);
 
         }
 
@@ -170,14 +170,14 @@ public class RestAPI {
                         return new ResponseEntity<>(HttpStatus.OK);
                     } else {
                         //invalid session
-                        return new ResponseEntity<>(new Payload("invalid session"), HttpStatus.UNAUTHORIZED);
+                        return new ResponseEntity<>(new Payload("invalid session"), HttpStatus.FORBIDDEN);
                     }
                 }
             } else {
-                return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+                return new ResponseEntity<>(HttpStatus.FORBIDDEN);
             }
         }
-        return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        return new ResponseEntity<>(HttpStatus.FORBIDDEN);
     }
 
 
@@ -264,12 +264,12 @@ public class RestAPI {
                     }
                     return new ResponseEntity<>(HttpStatus.ACCEPTED);
 
-                } else return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+                } else return new ResponseEntity<>(HttpStatus.FORBIDDEN);
             } else {
                 return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
             }
         } else {
-            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+            return new ResponseEntity<>(HttpStatus.FORBIDDEN);
         }
     }
 
@@ -298,12 +298,22 @@ public class RestAPI {
             String username = request.getParameter("username");
             String password = request.getParameter("password");
 
+            Pattern username_pattern = Pattern.compile("^[a-zA-Z0-9](?:[._]?[a-zA-Z0-9]){5,17}[a-zA-Z0-9]$"); //NOTE: USERNAME LENGTH MUST BE 5-20, ONLY CHARACTERS AND NUMBERS
+            Matcher username_match = username_pattern.matcher(username);
+
+            Pattern pwd_pattern = Pattern.compile("^[a-zA-Z0-9](?:[._]?[a-zA-Z0-9]){6,30}[a-zA-Z0-9]$"); //NOTE: PASSWORD LENGTH MUST BE 8-80, ONLY CHARACTERS AND NUMBERS
+            Matcher pwd_match = pwd_pattern.matcher(password);
+
             if (repository.findUserByUsername(username) != null) {
                 return new ResponseEntity<>(new Payload("username taken"), HttpStatus.NOT_ACCEPTABLE);
             } else {
-                User user = new User(username, bcrypt(password));
-                repository.save(user);
-                return new ResponseEntity<>(new Payload(new Gson().toJson(user)), HttpStatus.ACCEPTED);
+                if(username_match.matches() && pwd_match.matches()){
+                    User user = new User(username, bcrypt(password));
+                    repository.save(user);
+                    return new ResponseEntity<>(new Payload(new Gson().toJson(user)), HttpStatus.ACCEPTED);
+                }else{
+                    return new ResponseEntity<>(new Payload("illegally formatted username or/and password"),HttpStatus.UNPROCESSABLE_ENTITY);
+                }
             }
         }
         return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);

@@ -12,6 +12,4 @@ public class Payload {
     public Payload(String payload){
         this.payload = payload;
     }
-
-
 }

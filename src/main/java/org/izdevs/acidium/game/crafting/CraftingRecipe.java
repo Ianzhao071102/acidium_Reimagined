@@ -4,6 +4,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.izdevs.acidium.game.equipment.Equipment;
+import org.izdevs.acidium.serialization.Resource;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -11,7 +12,7 @@ import java.util.Set;
 
 @AllArgsConstructor
 @Getter
-public class CraftingRecipe {
+public class CraftingRecipe extends Resource {
     Equipment destination;
     String name;
     boolean ordered = false;
@@ -19,10 +20,12 @@ public class CraftingRecipe {
     Set<CraftingSlot> slots = new HashSet<>();
 
     public CraftingRecipe(@NotNull CraftingSlot... craftingSlots) {
+        super("UNSET-RECIPE-NAME",false);
         Collections.addAll(slots, craftingSlots);
     }
 
     public CraftingRecipe(@NotNull String name) {
+        super(name,false);
         this.name = name;
     }
 
@@ -30,6 +33,7 @@ public class CraftingRecipe {
      * constructors for un-craft-able items
      */
     public CraftingRecipe() {
+        super("UNSET-RECIPE-NAME",false);
         this.craftable = false;
     }
 
@@ -46,6 +50,7 @@ public class CraftingRecipe {
     }
 
     public CraftingRecipe(Set<CraftingSlot> grid){
+        super("UNSET-RECIPE-NAME",false);
         this.slots = grid;
     }
 }

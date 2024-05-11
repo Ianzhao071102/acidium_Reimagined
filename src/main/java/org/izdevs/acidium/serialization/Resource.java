@@ -51,7 +51,7 @@ public class Resource {
     };
     @Getter
     @Expose(serialize = false, deserialize = false)
-    boolean ticked;
+    boolean ticked = false;
     @Getter
     @Setter
     @Expose(serialize = false, deserialize = false)
@@ -78,6 +78,11 @@ public class Resource {
         return gson.toJson(this);
     }
 
-
-
+    @Deprecated
+    /**
+     * bro fuck do not use this, this is dangerous this is only used to help lombok
+     */
+    public Resource(){
+        this.unset = true;
+    }
 }

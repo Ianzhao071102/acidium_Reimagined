@@ -76,7 +76,7 @@ public class StartupTasksRunner implements ApplicationRunner {
         resource = ReflectUtil.getJSONResources();
 
         if (resource.length == 0) {
-            logger.debug("no nbt file found on classpath");
+            logger.debug("no json file found on classpath");
         }
         for (int i = 0; i <= resource.length - 1; i++) {
             org.springframework.core.io.Resource resource1 = resource[i];

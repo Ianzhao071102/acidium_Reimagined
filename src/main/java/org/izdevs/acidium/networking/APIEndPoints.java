@@ -25,11 +25,13 @@ import org.izdevs.acidium.serialization.API;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.serialization.ResourceFacade;
 
+import org.izdevs.acidium.utils.SpringBeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -166,7 +168,12 @@ public class APIEndPoints {
                             player.setY(player.getY() + add_y);
                         }, 1, true);
 
-                        LoopManager.scheduleAsyncDelayedTask(task);
+                        Object _mgr = SpringBeanUtils.getBean("loopManager");
+                        assert _mgr instanceof LoopManager;
+
+                        LoopManager manager = (LoopManager) _mgr;
+
+                        manager.scheduleAsyncDelayedTask(task);
                         return new ResponseEntity<>(HttpStatus.OK);
                     } else {
                         //invalid session

@@ -1,6 +1,6 @@
 package org.izdevs.acidium.world.generater;
 
-import org.izdevs.acidium.entity.spawner.DefaultSpawner;
+import org.izdevs.acidium.game.entity.spawner.DefaultSpawner;
 import org.izdevs.acidium.world.World;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

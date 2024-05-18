@@ -1,21 +1,24 @@
 package org.izdevs.acidium.world;
 
 import com.esri.core.geometry.Point;
+import jakarta.annotation.PostConstruct;
 import lombok.Getter;
 import lombok.Setter;
-import org.izdevs.acidium.entity.spawner.AbstractMobSpawner;
+import org.izdevs.acidium.game.entity.spawner.AbstractMobSpawner;
+import org.izdevs.acidium.game.entity.spawner.SpawnerFactory;
+import org.izdevs.acidium.game.entity.spawner.SpawnerType;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Map;
 
 @Setter
 @Getter
 public class World extends TickedWorld {
+
     @Getter
     @Setter
     volatile AbstractMobSpawner spawner;
     volatile Map<Point, Block> map;
-
-
 
     public World(Map<Point, Block> map) {
         super(map);
@@ -42,5 +45,10 @@ public class World extends TickedWorld {
     @Override
     public String toString() {
         return this.map.toString();
+    }
+
+    @PostConstruct
+    public void init(){
+        spawner = new SpawnerFactory().getSpawner(SpawnerType.Default);
     }
 }

@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.izdevs.acidium.scheduling.DelayedTask;
 import org.izdevs.acidium.scheduling.LoopManager;
+import org.izdevs.acidium.utils.SpringBeanUtils;
 
 import java.util.*;
 
@@ -43,7 +44,12 @@ public abstract class Event {
     public boolean cancel() {
         this.cancelled = true;
         this.getHandlers().sort(compare_based_on_priority);
-        LoopManager.scheduleAsyncDelayedTask(new DelayedTask(() -> {
+        Object _mgr = SpringBeanUtils.getBean("loopManager");
+        assert _mgr instanceof LoopManager;
+
+        LoopManager manager = (LoopManager) _mgr;
+
+        manager.scheduleAsyncDelayedTask(new DelayedTask(() -> {
             for(EventHandler handler:this.getHandlers()){
                 handler.onEventCancel();
             }

@@ -11,6 +11,7 @@ import org.izdevs.acidium.scheduling.LoopManager;
 import org.izdevs.acidium.scheduling.ScheduledTask;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.serialization.SpecObject;
+import org.izdevs.acidium.utils.SpringBeanUtils;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -62,14 +63,25 @@ public class Player extends Entity {
         this.uuid = uuid;
         this.username = username;
 
-        LoopManager.registerRepeatingTask(new ScheduledTask(() -> this.inventoryChecker.run()));
+        Object _mgr = SpringBeanUtils.getBean("loopManager");
+        assert _mgr instanceof LoopManager;
+
+        LoopManager manager = (LoopManager) _mgr;
+
+        manager.registerRepeatingTask(new ScheduledTask(() -> this.inventoryChecker.run()));
     }
 
     public Player() {
         super("unset", 0, 20, 2, 0);
         this.username = "unset";
         this.uuid = UUID.randomUUID();
-        LoopManager.registerRepeatingTask(new ScheduledTask(() -> this.inventoryChecker.run()));
+
+        Object _mgr = SpringBeanUtils.getBean("loopManager");
+        assert _mgr instanceof LoopManager;
+
+        LoopManager manager = (LoopManager) _mgr;
+
+        manager.registerRepeatingTask(new ScheduledTask(() -> this.inventoryChecker.run()));
     }
 
     public Player(User user, Entity entity) {
@@ -91,6 +103,11 @@ public class Player extends Entity {
         this.uuid = uuid;
         this.username = username;
         this.entity = entity;
-        LoopManager.registerRepeatingTask(new ScheduledTask(() -> this.inventoryChecker.run()));
+        Object _mgr = SpringBeanUtils.getBean("loopManager");
+        assert _mgr instanceof LoopManager;
+
+        LoopManager manager = (LoopManager) _mgr;
+
+        manager.registerRepeatingTask(new ScheduledTask(() -> this.inventoryChecker.run()));
     }
 }

@@ -25,6 +25,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Type;
 import java.util.*;
@@ -47,12 +48,21 @@ public class NBTParser implements ResourceDeserializer {
 
     @Override
     public Resource deserialize(InputStream input) {
+        CompoundTag tag = null;
+
+        try {
+            tag = BinaryTags.readCompressed(input);
+        } catch (IOException e) {
+            logger.error(e.getLocalizedMessage());
+        }
+
+        assert tag != null;
+        String apiVersion = tag.getString("apiVersion");
+        String name = tag.getString("name");
+        String type = tag.getString("type");
+
         Resource result = null;
         try {
-            CompoundTag tag = BinaryTags.readCompressed(input);
-            String apiVersion = tag.getString("apiVersion");
-            String name = tag.getString("name");
-            String type = tag.getString("type");
 
             //mob spec
             //block spec
@@ -205,11 +215,11 @@ public class NBTParser implements ResourceDeserializer {
                                     }
                                 }
                                 if (recipe == null) {
-                                    throw new IllegalArgumentException("fucked...");
+                                    throw new IllegalArgumentException("recipe is not specified");
                                 }
 
                                 return equipment;
-                            } else throw new IllegalArgumentException("fucked...");
+                            } else throw new IllegalArgumentException("unknown error");
                         }
                     }
                 }
@@ -217,6 +227,7 @@ public class NBTParser implements ResourceDeserializer {
         } catch (Exception e) {
             logger.error(e.getLocalizedMessage());
         }
+        logger.error(tag.toNbtString());
         throw new IllegalArgumentException("passed in illegal data.");
     }
 }

@@ -31,8 +31,6 @@ public class Mob extends Resource {
 
     int id;
     @Setter
-    int x, y;
-    @Setter
     double speed;
     @Setter
     int health;

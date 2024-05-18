@@ -5,7 +5,7 @@ import jakarta.annotation.PostConstruct;
 import org.izdevs.acidium.configuration.Config;
 import org.izdevs.acidium.scheduling.DelayedTask;
 import org.izdevs.acidium.scheduling.LoopManager;
-import org.izdevs.acidium.scheduling.ScheduledTask;
+import org.izdevs.acidium.utils.SpringBeanUtils;
 import org.izdevs.acidium.world.Block;
 import org.izdevs.acidium.world.World;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -17,6 +17,8 @@ import org.xguzm.pathfinding.grid.finders.GridFinderOptions;
 import java.util.List;
 
 public class DefaultBehaviourController extends AbstractBehaviourController {
+
+
     @Override
     public FloatArray nextStep() {
         if(this.controlled.getX() == 0||this.controlled.getY() == 0){
@@ -58,6 +60,7 @@ public class DefaultBehaviourController extends AbstractBehaviourController {
         }
     }
 
+
     public DefaultBehaviourController(World world){
         this.world = world;
     }
@@ -76,6 +79,11 @@ public class DefaultBehaviourController extends AbstractBehaviourController {
         DelayedTask task = new DelayedTask(move,1);
 
         //schedule the task...
-        LoopManager.scheduleAsyncDelayedTask(task);
+        Object _mgr = SpringBeanUtils.getBean("loopManager");
+        assert _mgr instanceof LoopManager;
+
+        LoopManager manager = (LoopManager) _mgr;
+
+        manager.scheduleAsyncDelayedTask(task);
     }
 }

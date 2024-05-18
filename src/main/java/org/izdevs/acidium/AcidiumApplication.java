@@ -1,10 +1,6 @@
 package org.izdevs.acidium;
 
 
-import org.izdevs.acidium.scheduling.LoopManager;
-import org.izdevs.acidium.scheduling.ScheduledTask;
-import org.izdevs.acidium.serialization.SerializerFactory;
-import org.izdevs.acidium.utils.ReflectUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +15,10 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
-
 
 
 @Configuration
@@ -40,12 +34,6 @@ public class AcidiumApplication extends SpringApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(AcidiumApplication.class, args);
-
-        LoopManager.registerRepeatingTask(new ScheduledTask(() -> {
-            logger.info("test from task");
-        }));
-
-        logger.error(bcrypt("Yqsz071102"));
     }
 
 

@@ -1,7 +1,7 @@
 package org.izdevs.acidium.api.v1;
 
 import lombok.Getter;
-import org.izdevs.acidium.entity.spawner.DefaultSpawner;
+import org.izdevs.acidium.game.entity.spawner.DefaultSpawner;
 import org.izdevs.acidium.serialization.API;
 
 import static org.izdevs.acidium.serialization.ResourceFacade.registerAPI;

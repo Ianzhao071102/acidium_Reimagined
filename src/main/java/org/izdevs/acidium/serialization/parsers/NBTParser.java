@@ -1,4 +1,4 @@
-package org.izdevs.acidium.serialization;
+package org.izdevs.acidium.serialization.parsers;
 
 import com.esri.core.geometry.Point;
 import com.google.gson.Gson;
@@ -6,7 +6,6 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.google.re2j.Matcher;
 import com.google.re2j.Pattern;
-import lombok.Getter;
 import net.forthecrown.nbt.BinaryTag;
 import net.forthecrown.nbt.BinaryTags;
 import net.forthecrown.nbt.CompoundTag;
@@ -19,16 +18,18 @@ import org.izdevs.acidium.game.equipment.DropTable;
 import org.izdevs.acidium.game.equipment.Equipment;
 import org.izdevs.acidium.game.equipment.EquipmentHolder;
 import org.izdevs.acidium.game.inventory.InventoryType;
+import org.izdevs.acidium.serialization.Resource;
+import org.izdevs.acidium.serialization.ResourceDeserializer;
 import org.izdevs.acidium.world.Block;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.io.InputStream;
 import java.lang.reflect.Type;
 import java.util.*;
 
-@Component
+@Service
 public class NBTParser implements ResourceDeserializer {
     public static ArrayList<CommandDefinition> definitions = new ArrayList<>();
     static Logger logger = LoggerFactory.getLogger(NBTParser.class);

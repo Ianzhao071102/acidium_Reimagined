@@ -6,8 +6,13 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import java.io.IOException;
 
 public class ReflectUtil {
-    public static Resource[] getResources() throws IOException {
+    public static Resource[] getNBTResources() throws IOException {
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         return resolver.getResources("classpath*:**/*.nbt");
+    }
+
+    public static Resource[] getJSONResources() throws IOException {
+        PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
+        return resolver.getResources("classpath*:**/*.json");
     }
 }

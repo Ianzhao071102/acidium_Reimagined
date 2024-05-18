@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-@AllArgsConstructor
+
 @Getter
 public class CraftingRecipe extends Resource {
     Equipment destination;
@@ -19,6 +19,14 @@ public class CraftingRecipe extends Resource {
     boolean craftable = true;
     Set<CraftingSlot> slots = new HashSet<>();
 
+    public CraftingRecipe(Equipment destination,String name,boolean ordered,boolean craftable,Set<CraftingSlot> slots){
+        super(name,false);
+        this.destination = destination;
+        this.name = name;
+        this.ordered = ordered;
+        this.craftable = craftable;
+        this.slots = slots;
+    }
     public CraftingRecipe(@NotNull CraftingSlot... craftingSlots) {
         super("UNSET-RECIPE-NAME",false);
         Collections.addAll(slots, craftingSlots);

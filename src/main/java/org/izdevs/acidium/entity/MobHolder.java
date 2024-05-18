@@ -1,8 +1,9 @@
 package org.izdevs.acidium.entity;
 
 import jakarta.annotation.PostConstruct;
-import org.izdevs.acidium.api.v1.DefaultSpawner;
 import org.izdevs.acidium.api.v1.Mob;
+import org.izdevs.acidium.entity.spawner.AbstractMobSpawner;
+import org.izdevs.acidium.entity.spawner.DefaultSpawner;
 import org.izdevs.acidium.scheduling.LoopManager;
 import org.izdevs.acidium.scheduling.ScheduledTask;
 

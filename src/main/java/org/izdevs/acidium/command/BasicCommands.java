@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Objects;
 
 import static org.izdevs.acidium.StartupTasksRunner.SQLConnection;
-import static org.izdevs.acidium.serialization.NBTParser.registerNBTDef;
+import static org.izdevs.acidium.serialization.parsers.NBTParser.registerNBTDef;
 
 @ShellComponent
 public class BasicCommands {

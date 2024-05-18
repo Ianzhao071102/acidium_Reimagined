@@ -1,13 +1,21 @@
-package org.izdevs.acidium.world;
+package org.izdevs.acidium.world.generater;
 
 import com.esri.core.geometry.Point;
 import org.izdevs.acidium.api.v1.Structure;
+import org.izdevs.acidium.world.Block;
+import org.izdevs.acidium.world.BlockType;
+import org.izdevs.acidium.world.Location;
+import org.izdevs.acidium.world.World;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
+@Service
+@Component
 public class DefaultWorldGenerator implements WorldGenerator {
     @Override
     public World generate(long seed) {

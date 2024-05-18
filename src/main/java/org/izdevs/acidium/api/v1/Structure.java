@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.world.Block;
-import org.izdevs.acidium.world.StructureHolder;
+import org.izdevs.acidium.world.generater.StructureHolder;
 
 import java.util.HashMap;
 import java.util.Map;

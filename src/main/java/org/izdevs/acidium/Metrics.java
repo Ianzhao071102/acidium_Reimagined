@@ -9,7 +9,7 @@ import lombok.NonNull;
 import org.izdevs.acidium.networking.APIEndPoints;
 import org.izdevs.acidium.tick.TickManager;
 import org.izdevs.acidium.world.World;
-import org.izdevs.acidium.world.WorldController;
+import org.izdevs.acidium.world.generater.WorldController;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -1,11 +1,12 @@
-package org.izdevs.acidium.api.v1;
+package org.izdevs.acidium.entity.spawner;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.izdevs.acidium.entity.AbstractMobSpawner;
+import org.izdevs.acidium.api.v1.Mob;
 import org.izdevs.acidium.entity.MobHolder;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.world.World;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,39 +14,20 @@ import java.util.Random;
 
 @Getter
 @Setter
-
+@Component
 public class DefaultSpawner extends Resource implements AbstractMobSpawner {
+
     public static List<Mob> jobQueue = new ArrayList<>();
+
     World world;
 
     public DefaultSpawner() {
         super("DefaultSpawner", false);
-        this.setFlags(new ArrayList<>());
-        this.getFlags().add("spawner");
-        MobHolder.registerSpawner(this);
-        this.setTickRun(() -> {
-            Random random = new Random();
-            long sleep = random.nextLong(20L, 500L);
-            try {
-                Thread.sleep(sleep);
-                spawn();
-            } catch (InterruptedException ignored) {
-            }
-        });
     }
 
     public DefaultSpawner(World world) {
         super("DefaultSpawner", false);
         this.world = world;
-        this.setTickRun(() -> {
-            Random random = new Random();
-            long sleep = random.nextLong(20L, 500L);
-            try {
-                Thread.sleep(sleep);
-                spawn();
-            } catch (InterruptedException ignored) {
-            }
-        });
     }
 
     @Override

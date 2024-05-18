@@ -16,7 +16,7 @@ import org.izdevs.acidium.scheduling.LoopManager;
 import org.izdevs.acidium.scheduling.ScheduledTask;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.world.World;
-import org.izdevs.acidium.world.WorldController;
+import org.izdevs.acidium.world.generater.WorldController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.annotation.Id;

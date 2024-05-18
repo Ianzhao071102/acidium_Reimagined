@@ -1,12 +1,16 @@
-package org.izdevs.acidium.serialization;
+package org.izdevs.acidium.serialization.parsers;
 
 import com.google.gson.Gson;
+import org.izdevs.acidium.serialization.Resource;
+import org.izdevs.acidium.serialization.ResourceDeserializer;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.io.InputStream;
 
+@Service
 @Component
-public class YAMLParser implements ResourceDeserializer{
+public class JSONParser implements ResourceDeserializer {
 
     @Override
     public Resource deserialize(String data) {

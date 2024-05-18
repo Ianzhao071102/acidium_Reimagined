@@ -1,4 +1,4 @@
-package org.izdevs.acidium.world;
+package org.izdevs.acidium.world.generater;
 
 import lombok.Getter;
 import org.izdevs.acidium.api.v1.Structure;

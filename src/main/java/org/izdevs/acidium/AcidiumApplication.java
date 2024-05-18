@@ -1,9 +1,9 @@
 package org.izdevs.acidium;
 
 
-import org.apache.naming.factory.ResourceFactory;
 import org.izdevs.acidium.scheduling.LoopManager;
 import org.izdevs.acidium.scheduling.ScheduledTask;
+import org.izdevs.acidium.serialization.SerializerFactory;
 import org.izdevs.acidium.utils.ReflectUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,18 +21,18 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
-import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-import static org.izdevs.acidium.serialization.NBTParser.registerNBTDef;
+
 
 @Configuration
 @SpringBootApplication
 @EnableScheduling
 @EntityScan("org.izdevs.acidium")
 public class AcidiumApplication extends SpringApplication {
+
     static Logger logger = LoggerFactory.getLogger(AcidiumApplication.class);
     @Autowired
     @Qualifier("license")
@@ -46,22 +46,6 @@ public class AcidiumApplication extends SpringApplication {
         }));
 
         logger.error(bcrypt("Yqsz071102"));
-    }
-
-
-    public static void loadNBT() throws IOException {
-        org.springframework.core.io.Resource[] resource = ReflectUtil.getResources();
-        if (resource.length == 0) {
-            logger.info(resource.length + " resources was/were found");
-            logger.debug("no nbt file found on classpath");
-            return;
-        }
-        for (int i = 0; i <= resource.length - 1; i++) {
-            org.springframework.core.io.Resource resource1 = resource[i];
-            InputStream stream = resource1.getInputStream();
-            registerNBTDef(stream);
-            logger.info("registered nbt def: " + resource1.getFilename());
-        }
     }
 
 

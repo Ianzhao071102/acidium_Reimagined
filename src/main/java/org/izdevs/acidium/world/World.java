@@ -3,7 +3,7 @@ package org.izdevs.acidium.world;
 import com.esri.core.geometry.Point;
 import lombok.Getter;
 import lombok.Setter;
-import org.izdevs.acidium.entity.AbstractMobSpawner;
+import org.izdevs.acidium.entity.spawner.AbstractMobSpawner;
 
 import java.util.Map;
 

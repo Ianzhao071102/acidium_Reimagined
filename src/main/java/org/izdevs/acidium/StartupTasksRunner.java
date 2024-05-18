@@ -2,25 +2,24 @@ package org.izdevs.acidium;
 
 import com.badlogic.gdx.ai.msg.MessageDispatcher;
 import com.badlogic.gdx.ai.msg.MessageManager;
-import org.izdevs.acidium.game.crafting.CraftingRecipeHolder;
 import org.izdevs.acidium.game.equipment.EquipmentHolder;
-import org.izdevs.acidium.serialization.ResourceFacade;
+import org.izdevs.acidium.serialization.*;
 import org.izdevs.acidium.tick.TickManager;
-import org.izdevs.acidium.world.WorldController;
+import org.izdevs.acidium.utils.ReflectUtil;
+import org.izdevs.acidium.world.generater.WorldController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
-import org.springframework.jdbc.datasource.DataSourceUtils;
 import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
+import java.io.InputStream;
 import java.security.SecureRandom;
 import java.sql.Connection;
 
-import static org.izdevs.acidium.AcidiumApplication.loadNBT;
 import static org.izdevs.acidium.AcidiumApplication.readAndPrintNote;
 
 @Component
@@ -37,6 +36,10 @@ public class StartupTasksRunner implements ApplicationRunner {
     @Qualifier("psql")
     public DataSource dataSource;
     @Autowired
+    WorldController controller;
+    @Autowired
+    SerializerFactory factory;
+    @Autowired
     @Qualifier("credits")
     String credits;
 
@@ -52,13 +55,45 @@ public class StartupTasksRunner implements ApplicationRunner {
 
         //initialization below
         TickManager.init();
-        loadNBT();
+
+
+        //handle nbt resources
+        org.springframework.core.io.Resource[] resource = ReflectUtil.getNBTResources();
+        if (resource.length == 0) {
+            logger.info(resource.length + " resources was/were found");
+            logger.debug("no nbt file found on classpath");
+        }
+        for (int i = 0; i <= resource.length - 1; i++) {
+            org.springframework.core.io.Resource resource1 = resource[i];
+            InputStream stream = resource1.getInputStream();
+            ResourceDeserializer deserializer = factory.getDeserializer(DeserializerTypes.NBT);
+            Resource selected = deserializer.deserialize(stream);
+            ResourceFacade.registerResource(selected);
+            logger.info("registered nbt def: " + resource1.getFilename());
+        }
+
+        //handle json resources
+        resource = ReflectUtil.getJSONResources();
+
+        if (resource.length == 0) {
+            logger.debug("no nbt file found on classpath");
+        }
+        for (int i = 0; i <= resource.length - 1; i++) {
+            org.springframework.core.io.Resource resource1 = resource[i];
+            InputStream stream = resource1.getInputStream();
+            ResourceDeserializer deserializer = factory.getDeserializer(DeserializerTypes.JSON);
+            Resource selected = deserializer.deserialize(stream);
+            ResourceFacade.registerResource(selected);
+            logger.info("registered nbt def: " + resource1.getFilename());
+        }
+
+        //call something out
         logger.info("starting resource facade, registering....");
         logger.trace("start world generation...");
 
         if (generateWorld) {
             SecureRandom seeder = new SecureRandom();
-            WorldController.generateWorld(seeder.nextLong());
+            controller.generateWorld(seeder.nextLong());
             logger.warn("World is being generated...");
         } else {
             logger.warn("world generation is skipped due to configuration");
@@ -72,13 +107,6 @@ public class StartupTasksRunner implements ApplicationRunner {
         readAndPrintNote();
         //init later...
         ResourceFacade.start();
-
-        //note that crafting recipe holder must start before equipment holder
-        CraftingRecipeHolder.init();
         EquipmentHolder.init();
-
-
-
-
     }
 }

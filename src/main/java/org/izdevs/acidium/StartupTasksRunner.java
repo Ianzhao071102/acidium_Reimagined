@@ -43,6 +43,9 @@ public class StartupTasksRunner implements ApplicationRunner {
     @Qualifier("credits")
     String credits;
 
+    @Autowired
+    ResourceFacade facade;
+
     @Override
     public void run(ApplicationArguments args) throws Exception {
         /*
@@ -68,7 +71,7 @@ public class StartupTasksRunner implements ApplicationRunner {
             InputStream stream = resource1.getInputStream();
             ResourceDeserializer deserializer = factory.getDeserializer(DeserializerTypes.NBT);
             Resource selected = deserializer.deserialize(stream);
-            ResourceFacade.registerResource(selected);
+            facade.registerResource(selected);
             logger.info("registered nbt def: " + resource1.getFilename());
         }
 
@@ -83,7 +86,7 @@ public class StartupTasksRunner implements ApplicationRunner {
             InputStream stream = resource1.getInputStream();
             ResourceDeserializer deserializer = factory.getDeserializer(DeserializerTypes.JSON);
             Resource selected = deserializer.deserialize(stream);
-            ResourceFacade.registerResource(selected);
+            facade.registerResource(selected);
             logger.info("registered nbt def: " + resource1.getFilename());
         }
 

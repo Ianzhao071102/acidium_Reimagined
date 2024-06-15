@@ -1,12 +1,13 @@
 package org.izdevs.acidium.scheduling;
 
 import jakarta.validation.constraints.NotNull;
+import org.springframework.stereotype.Component;
 
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 
+@Component
 public class AcidThreadFactory implements ThreadFactory {
-    public static final AcidThreadFactory INSTANCE = new AcidThreadFactory();
     private final AtomicInteger threadCounter = new AtomicInteger();
 
     @Override

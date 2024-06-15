@@ -6,6 +6,7 @@ import org.izdevs.acidium.configuration.Config;
 import org.izdevs.acidium.tick.TickManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,9 @@ import java.util.concurrent.TimeUnit;
 
 @Service
 public class LoopManager {
+    @Autowired
+    AcidThreadFactory threadFactory;
+
     /**
      * milliseconds between each pulse
      */
@@ -35,8 +39,8 @@ public class LoopManager {
      * is ticking paused
      */
     boolean paused = false;
-    private final ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor(AcidThreadFactory.INSTANCE);
-    private final ExecutorService async_executor = Executors.newFixedThreadPool(MAX_THREADS, AcidThreadFactory.INSTANCE);
+    private final ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor(threadFactory);
+    private final ExecutorService async_executor = Executors.newFixedThreadPool(MAX_THREADS, threadFactory);
 
     public void registerRepeatingTask(ScheduledTask task) {
         repeating_tasks.add(task);

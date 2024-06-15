@@ -15,7 +15,6 @@ public class BlockSpec extends Resource {
     boolean walkable;
     public BlockSpec(CompoundTag data) {
         super(data.getString("name"), false);
-        this.data = data;
         this.walkable = data.getString("walkable").equalsIgnoreCase("true");
     }
     public BlockSpec(){

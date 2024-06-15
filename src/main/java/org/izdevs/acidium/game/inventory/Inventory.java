@@ -11,7 +11,7 @@ import java.util.List;
 public class Inventory {
     InventoryType type;
     @Setter
-    public List<Equipment> items;
+    List<Equipment> items;
 
 
     /**
@@ -40,4 +40,7 @@ public class Inventory {
         }
     }
 
+    public void setItemAt(int id,Equipment item){
+        items.set(id,item);
+    }
 }

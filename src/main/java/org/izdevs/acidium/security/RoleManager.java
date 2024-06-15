@@ -4,15 +4,21 @@ import lombok.Getter;
 import org.izdevs.acidium.api.v1.Role;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@Service
 public class RoleManager {
-    @Getter
-    public static volatile Set<Role> roles = new HashSet<>();
+    @Autowired
+    RoleRepository repository;
 
-    public static void registerRole(Role role){
+    @Getter
+    public volatile Set<Role> roles = new HashSet<>();
+
+    public void registerRole(Role role){
         if(roles.contains(role)){
             Logger logger = LoggerFactory.getLogger(RoleManager.class);
             logger.warn("role is already registered... this action will not be performed...");
@@ -21,6 +27,7 @@ public class RoleManager {
             logger.warn("end stack trace...");
         }else{
             roles.add(role);
+            repository.save(role);
         }
     }
 }

@@ -2,33 +2,62 @@ package org.izdevs.acidium.game.inventory;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.izdevs.acidium.game.equipment.Equipment;
+import org.izdevs.acidium.utils.NumberUtils;
 
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Supplier;
 
-@Getter
+
 @NoArgsConstructor
 public class PlayerInventory {
-    AtomicReference<Inventory> primary = new AtomicReference<>(new Inventory(InventoryType.Inventory));
-    AtomicReference<Inventory> crafting = new AtomicReference<>(new Inventory(InventoryType._Crafting));
-    AtomicReference<Inventory> armour = new AtomicReference<>(new Inventory(InventoryType.Armour));
-    AtomicReference<Inventory> electron = new AtomicReference<>(new Inventory(InventoryType.Electron));
+    /**
+     * has 100 slots
+     */
+    public Inventory primary = new Inventory(InventoryType.Inventory);
+    /**
+     * has 9 slots
+     */
+    public Inventory crafting = new Inventory(InventoryType._Crafting);
+    /**
+     * has 50 slots
+     */
+    public Inventory armour = new Inventory(InventoryType.Armour);
+    /**
+     * has 20 slots
+     */
+    public Inventory electron = new Inventory(InventoryType.Electron);
 
-    public AtomicReference<Inventory> getInventoryReference(InventoryType type){
-        switch(type){
-            case Armour -> {
-                return armour;
+    public void setItemAtSlot(Equipment item,int slot){
+        if(NumberUtils.isInRange(0,178,slot)){
+            if(NumberUtils.isInRange(0,99,slot)){
+                primary.setItemAt(slot,item);
+            }else if(NumberUtils.isInRange(100,108,slot)){
+                crafting.setItemAt(slot-100,item);
+            }else if(NumberUtils.isInRange(109,158,slot)){
+                armour.setItemAt(slot-109,item);
+            }else if(NumberUtils.isInRange(158,178,slot)){
+                electron.setItemAt(slot-158,item);
             }
-            case Electron -> {
-                return electron;
-            }
-            case _Crafting -> {
-                return crafting;
-            }
-            case Inventory -> {
-                return primary;
-            }
+        }else{
+            throw new IllegalArgumentException();
         }
-        throw new RuntimeException("deprecated _graphics should not be used as a primary_inventory type");
+    }
+
+    public Equipment getItemAtSlot(int slot){
+        if(NumberUtils.isInRange(0,178,slot)){
+            if(NumberUtils.isInRange(0,99,slot)){
+                return primary.getItems().get(slot);
+            }else if(NumberUtils.isInRange(100,108,slot)){
+                return crafting.getItems().get(slot-100);
+            }else if(NumberUtils.isInRange(109,158,slot)){
+                return crafting.getItems().get(slot-109);
+            }else if(NumberUtils.isInRange(158,178,slot)){
+                return crafting.getItems().get(slot-158);
+            }
+        }else{
+            throw new IllegalArgumentException();
+        }
+        return null;
     }
 }

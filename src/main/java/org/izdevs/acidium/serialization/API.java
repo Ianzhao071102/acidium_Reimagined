@@ -1,13 +1,17 @@
 package org.izdevs.acidium.serialization;
 
 import lombok.Getter;
+import org.izdevs.acidium.serialization.models.ResourceSchema;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import static org.izdevs.acidium.serialization.ResourceFacade.registerAPI;
+
 
 public class API extends Resource{
+    @Autowired
+    ResourceFacade facade;
 
     @Getter
     public static int zero = 0;
@@ -21,11 +25,14 @@ public class API extends Resource{
         super(name,true);
         this.pointer = pointer;
         this.resources = new ArrayList<>(Arrays.asList(resources).subList(0, resources.length));
-        registerAPI(this);
+        facade.registerAPI(this);
     }
 
     public API(String name){
         super(name,true);
-        registerAPI(this);
+        facade.registerAPI(this);
     }
+
+    @Getter
+    ResourceSchema schema;
 }

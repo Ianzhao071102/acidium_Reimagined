@@ -1,6 +1,7 @@
 package org.izdevs.acidium.networking;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.re2j.Matcher;
 import com.google.re2j.Pattern;
 import jakarta.servlet.http.Cookie;
@@ -14,8 +15,6 @@ import org.izdevs.acidium.api.v1.User;
 import org.izdevs.acidium.basic.Entity;
 import org.izdevs.acidium.basic.UserRepository;
 import org.izdevs.acidium.game.equipment.Equipment;
-import org.izdevs.acidium.game.inventory.Inventory;
-import org.izdevs.acidium.game.inventory.InventoryType;
 import org.izdevs.acidium.scheduling.DelayedTask;
 import org.izdevs.acidium.scheduling.LoopManager;
 import org.izdevs.acidium.security.AuthorizationContent;
@@ -24,26 +23,32 @@ import org.izdevs.acidium.security.SessionGenerator;
 import org.izdevs.acidium.serialization.API;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.serialization.ResourceFacade;
-
+import org.izdevs.acidium.serialization.ResourceSchemaRepository;
+import org.izdevs.acidium.serialization.models.ResourceSchema;
+import org.izdevs.acidium.utils.NumberUtils;
 import org.izdevs.acidium.utils.SpringBeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.time.Instant;
-import java.util.*;
-import java.util.concurrent.atomic.AtomicReference;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+import java.util.UUID;
 
 import static org.izdevs.acidium.AcidiumApplication.bcrypt;
 
 @RestController
 @RequestMapping("v1") //RESOURCE GETTER API V1
 public class APIEndPoints {
+    @Autowired
+    private ResourceSchemaRepository schemaRepository;
+
     public static int playersOnline = 0;
 
     @Autowired
@@ -54,43 +59,19 @@ public class APIEndPoints {
     @Qualifier(value = "credits")
     private String credits;
 
-    @GetMapping(path = "resources/{name}/{api}")
+    @GetMapping(path = "resourceSchemas/{name}/{api}")
     public String getResource(@PathVariable(name = "name") String name, @PathVariable(name = "api", required = false) String api) {
         Metrics.apiRequests.increment();
-        for (int i = 0; i <= ResourceFacade.getResources().size() - 1; i++) {
-            Resource resource = ResourceFacade.getResources().get(i);
-            if ((name.isEmpty() || name.isBlank()) && (api.isBlank() || api.isEmpty())) {
-                Gson gson = new Gson();
-                return gson.toJson(ResourceFacade.getResources());
-            }
-            if (resource.getName().equals(name)) {
-                if (api.isEmpty() || api.isBlank()) {
-                    //no api pass directly
-                    Gson gson = new Gson();
-                    return gson.toJson(resource);
-                } else {
-                    //api specified check if satisfied
-                    API destl = null;
-                    for (int j = i; j <= ResourceFacade.getResources().size() - i; j++) {
-                        if (ResourceFacade.getResources().get(i).isApi() && ResourceFacade.getResources().get(i).getName().equals(api)) {
-                            destl = (API) ResourceFacade.getResources().get(i);
-                            break;
-                        }
-                    }
-                    if (destl == null) {
-                        Gson gson = new Gson();
-                        return gson.toJson(new Throwable("The API is NOT FOUND"));
-                    } else {
-                        //pass the resource
-                        if (resource.associatedApi.equals(destl)) {
-                            Gson gson = new Gson();
-                            return gson.toJson(resource);
-                        }
-                    }
-                }
+        ResourceSchema schema = schemaRepository.findByName(name);
+        Gson gson = new GsonBuilder().setPrettyPrinting().enableComplexMapKeySerialization().disableHtmlEscaping().create();
+        if(schema != null){
+            if(api != null){
+                if(schema.getApiName().equalsIgnoreCase(api)) return gson.toJson(schema);
+                else return gson.toJson(new Error(new IllegalArgumentException("resource not found with api specified")));
+            }else{
+                return gson.toJson(schema);
             }
         }
-        Gson gson = new Gson();
         return gson.toJson(new Error(new Throwable("Internal Server Caused an Exception")));
     }
 
@@ -107,11 +88,10 @@ public class APIEndPoints {
             //query is safe
 
             User user = repository.findUserByUsername(username);
-            if(user == null){
-                return new ResponseEntity<>(new Payload("user is not found"),HttpStatus.UNPROCESSABLE_ENTITY);
-            }
-            else if(!Objects.equals(user.getPasswordHash(), bcrypt(password))){
-                return new ResponseEntity<>(new Payload("incorrect password or username"),HttpStatus.UNAUTHORIZED);
+            if (user == null) {
+                return new ResponseEntity<>(new Payload("user is not found"), HttpStatus.UNPROCESSABLE_ENTITY);
+            } else if (!Objects.equals(user.getPasswordHash(), bcrypt(password))) {
+                return new ResponseEntity<>(new Payload("incorrect password or username"), HttpStatus.UNAUTHORIZED);
             }
             response.addCookie(new Cookie("user", user.toString()));
 
@@ -219,55 +199,32 @@ public class APIEndPoints {
         if (request.getSession().getAttribute("session-id") != null && request.getSession().getAttribute("player") != null) {
             String _op_slot = request.getParameter("op_slot");
             String _dest_slot = request.getParameter("dest_slot");
-            String _inv_type = request.getParameter("op_inv_type");
-            String _dest_inv_type = request.getParameter("dest_inv_type");
             //session id
             if (request.getSession().getAttribute("uuid") instanceof UUID session_id && request.getSession().getAttribute("player") instanceof Player player) {
                 if (!SessionGenerator.validate(session_id)) return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
-                else if (_op_slot != null && _dest_slot != null && _inv_type != null) {
+                else if (_op_slot != null && _dest_slot != null) {
                     try {
                         int op_slot = Integer.parseInt(_op_slot);
                         int dest_slot = Integer.parseInt(_dest_slot);
 
-                        InventoryType op_inv_type = null;
-                        InventoryType dest_inv_type = null;
-                        for (InventoryType type : InventoryType.values()) {
-                            if (type.toString().equalsIgnoreCase(_inv_type)) {
-                                op_inv_type = type;
-                            } else if (type.toString().equalsIgnoreCase(_dest_inv_type)) {
-                                dest_inv_type = type;
+                        //validate input
+                        if (NumberUtils.isInRange(0, 178, op_slot)) {
+                            if (!NumberUtils.isInRange(0, 178, dest_slot)) {
+                                return new ResponseEntity<>(new Payload("please provide valid integers in field: op_slot, dest_slot"), HttpStatus.UNPROCESSABLE_ENTITY);
+
                             }
-                        }
-
-
-                        if (op_inv_type == null && dest_inv_type == null) {
-                            return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
                         } else {
-                            assert op_inv_type != null && dest_inv_type != null;
-                            AtomicReference<Inventory> op_inv = player.getInventory().getInventoryReference(op_inv_type);
-                            AtomicReference<Inventory> dest_inv = player.getInventory().getInventoryReference(dest_inv_type);
-
-                            Inventory new_op_inv = op_inv.get();
-                            Inventory new_dest_inv = dest_inv.get();
-                            Equipment op_eq = new_op_inv.getItems().get(op_slot);
-                            Equipment dest_eq = new_dest_inv.getItems().get(dest_slot);
-
-                            Equipment third;
-
-                            //swap them
-                            third = op_eq;
-                            op_eq = dest_eq;
-                            dest_eq = third;
-
-                            new_op_inv.items.set(op_slot,op_eq);
-                            new_dest_inv.items.set(dest_slot,dest_eq);
-
-                            //commit the changes
-                            op_inv.set(new_op_inv);
-                            dest_inv.set(new_dest_inv);
+                            return new ResponseEntity<>(new Payload("please provide valid integers in field: op_slot, dest_slot"), HttpStatus.UNPROCESSABLE_ENTITY);
                         }
-                    } catch (Exception e) {
-                        return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
+
+                        Equipment op_equipment = player.getInventory().getItemAtSlot(op_slot);
+                        Equipment dest_equipment = player.getInventory().getItemAtSlot(dest_slot);
+
+                        //swap these
+                        player.getInventory().setItemAtSlot(dest_equipment,op_slot);
+                        player.getInventory().setItemAtSlot(op_equipment,dest_slot);
+                    } catch (NumberFormatException e) {
+                        return new ResponseEntity<>(new Payload("please provide valid integers in field: op_slot, dest_slot"), HttpStatus.UNPROCESSABLE_ENTITY);
                     }
                     return new ResponseEntity<>(HttpStatus.ACCEPTED);
 
@@ -314,12 +271,12 @@ public class APIEndPoints {
             if (repository.findUserByUsername(username) != null) {
                 return new ResponseEntity<>(new Payload("username taken"), HttpStatus.NOT_ACCEPTABLE);
             } else {
-                if(username_match.matches() && pwd_match.matches()){
+                if (username_match.matches() && pwd_match.matches()) {
                     User user = new User(username, bcrypt(password));
                     repository.save(user);
                     return new ResponseEntity<>(new Payload(new Gson().toJson(user)), HttpStatus.ACCEPTED);
-                }else{
-                    return new ResponseEntity<>(new Payload("illegally formatted username or/and password"),HttpStatus.UNPROCESSABLE_ENTITY);
+                } else {
+                    return new ResponseEntity<>(new Payload("illegally formatted username or/and password"), HttpStatus.UNPROCESSABLE_ENTITY);
                 }
             }
         }

@@ -24,6 +24,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.annotation.Id;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 import static com.esri.core.geometry.Point2D.distance;
@@ -32,6 +34,7 @@ import static com.esri.core.geometry.Point2D.distance;
 @Getter
 
 public class Entity extends Resource implements Telegraph {
+    Map<String,Object> attributes = new HashMap<>();
     boolean invincible = false;
     boolean alive = true;
     Inventory primary_inventory = new Inventory(InventoryType.Inventory);

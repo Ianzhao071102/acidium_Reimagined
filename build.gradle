@@ -32,6 +32,7 @@ ext {
 }
 
 dependencies {
+	implementation 'org.jgrapht:jgrapht-core:1.5.2'
 	implementation 'org.springframework.boot:spring-boot-starter-batch'
 	implementation 'org.springframework.boot:spring-boot-starter-mail'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
@@ -68,7 +69,6 @@ dependencies {
 	implementation 'org.reflections:reflections:0.10.2'
 	compileOnly 'org.reflections:reflections:0.10.2'
 	implementation 'com.google.code.gson:gson:2.10.1'
-	implementation 'com.mojang:brigadier:1.0.18'
 	implementation 'com.google.re2j:re2j:1.6'
 
 	testImplementation 'org.awaitility:awaitility:3.1.2'
@@ -80,11 +80,10 @@ dependencies {
 
 	implementation group: 'io.micrometer', name: 'micrometer-core', version: '1.12.3'
 
-	implementation 'com.github.implicit-invocation:jwalkable:master-SNAPSHOT'
+	implementation 'com.github.implicit-invocation:jwalkable:8ffaaf3558'
 
 	implementation "com.badlogicgames.gdx:gdx-ai:1.8.1"
 
-	compileOnly "com.github.xaguzman:pathfinding:0.2.6"
 	implementation "com.github.xaguzman:pathfinding:0.2.6"
 
 	implementation group: 'com.h2database', name: 'h2', version: '2.2.224'

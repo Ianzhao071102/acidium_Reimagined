@@ -6,11 +6,10 @@ import org.izdevs.acidium.basic.Entity;
 import org.izdevs.acidium.game.crafting.CraftingRecipe;
 import org.izdevs.acidium.game.crafting.CraftingRecipeHolder;
 import org.izdevs.acidium.game.crafting.CraftingSlot;
+import org.izdevs.acidium.game.entity.petals.Petal;
 import org.izdevs.acidium.game.inventory.PlayerInventory;
 import org.izdevs.acidium.scheduling.LoopManager;
 import org.izdevs.acidium.scheduling.ScheduledTask;
-import org.izdevs.acidium.serialization.Resource;
-import org.izdevs.acidium.serialization.SpecObject;
 import org.izdevs.acidium.utils.SpringBeanUtils;
 
 import java.util.HashSet;
@@ -19,6 +18,7 @@ import java.util.UUID;
 
 @Getter
 public class Player extends Entity {
+
     public volatile PlayerInventory inventory = new PlayerInventory();
     @Setter
     Entity entity;
@@ -45,7 +45,7 @@ public class Player extends Entity {
 
     @Setter
     @Getter
-    Set<Entity> petals = new HashSet<>();
+    volatile Set<Petal> petals = new HashSet<>();
 
     public Player() {
         super("unset", 0, 20, 2, 0);
@@ -62,10 +62,8 @@ public class Player extends Entity {
 
     public Player(User user, Entity entity) {
         super(user.getName(), entity.getMovementSpeed(), entity.getHealth(), entity.getHitboxRadius(), entity.getBDamage());
-        UUID uuid = null;
-        String username = null;
-        this.uuid = uuid;
-        this.username = username;
+        this.uuid = user.uuid;
+        this.username = user.username;
         this.entity = entity;
         Object _mgr = SpringBeanUtils.getBean("loopManager");
         assert _mgr instanceof LoopManager;

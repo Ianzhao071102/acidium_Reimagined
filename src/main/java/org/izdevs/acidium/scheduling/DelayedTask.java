@@ -8,7 +8,7 @@ import lombok.Getter;
 public class DelayedTask extends ScheduledTask{
     @Id
     @GeneratedValue
-    private Integer id;
+    private int id;
 
     public DelayedTask(Runnable task, long destTick) {
         super(task);

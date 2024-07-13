@@ -45,7 +45,6 @@ public class Mob extends Resource {
         objects.add(new SpecObject("bDamage", bDamage));
         objects.add(new SpecObject("health", health));
         objects.add(new SpecObject("hitboxRadius", hitboxRadius));
-        this.spec = objects;
     }
 
     public Mob() {
@@ -54,6 +53,5 @@ public class Mob extends Resource {
         objects.add(new SpecObject("name", "unset"));
         objects.add(new SpecObject("speed", 0));
         objects.add(new SpecObject("bDamage", 0));
-        this.spec = objects;
     }
 }

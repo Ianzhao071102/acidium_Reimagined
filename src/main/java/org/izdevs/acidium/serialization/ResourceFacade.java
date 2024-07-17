@@ -14,7 +14,10 @@ import java.util.Set;
 import static org.reflections.scanners.Scanners.SubTypes;
 
 @Service
-public abstract class ResourceFacade{
+public class ResourceFacade{
+    @Autowired
+    Set<API> apis;
+
     @Autowired
     ResourceSchemaRepository repository;
 
@@ -32,14 +35,4 @@ public abstract class ResourceFacade{
         repository.save(resource.schema);
     }
 
-    public static void start() throws InstantiationException, IllegalAccessException {
-
-        Reflections reflections = new Reflections("org.izdevs.acidium");
-
-        Set<Class<?>> subTypes =
-                reflections.get(SubTypes.of(API.class).asClass());
-        for (Class<?> subType : subTypes) {
-            logger.debug(subType.newInstance().toString());
-        }
-    }
 }

@@ -23,6 +23,7 @@ import org.izdevs.acidium.serialization.ResourceDeserializer;
 import org.izdevs.acidium.world.Block;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -32,6 +33,8 @@ import java.util.*;
 
 @Service
 public class NBTParser implements ResourceDeserializer {
+    @Autowired
+    EquipmentHolder equipmentHolder;
     public static ArrayList<CommandDefinition> definitions = new ArrayList<>();
     static Logger logger = LoggerFactory.getLogger(NBTParser.class);
 
@@ -162,7 +165,7 @@ public class NBTParser implements ResourceDeserializer {
 
                     Set<CraftingSlot> slots = new HashSet<>();
                     Equipment destination = new Gson().fromJson(destination_def, Equipment.class);
-                    if (EquipmentHolder.getEquipments().contains(destination)) {
+                    if (equipmentHolder.getEquipments().contains(destination)) {
                         logger.debug("equipment is registered in holder: " + destination_def);
                     } else {
                         logger.debug("equipment is not registered yet, maybe later...");
@@ -174,7 +177,7 @@ public class NBTParser implements ResourceDeserializer {
                         if (_this.isString()) {
                             String ingredient_name = _this.asString().toString();
                             int j = 0;
-                            for (Equipment _this_ : EquipmentHolder.getEquipments()) {
+                            for (Equipment _this_ : equipmentHolder.getEquipments()) {
                                 if (_this_.getName().equals(ingredient_name)) {
                                     if (ordered) {
                                         x++;

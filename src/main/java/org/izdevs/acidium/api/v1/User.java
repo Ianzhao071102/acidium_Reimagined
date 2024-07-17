@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 import org.izdevs.acidium.serialization.Resource;
 
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.UUID;
 
 
@@ -20,7 +22,7 @@ public class User extends Resource {
     @Getter
     @Setter
     @OneToOne
-    Role role = new Role("Default");
+    Role role = new Role("Default", Collections.singleton(Role.Level.PLAYER));
 
     @Getter
     @Id
@@ -31,13 +33,11 @@ public class User extends Resource {
         super(username, false);
         this.username = username;
         this.uuid = uuid;
-        register();
     }
 
     public User() {
         super("USER", false);
         this.uuid = UUID.randomUUID();
-        this.register();
     }
 
     public User(String name, String passwordHash) {

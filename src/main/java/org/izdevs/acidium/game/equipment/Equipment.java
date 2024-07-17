@@ -33,7 +33,6 @@ public class Equipment extends Entity {
 
     public Equipment(World world, String name, double movementSpeed, int health, int hitboxRadius, int bDamage, Entity equip, CraftingRecipe recipe) {
         super(world, name, movementSpeed, health, hitboxRadius, bDamage);
-        EquipmentHolder.register(this);
         this.equipEntity = equip;
 
         allowedSlots.add(InventoryType.Inventory);

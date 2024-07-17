@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.izdevs.acidium.security.RoleManager;
-import org.izdevs.acidium.utils.SpringBeanUtils;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -18,7 +16,7 @@ public class Role {
 
     @OneToMany
     Set<Level> levelsGranted = new HashSet<>();
-    @Lob
+
     Level level;
     @Id
     @GeneratedValue
@@ -29,24 +27,31 @@ public class Role {
     public Role(String name) {
         this.name = name;
         levelsGranted.add(Level.PLAYER);
-        RoleManager manager = (RoleManager) SpringBeanUtils.getBean("roleManager");
-        manager.registerRole(this);
     }
 
     public Role(String name, Set<Level> levels) {
         this.name = name;
         levelsGranted.addAll(levels);
-        RoleManager manager = (RoleManager) SpringBeanUtils.getBean("roleManager");
-        manager.registerRole(this);
     }
 
 
+    @Entity
     public enum Level {
         ADMIN(0), MODERATOR(1), PLAYER(2);
-        final int id;
+        @Id
+        int id = 2;
 
         Level(int id) {
             this.id = id;
+        }
+
+        Level() {
+            for(int i=0;i<=Level.values().length-1;i++){
+                if(Level.values()[i].equals(this)) {
+                    id = i;
+                    break;
+                }
+            }
         }
     }
 }

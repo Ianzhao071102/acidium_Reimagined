@@ -15,6 +15,7 @@ import org.izdevs.acidium.api.v1.User;
 import org.izdevs.acidium.basic.Entity;
 import org.izdevs.acidium.basic.UserRepository;
 import org.izdevs.acidium.game.equipment.Equipment;
+import org.izdevs.acidium.game.inventory.PlayerInventory;
 import org.izdevs.acidium.scheduling.DelayedTask;
 import org.izdevs.acidium.scheduling.LoopManager;
 import org.izdevs.acidium.security.AuthorizationContent;
@@ -29,6 +30,7 @@ import org.izdevs.acidium.utils.NumberUtils;
 import org.izdevs.acidium.utils.SpringBeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -46,6 +48,8 @@ import static org.izdevs.acidium.AcidiumApplication.bcrypt;
 @RestController
 @RequestMapping("v1") //RESOURCE GETTER API V1
 public class APIEndPoints {
+    @Autowired
+    ApplicationEventPublisher publisher;
     @Autowired
     private ResourceSchemaRepository schemaRepository;
 
@@ -219,10 +223,12 @@ public class APIEndPoints {
 
                         Equipment op_equipment = player.getInventory().getItemAtSlot(op_slot);
                         Equipment dest_equipment = player.getInventory().getItemAtSlot(dest_slot);
-
+                        PlayerInventory inventory = player.getInventory();
                         //swap these
-                        player.getInventory().setItemAtSlot(dest_equipment,op_slot);
-                        player.getInventory().setItemAtSlot(op_equipment,dest_slot);
+                        inventory.setItemAtSlot(dest_equipment,op_slot);
+                        inventory.setItemAtSlot(op_equipment,dest_slot);
+
+                        player.inventory = inventory;
                     } catch (NumberFormatException e) {
                         return new ResponseEntity<>(new Payload("please provide valid integers in field: op_slot, dest_slot"), HttpStatus.UNPROCESSABLE_ENTITY);
                     }
@@ -258,6 +264,7 @@ public class APIEndPoints {
 
     @PostMapping
     public ResponseEntity<Payload> register(HttpServletRequest request) {
+        Metrics.apiRequests.increment();
         if (request.getParameter("username") != null && request.getParameter("password") != null) {
             String username = request.getParameter("username");
             String password = request.getParameter("password");

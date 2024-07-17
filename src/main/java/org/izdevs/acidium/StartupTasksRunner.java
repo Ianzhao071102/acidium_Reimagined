@@ -108,8 +108,5 @@ public class StartupTasksRunner implements ApplicationRunner {
         logger.info("finished...");
 
         readAndPrintNote();
-        //init later...
-        ResourceFacade.start();
-        EquipmentHolder.init();
     }
 }

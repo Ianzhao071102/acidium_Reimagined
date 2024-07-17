@@ -5,29 +5,17 @@ import lombok.Setter;
 import org.reflections.Reflections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
 
 import static org.reflections.scanners.Scanners.SubTypes;
 
+@Getter
+@Service
 public class EquipmentHolder {
-    @Getter
-    @Setter
-    static Set<Equipment> equipments = new HashSet<>();
-    public static void register(Equipment equipment){
-        equipments.add(equipment);
-    }
-
-    public static void init() throws InstantiationException, IllegalAccessException {
-        Logger logger = LoggerFactory.getLogger(EquipmentHolder.class);
-        Reflections reflections = new Reflections("org.izdevs.acidium.game");
-
-        Set<Class<?>> subTypes =
-                reflections.get(SubTypes.of(Equipment.class).asClass());
-        for (Class<?> subType : subTypes) {
-            register((Equipment) subType.newInstance());
-            logger.debug(subType.newInstance().toString());
-        }
-    }
+    @Autowired
+    Set<Equipment> equipments;
 }

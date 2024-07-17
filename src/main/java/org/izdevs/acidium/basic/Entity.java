@@ -24,6 +24,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.annotation.Id;
 
+import java.security.SecureRandom;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -99,7 +100,11 @@ public class Entity extends Resource implements Telegraph {
         this.stateMachine = new DefaultStateMachine<>(this, BasicEntityState.WANDER);
 
         Random random = new Random();
-        int id = random.nextInt(0, WorldController.worlds.size());
+        int id = 0;
+        int size = WorldController.worlds.size();
+        if(size != 0){
+            id = new SecureRandom().nextInt(0,size-1);
+        }
         this.world = WorldController.worlds.get(id);
         //due to issues now controller is just default controller bro come on...
         this.controller = new DefaultBehaviourController(world);

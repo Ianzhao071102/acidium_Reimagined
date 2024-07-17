@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import net.forthecrown.nbt.CompoundTag;
 import org.izdevs.acidium.serialization.API;
+import org.izdevs.acidium.serialization.SerializableCompoundTag;
 
 @Getter
 @Entity
@@ -18,8 +19,9 @@ public class ResourceSchema {
 
     String name;
 
+    @Column(columnDefinition = "json")
     @Lob
-    CompoundTag tag;
+    SerializableCompoundTag tag;
     boolean isApi;
 
     String apiName;

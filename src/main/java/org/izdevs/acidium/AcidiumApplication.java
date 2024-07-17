@@ -1,6 +1,7 @@
 package org.izdevs.acidium;
 
 
+import lombok.Getter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
@@ -26,6 +29,8 @@ import java.util.List;
 @EnableScheduling
 @EntityScan("org.izdevs.acidium")
 public class AcidiumApplication extends SpringApplication {
+    @Getter
+    public static ConfigurableApplicationContext context;
 
     static Logger logger = LoggerFactory.getLogger(AcidiumApplication.class);
     @Autowired
@@ -33,7 +38,7 @@ public class AcidiumApplication extends SpringApplication {
     boolean print_license;
 
     public static void main(String[] args) {
-        SpringApplication.run(AcidiumApplication.class, args);
+        context = SpringApplication.run(AcidiumApplication.class, args);
     }
 
 

@@ -20,7 +20,6 @@ public class CraftingRecipe extends Resource {
     Set<CraftingSlot> slots = new HashSet<>();
 
     public CraftingRecipe(Equipment destination,String name,boolean ordered,boolean craftable,Set<CraftingSlot> slots){
-        super(name,false);
         this.destination = destination;
         this.name = name;
         this.ordered = ordered;
@@ -28,12 +27,10 @@ public class CraftingRecipe extends Resource {
         this.slots = slots;
     }
     public CraftingRecipe(@NotNull CraftingSlot... craftingSlots) {
-        super("UNSET-RECIPE-NAME",false);
         Collections.addAll(slots, craftingSlots);
     }
 
     public CraftingRecipe(@NotNull String name) {
-        super(name,false);
         this.name = name;
     }
 
@@ -41,7 +38,6 @@ public class CraftingRecipe extends Resource {
      * constructors for un-craft-able items
      */
     public CraftingRecipe() {
-        super("UNSET-RECIPE-NAME",false);
         this.craftable = false;
     }
 
@@ -58,7 +54,6 @@ public class CraftingRecipe extends Resource {
     }
 
     public CraftingRecipe(Set<CraftingSlot> grid){
-        super("UNSET-RECIPE-NAME",false);
         this.slots = grid;
     }
 }

@@ -1,10 +1,20 @@
 package org.izdevs.acidium.world.generater;
 
+import lombok.Getter;
 import org.izdevs.acidium.world.World;
 
-public interface WorldGenerator {
-    String seed = "";
-    String type = "";
+import java.util.ArrayList;
+import java.util.List;
 
-    World generate(long seed);
+@Getter
+public abstract class WorldGenerator {
+
+    String name;
+    List<Object> options;
+    abstract World generate(long seed);
+    public WorldGenerator(String name,Object... options){
+        this.name = name;
+        this.options = new ArrayList<>();
+        this.options.addAll(List.of(options));
+    }
 }

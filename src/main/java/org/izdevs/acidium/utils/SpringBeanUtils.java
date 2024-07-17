@@ -1,6 +1,7 @@
 package org.izdevs.acidium.utils;
 
 import org.izdevs.acidium.AcidiumApplication;
+import org.izdevs.acidium.scheduling.LoopManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
@@ -16,6 +17,11 @@ public class SpringBeanUtils implements ApplicationContextAware {
     @Autowired
     BeanFactory factory;
 
+    @Autowired
+    LoopManager manager;
+
+    private static StaticListableBeanFactory init_factory = new StaticListableBeanFactory();
+
     Logger logger = LoggerFactory.getLogger("SpringBeanUtils");
     static ApplicationContext context;
     public void setApplicationContext(@NonNull  ApplicationContext applicationContext) throws BeansException {
@@ -23,10 +29,9 @@ public class SpringBeanUtils implements ApplicationContextAware {
         logger.info(this.getClass().getCanonicalName() + " has been deprecated for multiple reasons...");
     }
 
-    public SpringBeanUtils(ApplicationContext context){
+    public SpringBeanUtils(){
         logger.debug("bean injection");
-        SpringBeanUtils.context = context;
-        if(context == null) this.setApplicationContext(AcidiumApplication.getContext());
+        init_factory.addBean("loopManager",manager);
     }
 
     public static Object getBean(String name){
@@ -34,13 +39,7 @@ public class SpringBeanUtils implements ApplicationContextAware {
             return context.getBean(name);
         }
         else{
-            if(AcidiumApplication.context == null){
-                return new StaticListableBeanFactory().getBean(name);
-            }
-            else{
-                SpringBeanUtils.context = (AcidiumApplication.context);
-                return AcidiumApplication.context.getBean(name);
-            }
+            return AcidiumApplication.context.getBean(name);
         }
     }
 }

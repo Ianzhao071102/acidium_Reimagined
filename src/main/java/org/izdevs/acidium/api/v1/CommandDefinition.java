@@ -1,12 +1,15 @@
 package org.izdevs.acidium.api.v1;
 
 import org.izdevs.acidium.serialization.Resource;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CommandDefinition extends Resource {
+    String command;
     public CommandDefinition() {
-        super("CommandDefinition",false);
+
     }
     public CommandDefinition(String command) {
-        super("CommandDefinition" + command,false);
+        this.command = command;
     }
 }

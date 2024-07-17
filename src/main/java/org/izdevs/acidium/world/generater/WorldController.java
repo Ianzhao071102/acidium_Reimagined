@@ -11,23 +11,35 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Set;
 import java.util.TimeZone;
 
 @Service
 @Component
 public class WorldController implements Ticked {
     @Autowired
-    WorldGenerator generator;
+    Set<WorldGenerator> generator;
 
     @Autowired
     ApplicationEventPublisher publisher;
     public static ArrayList<World> worlds = new ArrayList<>();
 
     public void generateWorld(long seed) {
-        //still uses default world generator just for now...
-        World world = generator.generate(seed);
-        world.setSpawner(new DefaultSpawner());
-        worlds.add(world);
+        boolean y = false;
+        for(WorldGenerator gen : generator){
+            if(gen.name.equalsIgnoreCase("default")){
+                World world = gen.generate(seed);
+                world.setSpawner(new DefaultSpawner());
+                worlds.add(world);
+                y = true;
+                break;
+            }
+        }
+
+        //unlikely
+        if(!y){
+            throw new NoClassDefFoundError("please define a world generator with name: default");
+        }
     }
 
     @Override

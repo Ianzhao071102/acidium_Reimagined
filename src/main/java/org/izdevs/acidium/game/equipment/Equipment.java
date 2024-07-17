@@ -68,8 +68,6 @@ public class Equipment extends Entity {
 
     public Equipment(String name) {
         super(name, 100, 1, 0, 0);
-
-        //defaults to un-craftable
         this.recipe = new CraftingRecipe();
     }
 }

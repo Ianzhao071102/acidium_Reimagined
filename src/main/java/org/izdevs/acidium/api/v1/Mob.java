@@ -10,6 +10,7 @@ import org.izdevs.acidium.game.equipment.DropTable;
 import org.izdevs.acidium.game.equipment.Equipment;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.serialization.SpecObject;
+import org.izdevs.acidium.serialization.models.ResourceSchema;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -28,7 +29,7 @@ public class Mob extends Resource {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-
+    String name;
     int id;
     @Setter
     double speed;
@@ -38,20 +39,11 @@ public class Mob extends Resource {
     int bDamage; //body damage
 
     public Mob(String name, double speed, int health, int bDamage, int hitboxRadius) {
-        super("Mob", false);
-        ArrayList<SpecObject> objects = new ArrayList<>();
-        objects.add(new SpecObject("name", name));
-        objects.add(new SpecObject("speed", speed));
-        objects.add(new SpecObject("bDamage", bDamage));
-        objects.add(new SpecObject("health", health));
-        objects.add(new SpecObject("hitboxRadius", hitboxRadius));
+       this.name = name;
+       this.speed = speed;
+       this.health = health;
+       this.bDamage = bDamage;
+       this.hitboxRadius = hitboxRadius;
     }
 
-    public Mob() {
-        super("Mob", false);
-        ArrayList<SpecObject> objects = new ArrayList<>();
-        objects.add(new SpecObject("name", "unset"));
-        objects.add(new SpecObject("speed", 0));
-        objects.add(new SpecObject("bDamage", 0));
-    }
 }

@@ -11,6 +11,8 @@ import org.izdevs.acidium.game.inventory.PlayerInventory;
 import org.izdevs.acidium.scheduling.LoopManager;
 import org.izdevs.acidium.scheduling.ScheduledTask;
 import org.izdevs.acidium.utils.SpringBeanUtils;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -51,13 +53,6 @@ public class Player extends Entity {
         super("unset", 0, 20, 2, 0);
         this.username = "unset";
         this.uuid = UUID.randomUUID();
-
-        Object _mgr = SpringBeanUtils.getBean("loopManager");
-        assert _mgr instanceof LoopManager;
-
-        LoopManager manager = (LoopManager) _mgr;
-
-        manager.registerRepeatingTask(new ScheduledTask(() -> this.inventoryChecker.run()));
     }
 
     public Player(User user, Entity entity) {
@@ -65,6 +60,10 @@ public class Player extends Entity {
         this.uuid = user.uuid;
         this.username = user.username;
         this.entity = entity;
+    }
+
+    @EventListener(ApplicationReadyEvent.class)
+    public void init_finish(){
         Object _mgr = SpringBeanUtils.getBean("loopManager");
         assert _mgr instanceof LoopManager;
 

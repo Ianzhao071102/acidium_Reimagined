@@ -1,12 +1,13 @@
 package org.izdevs.acidium.api.v1;
 
 import org.izdevs.acidium.serialization.Resource;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Error extends Resource {
-    public Error() {
-        super("Error", false);
-    }
+    Throwable cause;
+    public Error() {}
     public Error(Throwable cause){
-        super(cause.getMessage(), false);
+        this.cause = cause;
     }
 }

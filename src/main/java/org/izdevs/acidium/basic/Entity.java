@@ -17,23 +17,27 @@ import org.izdevs.acidium.scheduling.LoopManager;
 import org.izdevs.acidium.scheduling.LoopManagerFacade;
 import org.izdevs.acidium.scheduling.ScheduledTask;
 import org.izdevs.acidium.serialization.Resource;
+import org.izdevs.acidium.serialization.models.ResourceSchema;
 import org.izdevs.acidium.utils.SpringBeanUtils;
+import org.izdevs.acidium.world.PlaceHolderWorld;
 import org.izdevs.acidium.world.World;
 import org.izdevs.acidium.world.generater.WorldController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
 import org.springframework.data.annotation.Id;
 
 import java.security.SecureRandom;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
 import static com.esri.core.geometry.Point2D.distance;
 
-@Setter
 @Getter
-
+@Setter
 public class Entity extends Resource implements Telegraph {
     Map<String,Object> attributes = new HashMap<>();
     boolean invincible = false;
@@ -87,9 +91,9 @@ public class Entity extends Resource implements Telegraph {
                 }
             }
     );
-    public Entity(String name, double movementSpeed, int health, int hitboxRadius, int bDamage) {
 
-        super(name, false);
+    public Entity(String name, double movementSpeed, int health, int hitboxRadius, int bDamage) {
+        super();
         this.name = name;
         this.movementSpeed = movementSpeed;
         this.health = health;
@@ -104,17 +108,21 @@ public class Entity extends Resource implements Telegraph {
         int size = WorldController.worlds.size();
         if(size != 0){
             id = new SecureRandom().nextInt(0,size-1);
+            this.world = WorldController.worlds.get(id);
         }
-        this.world = WorldController.worlds.get(id);
+        else{
+            this.world = new PlaceHolderWorld("^\\S+$");
+        }
+
         //due to issues now controller is just default controller bro come on...
         this.controller = new DefaultBehaviourController(world);
         this.id = IDGenerator.createId();
-        init();
+
     }
 
     public Entity(World world, String name, double movementSpeed, int health, int hitboxRadius, int bDamage) {
 
-        super(name, false);
+        super();
         this.name = name;
         this.movementSpeed = movementSpeed;
         this.health = health;
@@ -127,7 +135,7 @@ public class Entity extends Resource implements Telegraph {
         this.world = world;
         this.controller = new DefaultBehaviourController(world);
         this.id = IDGenerator.createId();
-        init();
+
     }
 
     /**
@@ -163,6 +171,7 @@ public class Entity extends Resource implements Telegraph {
     /**
      * damages the entity one tick later
      */
+    //could NOT happen before initialization finish
     public void damage(int health) {
         DelayedTask task = new DelayedTask(() -> {
             //damage the entity
@@ -177,16 +186,16 @@ public class Entity extends Resource implements Telegraph {
         manager.scheduleAsyncDelayedTask(task);
     }
 
-    @PostConstruct
-    private void init() {
+    private record Result(double x1, double x2, double y1, double y2) {
+    }
+
+    @EventListener(ApplicationReadyEvent.class)
+    public void init_finish(){
         Object _mgr = SpringBeanUtils.getBean("loopManager");
         assert _mgr instanceof LoopManager;
 
         LoopManager manager = (LoopManager) _mgr;
 
         manager.registerRepeatingTask(task);
-    }
-
-    private record Result(double x1, double x2, double y1, double y2) {
     }
 }

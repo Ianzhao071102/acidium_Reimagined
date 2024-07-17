@@ -3,6 +3,7 @@ package org.izdevs.acidium.world;
 import com.esri.core.geometry.Point;
 import jakarta.annotation.PostConstruct;
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.Setter;
 import org.izdevs.acidium.game.entity.spawner.AbstractMobSpawner;
 import org.izdevs.acidium.game.entity.spawner.SpawnerFactory;
@@ -14,9 +15,7 @@ import java.util.Map;
 @Setter
 @Getter
 public class World extends TickedWorld {
-
-    @Getter
-    @Setter
+    @NonNull String name;
     volatile AbstractMobSpawner spawner;
     volatile Map<Point, Block> map;
 

@@ -2,6 +2,7 @@ package org.izdevs.acidium.world.generater;
 
 import com.esri.core.geometry.Point;
 import org.izdevs.acidium.api.v1.Structure;
+import org.izdevs.acidium.utils.RandomUtils;
 import org.izdevs.acidium.world.Block;
 import org.izdevs.acidium.world.BlockType;
 import org.izdevs.acidium.world.Location;
@@ -15,8 +16,12 @@ import java.util.Map;
 import java.util.Random;
 
 @Service
-@Component
-public class DefaultWorldGenerator implements WorldGenerator {
+public class DefaultWorldGenerator extends WorldGenerator {
+    public DefaultWorldGenerator() {
+        //the new Object() is just a place holder for something important
+        super("default", new Object());
+    }
+
     @Override
     public World generate(long seed) {
         Map<Point, Block> blockMap = new HashMap<>();
@@ -42,6 +47,8 @@ public class DefaultWorldGenerator implements WorldGenerator {
                 world.setBlockAtLoc(new Location((int) dist.getX(), (int) dist.getY()), map.get(tp)); //set block
             }
         }
+        //it is a lot (of combinations) huh
+        world.setName(RandomUtils.getRandomString(10));
         return world;
     }
 

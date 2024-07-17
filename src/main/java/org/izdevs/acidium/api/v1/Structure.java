@@ -13,12 +13,7 @@ import java.util.Map;
 @Getter
 @Setter
 public class Structure extends Resource {
-    //TODO FINISH SOME STRUCTURES IN THIS FORM AND ALSO SERIALIZATION TO AND FROM NBT
     public Structure(String name) {
-        super(name, false);
     }
     Map<Point, Block> description = new HashMap<>();
-    public void registerToHolder(){
-        StructureHolder.register(this);
-    }
 }

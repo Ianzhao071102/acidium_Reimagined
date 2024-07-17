@@ -5,19 +5,16 @@ import lombok.Getter;
 import lombok.Setter;
 import net.forthecrown.nbt.CompoundTag;
 import org.izdevs.acidium.serialization.Resource;
+import org.izdevs.acidium.serialization.models.ResourceSchema;
 import org.springframework.stereotype.Component;
 
 @Getter
 @Setter
 @Component
-public class BlockSpec extends Resource {
+public class BlockSpec extends ResourceSchema {
     int id;
     boolean walkable;
     public BlockSpec(CompoundTag data) {
-        super(data.getString("name"), false);
         this.walkable = data.getString("walkable").equalsIgnoreCase("true");
-    }
-    public BlockSpec(){
-        super("unset",false);
     }
 }

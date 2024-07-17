@@ -26,11 +26,11 @@ public class DefaultSpawner extends Resource implements AbstractMobSpawner {
     World world;
 
     public DefaultSpawner() {
-        super("DefaultSpawner", false);
+        super("DefaultSpawner");
     }
 
     public DefaultSpawner(World world) {
-        super("DefaultSpawner", false);
+        super("DefaultSpawner");
         this.world = world;
     }
 

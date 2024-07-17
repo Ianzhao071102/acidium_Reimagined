@@ -30,31 +30,26 @@ public class User extends Resource {
     private Long id;
 
     public User(String username, UUID uuid) {
-        super(username, false);
         this.username = username;
         this.uuid = uuid;
     }
 
     public User() {
-        super("USER", false);
         this.uuid = UUID.randomUUID();
     }
 
     public User(String name, String passwordHash) {
-        super(name,false);
         this.uuid = UUID.randomUUID();
         this.passwordHash = passwordHash;
         this.username = name;
     }
 
     public User(String username,String passwordHash,UUID uuid){
-        super(username,false);
         this.uuid = uuid;
         this.passwordHash = passwordHash;
         this.username = username;
     }
     public User(String username,String passwordHash,String uuid){
-        super(username,false);
         this.uuid = UUID.fromString(uuid);
         this.passwordHash = passwordHash;
         this.username = username;

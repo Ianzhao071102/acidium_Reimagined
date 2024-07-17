@@ -56,7 +56,7 @@ public class Player extends Entity {
     }
 
     public Player(User user, Entity entity) {
-        super(user.getName(), entity.getMovementSpeed(), entity.getHealth(), entity.getHitboxRadius(), entity.getBDamage());
+        super(user.getUsername(), entity.getMovementSpeed(), entity.getHealth(), entity.getHitboxRadius(), entity.getBDamage());
         this.uuid = user.uuid;
         this.username = user.username;
         this.entity = entity;

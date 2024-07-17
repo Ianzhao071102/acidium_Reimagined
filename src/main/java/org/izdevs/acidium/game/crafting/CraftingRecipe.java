@@ -31,6 +31,7 @@ public class CraftingRecipe extends Resource {
     }
 
     public CraftingRecipe(@NotNull String name) {
+        super(name);
         this.name = name;
     }
 

@@ -3,18 +3,22 @@ package org.izdevs.acidium.game.entity.petals;
 
 import org.izdevs.acidium.api.v1.Player;
 import org.izdevs.acidium.api.v1.User;
+import org.izdevs.acidium.basic.Entity;
 import org.izdevs.acidium.basic.UserRepository;
 import org.izdevs.acidium.game.equipment.Equipment;
 import org.izdevs.acidium.game.inventory.PlayerInventory;
 import org.izdevs.acidium.scheduling.Ticked;
+import org.izdevs.acidium.serialization.naming.PetalNamingService;
 import org.izdevs.acidium.world.generater.WorldController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
 
-@Service
+@Service("petalService")
 public class PetalService implements Ticked {
+    @Autowired
+    PetalNamingService service;
     @Autowired
     PetalRepository repository;
 
@@ -43,6 +47,7 @@ public class PetalService implements Ticked {
     }
 
 
+    //todo finish this up, the petals must be ticked by id
     @Override
     public void tick() {
         //updater logic of all the petal entities
@@ -53,18 +58,22 @@ public class PetalService implements Ticked {
                 PlayerInventory inv = player.getInventory();
                 List<Equipment> equipment = inv.armour.getItems();
                 equipment.addAll(inv.electron.getItems());
+                Set<Petal> tp = new HashSet<>();
+                Set<Entity> petals = new HashSet<>();
 
-                Set<Petal> petals = new HashSet<>();
-
-                Set<Petal> finalPetals = petals;
+                Set<Entity> finalPetals = new HashSet<>();
+                Set<Petal> finalPtls = new HashSet<>();
                 equipment.forEach(equipment1 -> {
-                    finalPetals.add(new Petal(equipment1.getWorld(), equipment1.getMovementSpeed(), equipment1.getHealth(), equipment1.getHitboxRadius(), equipment1.getBDamage()));
+                    Entity entity = new Entity(player.getWorld(),player.getUsername() + service.nameObject(equipment1),equipment1.getMovementSpeed(), equipment1.getHealth(), equipment1.getHitboxRadius(), equipment1.getBDamage());
+                    finalPetals.add(entity);
+                    finalPtls.add(new Petal(equipment1.getMovementSpeed(),equipment1.getHealth(),equipment1.getHitboxRadius(),equipment1.getBDamage()));
                 });
                 petals=finalPetals;
-                player.setPetals(petals);
+                player.setPetals(finalPtls);
+
 
                 //lock is not acquired, so re-getting player petals
-                petals = player.getPetals();
+                tp  = player.getPetals();
 
                 //rotate logic
                 petals.forEach(petal -> {

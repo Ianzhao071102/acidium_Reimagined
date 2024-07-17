@@ -60,22 +60,6 @@ public class APIEndPoints {
     @Qualifier(value = "credits")
     private String credits;
 
-    @GetMapping(path = "resourceSchemas/{name}/{api}")
-    public String getResource(@PathVariable(name = "name") String name, @PathVariable(name = "api", required = false) String api) {
-        Metrics.apiRequests.increment();
-        ResourceSchema schema = schemaRepository.findByName(name);
-        Gson gson = new GsonBuilder().setPrettyPrinting().enableComplexMapKeySerialization().disableHtmlEscaping().create();
-        if(schema != null){
-            if(api != null){
-                if(schema.getApiName().equalsIgnoreCase(api)) return gson.toJson(schema);
-                else return gson.toJson(new Error(new IllegalArgumentException("resource not found with api specified")));
-            }else{
-                return gson.toJson(schema);
-            }
-        }
-        return gson.toJson(new Error(new Throwable("Internal Server Caused an Exception")));
-    }
-
     @GetMapping(path = "/login/{username}/{password}")
     public ResponseEntity<Payload> login(@PathVariable(name = "username") String username, @PathVariable(name = "password") String password, HttpServletResponse response, HttpServletRequest request) {
         Metrics.apiRequests.increment();

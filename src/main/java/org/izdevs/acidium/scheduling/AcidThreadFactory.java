@@ -1,17 +1,17 @@
 package org.izdevs.acidium.scheduling;
 
-import jakarta.validation.constraints.NotNull;
-import org.springframework.stereotype.Component;
+import lombok.NonNull;
+import org.izdevs.acidium.serialization.naming.ThreadNamingService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.concurrent.CustomizableThreadFactory;
+import org.springframework.stereotype.Service;
 
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.atomic.AtomicInteger;
-
-@Component
-public class AcidThreadFactory implements ThreadFactory {
-    private final AtomicInteger threadCounter = new AtomicInteger();
-
+@Service
+public class AcidThreadFactory extends CustomizableThreadFactory {
+    @Autowired
+    ThreadNamingService naming;
     @Override
-    public Thread newThread(@NotNull Runnable runnable) {
-        return new Thread(runnable, "Acidium-scheduler-" + threadCounter.getAndIncrement());
+    public @NonNull Thread newThread(@NonNull Runnable runnable) {
+        return new Thread(runnable,naming.nameObject(runnable));
     }
 }

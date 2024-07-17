@@ -28,14 +28,5 @@ class AcidiumApplicationTests {
 
       logger.warn("world generation is skipped due to explicit test env");
     }
-    @Test
-    public void taskTest(){
-      DelayedTask task = new DelayedTask(() -> {
-        Logger logger = LoggerFactory.getLogger(this.getClass());
-
-        logger.info("logger test of tasking has been successful");
-      },1);
-      LoopManager.scheduleAsyncDelayedTask(task);
-    }
   
 }

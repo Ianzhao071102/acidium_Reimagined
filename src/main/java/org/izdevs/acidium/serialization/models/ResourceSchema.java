@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.izdevs.acidium.serialization.SerializableCompoundTag;
 
-@Getter
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor

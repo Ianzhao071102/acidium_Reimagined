@@ -7,7 +7,9 @@ import org.izdevs.acidium.game.crafting.CraftingRecipe;
 import org.izdevs.acidium.game.crafting.CraftingRecipeHolder;
 import org.izdevs.acidium.game.crafting.CraftingSlot;
 import org.izdevs.acidium.game.entity.petals.Petal;
+import org.izdevs.acidium.game.entity.petals.PetalService;
 import org.izdevs.acidium.game.inventory.PlayerInventory;
+import org.izdevs.acidium.scheduling.DelayedTask;
 import org.izdevs.acidium.scheduling.LoopManager;
 import org.izdevs.acidium.scheduling.ScheduledTask;
 import org.izdevs.acidium.utils.SpringBeanUtils;
@@ -66,9 +68,14 @@ public class Player extends Entity {
     public void init_finish(){
         Object _mgr = SpringBeanUtils.getBean("loopManager");
         assert _mgr instanceof LoopManager;
+        Object _petal = SpringBeanUtils.getBean("petalService");
+        assert _petal instanceof PetalService;
 
         LoopManager manager = (LoopManager) _mgr;
-
+        PetalService svc = (PetalService) _petal;
+        manager.scheduleAsyncDelayedTask(new DelayedTask(() -> {
+            this.petals = ((PetalService) _petal).getPetals(this);
+        },1));
         manager.registerRepeatingTask(new ScheduledTask(() -> this.inventoryChecker.run()));
     }
 }

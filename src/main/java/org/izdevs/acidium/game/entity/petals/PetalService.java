@@ -59,26 +59,37 @@ public class PetalService implements Ticked {
                 List<Equipment> equipment = inv.armour.getItems();
                 equipment.addAll(inv.electron.getItems());
                 Set<Petal> tp = new HashSet<>();
-                Set<Entity> petals = new HashSet<>();
+                Set<Entity> petals;
 
                 Set<Entity> finalPetals = new HashSet<>();
                 Set<Petal> finalPtls = new HashSet<>();
                 equipment.forEach(equipment1 -> {
-                    Entity entity = new Entity(player.getWorld(),player.getUsername() + service.nameObject(equipment1),equipment1.getMovementSpeed(), equipment1.getHealth(), equipment1.getHitboxRadius(), equipment1.getBDamage());
+                    Entity entity = null;
+                    boolean e_f = false;
+                    for(Entity e : player.getWorld().mobs){
+                        if(e instanceof Equipment && e.getId() == equipment1.getId()){
+                            e_f = true;
+                            entity = equipment1;
+                            break;
+                        }
+                    }
+                    if (!e_f) {
+                        entity = new Entity(player.getWorld(), player.getUsername() + service.nameObject(equipment1), equipment1.getMovementSpeed(), equipment1.getHealth(), equipment1.getHitboxRadius(), equipment1.getBDamage());
+                    }
                     finalPetals.add(entity);
-                    finalPtls.add(new Petal(equipment1.getMovementSpeed(),equipment1.getHealth(),equipment1.getHitboxRadius(),equipment1.getBDamage()));
+                    finalPtls.add(new Petal(equipment1.getMovementSpeed(), equipment1.getHealth(), equipment1.getHitboxRadius(), equipment1.getBDamage()));
                 });
-                petals=finalPetals;
+                petals = finalPetals;
                 player.setPetals(finalPtls);
 
 
                 //lock is not acquired, so re-getting player petals
-                tp  = player.getPetals();
+                tp = player.getPetals();
 
                 //rotate logic
                 petals.forEach(petal -> {
                     //https://www.desmos.com/geometry/potzespfgj
-                    Map<String,Object> attr = petal.getAttributes();
+                    Map<String, Object> attr = petal.getAttributes();
                     attr.putIfAbsent("rotate_deg", 0D);
 
                     //type assert is possible here...
@@ -86,7 +97,7 @@ public class PetalService implements Ticked {
                     double rad = Math.toRadians(deg);
 
                     int r;
-                    double x,y;
+                    double x, y;
 
                     //the distance of a petal to the player's center
                     r = 3;
@@ -94,7 +105,7 @@ public class PetalService implements Ticked {
                     x = r * Math.cos(rad);
                     y = r * Math.sin(rad);
 
-                    if(deg > 180D){
+                    if (deg > 180D) {
                         x = -x;
                         y = -y;
                     }

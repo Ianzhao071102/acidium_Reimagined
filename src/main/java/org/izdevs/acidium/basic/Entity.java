@@ -7,6 +7,8 @@ import com.badlogic.gdx.ai.msg.Telegraph;
 import com.dongbat.walkable.FloatArray;
 import com.esri.core.geometry.Point2D;
 import jakarta.annotation.PostConstruct;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.naming.factory.BeanFactory;
@@ -47,6 +49,7 @@ public class Entity extends Resource implements Telegraph {
     Inventory armourInv = new Inventory(InventoryType.Armour);
     AbstractBehaviourController controller;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id = 0;
     /**
      * basic self-representing global state machine for a basic entity
@@ -116,8 +119,6 @@ public class Entity extends Resource implements Telegraph {
 
         //due to issues now controller is just default controller bro come on...
         this.controller = new DefaultBehaviourController(world);
-        this.id = IDGenerator.createId();
-
     }
 
     public Entity(World world, String name, double movementSpeed, int health, int hitboxRadius, int bDamage) {
@@ -134,8 +135,6 @@ public class Entity extends Resource implements Telegraph {
 
         this.world = world;
         this.controller = new DefaultBehaviourController(world);
-        this.id = IDGenerator.createId();
-
     }
 
     /**

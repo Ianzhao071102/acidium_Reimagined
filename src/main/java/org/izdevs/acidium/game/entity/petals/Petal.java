@@ -17,6 +17,8 @@ import java.util.Map;
 
 public class Petal extends Resource {
     @Transient
+    org.izdevs.acidium.basic.Entity base;
+    @Transient
     Map<String,Object> attribute = new HashMap<>();
     double movementSpeed;
     int health;

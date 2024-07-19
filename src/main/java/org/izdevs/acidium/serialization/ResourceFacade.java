@@ -14,8 +14,10 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import static org.reflections.scanners.Scanners.SubTypes;
@@ -27,7 +29,7 @@ public class ResourceFacade{
     ResourceNamingService __naming;
 
     static ResourceNamingService naming;
-    private static StaticListableBeanFactory factory = new StaticListableBeanFactory();
+    private static final StaticListableBeanFactory factory = new StaticListableBeanFactory();
     @Autowired
     Set<ResourceSchema> resources;
 
@@ -57,7 +59,7 @@ public class ResourceFacade{
             factory.addBean(naming.nameObject(resource), resource);
         }
     }
-    public void registerResource_static(Resource resource){
+    public static void registerResource_static(Resource resource){
         if(!init){
             write_later.add(resource);
         }else {
@@ -67,5 +69,8 @@ public class ResourceFacade{
     @PostConstruct
     public void init(){
         naming = __naming;
+    }
+    public <T> Map<String, T> getResourceBeans(Class<T> type){
+        return factory.getBeansOfType(type);
     }
 }

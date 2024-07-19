@@ -7,6 +7,7 @@ import com.badlogic.gdx.ai.msg.Telegraph;
 import com.dongbat.walkable.FloatArray;
 import com.esri.core.geometry.Point2D;
 import jakarta.annotation.PostConstruct;
+import jakarta.persistence.Basic;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import lombok.Getter;
@@ -40,22 +41,21 @@ import static com.esri.core.geometry.Point2D.distance;
 
 @Getter
 @Setter
-public class Entity extends Resource implements Telegraph {
+public class Entity extends Resource {
+    AngerController controller = new DefaultAngerController();
+    EntityController entityController = new BasicEntityController();
     Map<String,Object> attributes = new HashMap<>();
     boolean invincible = false;
     boolean alive = true;
     Inventory primary_inventory = new Inventory(InventoryType.Inventory);
     Inventory electronInv = new Inventory(InventoryType.Electron);
     Inventory armourInv = new Inventory(InventoryType.Armour);
-    AbstractBehaviourController controller;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id = 0;
     /**
      * basic self-representing global state machine for a basic entity
      */
-    StateMachine<Entity, BasicEntityState> stateMachine;
-    BasicEntityState state;
     double x, y;
     String name;
     double movementSpeed;
@@ -103,10 +103,6 @@ public class Entity extends Resource implements Telegraph {
         this.hitboxRadius = hitboxRadius;
         this.bDamage = bDamage;
 
-        //defaults state to wandering
-        this.stateMachine = new DefaultStateMachine<>(this, BasicEntityState.WANDER);
-
-        Random random = new Random();
         int id = 0;
         int size = WorldController.worlds.size();
         if(size != 0){
@@ -116,9 +112,6 @@ public class Entity extends Resource implements Telegraph {
         else{
             this.world = new PlaceHolderWorld("^\\S+$");
         }
-
-        //due to issues now controller is just default controller bro come on...
-        this.controller = new DefaultBehaviourController(world);
     }
 
     public Entity(World world, String name, double movementSpeed, int health, int hitboxRadius, int bDamage) {
@@ -129,12 +122,7 @@ public class Entity extends Resource implements Telegraph {
         this.health = health;
         this.hitboxRadius = hitboxRadius;
         this.bDamage = bDamage;
-
-        //defaults state to wandering
-        this.stateMachine = new DefaultStateMachine<>(this, BasicEntityState.WANDER);
-
         this.world = world;
-        this.controller = new DefaultBehaviourController(world);
     }
 
     /**
@@ -159,12 +147,6 @@ public class Entity extends Resource implements Telegraph {
         y1 = a.getY();
         y2 = b.getY();
         return new Result(x1, x2, y1, y2);
-    }
-
-    @Override
-    public boolean handleMessage(Telegram telegram) {
-        //Let state machine handle the damn job
-        return stateMachine.handleMessage(telegram);
     }
 
     /**

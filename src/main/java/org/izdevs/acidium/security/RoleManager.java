@@ -17,7 +17,6 @@ public class RoleManager {
     RoleRepository repository;
 
     @Getter
-    @Autowired
     public volatile Set<Role> roles = new HashSet<>();
 
     @PostConstruct

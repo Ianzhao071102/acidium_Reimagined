@@ -20,7 +20,7 @@ public class SpringBeanUtils implements ApplicationContextAware {
     @Autowired
     LoopManager manager;
 
-    private static StaticListableBeanFactory init_factory = new StaticListableBeanFactory();
+    private static final StaticListableBeanFactory init_factory = new StaticListableBeanFactory();
 
     Logger logger = LoggerFactory.getLogger("SpringBeanUtils");
     static ApplicationContext context;
@@ -39,7 +39,10 @@ public class SpringBeanUtils implements ApplicationContextAware {
             return context.getBean(name);
         }
         else{
-            return AcidiumApplication.context.getBean(name);
+            if(AcidiumApplication.context != null) return AcidiumApplication.context.getBean(name);
+            else{
+                return init_factory.getBean(name);
+            }
         }
     }
 }

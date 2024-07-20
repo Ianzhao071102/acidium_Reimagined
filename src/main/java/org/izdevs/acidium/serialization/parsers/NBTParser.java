@@ -28,6 +28,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.Error;
 import java.lang.reflect.Type;
 import java.util.*;
 
@@ -59,12 +60,11 @@ public class NBTParser implements ResourceDeserializer {
             logger.error(e.getLocalizedMessage());
         }
 
-        assert tag != null;
+        logger.debug(String.valueOf(tag == null));
+        if(tag == null) logger.debug("failing here.");
         String apiVersion = tag.getString("apiVersion");
         String name = tag.getString("name");
         String type = tag.getString("type");
-
-        Resource result = null;
         try {
 
             //mob spec
@@ -108,7 +108,7 @@ public class NBTParser implements ResourceDeserializer {
                     for (int i = 0; i <= blocks.size() - 1; i++) {
                         String plr = blocks.getString(i);
 
-                        logger.debug("received dara: " + plr);
+                        logger.debug("received data: " + plr);
                         Gson gson = new GsonBuilder().create();
 
                         Type mapType = new TypeToken<Block>() {
@@ -222,8 +222,9 @@ public class NBTParser implements ResourceDeserializer {
                                 }
 
                                 return equipment;
-                            } else throw new IllegalArgumentException("unknown error");
+                            }
                         }
+                        throw new IllegalArgumentException("The input NBT specified a InventorySlot Type that could NOT be found");
                     }
                 }
             }

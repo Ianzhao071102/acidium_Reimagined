@@ -17,8 +17,11 @@ import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.security.SecureRandom;
 import java.sql.Connection;
+import java.util.List;
 
 import static org.izdevs.acidium.AcidiumApplication.readAndPrintNote;
 
@@ -53,8 +56,7 @@ public class StartupTasksRunner implements ApplicationRunner {
          */
         logger.info("MADE BY: " + credits);
         logger.info("OPENSOURCE ON GITHUB: https://github.com/Ianzhao071102/acidium_Reimagined");
-        logger.info("using spring framework...");
-        logger.info("Thanks for dphater for inspiring this project...");
+        logger.info("Thanks dphater for inspiring this project...");
 
         //initialization below
         TickManager.init();
@@ -69,6 +71,7 @@ public class StartupTasksRunner implements ApplicationRunner {
         for (int i = 0; i <= resource.length - 1; i++) {
             org.springframework.core.io.Resource resource1 = resource[i];
             InputStream stream = resource1.getInputStream();
+            logger.debug(resource1.getURI().toString());
             ResourceDeserializer deserializer = factory.getDeserializer(DeserializerTypes.NBT);
             Resource selected = deserializer.deserialize(stream);
             facade.registerResource(selected);

@@ -1,6 +1,7 @@
 package org.izdevs.acidium.serialization.parsers;
 
 import com.google.gson.Gson;
+import org.izdevs.acidium.serialization.DeserializerTypes;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.serialization.ResourceDeserializer;
 import org.springframework.stereotype.Component;
@@ -10,8 +11,7 @@ import java.io.InputStream;
 
 @Service
 @Component
-public class JSONParser implements ResourceDeserializer {
-
+public class JSONParser extends ResourceDeserializer {
     @Override
     public Resource deserialize(String data) {
         Gson gson = new Gson();
@@ -22,5 +22,8 @@ public class JSONParser implements ResourceDeserializer {
     @Override
     public Resource deserialize(InputStream input) {
         throw new UnsupportedOperationException("calling YAML/JSON parser with input stream is NOT supported");
+    }
+    public JSONParser(){
+        super(DeserializerTypes.JSON);
     }
 }

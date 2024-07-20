@@ -14,7 +14,9 @@ import java.util.Set;
 public class Role {
     String name;
 
-    @OneToMany
+    @ElementCollection(targetClass = Level.class)
+    @Column(name = "levels_granted",nullable = false)
+    @Enumerated(EnumType.STRING)
     Set<Level> levelsGranted = new HashSet<>();
 
     Level level;
@@ -35,7 +37,6 @@ public class Role {
     }
 
 
-    @Entity
     public enum Level {
         ADMIN(0), MODERATOR(1), PLAYER(2);
         @Id

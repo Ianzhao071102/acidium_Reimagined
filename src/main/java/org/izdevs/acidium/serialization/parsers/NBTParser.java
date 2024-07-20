@@ -18,12 +18,15 @@ import org.izdevs.acidium.game.equipment.DropTable;
 import org.izdevs.acidium.game.equipment.Equipment;
 import org.izdevs.acidium.game.equipment.EquipmentHolder;
 import org.izdevs.acidium.game.inventory.InventoryType;
+import org.izdevs.acidium.serialization.DeserializerTypes;
 import org.izdevs.acidium.serialization.Resource;
 import org.izdevs.acidium.serialization.ResourceDeserializer;
 import org.izdevs.acidium.world.Block;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -33,11 +36,15 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 @Service
-public class NBTParser implements ResourceDeserializer {
+public class NBTParser extends ResourceDeserializer {
     @Autowired
     EquipmentHolder equipmentHolder;
     public static ArrayList<CommandDefinition> definitions = new ArrayList<>();
     static Logger logger = LoggerFactory.getLogger(NBTParser.class);
+
+    public NBTParser() {
+        super(DeserializerTypes.NBT);
+    }
 
     public static void registerNBTDef(InputStream raw) {
         logger.debug("called with:" + raw);
@@ -209,19 +216,8 @@ public class NBTParser implements ResourceDeserializer {
                     for (int i = 0; i <= allowedSlots.size() - 1; i++) {
                         String inventory_slot_name = allowedSlots.getString(i);
                         for (InventoryType a : InventoryType.values()) {
-                            if (inventory_slot_name.equals(a.name())) {
-                                Equipment equipment = new Equipment(equipment_name);
-                                CraftingRecipe recipe = null;
-                                for (CraftingRecipe _recipe : CraftingRecipeHolder.getRecipes()) {
-                                    if (_recipe.getName().equalsIgnoreCase(crafting_recipe_name)) {
-                                        recipe = _recipe;
-                                    }
-                                }
-                                if (recipe == null) {
-                                    throw new IllegalArgumentException("recipe is not specified");
-                                }
-
-                                return equipment;
+                            if (inventory_slot_name.equalsIgnoreCase(a.name())) {
+                                return getEquipment(equipment_name, crafting_recipe_name);
                             }
                         }
                         throw new IllegalArgumentException("The input NBT specified a InventorySlot Type that could NOT be found");
@@ -233,5 +229,20 @@ public class NBTParser implements ResourceDeserializer {
         }
         logger.error(tag.toNbtString());
         throw new IllegalArgumentException("passed in illegal data.");
+    }
+
+    private Equipment getEquipment(String equipment_name, String crafting_recipe_name) {
+        Equipment equipment = new Equipment(equipment_name);
+        CraftingRecipe recipe = null;
+        for (CraftingRecipe _recipe : CraftingRecipeHolder.getRecipes()) {
+            if (_recipe.getName().equalsIgnoreCase(crafting_recipe_name)) {
+                recipe = _recipe;
+            }
+        }
+        if (recipe == null) {
+            throw new IllegalArgumentException("recipe is not specified");
+        }
+        equipment.setRecipe(recipe);
+        return equipment;
     }
 }

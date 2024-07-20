@@ -11,12 +11,10 @@ import org.springframework.shell.standard.ShellOption;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
-import static org.izdevs.acidium.StartupTasksRunner.SQLConnection;
 import static org.izdevs.acidium.serialization.parsers.NBTParser.registerNBTDef;
 
 @ShellComponent
@@ -31,19 +29,6 @@ public class BasicCommands {
     public String credits(){
       return Config.getCredits();
     }
-
-    
-    
-    @ShellMethod(value = "sqlTest")
-    public String testSqlConnection(){
-        try {
-            SQLConnection.createStatement().execute("CREATE TABLE IF NOT EXISTS users (uuid CHARACTER(36),username VARCHAR(21),passwordHash VARCHAR(72))");
-        }catch(SQLException e){
-            return "failed";
-        }
-        return "success";
-    }
-
     @ShellMethod(value = "regClassPathYaml")
     public String regClassPathYaml(@ShellOption(defaultValue = "name") String name) {
         try {

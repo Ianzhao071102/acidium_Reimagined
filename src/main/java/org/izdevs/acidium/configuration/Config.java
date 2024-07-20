@@ -116,7 +116,7 @@ public class Config {
     @Value("${misc.print_license}")
     static boolean license;
     @Bean(name = "license")
-    public static boolean generateLicense(){
+    public boolean generateLicense(){
         return license;
     }
 }

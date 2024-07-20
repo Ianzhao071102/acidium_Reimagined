@@ -4,7 +4,11 @@ import org.izdevs.acidium.serialization.models.ResourceSchema;
 
 import java.io.InputStream;
 
-public interface ResourceDeserializer {
-    Resource deserialize(String data);
-    Resource deserialize(InputStream input);
+public abstract class ResourceDeserializer {
+    DeserializerTypes type;
+    public ResourceDeserializer(DeserializerTypes type){
+        this.type = type;
+    }
+    public abstract Resource deserialize(String data);
+    public abstract Resource deserialize(InputStream input);
 }

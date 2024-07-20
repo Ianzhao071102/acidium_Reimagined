@@ -21,7 +21,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Component
-@ComponentScan(basePackages = "org.izdevs.acidium")
 public class TickManager {
     /**
      * newly collected ticks per second value
@@ -47,6 +46,8 @@ public class TickManager {
     public static void init() {
         Logger logger = LoggerFactory.getLogger(TickManager.class);
         logger.info("tick manager has been initialized");
+        logger.info("this means that the static method init() has been called");
+        logger.info("Hello World from Acidium");
     }
 
     @Scheduled(fixedRate = 1000)

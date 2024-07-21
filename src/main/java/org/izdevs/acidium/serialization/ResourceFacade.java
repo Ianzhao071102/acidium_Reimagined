@@ -31,20 +31,13 @@ public class ResourceFacade{
     static ResourceNamingService naming;
     private static final StaticListableBeanFactory factory = new StaticListableBeanFactory();
     @Autowired
-    Set<ResourceSchema> resources;
+    Set<Resource> resources;
 
-    @Autowired
-    ResourceSchemaRepository repository;
     private static final Set<Resource> write_later = new HashSet<>();
     static Logger logger = LoggerFactory.getLogger(ResourceFacade.class);
 
     @EventListener(ApplicationReadyEvent.class)
     public void write(){
-        init = true;
-        for(int i=0;i<=resources.size()-1;i++){
-            repository.save(resources.iterator().next());
-        }
-
         if(!write_later.isEmpty()){
             for(int i=0;i<= write_later.size()-1;i++){
                 Resource resource = write_later.iterator().next();

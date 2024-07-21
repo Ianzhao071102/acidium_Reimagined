@@ -32,16 +32,14 @@ import org.springframework.context.event.EventListener;
 import org.springframework.data.annotation.Id;
 
 import java.security.SecureRandom;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 import static com.esri.core.geometry.Point2D.distance;
 
 @Getter
 @Setter
 public class Entity extends Resource {
+    private boolean finished = false;
     AngerController controller = new DefaultAngerController();
     EntityController entityController = new BasicEntityController();
     Map<String,Object> attributes = new HashMap<>();
@@ -172,11 +170,31 @@ public class Entity extends Resource {
 
     @EventListener(ApplicationReadyEvent.class)
     public void init_finish(){
+        finished = true;
+    }
+    private void run_task(){
         Object _mgr = SpringBeanUtils.getBean("loopManager");
         assert _mgr instanceof LoopManager;
 
         LoopManager manager = (LoopManager) _mgr;
 
         manager.registerRepeatingTask(task);
+    }
+    @PostConstruct
+    public void reg_task(){
+        if(finished){
+            run_task();
+        }else{
+            //timer task
+            TimerTask tt = new TimerTask() {
+                @Override
+                public void run() {
+                    run_task();
+                }
+            };
+            //init this five seconds later
+            Timer timer = new Timer();
+            timer.schedule(tt,20000L);
+        }
     }
 }

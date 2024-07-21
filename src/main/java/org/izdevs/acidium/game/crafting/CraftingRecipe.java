@@ -31,7 +31,7 @@ public class CraftingRecipe extends Resource {
     }
 
     public CraftingRecipe(@NotNull String name) {
-        super(name);
+        super(name,CraftingRecipe.class.getSimpleName());
         this.name = name;
     }
 

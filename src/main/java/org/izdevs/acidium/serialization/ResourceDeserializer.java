@@ -11,4 +11,5 @@ public abstract class ResourceDeserializer {
     }
     public abstract Resource deserialize(String data);
     public abstract Resource deserialize(InputStream input);
+    public abstract <T> Resource deserialize(InputStream input , T type);
 }

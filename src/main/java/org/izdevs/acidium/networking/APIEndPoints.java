@@ -1,14 +1,12 @@
 package org.izdevs.acidium.networking;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.re2j.Matcher;
 import com.google.re2j.Pattern;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.izdevs.acidium.Metrics;
-import org.izdevs.acidium.api.v1.Error;
 import org.izdevs.acidium.api.v1.Payload;
 import org.izdevs.acidium.api.v1.Player;
 import org.izdevs.acidium.api.v1.User;
@@ -21,8 +19,6 @@ import org.izdevs.acidium.scheduling.LoopManager;
 import org.izdevs.acidium.security.AuthorizationContent;
 import org.izdevs.acidium.security.SessionDetail;
 import org.izdevs.acidium.security.SessionGenerator;
-import org.izdevs.acidium.serialization.ResourceSchemaRepository;
-import org.izdevs.acidium.serialization.models.ResourceSchema;
 import org.izdevs.acidium.utils.NumberUtils;
 import org.izdevs.acidium.utils.SpringBeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,8 +43,7 @@ import static org.izdevs.acidium.AcidiumApplication.bcrypt;
 public class APIEndPoints {
     @Autowired
     ApplicationEventPublisher publisher;
-    @Autowired
-    private ResourceSchemaRepository schemaRepository;
+
 
     public static int playersOnline = 0;
 

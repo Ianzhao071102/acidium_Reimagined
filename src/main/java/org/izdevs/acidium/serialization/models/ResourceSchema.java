@@ -5,10 +5,11 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.izdevs.acidium.serialization.SerializableCompoundTag;
+import org.springframework.stereotype.Component;
 
-@Entity
-@AllArgsConstructor
-@NoArgsConstructor
+@MappedSuperclass
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "additional")
 public class ResourceSchema {
     @GeneratedValue
     @Id

@@ -231,6 +231,11 @@ public class NBTParser extends ResourceDeserializer {
         throw new IllegalArgumentException("passed in illegal data.");
     }
 
+    @Override
+    public <T> Resource deserialize(InputStream input, T type) {
+        throw new UnsupportedOperationException();
+    }
+
     private Equipment getEquipment(String equipment_name, String crafting_recipe_name) {
         Equipment equipment = new Equipment(equipment_name);
         CraftingRecipe recipe = null;

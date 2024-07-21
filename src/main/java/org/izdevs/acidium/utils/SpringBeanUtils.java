@@ -30,7 +30,8 @@ public class SpringBeanUtils implements ApplicationContextAware {
         logger.info(this.getClass().getCanonicalName() + " has been deprecated for multiple reasons...");
     }
 
-    public SpringBeanUtils(){
+    public SpringBeanUtils(ApplicationContext context){
+        SpringBeanUtils.context = context;
         logger.debug("bean injection");
         init_factory.addBean("loopManager",manager);
     }

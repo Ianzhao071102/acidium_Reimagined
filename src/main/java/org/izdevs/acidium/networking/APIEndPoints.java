@@ -6,6 +6,7 @@ import com.google.re2j.Pattern;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.websocket.Session;
 import org.izdevs.acidium.Metrics;
 import org.izdevs.acidium.api.v1.Payload;
 import org.izdevs.acidium.api.v1.Player;
@@ -44,6 +45,8 @@ public class APIEndPoints {
     @Autowired
     ApplicationEventPublisher publisher;
 
+    @Autowired
+    SessionGenerator sessionGenerator;
 
     public static int playersOnline = 0;
 
@@ -75,7 +78,7 @@ public class APIEndPoints {
             }
             response.addCookie(new Cookie("user", user.toString()));
 
-            UUID sid = SessionGenerator.use();
+            UUID sid = sessionGenerator.use();
             UUID playerUUID = user.getUuid();
             //initial value of player
             request.getSession().setAttribute("player", new Player(user, new Entity(username, 1, 20, 0, 20)));
@@ -111,7 +114,7 @@ public class APIEndPoints {
 
         if (matcher.matches()) {
             //uuid follows the uuid schema
-            if (SessionGenerator.validate(uuid)) {
+            if (sessionGenerator.validate(uuid)) {
                 //session is valid
                 if (request.getSession().getAttribute("player") == null) {
                     //if attribute is not present
@@ -153,11 +156,11 @@ public class APIEndPoints {
         Metrics.apiRequests.increment();
         if (!(request.getSession().getAttribute("session-id") instanceof UUID session) || !(request.getSession().getAttribute("player") instanceof Player)) {
             //handle invalid session
-            request.getSession().setAttribute("session-id", SessionGenerator.use().toString());
+            request.getSession().setAttribute("session-id", sessionGenerator.use().toString());
             response.getWriter().println("invalid session, new session is set");
             return new ResponseEntity<>(HttpStatus.ACCEPTED);
         } else {
-            if (SessionGenerator.validate(session)) {
+            if (sessionGenerator.validate(session)) {
                 Gson gson = new Gson();
                 Map<String, String> entityMap = new HashMap<>();
 
@@ -181,7 +184,7 @@ public class APIEndPoints {
             String _dest_slot = request.getParameter("dest_slot");
             //session id
             if (request.getSession().getAttribute("uuid") instanceof UUID session_id && request.getSession().getAttribute("player") instanceof Player player) {
-                if (!SessionGenerator.validate(session_id)) return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+                if (!sessionGenerator.validate(session_id)) return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
                 else if (_op_slot != null && _dest_slot != null) {
                     try {
                         int op_slot = Integer.parseInt(_op_slot);
@@ -218,14 +221,6 @@ public class APIEndPoints {
             return new ResponseEntity<>(HttpStatus.FORBIDDEN);
         }
     }
-
-    @PostMapping(path = "/tests/echo")
-    public ResponseEntity<Payload> echo() {
-        Metrics.apiRequests.increment();
-        return new ResponseEntity<>(new Payload("success"), HttpStatus.OK);
-    }
-
-
     @GetMapping(path = "credits")
     public ResponseEntity<Payload> credits() {
         Metrics.apiRequests.increment();
@@ -237,33 +232,4 @@ public class APIEndPoints {
         Metrics.apiRequests.increment();
         return new ResponseEntity<>(new Payload("hello from: " + credits), HttpStatus.OK);
     }
-
-    @PostMapping
-    public ResponseEntity<Payload> register(HttpServletRequest request) {
-        Metrics.apiRequests.increment();
-        if (request.getParameter("username") != null && request.getParameter("password") != null) {
-            String username = request.getParameter("username");
-            String password = request.getParameter("password");
-
-            Pattern username_pattern = Pattern.compile("^[a-zA-Z0-9](?:[._]?[a-zA-Z0-9]){5,17}[a-zA-Z0-9]$"); //NOTE: USERNAME LENGTH MUST BE 5-20, ONLY CHARACTERS AND NUMBERS
-            Matcher username_match = username_pattern.matcher(username);
-
-            Pattern pwd_pattern = Pattern.compile("^[a-zA-Z0-9](?:[._]?[a-zA-Z0-9]){6,30}[a-zA-Z0-9]$"); //NOTE: PASSWORD LENGTH MUST BE 8-80, ONLY CHARACTERS AND NUMBERS
-            Matcher pwd_match = pwd_pattern.matcher(password);
-
-            if (repository.findUserByUsername(username) != null) {
-                return new ResponseEntity<>(new Payload("username taken"), HttpStatus.NOT_ACCEPTABLE);
-            } else {
-                if (username_match.matches() && pwd_match.matches()) {
-                    User user = new User(username, bcrypt(password));
-                    repository.save(user);
-                    return new ResponseEntity<>(new Payload(new Gson().toJson(user)), HttpStatus.ACCEPTED);
-                } else {
-                    return new ResponseEntity<>(new Payload("illegally formatted username or/and password"), HttpStatus.UNPROCESSABLE_ENTITY);
-                }
-            }
-        }
-        return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
-    }
-
 }

@@ -1,5 +1,6 @@
 package org.izdevs.acidium.serialization;
 
+import com.google.gson.Gson;
 import jakarta.annotation.PostConstruct;
 import lombok.Getter;
 import org.izdevs.acidium.serialization.exceptions.ResourceNotFoundException;
@@ -24,6 +25,7 @@ import static org.reflections.scanners.Scanners.SubTypes;
 
 @Service
 public class ResourceFacade{
+    Gson gson = new Gson();
     static boolean init = false;
     @Autowired
     ResourceNamingService __naming;
@@ -46,6 +48,8 @@ public class ResourceFacade{
         }
     }
     public void registerResource(Resource resource){
+        logger.debug("registered resource"); 
+        logger.debug(gson.toJson(resource));
         if(!init){
             write_later.add(resource);
         }else {

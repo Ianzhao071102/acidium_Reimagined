@@ -1,6 +1,6 @@
 package org.izdevs.acidium.networking;
 
-import jakarta.websocket.EndpointConfig;
+import jakarta.websocket.CloseReason;
 import jakarta.websocket.OnMessage;
 import jakarta.websocket.OnOpen;
 import jakarta.websocket.Session;
@@ -9,9 +9,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
 import java.time.Instant;
 @Component
-@ServerEndpoint("/health")
+@ServerEndpoint("/ws/utils/health")
 public class AcidHealthEndpoint{
     Logger logger = LoggerFactory.getLogger(AcidHealthEndpoint.class);
 
@@ -38,7 +39,10 @@ public class AcidHealthEndpoint{
         this.session.getAsyncRemote().sendText(response);
     }
     @OnOpen
-    public void open(Session session){
+    public void open(Session session) throws IOException {
+        if(session != null){
+            session.close(new CloseReason(CloseReason.CloseCodes.GOING_AWAY,"Another Client is connecting..."));
+        }
         this.session = session;
     }
 }

@@ -8,8 +8,6 @@ import org.springframework.web.socket.server.standard.ServerEndpointExporter;
 public class ServerEndpointConfigurator {
     @Bean
     public ServerEndpointExporter exporter(){
-        ServerEndpointExporter exporter = new ServerEndpointExporter();
-        exporter.setAnnotatedEndpointClasses(AcidHealthEndpoint.class);
-        return exporter;
+        return new ServerEndpointExporter();
     }
 }

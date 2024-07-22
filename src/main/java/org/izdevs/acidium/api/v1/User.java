@@ -1,10 +1,12 @@
 package org.izdevs.acidium.api.v1;
 
+import com.google.re2j.Pattern;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import org.izdevs.acidium.serialization.Resource;
+import org.springframework.security.core.parameters.P;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -14,8 +16,9 @@ import java.util.UUID;
 @Entity
 @Table(name = "users")
 @Getter
-
 public class User extends Resource {
+    public static final Pattern username_regex = Pattern.compile("^[a-zA-Z0-9](?:[._]?[a-zA-Z0-9]){5,17}[a-zA-Z0-9]$");
+    public static final Pattern password_regex = Pattern.compile("^[a-zA-Z0-9](?:[._]?[a-zA-Z0-9]){6,30}[a-zA-Z0-9]$");
     String username;
     UUID uuid;
     String passwordHash;

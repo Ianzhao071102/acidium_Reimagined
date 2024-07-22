@@ -42,6 +42,7 @@ public class JSONDeserializerStartupRunner implements ApplicationRunner {
             //fuck NullPointerException.class
             if(r == null) break;
             try {
+                logger.debug(r.getURI().getPath());
                 pool.execute(() -> {
                     facade.registerResource(decode(r, DeserializerTypes.JSON));
                 });

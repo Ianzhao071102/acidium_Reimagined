@@ -19,6 +19,7 @@ import java.util.concurrent.TimeUnit;
 
 @Service("loopManager")
 public class LoopManager {
+    Logger logger = LoggerFactory.getLogger(this.getClass().getSimpleName());
     ThreadFactory factory = new ThreadFactoryBuilder().setThreadFactory(new AcidThreadFactory()).build();
     ThreadPoolExecutor executor = new ThreadPoolExecutor(20,200,1000, TimeUnit.MILLISECONDS, new ArrayBlockingQueue<>(5),factory);
 
@@ -39,10 +40,12 @@ public class LoopManager {
      */
     boolean paused = false;
     public void registerRepeatingTask(ScheduledTask task) {
+        logger.debug("repeating task has been registered: " + task.id);
         repeating_tasks.add(task);
     }
 
     public void scheduleAsyncDelayedTask(DelayedTask task) {
+        logger.debug("async delayed task has been registered: " + task.getId());
         delayedTasks.add(task);
     }
 
@@ -52,6 +55,7 @@ public class LoopManager {
         for (ScheduledTask task : delayedTasks) {
             if (task.state == ScheduledTask.State.FINISHED) {
                 delayedTasks.remove(task);
+                break;
             } else {
                 if (task.state == ScheduledTask.State.SCHEDULED_WAITING) {
                     if (task.destTick == 0) {
@@ -78,6 +82,7 @@ public class LoopManager {
                 if (task.destTick == 0) {
                     if (task.async) {
                         executor.execute(task.task);
+                        task.state = ScheduledTask.State.FINISHED;
                     } else {
                         task.exec();
                         task.destTick = task._indicator;

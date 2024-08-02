@@ -14,10 +14,10 @@ import java.util.Map;
 public class TickedWorld {
     public volatile ArrayList<Entity> mobs = new ArrayList<>();
     public volatile ArrayList<Player> players = new ArrayList<Player>();
-    Map<Point, Block> map;
+    Map<Point, Block> block_map;
 
     public TickedWorld(Map<Point, Block> map) {
-        this.map = map;
+        this.block_map = map;
     }
 
     public void addPlayer(Player player) {

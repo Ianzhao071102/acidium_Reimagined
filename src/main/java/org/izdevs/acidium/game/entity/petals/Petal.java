@@ -24,10 +24,6 @@ public class Petal extends Resource {
     int health;
     int hitboxRadius;
     int bDamage;
-    @Id
-    @GeneratedValue
-    private Long id;
-
     public Petal() {
 
     }

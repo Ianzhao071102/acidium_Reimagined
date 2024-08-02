@@ -14,7 +14,6 @@ import java.util.Set;
 @Getter
 public class CraftingRecipe extends Resource {
     Equipment destination;
-    String name;
     boolean ordered = false;
     boolean craftable = true;
     Set<CraftingSlot> slots = new HashSet<>();

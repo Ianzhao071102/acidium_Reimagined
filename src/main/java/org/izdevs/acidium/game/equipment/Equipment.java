@@ -13,21 +13,16 @@ import org.springframework.data.annotation.Id;
 import java.util.HashSet;
 import java.util.Set;
 
+@Getter
 public class Equipment extends Entity {
-    @Getter
     @Setter
     CraftingRecipe recipe;
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
-    int id;
-    @Getter
     Entity equipEntity;
 
     /**
      * slots that is allowed to be placed on
      * defaults to: primary_inventory
      */
-    @Getter
     @Setter
     Set<InventoryType> allowedSlots = new HashSet<>();
 
@@ -42,7 +37,7 @@ public class Equipment extends Entity {
     /**
      * equip current equipment to its owner's electron slot
      */
-    public void equipElectronSlot(int slotId,String name) {
+    public void equipElectronSlot(int slotId, String name) {
         this.setName(name);
         if (this.equipEntity.getPrimary_inventory().getItems().contains(this)) {
             this.equipEntity.getPrimary_inventory().getItems().remove(this);

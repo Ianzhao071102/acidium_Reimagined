@@ -48,14 +48,10 @@ public class Entity extends Resource {
     Inventory primary_inventory = new Inventory(InventoryType.Inventory);
     Inventory electronInv = new Inventory(InventoryType.Electron);
     Inventory armourInv = new Inventory(InventoryType.Armour);
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id = 0;
     /**
      * basic self-representing global state machine for a basic entity
      */
     double x, y;
-    String name;
     double movementSpeed;
     int health;
     int hitboxRadius;
@@ -196,5 +192,8 @@ public class Entity extends Resource {
             Timer timer = new Timer();
             timer.schedule(tt,20000L);
         }
+    }
+    public long getId(){
+        return this.id;
     }
 }

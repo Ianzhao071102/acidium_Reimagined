@@ -5,15 +5,22 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.Serializable;
 @MappedSuperclass
+
 public class Resource implements Serializable {
-    String typeName;
-    String name;
+    @Getter
+    @Setter
+    public String typeName;
+    @Getter
+    @Setter
+    public String name;
     @Id
     @GeneratedValue
-    private Long id;
+    public Long id;
 
     public Resource(String name,String typeName){
         this.name = name;

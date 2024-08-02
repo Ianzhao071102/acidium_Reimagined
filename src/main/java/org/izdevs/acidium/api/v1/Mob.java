@@ -18,6 +18,7 @@ import java.util.Set;
 
 @Getter
 public class Mob extends Resource {
+    String mbName;
     /**
      * no default drop table for entity without this
      */
@@ -26,11 +27,6 @@ public class Mob extends Resource {
 
     @Setter
     public Set<Equipment> equipments = new HashSet<>();
-
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
-    String name;
-    int id;
     @Setter
     double speed;
     @Setter
@@ -39,11 +35,14 @@ public class Mob extends Resource {
     int bDamage; //body damage
 
     public Mob(String name, double speed, int health, int bDamage, int hitboxRadius) {
-       this.name = name;
+       super(name,"Mob");
+       this.mbName = name;
        this.speed = speed;
        this.health = health;
        this.bDamage = bDamage;
        this.hitboxRadius = hitboxRadius;
     }
-
+    public String getName(){
+        return this.mbName;
+    }
 }

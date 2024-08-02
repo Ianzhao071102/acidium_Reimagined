@@ -1,6 +1,7 @@
 package org.izdevs.acidium;
 
 import com.google.gson.Gson;
+import org.izdevs.acidium.api.v1.Mob;
 import org.izdevs.acidium.game.crafting.CraftingRecipe;
 import org.izdevs.acidium.game.crafting.CraftingSlot;
 import org.izdevs.acidium.game.equipment.Equipment;
@@ -18,7 +19,7 @@ public class TestAcidiumApplication {
 
 
 	public static void main(String[] args) {
-		//TODO MAKE POSITION'S NBT DATA(equipment)
-		SpringApplication.from(AcidiumApplication::main).with(TestAcidiumApplication.class).run(args);
+		System.out.println(new Gson().toJson(new Mob("name",1,1,1,1)));
+		//SpringApplication.from(AcidiumApplication::main).with(TestAcidiumApplication.class).run(args);
 	}
 }

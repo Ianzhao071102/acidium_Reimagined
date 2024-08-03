@@ -17,8 +17,11 @@ import java.util.UUID;
 @Table(name = "users")
 @Getter
 public class User extends Resource {
+    @Transient
     public static final Pattern username_regex = Pattern.compile("^[a-zA-Z0-9](?:[._]?[a-zA-Z0-9]){5,17}[a-zA-Z0-9]$");
+    @Transient
     public static final Pattern password_regex = Pattern.compile("^[a-zA-Z0-9](?:[._]?[a-zA-Z0-9]){6,30}[a-zA-Z0-9]$");
+
     String username;
     UUID uuid;
     String passwordHash;
@@ -47,12 +50,13 @@ public class User extends Resource {
         this.username = name;
     }
 
-    public User(String username,String passwordHash,UUID uuid){
+    public User(String username, String passwordHash, UUID uuid) {
         this.uuid = uuid;
         this.passwordHash = passwordHash;
         this.username = username;
     }
-    public User(String username,String passwordHash,String uuid){
+
+    public User(String username, String passwordHash, String uuid) {
         this.uuid = UUID.fromString(uuid);
         this.passwordHash = passwordHash;
         this.username = username;

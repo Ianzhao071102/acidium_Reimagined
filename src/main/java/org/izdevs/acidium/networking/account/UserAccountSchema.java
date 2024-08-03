@@ -1,10 +1,12 @@
 package org.izdevs.acidium.networking.account;
 
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
+@NoArgsConstructor
 public class UserAccountSchema {
-    enum opType{
+    public enum opType{
         REGISTER,
         LOGIN,
         DESTROY

@@ -18,13 +18,11 @@ public class MetricsIntecepter implements HandshakeInterceptor {
     public boolean beforeHandshake(ServerHttpRequest request, ServerHttpResponse response, WebSocketHandler wsHandler, Map<String, Object> attributes) throws Exception {
         Metrics.apiRequests.increment();
         logger.info("Handshake received");
-        logger.trace("Handshake RCV:" + gson.toJson(request));
         return true;
     }
 
     @Override
     public void afterHandshake(ServerHttpRequest request, ServerHttpResponse response, WebSocketHandler wsHandler, Exception exception) {
         logger.info("HandShake Complete");
-        logger.trace("Handshake Complete:" + gson.toJson(request));
     }
 }

@@ -1,7 +1,11 @@
 package org.izdevs.acidium;
 
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import lombok.Getter;
+import org.izdevs.acidium.networking.account.UserAccountSchema;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +42,7 @@ public class AcidiumApplication extends SpringApplication {
     boolean print_license;
 
     public static void main(String[] args) {
+        logger.error(new Gson().toJson(new UserAccountSchema(UserAccountSchema.opType.REGISTER,"Ian071102","Yqsz071102") ));
         context = SpringApplication.run(AcidiumApplication.class, args);
     }
 

@@ -1,5 +1,6 @@
 package org.izdevs.acidium.game.equipment;
 
+import jakarta.annotation.PostConstruct;
 import lombok.Getter;
 import lombok.Setter;
 import org.reflections.Reflections;
@@ -17,5 +18,11 @@ import static org.reflections.scanners.Scanners.SubTypes;
 @Service
 public class EquipmentHolder {
     @Autowired
-    Set<Equipment> equipments;
+    private Set<Equipment> equipments_;
+    public Set<Equipment> equipments;
+
+    @PostConstruct
+    public void copy(){
+        this.equipments = this.equipments_;
+    }
 }

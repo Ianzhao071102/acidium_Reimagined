@@ -10,12 +10,9 @@ import java.util.Set;
 
 @Getter
 @Entity
-@NoArgsConstructor
 public class Role {
     String name;
-
     @ElementCollection(targetClass = Level.class)
-    @Column(name = "levels_granted",nullable = false)
     @Enumerated(EnumType.STRING)
     Set<Level> levelsGranted = new HashSet<>();
 
@@ -35,7 +32,7 @@ public class Role {
         this.name = name;
         levelsGranted.addAll(levels);
     }
-
+    public Role(){}
 
     public enum Level {
         ADMIN(0), MODERATOR(1), PLAYER(2);

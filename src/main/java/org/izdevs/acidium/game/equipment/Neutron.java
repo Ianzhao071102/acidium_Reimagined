@@ -15,7 +15,7 @@ public class Neutron extends Equipment {
      */
     public Neutron(World world, Entity equip) {
         //un-craftable
-        super(world, "neutron", 0, 100, 1, 2, equip, new CraftingRecipe());
+        super(world, "neutron", 0, 100, 1, 2, new CraftingRecipe());
         this.allowedSlots.add(InventoryType.Armour);
         //un-craftable
         this.recipe = new CraftingRecipe();

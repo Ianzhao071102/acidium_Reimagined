@@ -3,6 +3,7 @@ package org.izdevs.acidium.networking.account;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import jakarta.websocket.server.ServerEndpoint;
+import lombok.extern.slf4j.Slf4j;
 import org.checkerframework.checker.units.qual.A;
 import org.izdevs.acidium.api.v1.Payload;
 import org.izdevs.acidium.api.v1.User;
@@ -21,7 +22,9 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.util.UUID;
 
-@Configurable
+@Service
+@Slf4j
+@ServerEndpoint("/ws/account")
 public class AccountServiceWebSocketEndpoint implements WebSocketHandler {
     @Autowired
     UserRepository repository;
@@ -47,8 +50,10 @@ public class AccountServiceWebSocketEndpoint implements WebSocketHandler {
     @Override
     public void handleTransportError(WebSocketSession session, Throwable exception) throws Exception {
         if(exception instanceof IOException){
-            session.sendMessage(new TextMessage("connection error"));
-            session.close(CloseStatus.PROTOCOL_ERROR);
+            if(!session.isOpen()){
+                session.sendMessage(new TextMessage("connection error"));
+                session.close(CloseStatus.PROTOCOL_ERROR);
+            }
         }
         logger.trace("exception thrown in account service", exception);
     }
@@ -83,11 +88,13 @@ public class AccountServiceWebSocketEndpoint implements WebSocketHandler {
         String username = schema.username;
         String password = schema.password;
         if (User.username_regex.matches(username) && User.password_regex.matches(password)) {
-            String password_hash = new BCryptPasswordEncoder().encode(password);
+            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+            String password_hash = encoder.encode(password);
             User user = new User(username, password_hash);
             switch (schema.type) {
                 case REGISTER -> {
                     if (repository.findUserByUsername(username) != null) {
+                        logger.debug("session is closed due to failed register attempt");
                         session.sendMessage(new TextMessage("username exists"));
                         session.close(CloseStatus.BAD_DATA);
                         return;
@@ -95,7 +102,9 @@ public class AccountServiceWebSocketEndpoint implements WebSocketHandler {
                     repository.save(user);
                 }
                 case LOGIN -> {
-                    if (!repository.findUserByUsername(username).getPasswordHash().equals(password_hash)) {
+                    String hash = repository.findUserByUsername(username).getPasswordHash();
+                    logger.debug(new Gson().toJson(user));
+                    if (encoder.matches(password,hash)) {
                         session.sendMessage(new TextMessage("incorrect password"));
                         session.close(CloseStatus.BAD_DATA);
                         return;

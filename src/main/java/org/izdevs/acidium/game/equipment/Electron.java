@@ -16,7 +16,7 @@ public class Electron extends Equipment {
      * body_damage of 5
      */
     public Electron(World world, Entity equip) {
-        super(world, "electron", 0.2, 20, 1, 5, equip, new CraftingRecipe());
+        super(world, "electron", 0.2, 20, 1, 5, new CraftingRecipe());
         this.allowedSlots.add(InventoryType.Electron);
 
         //un-craftable

@@ -14,20 +14,18 @@ import java.util.UUID;
 
 
 @Entity
-@Table(name = "users")
 @Getter
+@Table(name = "users")
 public class User extends Resource {
     @Transient
     public static final Pattern username_regex = Pattern.compile("^[a-zA-Z0-9](?:[._]?[a-zA-Z0-9]){5,17}[a-zA-Z0-9]$");
     @Transient
     public static final Pattern password_regex = Pattern.compile("^[a-zA-Z0-9](?:[._]?[a-zA-Z0-9]){6,30}[a-zA-Z0-9]$");
-
     String username;
     UUID uuid;
     String passwordHash;
-    @Getter
-    @Setter
-    @OneToOne
+
+    @OneToOne(cascade = CascadeType.ALL)
     Role role = new Role("Default", Collections.singleton(Role.Level.PLAYER));
 
     @Getter

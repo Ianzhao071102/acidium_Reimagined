@@ -44,16 +44,13 @@ import static org.izdevs.acidium.AcidiumApplication.bcrypt;
 public class APIEndPoints {
     @Autowired
     ApplicationEventPublisher publisher;
-
     @Autowired
     SessionGenerator sessionGenerator;
-
     public static int playersOnline = 0;
-
     @Autowired
     public UserRepository repository;
-
-
+    @Autowired
+    LoopManager manager;
     @Autowired
     @Qualifier(value = "credits")
     private String credits;
@@ -131,11 +128,6 @@ public class APIEndPoints {
                             player.setY(player.getY() + add_y);
                         }, 1, true);
 
-                        Object _mgr = SpringBeanUtils.getBean("loopManager");
-                        assert _mgr instanceof LoopManager;
-
-                        LoopManager manager = (LoopManager) _mgr;
-
                         manager.scheduleAsyncDelayedTask(task);
                         return new ResponseEntity<>(HttpStatus.OK);
                     } else {
@@ -194,7 +186,6 @@ public class APIEndPoints {
                         if (NumberUtils.isInRange(0, 178, op_slot)) {
                             if (!NumberUtils.isInRange(0, 178, dest_slot)) {
                                 return new ResponseEntity<>(new Payload("please provide valid integers in field: op_slot, dest_slot"), HttpStatus.UNPROCESSABLE_ENTITY);
-
                             }
                         } else {
                             return new ResponseEntity<>(new Payload("please provide valid integers in field: op_slot, dest_slot"), HttpStatus.UNPROCESSABLE_ENTITY);
@@ -204,10 +195,11 @@ public class APIEndPoints {
                         Equipment dest_equipment = player.getInventory().getItemAtSlot(dest_slot);
                         PlayerInventory inventory = player.getInventory();
                         //swap these
-                        inventory.setItemAtSlot(dest_equipment,op_slot);
-                        inventory.setItemAtSlot(op_equipment,dest_slot);
+                        inventory.setItemAtSlot(dest_equipment, op_slot);
+                        inventory.setItemAtSlot(op_equipment, dest_slot);
 
                         player.inventory = inventory;
+                        request.getSession().setAttribute("player", player);
                     } catch (NumberFormatException e) {
                         return new ResponseEntity<>(new Payload("please provide valid integers in field: op_slot, dest_slot"), HttpStatus.UNPROCESSABLE_ENTITY);
                     }
@@ -221,15 +213,10 @@ public class APIEndPoints {
             return new ResponseEntity<>(HttpStatus.FORBIDDEN);
         }
     }
+
     @GetMapping(path = "credits")
     public ResponseEntity<Payload> credits() {
         Metrics.apiRequests.increment();
         return new ResponseEntity<>(new Payload(credits), HttpStatus.OK);
-    }
-
-    @GetMapping(path = "hello")
-    public ResponseEntity<Payload> hello() {
-        Metrics.apiRequests.increment();
-        return new ResponseEntity<>(new Payload("hello from: " + credits), HttpStatus.OK);
     }
 }

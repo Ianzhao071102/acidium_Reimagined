@@ -27,7 +27,7 @@ public class PetalService implements Ticked {
 
     public Player initPlayerPetals(Player player) {
         String username = player.getUsername();
-        User user = u_repo.findUserByUsername(username);
+        User user = u_repo.findByUsername(username);
         Optional<PetalList> op = repository.findById(user);
         if (op.isPresent()) {
             player.setPetals(op.get().getPetals());
@@ -38,7 +38,7 @@ public class PetalService implements Ticked {
     }
 
     public Set<Petal> getPetals(Player player) {
-        Optional<PetalList> petal = repository.findById(u_repo.findUserByUsername(player.getUsername()));
+        Optional<PetalList> petal = repository.findById(u_repo.findByUsername(player.getUsername()));
         if (petal.isPresent()) {
             return petal.get().getPetals();
         } else {

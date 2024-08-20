@@ -9,8 +9,7 @@ import org.springframework.stereotype.Repository;
 public interface UserRepository extends JpaRepository<User,Integer> {
     User findById(Long id);
     User findUserByRole(Role role);
-
-    User findUserByUsername(String username);
+    User findByUsername(String username);
 
     User findUsersByUsernameContainingIgnoreCase(String param);
 

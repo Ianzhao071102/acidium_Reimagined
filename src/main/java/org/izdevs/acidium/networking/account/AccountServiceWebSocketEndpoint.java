@@ -93,7 +93,7 @@ public class AccountServiceWebSocketEndpoint implements WebSocketHandler {
             User user = new User(username, password_hash);
             switch (schema.type) {
                 case REGISTER -> {
-                    if (repository.findUserByUsername(username) != null) {
+                    if (repository.findByUsername(username) != null) {
                         logger.debug("session is closed due to failed register attempt");
                         session.sendMessage(new TextMessage("username exists"));
                         session.close(CloseStatus.BAD_DATA);
@@ -102,9 +102,13 @@ public class AccountServiceWebSocketEndpoint implements WebSocketHandler {
                     repository.save(user);
                 }
                 case LOGIN -> {
-                    String hash = repository.findUserByUsername(username).getPasswordHash();
+                    if(repository.findByUsername(username) == null){
+                        session.sendMessage(new TextMessage("user does not exist"));
+                        session.close(CloseStatus.BAD_DATA);
+                    }
+                    String hash = repository.findByUsername(username).getPasswordHash();
                     logger.debug(new Gson().toJson(user));
-                    if (encoder.matches(password,hash)) {
+                    if (!encoder.matches(password,hash)) {
                         session.sendMessage(new TextMessage("incorrect password"));
                         session.close(CloseStatus.BAD_DATA);
                         return;

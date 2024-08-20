@@ -12,9 +12,8 @@ import java.util.Set;
 @Entity
 public class Role {
     String name;
-    @ElementCollection(targetClass = Level.class)
-    @Enumerated(EnumType.STRING)
-    Set<Level> levelsGranted = new HashSet<>();
+
+    Level levelGranted = Level.PLAYER;
 
     Level level;
     @Id
@@ -25,12 +24,11 @@ public class Role {
 
     public Role(String name) {
         this.name = name;
-        levelsGranted.add(Level.PLAYER);
     }
 
-    public Role(String name, Set<Level> levels) {
+    public Role(String name, Level level) {
         this.name = name;
-        levelsGranted.addAll(levels);
+        this.levelGranted = level;
     }
     public Role(){}
 

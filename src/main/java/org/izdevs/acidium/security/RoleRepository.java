@@ -7,5 +7,5 @@ import java.util.Set;
 
 public interface RoleRepository extends CrudRepository<Role,Long> {
     Role findById(long id);
-    Role findByLevelsGranted(Set<Role.Level> levelsGranted);
+    Role findByLevelGranted(Role.Level level);
 }

@@ -25,13 +25,8 @@ public class User extends Resource {
     UUID uuid;
     String passwordHash;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    Role role = new Role("Default", Collections.singleton(Role.Level.PLAYER));
-
-    @Getter
-    @Id
-    @GeneratedValue
-    private Long id;
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    Role role = new Role("Default", Role.Level.PLAYER);
 
     public User(String username, UUID uuid) {
         this.username = username;

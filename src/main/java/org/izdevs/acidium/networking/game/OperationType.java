@@ -1,0 +1,7 @@
+package org.izdevs.acidium.networking.game;
+
+public enum OperationType {
+    INVENTORY,
+    MOVEMENT,
+    COMBAT
+}

@@ -8,4 +8,7 @@ public class ProtocolOperation<T> {
     String uuid;
     int revision = -1;
     T additionalPayload;
+
+    String username;
+    String password;
 }

@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import jakarta.websocket.server.ServerEndpoint;
 import lombok.extern.slf4j.Slf4j;
 import org.checkerframework.checker.units.qual.A;
+import org.hibernate.mapping.Join;
 import org.izdevs.acidium.api.v1.Payload;
 import org.izdevs.acidium.api.v1.User;
 import org.izdevs.acidium.basic.UserRepository;
@@ -30,6 +31,8 @@ public class AccountServiceWebSocketEndpoint implements WebSocketHandler {
     UserRepository repository;
     @Autowired
     SessionGenerator generator;
+    @Autowired
+    OnlinePlayerRepository opr;
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Override
@@ -49,8 +52,8 @@ public class AccountServiceWebSocketEndpoint implements WebSocketHandler {
 
     @Override
     public void handleTransportError(WebSocketSession session, Throwable exception) throws Exception {
-        if(exception instanceof IOException){
-            if(!session.isOpen()){
+        if (exception instanceof IOException) {
+            if (!session.isOpen()) {
                 session.sendMessage(new TextMessage("connection error"));
                 session.close(CloseStatus.PROTOCOL_ERROR);
             }
@@ -102,18 +105,19 @@ public class AccountServiceWebSocketEndpoint implements WebSocketHandler {
                     repository.save(user);
                 }
                 case LOGIN -> {
-                    if(repository.findByUsername(username) == null){
+                    if (repository.findByUsername(username) == null) {
                         session.sendMessage(new TextMessage("user does not exist"));
                         session.close(CloseStatus.BAD_DATA);
                     }
                     String hash = repository.findByUsername(username).getPasswordHash();
                     logger.debug(new Gson().toJson(user));
-                    if (!encoder.matches(password,hash)) {
+                    if (!encoder.matches(password, hash)) {
                         session.sendMessage(new TextMessage("incorrect password"));
                         session.close(CloseStatus.BAD_DATA);
                         return;
                     } else {
                         UUID uuid = generator.use();
+                        opr.save(new JoinedPlayer(username,password_hash,uuid.toString()));
                         session.sendMessage(new TextMessage(uuid.toString()));
                         session.close(CloseStatus.NORMAL);
                     }

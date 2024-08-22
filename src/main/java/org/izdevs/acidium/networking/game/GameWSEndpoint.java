@@ -3,15 +3,20 @@ package org.izdevs.acidium.networking.game;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.websocket.server.ServerEndpoint;
 import lombok.extern.slf4j.Slf4j;
+
 import org.izdevs.acidium.networking.account.JoinedPlayer;
 import org.izdevs.acidium.networking.account.OnlinePlayerRepository;
 import org.izdevs.acidium.networking.game.payload.AuthenticationPayload;
 import org.izdevs.acidium.networking.game.payload.CombatPayload;
+import org.izdevs.acidium.networking.game.payload.CombatPositionType;
+import org.izdevs.acidium.networking.game.payload.WarpTeleportation;
+import org.izdevs.acidium.scheduling.DelayedTask;
 import org.izdevs.acidium.scheduling.LoopManager;
 import org.izdevs.acidium.security.SessionGenerator;
+import org.izdevs.acidium.world.World;
+import org.izdevs.acidium.world.generater.WorldController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.socket.*;
@@ -32,15 +37,20 @@ public class GameWSEndpoint implements WebSocketHandler {
 
     @Autowired
     OnlinePlayerRepository opr;
+    @Autowired
+    PlayerConnectionService connectionService;
+
+    @Autowired
+    WorldController controller;
 
     @Override
     public void afterConnectionEstablished(WebSocketSession session) {
         log.info("connection is established:" + session.getRemoteAddress());
 
-        //authentication happens here
         session.getAttributes().put("authenticated", 0);
         session.getAttributes().put("username","");
         session.getAttributes().put("passwordHash","");
+        session.getAttributes().put("world_name", "__UNSET__");
     }
 
     @Override
@@ -87,9 +97,10 @@ public class GameWSEndpoint implements WebSocketHandler {
 
         if (po == null) {
             this.close(session, "invalid payload, required json");
+            return;
         }
-        assert po != null;
         UUID uuid = UUID.fromString(po.uuid);
+
         //initially revision id is set to 0, so it is impossible for it to be less than 0
         if (po.revision < 0) {
             close(session, "invalid revision number");
@@ -112,9 +123,33 @@ public class GameWSEndpoint implements WebSocketHandler {
 
                 if (payload == null) {
                     close(session, "invalid data: payload is invalid");
+                    return;
                 }
-
-
+                CombatPositionType position = payload.additionalPayload.getPosition_type();
+                if(position == null){
+                    close(session,"invalid position data");
+                }
+                if(session.getAttributes().get("world_name").equals("__UNSET__")){
+                    session.sendMessage(new TextMessage("failed to switch combat state: world is not specified"));
+                    return;
+                }
+                JoinedPlayer player = new JoinedPlayer(session.getAttributes().getOrDefault("username", "__UNSET__").toString(),
+                session.getAttributes().getOrDefault("passwordHash", "__UNSET__").toString(),
+                uuid.toString());
+                switch(position){
+                    case TIGHT -> {
+                        connectionService.attackState(player, CombatPositionType.TIGHT);
+                        setToNormal5TicksLater(player);                        
+                    }
+                    case NORMAL -> {
+                        setToNormal5TicksLater(player);   
+                    }
+                    case EXTENDED -> {
+                        connectionService.attackState(player, CombatPositionType.EXTENDED);
+                        setToNormal5TicksLater(player);   
+                    }
+                }                    
+                
             }
             case LOGIN -> {
                 if (session.getAttributes().get("authenticated") instanceof Integer a && a > 0) {
@@ -156,6 +191,45 @@ public class GameWSEndpoint implements WebSocketHandler {
                     close(session,"invalid authentication payload send check failed");
                 }
             }
+            case WARP -> {
+                if(!(session.getAttributes().get("authenticated") instanceof Integer a && a >= 0)){
+                    close(session,"please authorize before warping");
+                    return;
+                }
+
+                Type type = new TypeToken<ProtocolOperation<WarpTeleportation>>() {
+                }.getType();
+
+                ProtocolOperation<WarpTeleportation> payload = null;
+                try {
+                    payload = new Gson().fromJson(pld, type);
+                } catch (JsonSyntaxException e) {
+                    close(session, "invalid authentication payload sent");
+                }
+
+                if(payload == null){
+                    close(session,"invalid warp location specified");
+                    return;
+                }
+                if(payload.additionalPayload == null){
+                    close(session, "illegally formatted teleportation payload JSON");
+                    return;
+                }
+                WarpTeleportation teleportation = payload.additionalPayload;
+                
+                //todo make warping points for world
+                String destl_location = teleportation.getWarp_point_name();
+                String world_name = teleportation.getWorld_name();
+                controller.worlds.forEach((world) -> {
+                    if(world.getName().equals(world_name)){
+                        session.getAttributes().put("world_name", world.getName());
+                    }
+                });
+
+                if(session.getAttributes().get("world_name").equals("__UNSET__")){
+                    close(session, "the world specified for warping is NOT found");
+                }
+            }
             default -> {
                 close(session, "invalid op type");
             }
@@ -168,5 +242,10 @@ public class GameWSEndpoint implements WebSocketHandler {
     public void close(WebSocketSession session, String message) throws IOException {
         session.sendMessage(new TextMessage(message));
         session.close();
+    }
+    private void setToNormal5TicksLater(JoinedPlayer player){
+        loopManager.scheduleAsyncDelayedTask(new DelayedTask(() -> {
+            connectionService.attackState(player,CombatPositionType.NORMAL);
+        }, 5));
     }
 }

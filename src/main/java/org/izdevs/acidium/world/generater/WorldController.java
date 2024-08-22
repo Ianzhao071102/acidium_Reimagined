@@ -22,6 +22,8 @@ public class WorldController implements Ticked {
 
     @Autowired
     ApplicationEventPublisher publisher;
+    
+    //todo migrate static references to bean references
     public static ArrayList<World> worlds = new ArrayList<>();
 
     public void generateWorld(long seed) {

@@ -4,5 +4,6 @@ public enum OperationType {
     INVENTORY,
     MOVEMENT,
     COMBAT,
-    LOGIN
+    LOGIN,
+    WARP
 }

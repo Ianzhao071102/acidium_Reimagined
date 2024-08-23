@@ -5,9 +5,12 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
+
 import org.izdevs.acidium.networking.game.payload.CombatPositionType;
 
 @Getter
+@Setter
 @Entity
 public class JoinedPlayer {
     String username;
@@ -17,6 +20,7 @@ public class JoinedPlayer {
     @Id
     @GeneratedValue
     private Long id;
+    String world_name;
 
     public JoinedPlayer() {}
     public JoinedPlayer(String username,String passwordHash,String uuid){

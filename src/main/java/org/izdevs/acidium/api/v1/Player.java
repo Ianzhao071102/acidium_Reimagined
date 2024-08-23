@@ -9,6 +9,7 @@ import org.izdevs.acidium.game.crafting.CraftingSlot;
 import org.izdevs.acidium.game.entity.petals.Petal;
 import org.izdevs.acidium.game.entity.petals.PetalService;
 import org.izdevs.acidium.game.inventory.PlayerInventory;
+import org.izdevs.acidium.networking.game.payload.CombatPositionType;
 import org.izdevs.acidium.scheduling.DelayedTask;
 import org.izdevs.acidium.scheduling.LoopManager;
 import org.izdevs.acidium.scheduling.ScheduledTask;
@@ -25,6 +26,7 @@ public class Player extends Entity {
 
     public volatile PlayerInventory inventory = new PlayerInventory();
     @Setter
+    //todo remove this field, migrate all reference to the Player.java class itself
     Entity entity;
     String username;
     UUID uuid;

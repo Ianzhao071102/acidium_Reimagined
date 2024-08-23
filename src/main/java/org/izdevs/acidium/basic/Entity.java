@@ -1,26 +1,18 @@
 package org.izdevs.acidium.basic;
 
-import com.badlogic.gdx.ai.fsm.DefaultStateMachine;
-import com.badlogic.gdx.ai.fsm.StateMachine;
-import com.badlogic.gdx.ai.msg.Telegram;
-import com.badlogic.gdx.ai.msg.Telegraph;
+
 import com.dongbat.walkable.FloatArray;
 import com.esri.core.geometry.Point2D;
 import jakarta.annotation.PostConstruct;
-import jakarta.persistence.Basic;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import lombok.Getter;
 import lombok.Setter;
-import org.apache.naming.factory.BeanFactory;
 import org.izdevs.acidium.game.inventory.Inventory;
 import org.izdevs.acidium.game.inventory.InventoryType;
+import org.izdevs.acidium.networking.game.payload.CombatPositionType;
 import org.izdevs.acidium.scheduling.DelayedTask;
 import org.izdevs.acidium.scheduling.LoopManager;
-import org.izdevs.acidium.scheduling.LoopManagerFacade;
 import org.izdevs.acidium.scheduling.ScheduledTask;
 import org.izdevs.acidium.serialization.Resource;
-import org.izdevs.acidium.serialization.models.ResourceSchema;
 import org.izdevs.acidium.utils.SpringBeanUtils;
 import org.izdevs.acidium.world.PlaceHolderWorld;
 import org.izdevs.acidium.world.World;
@@ -29,7 +21,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
-import org.springframework.data.annotation.Id;
 
 import java.security.SecureRandom;
 import java.util.*;
@@ -65,6 +56,9 @@ public class Entity extends Resource {
      */
     World world;
     FloatArray pathFinderGoal = new FloatArray(2);
+
+    CombatPositionType position;
+
     ScheduledTask task = new ScheduledTask(
             () -> {
                 Logger logger = LoggerFactory.getLogger(this.getClass());

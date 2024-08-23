@@ -1,8 +1,13 @@
 package org.izdevs.acidium.networking.game.payload;
+import org.izdevs.acidium.world.WarpingPoint;
+import org.jetbrains.annotations.Nullable;
+
 import lombok.Getter;
 
 @Getter
 public class WarpTeleportation {
-    String world_name;
-    String warp_point_name;
+    @Nullable
+    String teleportation_code;
+
+    WarpingPoint point;
 }

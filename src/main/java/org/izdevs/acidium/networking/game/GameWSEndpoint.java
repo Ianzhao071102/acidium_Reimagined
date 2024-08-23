@@ -15,7 +15,9 @@ import org.izdevs.acidium.networking.game.payload.WarpTeleportation;
 import org.izdevs.acidium.scheduling.DelayedTask;
 import org.izdevs.acidium.scheduling.LoopManager;
 import org.izdevs.acidium.security.SessionGenerator;
-import org.izdevs.acidium.world.World;
+import org.izdevs.acidium.world.Location;
+import org.izdevs.acidium.world.WarpingPoint;
+import org.izdevs.acidium.world.WarpingPointHolder;
 import org.izdevs.acidium.world.generater.WorldController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,6 +44,9 @@ public class GameWSEndpoint implements WebSocketHandler {
 
     @Autowired
     WorldController controller;
+
+    @Autowired
+    WarpingPointHolder wpholder;
 
     @Override
     public void afterConnectionEstablished(WebSocketSession session) {
@@ -217,17 +222,37 @@ public class GameWSEndpoint implements WebSocketHandler {
                 }
                 WarpTeleportation teleportation = payload.additionalPayload;
                 
-                //todo make warping points for world
-                String destl_location = teleportation.getWarp_point_name();
-                String world_name = teleportation.getWorld_name();
-                controller.worlds.forEach((world) -> {
-                    if(world.getName().equals(world_name)){
-                        session.getAttributes().put("world_name", world.getName());
-                    }
-                });
+                if(teleportation.getPoint() == null){
+                    close(session, "please provide a valid warp point");
+                    return;
+                }
+                WarpingPoint point = teleportation.getPoint();
+                double x = point.getX(),y = point.getY(), facing = point.getFacing();
+                String world_name = point.getWorld_name();
+
+                if(wpholder.getPoints().contains(point)){
+                    //found it
+                    controller.worlds.forEach((world) -> {
+                        if(world.getName().equals(world_name)){
+                            session.getAttributes().put("world_name", point.getWorld_name());
+                            return;
+                        }
+                    });
+                    
+                }
 
                 if(session.getAttributes().get("world_name").equals("__UNSET__")){
                     close(session, "the world specified for warping is NOT found");
+                }else{
+                    JoinedPlayer jp = opr.findJoinedPlayerByUsername(session.getAttributes().get("username").toString());
+                    if(jp == null){
+                        close(session, "authentication for this player is NOT found");
+                        return;
+                    }
+                    jp.setWorld_name(world_name);
+                    opr.save(jp);
+                    
+                    connectionService.teleport(jp, new Location((int) x , (int) y));
                 }
             }
             default -> {

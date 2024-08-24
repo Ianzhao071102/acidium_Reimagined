@@ -6,6 +6,7 @@ import com.esri.core.geometry.Point2D;
 import jakarta.annotation.PostConstruct;
 import lombok.Getter;
 import lombok.Setter;
+import org.izdevs.acidium.game.entity.EntityWorldAssigner;
 import org.izdevs.acidium.game.inventory.Inventory;
 import org.izdevs.acidium.game.inventory.InventoryType;
 import org.izdevs.acidium.networking.game.payload.CombatPositionType;
@@ -19,19 +20,31 @@ import org.izdevs.acidium.world.World;
 import org.izdevs.acidium.world.generater.WorldController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 
-import java.security.SecureRandom;
-import java.util.*;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import static com.esri.core.geometry.Point2D.distance;
 
 @Getter
 @Setter
+@Configurable
 public class Entity extends Resource {
+    @Autowired
+    EntityWorldAssigner assigner;
+    @Autowired
+    WorldController controller;
+
     private boolean finished = false;
-    AngerController controller = new DefaultAngerController();
     EntityController entityController = new BasicEntityController();
     Map<String,Object> attributes = new HashMap<>();
     boolean invincible = false;
@@ -39,9 +52,6 @@ public class Entity extends Resource {
     Inventory primary_inventory = new Inventory(InventoryType.Inventory);
     Inventory electronInv = new Inventory(InventoryType.Electron);
     Inventory armourInv = new Inventory(InventoryType.Armour);
-    /**
-     * basic self-representing global state machine for a basic entity
-     */
     double x, y;
     double movementSpeed;
     int health;
@@ -54,7 +64,20 @@ public class Entity extends Resource {
     /**
      * which world it is in
      */
-    World world;
+    String world_name;
+    World world = (World) Proxy.newProxyInstance(this.getClass().getClassLoader(), World.class.getInterfaces(), new InvocationHandler() {
+        @Override
+        public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+
+            for(World curr: controller.worlds){
+                if(curr.getName().equals(world_name)){
+                    return method.invoke(curr,args);
+                }
+            }
+            throw new RuntimeException("world name is specified is invalid: " + world_name);
+        }
+    });
+
     FloatArray pathFinderGoal = new FloatArray(2);
 
     CombatPositionType position;
@@ -91,19 +114,14 @@ public class Entity extends Resource {
         this.hitboxRadius = hitboxRadius;
         this.bDamage = bDamage;
 
-        int id = 0;
-        int size = WorldController.worlds.size();
-        if(size != 0){
-            id = new SecureRandom().nextInt(0,size-1);
-            this.world = WorldController.worlds.get(id);
-        }
-        else{
+        //world should be assigned
+        String result = assigner.assign(this);
+        if(result.equalsIgnoreCase("__WAITING__")){
             this.world = new PlaceHolderWorld("^\\S+$");
         }
     }
 
     public Entity(World world, String name, double movementSpeed, int health, int hitboxRadius, int bDamage) {
-
         super();
         this.name = name;
         this.movementSpeed = movementSpeed;
@@ -185,6 +203,10 @@ public class Entity extends Resource {
             //init this five seconds later
             Timer timer = new Timer();
             timer.schedule(tt,20000L);
+        }
+
+        if(this.world == null){
+
         }
     }
     public long getId(){

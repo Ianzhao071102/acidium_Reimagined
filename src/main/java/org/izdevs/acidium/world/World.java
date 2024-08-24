@@ -18,7 +18,7 @@ import java.util.Map;
 public class World extends TickedWorld {
     @NotNull String name;
     volatile AbstractMobSpawner spawner;
-    volatile Map<Point, Block> map;
+    private volatile Map<Point, Block> map;
 
     public World(Map<Point, Block> map) {
         super(map);

@@ -1,6 +1,7 @@
 package org.izdevs.acidium.game.entity.petals;
 
 
+import org.checkerframework.checker.units.qual.A;
 import org.izdevs.acidium.api.v1.Player;
 import org.izdevs.acidium.api.v1.User;
 import org.izdevs.acidium.basic.Entity;
@@ -24,6 +25,9 @@ public class PetalService implements Ticked {
 
     @Autowired
     UserRepository u_repo;
+    @Autowired
+    WorldController controller;
+
 
     public Player initPlayerPetals(Player player) {
         String username = player.getUsername();
@@ -51,9 +55,9 @@ public class PetalService implements Ticked {
     @Override
     public void tick() {
         //updater logic of all the petal entities
-        for (int i = 0; i <= WorldController.worlds.size() - 1; i++) {
-            for (int j = 0; j <= WorldController.worlds.get(i).players.size() - 1; j++) {
-                Player player = WorldController.worlds.get(i).players.get(i);
+        for (int i = 0; i <= controller.worlds.size() - 1; i++) {
+            for (int j = 0; j <= controller.worlds.get(i).players.size() - 1; j++) {
+                Player player = controller.worlds.get(i).players.get(i);
                 //copy inv to petals
                 PlayerInventory inv = player.getInventory();
                 List<Equipment> equipment = inv.armour.getItems();

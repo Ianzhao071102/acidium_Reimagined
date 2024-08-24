@@ -235,7 +235,6 @@ public class GameWSEndpoint implements WebSocketHandler {
                     controller.worlds.forEach((world) -> {
                         if(world.getName().equals(world_name)){
                             session.getAttributes().put("world_name", point.getWorld_name());
-                            return;
                         }
                     });
                     

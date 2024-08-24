@@ -10,11 +10,16 @@ import org.izdevs.acidium.networking.APIEndPoints;
 import org.izdevs.acidium.tick.TickManager;
 import org.izdevs.acidium.world.World;
 import org.izdevs.acidium.world.generater.WorldController;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 @Getter
 public class Metrics implements MeterBinder {
+    @Autowired
+    WorldController controller;
+
+    //todo migrate to non static
     public static Counter requests;
     public static Gauge players;
     public static Counter ticksElapsed;
@@ -23,12 +28,12 @@ public class Metrics implements MeterBinder {
     public static Gauge entities;
 
 
-    public static int getEntityCount() {
-        if(WorldController.worlds.isEmpty()) return 0;
+    public int getEntityCount() {
+        if(controller.worlds.isEmpty()) return 0;
         else {
             int _value = 0;
-            for (int i = 0; i <= WorldController.worlds.size() - 1; i++) {
-                World world = WorldController.worlds.get(i);
+            for (int i = 0; i <= controller.worlds.size() - 1; i++) {
+                World world = controller.worlds.get(i);
 
                 _value += world.mobs.size();
             }
@@ -48,7 +53,7 @@ public class Metrics implements MeterBinder {
 
         apiRequests = Counter.builder("api_requests").register(meterRegistry);
 
-        entities = Gauge.builder("entities", Metrics::getEntityCount).register(meterRegistry);
+        entities = Gauge.builder("entities", this::getEntityCount).register(meterRegistry);
 
     }
 }

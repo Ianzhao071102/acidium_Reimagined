@@ -17,6 +17,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -34,6 +35,7 @@ import java.util.List;
 @SpringBootApplication
 @EnableScheduling
 @EntityScan("org.izdevs.acidium")
+@EnableAspectJAutoProxy
 @EnableJpaRepositories
 public class AcidiumApplication extends SpringApplication {
     @Getter

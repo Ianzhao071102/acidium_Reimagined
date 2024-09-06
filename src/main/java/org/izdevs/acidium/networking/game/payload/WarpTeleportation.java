@@ -1,8 +1,8 @@
 package org.izdevs.acidium.networking.game.payload;
 import org.izdevs.acidium.world.WarpingPoint;
-import org.jetbrains.annotations.Nullable;
 
 import lombok.Getter;
+import org.springframework.lang.Nullable;
 
 @Getter
 public class WarpTeleportation {

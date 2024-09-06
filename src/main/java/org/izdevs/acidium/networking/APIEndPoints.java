@@ -55,9 +55,12 @@ public class APIEndPoints {
     @Qualifier(value = "credits")
     private String credits;
 
+    @Autowired
+    Metrics metrics;
+
     @GetMapping(path = "credits")
     public ResponseEntity<Payload> credits() {
-        Metrics.apiRequests.increment();
+        metrics.apiRequests.increment();
         return new ResponseEntity<>(new Payload(credits), HttpStatus.OK);
     }
 }

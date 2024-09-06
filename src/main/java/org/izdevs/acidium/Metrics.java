@@ -20,12 +20,12 @@ public class Metrics implements MeterBinder {
     WorldController controller;
 
     //todo migrate to non static
-    public static Counter requests;
-    public static Gauge players;
-    public static Counter ticksElapsed;
-    public static Gauge ticksPerSecond;
-    public static Counter apiRequests;
-    public static Gauge entities;
+    public Counter requests;
+    public Gauge players;
+    public Counter ticksElapsed;
+    public Gauge ticksPerSecond;
+    public Counter apiRequests;
+    public Gauge entities;
 
 
     public int getEntityCount() {

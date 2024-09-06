@@ -1,7 +1,10 @@
-package org.izdevs.acidium.game.equipment;
+package org.izdevs.acidium.game.equipment.entity;
 
 import org.izdevs.acidium.basic.Entity;
 import org.izdevs.acidium.game.crafting.CraftingRecipe;
+import org.izdevs.acidium.game.equipment.Equipment;
+import org.izdevs.acidium.game.equipment.EquipmentSchema;
+import org.izdevs.acidium.game.equipment.schemas.ElectronSchema;
 import org.izdevs.acidium.game.inventory.InventoryType;
 import org.izdevs.acidium.world.World;
 import org.springframework.stereotype.Component;
@@ -16,11 +19,9 @@ public class Electron extends Equipment {
      * body_damage of 5
      */
     public Electron(World world, Entity equip) {
-        super(world, "electron", 0.2, 20, 1, 5, new CraftingRecipe());
-        this.allowedSlots.add(InventoryType.Electron);
-
-        //un-craftable
-        this.recipe = new CraftingRecipe();
+        super(world, "electron", 0.2, 20, 1, 5);
+        this.schema = new ElectronSchema();
+        this.schema.allowedSlots.add(InventoryType.Electron);
     }
 
     public Electron() {

@@ -11,4 +11,10 @@ public class EquipmentSchema {
     public Set<InventoryType> allowedSlots;
     public String name;
     public boolean allowToBeCraftingMaterial = true;
+
+    public EquipmentSchema(int maxDurability,Set<InventoryType> allowedSlots,String name){
+        this.maxDurability = maxDurability;
+        this.allowedSlots = allowedSlots;
+        this.name = name;
+    }
 }

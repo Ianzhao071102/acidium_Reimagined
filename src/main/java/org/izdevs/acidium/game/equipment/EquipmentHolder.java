@@ -18,8 +18,8 @@ import static org.reflections.scanners.Scanners.SubTypes;
 @Service
 public class EquipmentHolder {
     @Autowired
-    private Set<Equipment> equipments_;
-    public Set<Equipment> equipments;
+    private Set<EquipmentSchema> equipments_;
+    public Set<EquipmentSchema> equipments;
 
     @PostConstruct
     public void copy(){

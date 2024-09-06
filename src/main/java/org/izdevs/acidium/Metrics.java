@@ -6,6 +6,7 @@ import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.core.instrument.binder.MeterBinder;
 import lombok.Getter;
 import lombok.NonNull;
+import lombok.extern.slf4j.Slf4j;
 import org.izdevs.acidium.networking.APIEndPoints;
 import org.izdevs.acidium.tick.TickManager;
 import org.izdevs.acidium.world.World;
@@ -15,11 +16,14 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Getter
+@Slf4j
 public class Metrics implements MeterBinder {
     @Autowired
     WorldController controller;
 
-    //todo migrate to non static
+    @Autowired
+    TickManager tickManager;
+
     public Counter requests;
     public Gauge players;
     public Counter ticksElapsed;
@@ -45,11 +49,11 @@ public class Metrics implements MeterBinder {
     public void bindTo(@NonNull MeterRegistry meterRegistry) {
         requests = Counter.builder("requests").register(meterRegistry);
 
-        players = Gauge.builder("players", () -> APIEndPoints.playersOnline).register(meterRegistry);
+        players = Gauge.builder("players", () ->).register(meterRegistry);
 
         ticksElapsed = Counter.builder("ticks_elapsed").register(meterRegistry);
 
-        ticksPerSecond = Gauge.builder("tps", () -> TickManager.tps).register(meterRegistry);
+        ticksPerSecond = Gauge.builder("tps", () -> tickManager.tps).register(meterRegistry);
 
         apiRequests = Counter.builder("api_requests").register(meterRegistry);
 

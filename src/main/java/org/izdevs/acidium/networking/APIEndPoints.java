@@ -43,15 +43,6 @@ import static org.izdevs.acidium.AcidiumApplication.bcrypt;
 @RequestMapping("v1") //RESOURCE GETTER API V1
 public class APIEndPoints {
     @Autowired
-    ApplicationEventPublisher publisher;
-    @Autowired
-    SessionGenerator sessionGenerator;
-    public static int playersOnline = 0;
-    @Autowired
-    public UserRepository repository;
-    @Autowired
-    LoopManager manager;
-    @Autowired
     @Qualifier(value = "credits")
     private String credits;
 

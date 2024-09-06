@@ -18,7 +18,8 @@ public class Electron extends Equipment {
      * hitbox radius of 1
      * body_damage of 5
      */
-    public Electron(World world, Entity equip) {
+    long owner_entity_id = -1;
+    public Electron(World world) {
         super(world, "electron", 0.2, 20, 1, 5);
         this.schema = new ElectronSchema();
         this.schema.allowedSlots.add(InventoryType.Electron);

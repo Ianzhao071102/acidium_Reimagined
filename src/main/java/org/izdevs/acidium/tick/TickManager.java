@@ -25,7 +25,7 @@ public class TickManager {
     /**
      * newly collected ticks per second value
      */
-    public static int tps;
+    public int tps;
 
     /**
         the tick per second collected a second ago

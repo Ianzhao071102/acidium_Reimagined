@@ -1,11 +1,13 @@
 package org.izdevs.acidium.game.equipment;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import org.izdevs.acidium.game.inventory.InventoryType;
 
 import java.util.Set;
 
 @AllArgsConstructor
+@Getter
 public class EquipmentSchema {
     public int maxDurability;
     public Set<InventoryType> allowedSlots;

@@ -31,9 +31,9 @@ public class Inventory {
         this.type = type;
         for (int i = 0; i <= items.size() - 1; i++) {
             Equipment _this = items.get(i);
-            if (!_this.getAllowedSlots().contains(type)) {
+            if (!_this.getSchema().getAllowedSlots().contains(type)) {
                 //it is not allowed to be in this type of primary_inventory
-                throw new IllegalArgumentException("primary_inventory type not supported:" + _this.getAllowedSlots() + "primary_inventory type:" + this.type);
+                throw new IllegalArgumentException("primary_inventory type not supported:" + _this.getSchema().getAllowedSlots() + "primary_inventory type:" + this.type);
             } else {
                 this.items = items;
             }

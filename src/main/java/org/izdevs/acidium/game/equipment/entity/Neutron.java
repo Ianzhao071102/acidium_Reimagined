@@ -8,7 +8,6 @@ import org.izdevs.acidium.game.inventory.InventoryType;
 import org.izdevs.acidium.world.World;
 import org.springframework.stereotype.Component;
 
-@Component
 public class Neutron extends Equipment {
     /**
      * defensive equipment that cannot be put onto electron slot

@@ -46,7 +46,7 @@ public class Entity extends Resource {
 
     private boolean finished = false;
     EntityController entityController = new BasicEntityController();
-    Map<String,Object> attributes = new HashMap<>();
+    Map<String, Object> attributes = new HashMap<>();
     boolean invincible = false;
     boolean alive = true;
     Inventory primary_inventory = new Inventory(InventoryType.Inventory);
@@ -65,18 +65,25 @@ public class Entity extends Resource {
      * which world it is in
      */
     String world_name;
-    World world = (World) Proxy.newProxyInstance(this.getClass().getClassLoader(), World.class.getInterfaces(), new InvocationHandler() {
-        @Override
-        public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+    private World world = null;
 
-            for(World curr: controller.worlds){
-                if(curr.getName().equals(world_name)){
-                    return method.invoke(curr,args);
+    public World getWorld() {
+        String assigned_name = "";
+        if (this.world instanceof PlaceHolderWorld) {
+            assigned_name = this.assigner.assign(this);
+        }
+        for (World world : controller.worlds) {
+            if (assigned_name.equals("__WAITING__")) {
+                if (world.getName().equalsIgnoreCase(assigned_name)) {
+                    return world;
                 }
             }
-            throw new RuntimeException("world name is specified is invalid: " + world_name);
+            if (world.getName().equalsIgnoreCase(this.world_name)) {
+                return world;
+            }
         }
-    });
+        throw new UnsupportedOperationException("world specified by entity is not found, edge case here");
+    }
 
     FloatArray pathFinderGoal = new FloatArray(2);
 
@@ -116,7 +123,7 @@ public class Entity extends Resource {
 
         //world should be assigned
         String result = assigner.assign(this);
-        if(result.equalsIgnoreCase("__WAITING__")){
+        if (result.equalsIgnoreCase("__WAITING__")) {
             this.world = new PlaceHolderWorld("^\\S+$");
         }
     }
@@ -177,10 +184,11 @@ public class Entity extends Resource {
     }
 
     @EventListener(ApplicationReadyEvent.class)
-    public void init_finish(){
+    public void init_finish() {
         finished = true;
     }
-    private void run_task(){
+
+    private void run_task() {
         Object _mgr = SpringBeanUtils.getBean("loopManager");
         assert _mgr instanceof LoopManager;
 
@@ -188,11 +196,12 @@ public class Entity extends Resource {
 
         manager.registerRepeatingTask(task);
     }
+
     @PostConstruct
-    public void reg_task(){
-        if(finished){
+    public void reg_task() {
+        if (finished) {
             run_task();
-        }else{
+        } else {
             //timer task
             TimerTask tt = new TimerTask() {
                 @Override
@@ -202,14 +211,11 @@ public class Entity extends Resource {
             };
             //init this five seconds later
             Timer timer = new Timer();
-            timer.schedule(tt,20000L);
-        }
-
-        if(this.world == null){
-
+            timer.schedule(tt, 20000L);
         }
     }
-    public long getId(){
+
+    public long getId() {
         return this.id;
     }
 }

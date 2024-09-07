@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Error extends Resource {
     Throwable cause;
+    String message;
     public Error() {}
     public Error(Throwable cause){
         this.cause = cause;

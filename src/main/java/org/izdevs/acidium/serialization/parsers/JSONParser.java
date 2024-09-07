@@ -24,7 +24,7 @@ public class JSONParser extends ResourceDeserializer {
     String err_msg = "";
 
     @PostConstruct
-    public void writeErrs() {
+    public void writeErrMSG() {
         err_msg = new Gson().toJson(schemas);
     }
 
@@ -42,7 +42,7 @@ public class JSONParser extends ResourceDeserializer {
         }
 
         log.error("failed to deserialize, supported typename(s) are:" + err_msg);
-        throw new UnsupportedOperationException("invalid schema definition, cannot find ResourceSchema for the specified typename:" + stp1.typeName);
+        throw new UnsupportedOperationException("invalid schema definition, cannot find ResourceSchemaDefinition for the specified typename:" + stp1.typeName);
     }
 
     @Override
@@ -59,7 +59,7 @@ public class JSONParser extends ResourceDeserializer {
         }
 
         log.error("failed to deserialize, supported typename(s) are:" + err_msg);
-        throw new UnsupportedOperationException("invalid schema definition, cannot find ResourceSchema for the specified typename:" + stp1.typeName);
+        throw new UnsupportedOperationException("invalid schema definition, cannot find ResourceSchemaDefinition for the specified typename:" + stp1.typeName);
     }
 
     @Override

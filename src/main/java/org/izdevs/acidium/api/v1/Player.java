@@ -44,7 +44,7 @@ public class Player extends Entity {
             //if crafting recipe valid
             if (found) {
                 int slot_id = 9; //(10-1)
-                this.getInventory().crafting.getItems().set(slot_id,recipe_.getDestination());
+                this.inventory.crafting.items.set(slot_id,recipe_.getDestination());
             }
         }
     };

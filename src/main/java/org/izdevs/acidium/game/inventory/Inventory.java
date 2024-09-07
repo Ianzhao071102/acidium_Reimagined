@@ -9,9 +9,9 @@ import java.util.List;
 
 @Getter
 public class Inventory {
-    InventoryType type;
+    public final InventoryType type;
     @Setter
-    List<Equipment> items;
+    public List<Equipment> items;
 
 
     /**

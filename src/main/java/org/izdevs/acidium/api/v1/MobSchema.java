@@ -7,7 +7,7 @@ import org.izdevs.acidium.game.equipment.EquipmentSchema;
 import org.izdevs.acidium.serialization.annotations.ResourceSchemaDefinition;
 
 import java.util.Set;
-@ResourceSchemaDefinition
+@ResourceSchemaDefinition("Mob")
 @Getter
 @Setter
 public class MobSchema {

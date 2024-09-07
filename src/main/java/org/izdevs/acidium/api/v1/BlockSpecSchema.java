@@ -8,7 +8,7 @@ import org.izdevs.acidium.serialization.models.ResourceSchema;
 
 @Getter
 @Setter
-@ResourceSchemaDefinition
+@ResourceSchemaDefinition("BlockSpec")
 //todo make resource schema for every resource type
 public class BlockSpecSchema extends ResourceSchema {
     boolean walkable;

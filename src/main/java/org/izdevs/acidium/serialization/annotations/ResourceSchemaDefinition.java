@@ -11,4 +11,8 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ResourceSchemaDefinition {
+    /**
+     * The target name of the definition
+     */
+    String value();
 }

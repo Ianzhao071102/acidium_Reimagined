@@ -9,7 +9,7 @@ public abstract class ResourceDeserializer {
     public ResourceDeserializer(DeserializerTypes type){
         this.type = type;
     }
-    public abstract Resource deserialize(String data);
-    public abstract Resource deserialize(InputStream input);
-    public abstract <T> Resource deserialize(InputStream input , T type);
+    public abstract ResourceSchema deserialize(String data);
+    public abstract ResourceSchema deserialize(InputStream input);
+    public abstract <T> ResourceSchema deserialize(InputStream input , T type);
 }

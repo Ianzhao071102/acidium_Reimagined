@@ -35,19 +35,19 @@ public class ResourceFacade{
     @Autowired
     Set<Resource> resources;
 
-    private static final Set<Resource> write_later = new HashSet<>();
+    private static final Set<ResourceSchema> write_later = new HashSet<>();
     static Logger logger = LoggerFactory.getLogger(ResourceFacade.class);
 
     @EventListener(ApplicationReadyEvent.class)
     public void write(){
         if(!write_later.isEmpty()){
             for(int i=0;i<= write_later.size()-1;i++){
-                Resource resource = write_later.iterator().next();
+                ResourceSchema resource = write_later.iterator().next();
                 factory.addBean(naming.nameObject(resource),resource);
             }
         }
     }
-    public void registerResource(Resource resource){
+    public void registerResource(ResourceSchema resource){
         logger.debug("registered resource"); 
         logger.debug(gson.toJson(resource));
         if(!init){
@@ -56,7 +56,7 @@ public class ResourceFacade{
             factory.addBean(naming.nameObject(resource), resource);
         }
     }
-    public static void registerResource_static(Resource resource){
+    public static void registerResource_static(ResourceSchema resource){
         if(!init){
             write_later.add(resource);
         }else {

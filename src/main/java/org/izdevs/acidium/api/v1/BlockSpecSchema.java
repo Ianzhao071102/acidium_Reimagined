@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 @Getter
 @Setter
 @Entity
+//todo make resource schema for every resource type
 public class BlockSpecSchema extends ResourceSchema {
     boolean walkable;
 }

@@ -2,6 +2,8 @@ package org.izdevs.acidium.command;
 
 import jakarta.validation.constraints.NotNull;
 import org.izdevs.acidium.configuration.Config;
+import org.izdevs.acidium.serialization.parsers.JSONParser;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.shell.standard.ShellComponent;
@@ -15,11 +17,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
-import static org.izdevs.acidium.serialization.parsers.NBTParser.registerNBTDef;
-
 @ShellComponent
 public class BasicCommands {
-  
+
+    @Autowired
+    JSONParser parser;
     @ShellMethod(value = "get version data", key = "version")
     public String version(){
       return Config.version();
@@ -34,7 +36,7 @@ public class BasicCommands {
         try {
             ClassLoader classloader = Thread.currentThread().getContextClassLoader();
             InputStream is = classloader.getResourceAsStream(name);
-            registerNBTDef(is);
+            parser.deserialize(is);
         } catch (Throwable e) {
             throw new RuntimeException(e);
         }

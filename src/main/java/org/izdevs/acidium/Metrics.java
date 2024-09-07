@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.izdevs.acidium.networking.APIEndPoints;
+import org.izdevs.acidium.networking.game.GameWSEndpoint;
 import org.izdevs.acidium.tick.TickManager;
 import org.izdevs.acidium.world.World;
 import org.izdevs.acidium.world.generater.WorldController;
@@ -23,6 +24,9 @@ public class Metrics implements MeterBinder {
 
     @Autowired
     TickManager tickManager;
+
+    @Autowired
+    GameWSEndpoint endpoint;
 
     public Counter requests;
     public Gauge players;
@@ -47,9 +51,10 @@ public class Metrics implements MeterBinder {
 
     @Override
     public void bindTo(@NonNull MeterRegistry meterRegistry) {
+        log.debug("binding metrics to meter registry");
         requests = Counter.builder("requests").register(meterRegistry);
 
-        players = Gauge.builder("players", () ->).register(meterRegistry);
+        players = Gauge.builder("players", () -> endpoint.getPlayersOnline()).register(meterRegistry);
 
         ticksElapsed = Counter.builder("ticks_elapsed").register(meterRegistry);
 
@@ -58,6 +63,5 @@ public class Metrics implements MeterBinder {
         apiRequests = Counter.builder("api_requests").register(meterRegistry);
 
         entities = Gauge.builder("entities", this::getEntityCount).register(meterRegistry);
-
     }
 }

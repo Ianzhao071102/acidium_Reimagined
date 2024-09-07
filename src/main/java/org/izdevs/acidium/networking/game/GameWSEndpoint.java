@@ -48,6 +48,10 @@ public class GameWSEndpoint implements WebSocketHandler {
     @Autowired
     WarpingPointHolder wpholder;
 
+    public long getPlayersOnline(){
+        return opr.count();
+    }
+
     @Override
     public void afterConnectionEstablished(WebSocketSession session) {
         log.info("connection is established:" + session.getRemoteAddress());

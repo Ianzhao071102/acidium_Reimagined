@@ -1,6 +1,7 @@
 package org.izdevs.acidium.serialization;
 
 import com.yworks.common.ResourcePolicy;
+import org.izdevs.acidium.serialization.models.ResourceSchema;
 import org.izdevs.acidium.utils.ReflectUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -52,7 +53,7 @@ public class JSONDeserializerStartupRunner implements ApplicationRunner {
         }
     }
 
-    private org.izdevs.acidium.serialization.Resource decode(Resource resource, DeserializerTypes type) {
+    private ResourceSchema decode(Resource resource, DeserializerTypes type) {
         try {
             InputStream stream = resource.getInputStream();
             return factory.getDeserializer(type).deserialize(stream);

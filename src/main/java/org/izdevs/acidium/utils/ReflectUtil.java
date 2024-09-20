@@ -29,7 +29,7 @@ public class ReflectUtil {
         }
         //fuck overflow
         Resource[] returner = new Resource[size];
-        result.toArray(returner);
+        returner = result.toArray(returner);
         return returner;
     }
     public static List<String> getLicense() throws IOException {

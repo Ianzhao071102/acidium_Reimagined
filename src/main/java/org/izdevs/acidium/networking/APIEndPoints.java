@@ -15,9 +15,12 @@ import org.izdevs.acidium.basic.Entity;
 import org.izdevs.acidium.basic.UserRepository;
 import org.izdevs.acidium.game.equipment.Equipment;
 import org.izdevs.acidium.game.inventory.PlayerInventory;
+import org.izdevs.acidium.networking.account.JoinedPlayer;
+import org.izdevs.acidium.networking.account.OnlinePlayerRepository;
 import org.izdevs.acidium.scheduling.DelayedTask;
 import org.izdevs.acidium.scheduling.LoopManager;
 import org.izdevs.acidium.security.AuthorizationContent;
+import org.izdevs.acidium.security.RegistrationPayload;
 import org.izdevs.acidium.security.SessionDetail;
 import org.izdevs.acidium.security.SessionGenerator;
 import org.izdevs.acidium.utils.NumberUtils;
@@ -27,7 +30,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -48,10 +53,24 @@ public class APIEndPoints {
 
     @Autowired
     Metrics metrics;
+    @Autowired
+    OnlinePlayerRepository repository;
 
     @GetMapping(path = "credits")
     public ResponseEntity<Payload> credits() {
         metrics.apiRequests.increment();
         return new ResponseEntity<>(new Payload(credits), HttpStatus.OK);
+    }
+
+    @PostMapping(path = "register",consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<User> register(@RequestBody RegistrationPayload pld,HttpServletRequest request){
+        if(User.password_regex.matches(pld.getPassword()) && User.username_regex.matches(pld.getUsername())){
+            String password_hash = new BCryptPasswordEncoder().encode(pld.getPassword());
+            UUID uuid = UUID.randomUUID();
+            repository.save(new JoinedPlayer(pld.getUsername(), password_hash,uuid.toString()));
+            return new ResponseEntity<>(new User(pld.getUsername(), password_hash,uuid),HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(new User(),HttpStatus.BAD_REQUEST);
+        }
     }
 }

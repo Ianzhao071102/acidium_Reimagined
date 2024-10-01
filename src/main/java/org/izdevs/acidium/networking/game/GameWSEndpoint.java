@@ -6,6 +6,7 @@ import com.google.gson.JsonSyntaxException;
 import jakarta.websocket.server.ServerEndpoint;
 import lombok.extern.slf4j.Slf4j;
 
+import org.izdevs.acidium.game.player.PlayerHolder;
 import org.izdevs.acidium.networking.account.JoinedPlayer;
 import org.izdevs.acidium.networking.account.OnlinePlayerRepository;
 import org.izdevs.acidium.networking.game.payload.AuthenticationPayload;
@@ -20,6 +21,7 @@ import org.izdevs.acidium.world.WarpingPoint;
 import org.izdevs.acidium.world.WarpingPointHolder;
 import org.izdevs.acidium.world.generater.WorldController;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.socket.*;
 
@@ -47,6 +49,8 @@ public class GameWSEndpoint implements WebSocketHandler {
 
     @Autowired
     WarpingPointHolder wpholder;
+    @Autowired
+    PlayerHolder playerHolder;
 
     public long getPlayersOnline(){
         return opr.count();
@@ -187,7 +191,7 @@ public class GameWSEndpoint implements WebSocketHandler {
                     else{
                         JoinedPlayer player = opr.findJoinedPlayerByUsername(username);
 
-                        if(player.getPasswordHash().equals(password) && uuid.toString().equals(player.getUuid())){
+                        if(player.getPasswordHash().equals(new BCryptPasswordEncoder().encode(password)) && uuid.toString().equals(player.getUuid())){
                             //authenticated ur in bro
                             session.getAttributes().put("authenticated",1);
                             session.getAttributes().put("username",username);

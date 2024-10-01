@@ -9,6 +9,7 @@ import org.izdevs.acidium.scheduling.LoopManager;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
@@ -16,6 +17,8 @@ import org.springframework.context.annotation.Primary;
 
 @SpringBootTest
 class AcidiumApplicationTests {
+  @Autowired
+  CentralUtil cutil;
   //worlds do not generate
     @Bean(name = "generateWorld")
     @Primary
@@ -27,6 +30,7 @@ class AcidiumApplicationTests {
       Logger logger = LoggerFactory.getLogger(this.getClass());
 
       logger.warn("world generation is skipped due to explicit test env");
+
     }
   
 }

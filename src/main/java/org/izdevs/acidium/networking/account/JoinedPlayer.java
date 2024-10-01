@@ -16,7 +16,6 @@ public class JoinedPlayer {
     String username;
     String passwordHash;
     String uuid;
-    CombatPositionType position = CombatPositionType.NORMAL;
     @Id
     @GeneratedValue
     private Long id;

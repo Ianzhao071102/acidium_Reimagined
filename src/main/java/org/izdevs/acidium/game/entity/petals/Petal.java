@@ -17,7 +17,12 @@ import java.util.Map;
 
 public class Petal extends Resource {
     @Transient
-    org.izdevs.acidium.basic.Entity base;
+    public static final float orbit_radius_min = 3F;
+    @Transient
+    public static final float orbit_radius_max = 8F;
+
+
+    int anchor_x,anchor_y;
     @Transient
     Map<String,Object> attribute = new HashMap<>();
     double movementSpeed;

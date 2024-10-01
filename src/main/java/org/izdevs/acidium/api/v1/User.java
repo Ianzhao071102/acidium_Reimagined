@@ -12,7 +12,6 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.UUID;
 
-
 @Entity
 @Getter
 @Table(name = "users")

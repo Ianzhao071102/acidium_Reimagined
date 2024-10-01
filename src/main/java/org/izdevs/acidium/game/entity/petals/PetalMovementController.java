@@ -6,8 +6,10 @@ import org.izdevs.acidium.basic.Entity;
 import org.izdevs.acidium.game.entity.movement.Movement;
 import org.izdevs.acidium.game.entity.movement.MovementBehaviour;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 @Slf4j
+@Component
 public class PetalMovementController implements MovementBehaviour {
     @Autowired
     CentralUtil util;

@@ -5,6 +5,7 @@ import org.izdevs.acidium.event.EntityDeathEvent;
 import org.izdevs.acidium.game.entity.spawner.DefaultSpawner;
 import org.izdevs.acidium.scheduling.Ticked;
 import org.izdevs.acidium.world.World;
+import org.izdevs.acidium.world.WorldDataHolder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
@@ -28,8 +29,9 @@ public class WorldController implements Ticked {
         boolean y = false;
         for(WorldGenerator gen : generator){
             if(gen.name.equalsIgnoreCase("default")){
-                World world = gen.generate(seed);
+                World world = new World();
                 world.setSpawner(new DefaultSpawner());
+                WorldDataHolder.data.put(world,gen.generate(seed));
                 worlds.add(world);
                 y = true;
                 break;

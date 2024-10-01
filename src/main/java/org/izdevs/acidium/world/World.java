@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
+import org.izdevs.acidium.basic.Entity;
 import org.izdevs.acidium.game.entity.spawner.AbstractMobSpawner;
 import org.izdevs.acidium.game.entity.spawner.SpawnerFactory;
 import org.izdevs.acidium.game.entity.spawner.SpawnerType;
@@ -18,37 +19,34 @@ import java.util.Map;
 public class World extends TickedWorld {
     @NotNull String name;
     volatile AbstractMobSpawner spawner;
-    private volatile Map<Point, Block> map;
-
-    public World(Map<Point, Block> map) {
-        super(map);
-        this.map = map;
-    }
 
     public Block getBlockAtLoc(Location location) {
-        if (map.containsKey(new Point(location.getX(), location.getY()))) {
-            return map.get(new Point(location.getX(), location.getY()));
-        } else {
-            throw new IllegalArgumentException("block is not found in:" + map);
-        }
+        return WorldDataHolder.data.get(this).map.getOrDefault(new Point(location.getX(), location.getY()), null);
     }
 
     public void setBlockAtLoc(Location location, Block block) {
-        if (map.containsKey(new Point(location.getX(), location.getY()))) {
-            map.replace(new Point(location.getX(), location.getY()), block);
+        if (WorldDataHolder.data.get(this).map.containsKey(new Point(location.getX(), location.getY()))) {
+            WorldDataHolder.data.get(this).map.replace(new Point(location.getX(), location.getY()), block);
         } else {
             Point point = new Point(location.x, location.y);
-            map.put(point, block);
+            WorldDataHolder.data.get(this).map.put(point, block);
         }
+    }
+
+    public void summonEntity(Entity a, Location location) {
+        a.setAlive(true);
+        a.setX(location.x);
+        a.setY(location.y);
+        WorldDataHolder.data.get(this).entities.add(a);
     }
 
     @Override
     public String toString() {
-        return this.map.toString();
+        return WorldDataHolder.data.get(this).map.toString();
     }
 
     @PostConstruct
-    public void init(){
+    public void init() {
         spawner = new SpawnerFactory().getSpawner(SpawnerType.Default);
     }
 }

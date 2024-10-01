@@ -56,6 +56,9 @@ public class Entity extends Resource {
     double movementSpeed;
     int health;
     int hitboxRadius;
+
+    //in degrees
+    int facingDir = 0;
     /**
      * body damage
      */
@@ -217,5 +220,27 @@ public class Entity extends Resource {
 
     public long getId() {
         return this.id;
+    }
+
+    /**
+     * handles hitbox collisions
+     * can be overridden
+     * @param another another entity which its hitbox is colliding with the current entity
+     */
+    public void handleHitboxCollision(Entity another){
+        this.health -= another.getBDamage();
+    }
+
+    /**
+     * handles the death of the entity
+     * can be overridden
+     */
+    public void handleDeath(){
+        this.setAlive(false);
+        this.setHealth(0);
+    }
+
+    public boolean parentCheck(){
+        return false;
     }
 }

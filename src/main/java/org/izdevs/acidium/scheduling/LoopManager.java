@@ -1,12 +1,14 @@
 package org.izdevs.acidium.scheduling;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import jakarta.annotation.PostConstruct;
 import lombok.Getter;
 import lombok.Setter;
 import org.izdevs.acidium.configuration.Config;
 import org.izdevs.acidium.tick.TickManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
@@ -21,24 +23,26 @@ import java.util.concurrent.TimeUnit;
 public class LoopManager {
     Logger logger = LoggerFactory.getLogger(this.getClass().getSimpleName());
     ThreadFactory factory = new ThreadFactoryBuilder().setThreadFactory(new AcidThreadFactory()).build();
-    ThreadPoolExecutor executor = new ThreadPoolExecutor(20,200,1000, TimeUnit.MILLISECONDS, new ArrayBlockingQueue<>(5),factory);
 
-    /**
-     * milliseconds between each pulse
-     */
-    public static final int pulse_interval = 50;
-    public static final int MAX_THREADS = Runtime.getRuntime().availableProcessors();
+    //one update at a time, array blocking queue size set to 1
+    //todo long-term: finish migration to multi-threading framework
+    ThreadPoolExecutor executor = new ThreadPoolExecutor(20, 200, 1000, TimeUnit.MILLISECONDS, new ArrayBlockingQueue<>(1), factory);
     @Getter
     volatile Set<DelayedTask> delayedTasks = new HashSet<>();
     @Getter
     //note that these are repeating repeating_tasks
     volatile Set<ScheduledTask> repeating_tasks = new HashSet<>();
+
+    @Autowired
+    Set<Ticked> tick_tasks;
+
     @Getter
     @Setter
     /**
      * is ticking paused
      */
-    boolean paused = false;
+            boolean paused = false;
+
     public void registerRepeatingTask(ScheduledTask task) {
         logger.debug("repeating task has been registered: " + task.id);
         repeating_tasks.add(task);
@@ -49,9 +53,7 @@ public class LoopManager {
         delayedTasks.add(task);
     }
 
-    @Scheduled(fixedDelay = pulse_interval)
     public void pulse() throws Exception {
-        Logger logger = LoggerFactory.getLogger(this.getClass());
         for (ScheduledTask task : delayedTasks) {
             if (task.state == ScheduledTask.State.FINISHED) {
                 delayedTasks.remove(task);
@@ -71,14 +73,14 @@ public class LoopManager {
                 } else {
                     if (task.state == ScheduledTask.State.EXCEPTION) {
                         delayedTasks.remove(task);
-                        throw new Exception("Task:" + task.getId() + "thrown an exception while executing");
+                        throw new RuntimeException("Task:" + task.getId() + "thrown an exception while executing");
                     }
                 }
             }
         }
 
-        for(ScheduledTask task: repeating_tasks){
-            if(task.state == ScheduledTask.State.SCHEDULED_WAITING){
+        for (ScheduledTask task : repeating_tasks) {
+            if (task.state == ScheduledTask.State.SCHEDULED_WAITING) {
                 if (task.destTick == 0) {
                     if (task.async) {
                         executor.execute(task.task);
@@ -90,8 +92,7 @@ public class LoopManager {
                 } else {
                     task.destTick--;
                 }
-            }
-            else if(task.state == ScheduledTask.State.EXCEPTION){
+            } else if (task.state == ScheduledTask.State.EXCEPTION) {
                 repeating_tasks.remove(task);
                 throw new Exception("Repeating Task:" + task.getId() + "Exited with exception");
             }
@@ -99,9 +100,27 @@ public class LoopManager {
     }
 
     @Scheduled(fixedDelay = 1000 / Config.ticksPerSecond)
-    public void tick() {
+    public void tick() throws Exception {
         if (!paused) {
             TickManager.stepTick();
+            pulse();
+        }
+    }
+
+    /**
+     * schedules every component instanceof Ticked
+     */
+    @PostConstruct
+    public void registerAllTickedTasks() {
+        for (Ticked ticked : tick_tasks) {
+            Runnable runnable = new Runnable() {
+                @Override
+                public void run() {
+                    ticked.tick();
+                }
+            };
+
+            this.repeating_tasks.add(new ScheduledTask(runnable));
         }
     }
 }

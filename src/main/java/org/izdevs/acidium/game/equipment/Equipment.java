@@ -13,23 +13,43 @@ import java.util.Set;
 
 @Setter
 @Getter
-public class Equipment extends Entity {
+public abstract class Equipment extends Entity {
+    //reserved cd to avoid shits from happening
+    public static final int reserved_cd = Integer.MAX_VALUE;
+
+    boolean isBroken = false;
+
     protected EquipmentSchema schema;
+    Entity owner;
     @PostConstruct
     public void __set_allow_to_be_crafting_material(){
         if(this.schema.allowToBeCraftingMaterial)
             this.schema.allowedSlots.add(InventoryType._Crafting);
     }
-    public Equipment(World world, String name, double movementSpeed, int health, int hitboxRadius, int bDamage) {
+    public Equipment(World world, String name, double movementSpeed, int health, int hitboxRadius, int bDamage,Entity owner) {
         super(world, name, movementSpeed, health, hitboxRadius, bDamage);
         this.schema.allowedSlots.add(InventoryType.Inventory);
+        this.owner = owner;
     }
-    public Equipment(World world, String name, double movementSpeed, int health, int hitboxRadius, int bDamage, int maxDurability) {
+    public Equipment(World world, String name, double movementSpeed, int health, int hitboxRadius, int bDamage, int maxDurability,Entity owner) {
         super(world, name, movementSpeed, health, hitboxRadius, bDamage);
+        if(maxDurability <= 0){
+            throw new IllegalArgumentException("maxDurability cannot be less or equal to 0");
+        }
         this.schema.allowedSlots.add(InventoryType.Inventory);
         this.schema.maxDurability = maxDurability;
+        this.owner = owner;
     }
     public Equipment(String name) {
         super(name, 100, 1, 0, 0);
     }
+
+    public abstract boolean is_cd_over();
+    public abstract void use();
+
+    /**
+     * invokes when the equipment runs out of durability
+     */
+    public abstract void handleBroken();
+
 }

@@ -1,13 +1,7 @@
 package org.izdevs.acidium;
 
-import com.badlogic.gdx.ai.msg.MessageDispatcher;
-import com.badlogic.gdx.ai.msg.MessageManager;
-import com.google.common.util.concurrent.MoreExecutors;
-import org.izdevs.acidium.game.equipment.EquipmentHolder;
-import org.izdevs.acidium.scheduling.AcidThreadFactory;
 import org.izdevs.acidium.serialization.*;
 import org.izdevs.acidium.tick.TickManager;
-import org.izdevs.acidium.utils.ReflectUtil;
 import org.izdevs.acidium.world.generater.WorldController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,15 +11,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import javax.sql.DataSource;
-import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.security.SecureRandom;
-import java.sql.Connection;
-import java.util.List;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
 
 import static org.izdevs.acidium.AcidiumApplication.readAndPrintNote;
 

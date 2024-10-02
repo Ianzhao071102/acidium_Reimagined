@@ -36,6 +36,8 @@ public class LoopManager {
     @Autowired
     Set<Ticked> tick_tasks;
 
+    static Set<DelayedTask> static_delayed_tasks;
+
     @Getter
     @Setter
     /**
@@ -51,6 +53,10 @@ public class LoopManager {
     public void scheduleAsyncDelayedTask(DelayedTask task) {
         logger.debug("async delayed task has been registered: " + task.getId());
         delayedTasks.add(task);
+    }
+
+    public static void scheduleDelayedTask(DelayedTask task) {
+        static_delayed_tasks.add(task);
     }
 
     public void pulse() throws Exception {
@@ -96,6 +102,13 @@ public class LoopManager {
                 repeating_tasks.remove(task);
                 throw new Exception("Repeating Task:" + task.getId() + "Exited with exception");
             }
+        }
+
+        for(DelayedTask task:static_delayed_tasks){
+            if(task.destTick == 0){
+                task.exec();
+            }
+            else task.destTick--;
         }
     }
 

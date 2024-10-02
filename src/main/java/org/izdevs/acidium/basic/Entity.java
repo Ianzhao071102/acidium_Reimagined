@@ -58,7 +58,7 @@ public class Entity extends Resource {
     int hitboxRadius;
 
     //in degrees
-    int facingDir = 0;
+    double facingDir = 0;
     /**
      * body damage
      */

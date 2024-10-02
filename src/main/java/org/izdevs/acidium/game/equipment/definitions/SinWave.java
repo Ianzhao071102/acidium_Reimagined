@@ -5,14 +5,13 @@ import org.izdevs.acidium.game.equipment.Equipment;
 import org.izdevs.acidium.world.Location;
 import org.izdevs.acidium.world.World;
 import org.izdevs.acidium.world.WorldDataHolder;
-import org.izdevs.acidium.world.generater.WorldController;
 
 public class SinWave extends Equipment {
     int cd_current = cd_max;
     public static final int cd_max = 200;
 
     public SinWave(World world, Entity owner, int maxDurability) {
-        super(world, owner.getName(), 0.75, 40, 1, 100, maxDurability);
+        super(world, owner.getName(), 0.75, 40, 1, 100, maxDurability,owner);
         this.setOwner(owner);
     }
 

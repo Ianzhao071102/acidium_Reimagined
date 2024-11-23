@@ -7,16 +7,19 @@ import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.websocket.Session;
+import org.hibernate.validator.internal.constraintvalidators.hv.UUIDValidator;
 import org.izdevs.acidium.Metrics;
 import org.izdevs.acidium.api.v1.Payload;
 import org.izdevs.acidium.api.v1.Player;
 import org.izdevs.acidium.api.v1.User;
 import org.izdevs.acidium.basic.Entity;
+import org.izdevs.acidium.basic.InventoryRepository;
 import org.izdevs.acidium.basic.UserRepository;
 import org.izdevs.acidium.game.equipment.Equipment;
 import org.izdevs.acidium.game.inventory.PlayerInventory;
 import org.izdevs.acidium.networking.account.JoinedPlayer;
 import org.izdevs.acidium.networking.account.OnlinePlayerRepository;
+import org.izdevs.acidium.networking.game.payload.PlayerReference;
 import org.izdevs.acidium.scheduling.DelayedTask;
 import org.izdevs.acidium.scheduling.LoopManager;
 import org.izdevs.acidium.security.AuthorizationContent;
@@ -37,10 +40,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.time.Instant;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.UUID;
+import java.util.*;
 
 import static org.izdevs.acidium.AcidiumApplication.bcrypt;
 
@@ -56,6 +56,11 @@ public class APIEndPoints {
     @Autowired
     OnlinePlayerRepository repository;
 
+    @Autowired
+    InventoryRepository inventoryRepository;
+    @Autowired
+    UserRepository userRepository;
+
     @GetMapping(path = "credits")
     public ResponseEntity<Payload> credits() {
         metrics.apiRequests.increment();
@@ -63,7 +68,7 @@ public class APIEndPoints {
     }
 
     @PostMapping(path = "register",consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<User> register(@RequestBody RegistrationPayload pld,HttpServletRequest request){
+    public ResponseEntity<User> register(@RequestBody RegistrationPayload pld){
         if(User.password_regex.matches(pld.getPassword()) && User.username_regex.matches(pld.getUsername())){
             String password_hash = new BCryptPasswordEncoder().encode(pld.getPassword());
             UUID uuid = UUID.randomUUID();
@@ -72,5 +77,20 @@ public class APIEndPoints {
         }else{
             return new ResponseEntity<>(new User(),HttpStatus.BAD_REQUEST);
         }
+    }
+
+    @GetMapping(path = "inventory")
+    public ResponseEntity<PlayerInventory> getInventoryOfPlayer(@RequestBody PlayerReference ref){
+        if(ref.username().contains(" ") || !User.username_regex.matcher(ref.username()).matches()){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        User user = userRepository.findByUsername(ref.username());
+        if(user != null){
+            Optional<PlayerInventory> a = inventoryRepository.findById(user);
+            if(a.isPresent()){
+                return new ResponseEntity<>(a.get(),HttpStatus.OK);
+            }
+        }
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 }

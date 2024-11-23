@@ -8,10 +8,11 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepository extends JpaRepository<User,Integer> {
     User findById(Long id);
-    User findUserByRole(Role role);
+    User findByRole(Role role);
     User findByUsername(String username);
 
     User findUsersByUsernameContainingIgnoreCase(String param);
 
     void deleteUserByUsername(String username);
+    boolean existsByUsername(String username);
 }

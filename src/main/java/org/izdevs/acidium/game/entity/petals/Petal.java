@@ -22,17 +22,18 @@ public class Petal extends Resource {
     public static final float orbit_radius_max = 8F;
 
 
-    int anchor_x,anchor_y;
+    int anchor_x, anchor_y;
     @Transient
-    Map<String,Object> attribute = new HashMap<>();
+    Map<String, Object> attribute = new HashMap<>();
     double movementSpeed;
     int health;
     int hitboxRadius;
     int bDamage;
-    public Petal() {
 
+    public Petal() {
     }
-    public Petal(double movementSpeed,int health,int hitboxRadius,int bDamage){
+
+    public Petal(double movementSpeed, int health, int hitboxRadius, int bDamage) {
         this.movementSpeed = movementSpeed;
         this.health = health;
         this.hitboxRadius = hitboxRadius;

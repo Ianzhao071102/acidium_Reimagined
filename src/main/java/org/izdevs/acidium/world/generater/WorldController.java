@@ -29,7 +29,7 @@ public class WorldController implements Ticked {
         boolean y = false;
         for(WorldGenerator gen : generator){
             if(gen.name.equalsIgnoreCase("default")){
-                World world = new World();
+                World world = new World(true);
                 world.setSpawner(new DefaultSpawner());
                 WorldDataHolder.data.put(world,gen.generate(seed));
                 worlds.add(world);

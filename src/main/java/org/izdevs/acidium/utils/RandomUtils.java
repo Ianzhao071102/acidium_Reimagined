@@ -23,4 +23,7 @@ public class RandomUtils {
             return sb.toString();
         }
     }
+    public static String sub_entity_name(String owner_name,String property_type_name){
+        return owner_name+"_"+property_type_name+"_"+getRandomString(5);
+    }
 }

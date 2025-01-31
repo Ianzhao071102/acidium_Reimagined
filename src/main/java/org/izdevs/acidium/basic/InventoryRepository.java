@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface InventoryRepository extends CrudRepository<PlayerInventory, User> {
+    PlayerInventory findInventoryByOwner(User user);
 }

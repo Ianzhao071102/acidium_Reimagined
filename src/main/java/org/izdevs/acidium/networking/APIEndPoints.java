@@ -7,6 +7,8 @@ import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.websocket.Session;
+import jakarta.websocket.server.PathParam;
+import lombok.extern.slf4j.Slf4j;
 import org.hibernate.validator.internal.constraintvalidators.hv.UUIDValidator;
 import org.izdevs.acidium.Metrics;
 import org.izdevs.acidium.api.v1.Payload;
@@ -46,6 +48,7 @@ import static org.izdevs.acidium.AcidiumApplication.bcrypt;
 
 @RestController
 @RequestMapping("v1") //RESOURCE GETTER API V1
+@Slf4j
 public class APIEndPoints {
     @Autowired
     @Qualifier(value = "credits")
@@ -67,30 +70,38 @@ public class APIEndPoints {
         return new ResponseEntity<>(new Payload(credits), HttpStatus.OK);
     }
 
-    @PostMapping(path = "register",consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<User> register(@RequestBody RegistrationPayload pld){
-        if(User.password_regex.matches(pld.getPassword()) && User.username_regex.matches(pld.getUsername())){
+    @PostMapping(path = "register", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<User> register(@RequestBody RegistrationPayload pld) {
+        if (User.password_regex.matches(pld.getPassword()) && User.username_regex.matches(pld.getUsername())) {
+            if(userRepository.findByUsername(pld.getUsername()) != null) {
+                log.debug("username taken:{}", pld.getUsername());
+                return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+            }
+            log.debug("registration successful");
             String password_hash = new BCryptPasswordEncoder().encode(pld.getPassword());
-            UUID uuid = UUID.randomUUID();
-            repository.save(new JoinedPlayer(pld.getUsername(), password_hash,uuid.toString()));
-            return new ResponseEntity<>(new User(pld.getUsername(), password_hash,uuid),HttpStatus.OK);
-        }else{
-            return new ResponseEntity<>(new User(),HttpStatus.BAD_REQUEST);
+            userRepository.save(new User(pld.getUsername(), password_hash));
+            return new ResponseEntity<>(new User(pld.getUsername(), password_hash), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
     }
 
     @GetMapping(path = "inventory")
-    public ResponseEntity<PlayerInventory> getInventoryOfPlayer(@RequestBody PlayerReference ref){
-        if(ref.username().contains(" ") || !User.username_regex.matcher(ref.username()).matches()){
+    public ResponseEntity<PlayerInventory> getInventoryOfPlayer(@PathParam("username") String username) {
+        if (username.contains(" ") || !User.username_regex.matcher(username).matches()) {
+            log.debug("username regex match failed");
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
-        User user = userRepository.findByUsername(ref.username());
-        if(user != null){
-            Optional<PlayerInventory> a = inventoryRepository.findById(user);
-            if(a.isPresent()){
-                return new ResponseEntity<>(a.get(),HttpStatus.OK);
+        User user = userRepository.findByUsername(username);
+        if (user != null) {
+            log.debug("user found");
+            Optional<PlayerInventory> a = Optional.ofNullable(inventoryRepository.findInventoryByOwner(user));
+            if (a.isPresent()) {
+                log.debug("inventory found");
+                return new ResponseEntity<>(a.get(), HttpStatus.OK);
             }
         }
+        log.debug("user is not found");
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 }

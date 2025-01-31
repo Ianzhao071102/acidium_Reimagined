@@ -114,18 +114,16 @@ public class AccountServiceWebSocketEndpoint implements WebSocketHandler {
                     if (!encoder.matches(password, hash)) {
                         session.sendMessage(new TextMessage("incorrect password"));
                         session.close(CloseStatus.BAD_DATA);
-                        return;
                     } else {
                         UUID uuid = generator.use();
                         opr.save(new JoinedPlayer(username,password_hash,uuid.toString()));
                         session.sendMessage(new TextMessage(uuid.toString()));
-                        session.close(CloseStatus.NORMAL);
                     }
                 }
             }
 
-            session.sendMessage(new TextMessage(new ObjectMapper().writeValueAsString(user)));
-            session.close(CloseStatus.NORMAL);
+            //below normal login more handling
+            //todo finish game protocol handling
         } else {
             session.sendMessage(new TextMessage("illegal argument passed in 3"));
             session.close(CloseStatus.BAD_DATA);

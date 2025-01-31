@@ -2,6 +2,7 @@ package org.izdevs.acidium.game.equipment.definitions;
 
 import org.izdevs.acidium.basic.Entity;
 import org.izdevs.acidium.game.equipment.Equipment;
+import org.izdevs.acidium.utils.RandomUtils;
 import org.izdevs.acidium.world.Location;
 import org.izdevs.acidium.world.World;
 import org.izdevs.acidium.world.WorldDataHolder;
@@ -12,7 +13,7 @@ public class SinWave extends Equipment {
     public static final int cd_max = 200;
 
     public SinWave(World world, Entity owner, int maxDurability) {
-        super(world, owner.getName(), 0.75, 40, 1, 100, maxDurability);
+        super(world, RandomUtils.sub_entity_name(owner.getName(),"equipment"), 0.75, 40, 1, 100, maxDurability,owner);
         this.setOwner(owner);
     }
 

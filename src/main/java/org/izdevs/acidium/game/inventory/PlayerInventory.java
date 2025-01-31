@@ -4,6 +4,9 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.izdevs.acidium.api.v1.Player;
+import org.izdevs.acidium.api.v1.User;
 import org.izdevs.acidium.basic.PlayerInventoryConverter;
 import org.izdevs.acidium.game.equipment.Equipment;
 import org.izdevs.acidium.utils.NumberUtils;
@@ -14,13 +17,26 @@ import java.util.function.Supplier;
 
 @NoArgsConstructor
 @Entity
+@EntityListeners({PlayerInventoryListener.class})
 public class PlayerInventory {
+    //todo make inventories receive the items of a user every time class constructed
     @Id
     @GeneratedValue
     public long id;
     /**
      * has 100 slots
      */
+
+    @ManyToOne
+    @JoinColumn(name = "owner_id")
+    @Getter
+    @Setter
+    User owner;
+
+    public PlayerInventory(User user) {
+        this.owner = user;
+    }
+
     @Convert(converter = PlayerInventoryConverter.class)
     public Inventory primary = new Inventory(InventoryType.Inventory);
     /**

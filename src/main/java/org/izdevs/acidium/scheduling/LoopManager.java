@@ -94,7 +94,7 @@ public class LoopManager {
                 }
             } else if (task.state == ScheduledTask.State.EXCEPTION) {
                 repeating_tasks.remove(task);
-                throw new Exception("Repeating Task:" + task.getId() + "Exited with exception");
+                throw new Exception("Repeating Task:" + task.getId() + " Exited with exception");
             }
         }
     }

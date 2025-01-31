@@ -2,5 +2,6 @@ package org.izdevs.acidium.game.entity.spawner;
 
 public enum SpawnerType {
     Default,
-    Revoker
+    Revoker,
+    __EMPTY__
 }

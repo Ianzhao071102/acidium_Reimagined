@@ -47,7 +47,6 @@ public class AcidiumApplication extends SpringApplication {
     boolean print_license;
 
     public static void main(String[] args) {
-        logger.error(new Gson().toJson(new UserAccountSchema(UserAccountSchema.opType.REGISTER,"Ian071102","Yqsz071102") ));
         context = SpringApplication.run(AcidiumApplication.class, args);
     }
 

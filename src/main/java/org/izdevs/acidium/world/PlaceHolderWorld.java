@@ -14,7 +14,7 @@ public class PlaceHolderWorld extends World{
      */
     public PlaceHolderWorld(String regex_match_by_world_name) {
         //empty map
-        super(new HashMap<>());
+        super(false);
         try {
             this.pattern = Pattern.compile(regex_match_by_world_name);
         }catch(RuntimeException e){

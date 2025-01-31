@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.HashSet;
 import java.util.Set;
 
 @Service
@@ -26,7 +27,11 @@ public class JSONParser extends ResourceDeserializer {
 
     @PostConstruct
     public void writeErrMSG() {
-        err_msg = new Gson().toJson(schemas);
+        Set<String> types = new HashSet<>();
+        for (ResourceSchema schema : schemas) {
+            types.add(schema.getClass().getTypeName());
+        }
+        err_msg = new Gson().toJson(types);
     }
 
     @Override
@@ -42,8 +47,8 @@ public class JSONParser extends ResourceDeserializer {
             }
         }
 
-        log.error("failed to deserialize, supported typename(s) are:" + err_msg);
-        throw new UnsupportedOperationException("invalid schema definition, cannot find ResourceSchemaDefinition for the specified typename:" + stp1.typeName);
+        log.warn("failed to deserialize string data, supported typename(s) are:{}, skipping", err_msg);
+        throw new RuntimeException("failed to deserialize string data, supported typename(s) are:" + err_msg);
     }
 
     @Override
@@ -59,8 +64,8 @@ public class JSONParser extends ResourceDeserializer {
             }
         }
 
-        log.error("failed to deserialize, supported typename(s) are:" + err_msg);
-        throw new UnsupportedOperationException("invalid schema definition, cannot find ResourceSchemaDefinition for the specified typename:" + stp1.typeName);
+        log.error("failed to deserialize json data, supported typename(s) are:{}, skipping", err_msg);
+        throw new RuntimeException("deserialize json data failed");
     }
 
     @Override

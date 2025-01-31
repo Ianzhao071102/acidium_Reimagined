@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Set;
-import java.util.TimeZone;
 
 @Service
 @Component
@@ -23,7 +22,9 @@ public class WorldController implements Ticked {
 
     @Autowired
     ApplicationEventPublisher publisher;
-    public ArrayList<World> worlds = new ArrayList<>();
+    @Autowired
+    WorldDataHolder holder;
+    public static ArrayList<World> worlds = new ArrayList<>();
 
     public void generateWorld(long seed) {
         boolean y = false;
@@ -55,5 +56,25 @@ public class WorldController implements Ticked {
                 }
             }
         }
+    }
+
+    public static void patchEntity(String world_name, Entity original, Entity dest){
+        for(World w:WorldController.worlds){
+            if(w.getName().equals(world_name)){
+                var c = WorldDataHolder.data.get(w);
+                var d = c.entities;
+                d.remove(original);
+                d.add(dest);
+                c.entities = d;
+
+                WorldDataHolder.data.remove(w);
+                WorldDataHolder.data.put(w,c);
+                return;
+            }
+        }
+        throw new IllegalArgumentException("world not found");
+    }
+    public void patchEntity(){
+        this.patchEntity();
     }
 }

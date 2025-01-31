@@ -16,7 +16,7 @@ public class LivingEntity extends Entity implements EntityBrainAdapter {
     int cursor = 0;
     public Set<PetalEntity> petals;
     Brain brain = new EmptyBrain();
-    EntityBrainConnector connector = new DefaultBrainConnector();
+    EntityBrainConnector connector = new DefaultBrainConnector(this);
     public void updatePetalAnchors(){
         for(PetalEntity p:petals){
             p.updateAnchor(this);

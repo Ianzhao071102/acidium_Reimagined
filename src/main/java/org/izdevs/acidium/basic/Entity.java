@@ -7,6 +7,8 @@ import jakarta.annotation.PostConstruct;
 import lombok.Getter;
 import lombok.Setter;
 import org.izdevs.acidium.game.entity.EntityWorldAssigner;
+import org.izdevs.acidium.game.entity.mechanics.DefaultHitbox;
+import org.izdevs.acidium.game.entity.mechanics.HitBox;
 import org.izdevs.acidium.game.inventory.Inventory;
 import org.izdevs.acidium.game.inventory.InventoryType;
 import org.izdevs.acidium.networking.game.payload.CombatPositionType;
@@ -55,7 +57,12 @@ public class Entity extends Resource {
     double x, y;
     double movementSpeed;
     int health;
+
+    /**
+     * hitbox multiplier
+     */
     int hitboxRadius;
+    HitBox hitbox = new DefaultHitbox();
 
     //in degrees
     int facingDir = 0;
@@ -91,30 +98,6 @@ public class Entity extends Resource {
     FloatArray pathFinderGoal = new FloatArray(2);
 
     CombatPositionType position;
-
-    ScheduledTask task = new ScheduledTask(
-            () -> {
-                Logger logger = LoggerFactory.getLogger(this.getClass());
-                if (this.getHealth() <= 0) this.alive = false;
-                World current_world = this.getWorld();
-
-                if (current_world != null) {
-                    for (int i = 0; i <= current_world.mobs.size() - 1; i++) {
-                        Entity mob = current_world.mobs.get(i);
-
-                        if (isColliding(mob, this)) {
-                            if (invincible) {
-                                logger.debug("entity is invincible, stopped damage");
-                            } else {
-                                mob.setHealth(mob.getHealth() - this.getBDamage());
-                                this.damage(mob.getBDamage());
-                                logger.debug("entity damage is triggered, amount:" + this.getBDamage());
-                            }
-                        }
-                    }
-                }
-            }
-    );
 
     public Entity(String name, double movementSpeed, int health, int hitboxRadius, int bDamage) {
         super();
@@ -189,33 +172,6 @@ public class Entity extends Resource {
     @EventListener(ApplicationReadyEvent.class)
     public void init_finish() {
         finished = true;
-    }
-
-    private void run_task() {
-        Object _mgr = SpringBeanUtils.getBean("loopManager");
-        assert _mgr instanceof LoopManager;
-
-        LoopManager manager = (LoopManager) _mgr;
-
-        manager.registerRepeatingTask(task);
-    }
-
-    @PostConstruct
-    public void reg_task() {
-        if (finished) {
-            run_task();
-        } else {
-            //timer task
-            TimerTask tt = new TimerTask() {
-                @Override
-                public void run() {
-                    run_task();
-                }
-            };
-            //init this five seconds later
-            Timer timer = new Timer();
-            timer.schedule(tt, 20000L);
-        }
     }
 
     public long getId() {

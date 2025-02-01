@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.izdevs.acidium.basic.Entity;
 import org.izdevs.acidium.game.entity.mechanics.LivingEntity;
+import org.izdevs.acidium.world.World;
 
 import java.security.SecureRandom;
 
@@ -41,7 +42,7 @@ public class PetalEntity extends Entity {
         //it cant hold petals in this case:
         else throw new UnsupportedOperationException("owner is not LivingEntity, therefore cannot hold petals");
     }
-    public PetalEntity(Petal petal) {
-        super("petal-" + petal.id, petal.movementSpeed, petal.health, petal.hitboxRadius, petal.bDamage);
+    public PetalEntity(Petal petal, World world) {
+        super(world,"petal-" + petal.id, petal.movementSpeed, petal.health, petal.hitboxRadius, petal.bDamage);
     }
 }

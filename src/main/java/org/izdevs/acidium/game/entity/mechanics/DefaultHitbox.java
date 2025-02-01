@@ -10,10 +10,10 @@ public class DefaultHitbox extends HitBox {
 
     @Override
     public boolean collide_with(HitBox hitBox) {
-        int ox = this.owner_x + anchor_x;
-        int hox = hitBox.owner_x + hitBox.anchor_x;
-        int oy = this.owner_y + anchor_y;
-        int hoy = hitBox.owner_y + hitBox.anchor_y;
+        int ox = (this.owner_x + anchor_x) * super.multiplier;
+        int hox = (hitBox.owner_x + hitBox.anchor_x) * hitBox.multiplier;
+        int oy = (this.owner_y + anchor_y) * super.multiplier;
+        int hoy = (hitBox.owner_y + hitBox.anchor_y) * hitBox.multiplier;
         return ox < hox + 1 &&
                 ox + 1 > hox &&
                 oy < hoy + 1 &&

@@ -39,12 +39,7 @@ import static com.esri.core.geometry.Point2D.distance;
 
 @Getter
 @Setter
-@Configurable
 public class Entity extends Resource {
-    @Autowired
-    EntityWorldAssigner assigner;
-    @Autowired
-    WorldController controller;
 
     private boolean finished = false;
     EntityController entityController = new BasicEntityController();
@@ -61,7 +56,9 @@ public class Entity extends Resource {
     /**
      * hitbox multiplier
      */
+    @Deprecated
     int hitboxRadius;
+
     HitBox hitbox = new DefaultHitbox();
 
     //in degrees
@@ -77,42 +74,11 @@ public class Entity extends Resource {
     String world_name;
     private World world = null;
 
-    public World getWorld() {
-        String assigned_name = "";
-        if (this.world instanceof PlaceHolderWorld) {
-            assigned_name = this.assigner.assign(this);
-        }
-        for (World world : controller.worlds) {
-            if (assigned_name.equals("__WAITING__")) {
-                if (world.getName().equalsIgnoreCase(assigned_name)) {
-                    return world;
-                }
-            }
-            if (world.getName().equalsIgnoreCase(this.world_name)) {
-                return world;
-            }
-        }
-        throw new UnsupportedOperationException("world specified by entity is not found, edge case here");
-    }
 
     FloatArray pathFinderGoal = new FloatArray(2);
 
     CombatPositionType position;
 
-    public Entity(String name, double movementSpeed, int health, int hitboxRadius, int bDamage) {
-        super();
-        this.name = name;
-        this.movementSpeed = movementSpeed;
-        this.health = health;
-        this.hitboxRadius = hitboxRadius;
-        this.bDamage = bDamage;
-
-        //world should be assigned
-        String result = assigner.assign(this);
-        if (result.equalsIgnoreCase("__WAITING__")) {
-            this.world = new PlaceHolderWorld("^\\S+$");
-        }
-    }
 
     public Entity(World world, String name, double movementSpeed, int health, int hitboxRadius, int bDamage) {
         super();
@@ -199,4 +165,7 @@ public class Entity extends Resource {
     public boolean parentCheck(){
         return false;
     }
+
+    @PostConstruct
+    public void init_hb_world(){}
 }

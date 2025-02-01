@@ -33,6 +33,7 @@ public class WorldController implements Ticked {
                 world.setSpawner(new DefaultSpawner());
                 WorldDataHolder.data.put(world,gen.generate(seed));
                 worlds.add(world);
+                world.index = worlds.indexOf(world);
                 y = true;
                 break;
             }

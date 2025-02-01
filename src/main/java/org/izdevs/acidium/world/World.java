@@ -17,6 +17,10 @@ import java.util.Map;
 @Setter
 @Getter
 public class World extends TickedWorld {
+    /**
+     * id assigned by world controller
+     */
+    public int index = -1;
     @NotNull String name;
     volatile AbstractMobSpawner spawner;
     boolean _spawner_on = true;

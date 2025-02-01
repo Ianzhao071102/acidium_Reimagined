@@ -1,7 +1,6 @@
 package org.izdevs.acidium.api.v1;
 
 import lombok.Getter;
-import org.izdevs.acidium.basic.Entity;
 import org.izdevs.acidium.basic.InventoryRepository;
 import org.izdevs.acidium.game.inventory.PlayerInventory;
 import org.springframework.beans.factory.annotation.Autowire;
@@ -12,7 +11,7 @@ import java.util.UUID;
 
 @Getter
 @Configurable(autowire = Autowire.BY_TYPE)
-public class Player extends Entity {
+public class Player{
     @Autowired
     InventoryRepository repository;
 
@@ -20,8 +19,7 @@ public class Player extends Entity {
     UUID uuid;
     User user;
 
-    public Player(User user,double movementSpeed, int health, int hitboxRadius, int bDamage) {
-        super(user.username, movementSpeed, health, hitboxRadius, bDamage);
+    public Player(User user) {
         this.user = user;
 
         //create a new inventory if not found for the player

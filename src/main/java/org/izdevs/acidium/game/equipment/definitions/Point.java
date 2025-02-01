@@ -12,11 +12,8 @@ public class Point extends Entity {
 
     @Override
     public void handleHitboxCollision(Entity another) {
-        if (!(another instanceof SinWave)) {
-            another.handleHitboxCollision(this);
-        } else if (((Equipment) another).getOwner().parentCheck()) {
-            another.handleHitboxCollision(this);
-        }
+        another.setHealth(another.getHealth() - this.getHealth());
+        this.setHealth(this.getHealth() - another.getBDamage());
     }
 
     @Override

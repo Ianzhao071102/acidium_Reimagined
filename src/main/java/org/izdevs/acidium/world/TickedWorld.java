@@ -1,14 +1,10 @@
 package org.izdevs.acidium.world;
 
-import com.esri.core.geometry.Point;
 import lombok.Getter;
-import org.izdevs.acidium.api.v1.Mob;
 import org.izdevs.acidium.api.v1.Player;
 import org.izdevs.acidium.basic.Entity;
-import org.jline.nativ.Kernel32;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 @Getter
 public class TickedWorld {

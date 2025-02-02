@@ -11,14 +11,14 @@ import org.springframework.stereotype.Service;
 
 
 @Service
-public class PlayerConnectionService implements AbstractPlayerConnector{
+public class PlayerConnectionService implements AbstractPlayerConnector {
     @Autowired
     PlayerHolder holder;
 
     @Override
     public PlayerEntity getPlayer(JoinedPlayer player) {
-        for(PlayerEntity p:holder.players){
-            if(p.getUsername().equals(player.getUsername())){
+        for (PlayerEntity p : holder.players) {
+            if (p.getUsername().equals(player.getUsername())) {
                 return p;
             }
         }
@@ -38,7 +38,7 @@ public class PlayerConnectionService implements AbstractPlayerConnector{
         PlayerEntity ap = this.getPlayer(player);
         ap.setX(location.getX());
         ap.setY(location.getY());
-        this.updatePlayer(player,ap);
+        this.updatePlayer(player, ap);
     }
 
 

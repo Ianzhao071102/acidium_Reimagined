@@ -52,31 +52,6 @@ public class Config {
         return 20;
     }
 
-    @Bean(name = "psql")
-    @Lazy(false)
-    public DataSource getDataSource() {
-        Logger logger = LoggerFactory.getLogger(this.getClass());
-        String url = env.getProperty("spring.datasource.url");
-        String username = env.getProperty("spring.datasource.username");
-        String pwd = env.getProperty("spring.datasource.password");
-        DataSource _this = DataSourceBuilder.create().username(username).url(url).password(pwd).build();
-
-        try {
-            _this.getConnection();
-
-        } catch (SQLException e) {
-            logger.warn("failed to connect to sql...");
-            logger.warn("using embedded psql...");
-
-            _this = DataSourceBuilder.create().username("sa").password("password").url("jdbc:h2:file:/data/acidium").build();
-        }
-
-        logger.info("connection to sql has been verified to be legitimate...");
-        logger.debug(_this.toString());
-        return _this;
-    }
-
-
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {

@@ -1,6 +1,6 @@
 package org.izdevs.acidium.serialization;
 
-import com.yworks.common.ResourcePolicy;
+
 import org.izdevs.acidium.serialization.models.ResourceSchema;
 import org.izdevs.acidium.utils.ReflectUtil;
 import org.slf4j.Logger;
@@ -13,16 +13,6 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.net.URI;
-import java.nio.file.FileSystem;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 

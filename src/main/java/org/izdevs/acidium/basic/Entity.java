@@ -7,6 +7,8 @@ import jakarta.annotation.PostConstruct;
 import lombok.Getter;
 import lombok.Setter;
 import org.izdevs.acidium.game.entity.EntityWorldAssigner;
+import org.izdevs.acidium.game.entity.mechanics.DefaultHitbox;
+import org.izdevs.acidium.game.entity.mechanics.HitBox;
 import org.izdevs.acidium.game.inventory.Inventory;
 import org.izdevs.acidium.game.inventory.InventoryType;
 import org.izdevs.acidium.networking.game.payload.CombatPositionType;
@@ -37,12 +39,7 @@ import static com.esri.core.geometry.Point2D.distance;
 
 @Getter
 @Setter
-@Configurable
 public class Entity extends Resource {
-    @Autowired
-    EntityWorldAssigner assigner;
-    @Autowired
-    WorldController controller;
 
     private boolean finished = false;
     EntityController entityController = new BasicEntityController();
@@ -55,7 +52,14 @@ public class Entity extends Resource {
     double x, y;
     double movementSpeed;
     int health;
+
+    /**
+     * hitbox multiplier
+     */
+    @Deprecated
     int hitboxRadius;
+
+    HitBox hitbox = new DefaultHitbox();
 
     //in degrees
     double facingDir = 0;
@@ -70,66 +74,11 @@ public class Entity extends Resource {
     String world_name;
     private World world = null;
 
-    public World getWorld() {
-        String assigned_name = "";
-        if (this.world instanceof PlaceHolderWorld) {
-            assigned_name = this.assigner.assign(this);
-        }
-        for (World world : controller.worlds) {
-            if (assigned_name.equals("__WAITING__")) {
-                if (world.getName().equalsIgnoreCase(assigned_name)) {
-                    return world;
-                }
-            }
-            if (world.getName().equalsIgnoreCase(this.world_name)) {
-                return world;
-            }
-        }
-        throw new UnsupportedOperationException("world specified by entity is not found, edge case here");
-    }
 
     FloatArray pathFinderGoal = new FloatArray(2);
 
     CombatPositionType position;
 
-    ScheduledTask task = new ScheduledTask(
-            () -> {
-                Logger logger = LoggerFactory.getLogger(this.getClass());
-                if (this.getHealth() <= 0) this.alive = false;
-                World current_world = this.getWorld();
-
-                if (current_world != null) {
-                    for (int i = 0; i <= current_world.mobs.size() - 1; i++) {
-                        Entity mob = current_world.mobs.get(i);
-
-                        if (isColliding(mob, this)) {
-                            if (invincible) {
-                                logger.debug("entity is invincible, stopped damage");
-                            } else {
-                                mob.setHealth(mob.getHealth() - this.getBDamage());
-                                this.damage(mob.getBDamage());
-                                logger.debug("entity damage is triggered, amount:" + this.getBDamage());
-                            }
-                        }
-                    }
-                }
-            }
-    );
-
-    public Entity(String name, double movementSpeed, int health, int hitboxRadius, int bDamage) {
-        super();
-        this.name = name;
-        this.movementSpeed = movementSpeed;
-        this.health = health;
-        this.hitboxRadius = hitboxRadius;
-        this.bDamage = bDamage;
-
-        //world should be assigned
-        String result = assigner.assign(this);
-        if (result.equalsIgnoreCase("__WAITING__")) {
-            this.world = new PlaceHolderWorld("^\\S+$");
-        }
-    }
 
     public Entity(World world, String name, double movementSpeed, int health, int hitboxRadius, int bDamage) {
         super();
@@ -191,33 +140,6 @@ public class Entity extends Resource {
         finished = true;
     }
 
-    private void run_task() {
-        Object _mgr = SpringBeanUtils.getBean("loopManager");
-        assert _mgr instanceof LoopManager;
-
-        LoopManager manager = (LoopManager) _mgr;
-
-        manager.registerRepeatingTask(task);
-    }
-
-    @PostConstruct
-    public void reg_task() {
-        if (finished) {
-            run_task();
-        } else {
-            //timer task
-            TimerTask tt = new TimerTask() {
-                @Override
-                public void run() {
-                    run_task();
-                }
-            };
-            //init this five seconds later
-            Timer timer = new Timer();
-            timer.schedule(tt, 20000L);
-        }
-    }
-
     public long getId() {
         return this.id;
     }
@@ -243,4 +165,7 @@ public class Entity extends Resource {
     public boolean parentCheck(){
         return false;
     }
+
+    @PostConstruct
+    public void init_hb_world(){}
 }

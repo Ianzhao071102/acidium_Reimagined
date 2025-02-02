@@ -17,8 +17,13 @@ import java.util.Map;
 @Setter
 @Getter
 public class World extends TickedWorld {
+    /**
+     * id assigned by world controller
+     */
+    public int index = -1;
     @NotNull String name;
     volatile AbstractMobSpawner spawner;
+    boolean _spawner_on = true;
 
     public Block getBlockAtLoc(Location location) {
         return WorldDataHolder.data.get(this).map.getOrDefault(new Point(location.getX(), location.getY()), null);
@@ -47,6 +52,14 @@ public class World extends TickedWorld {
 
     @PostConstruct
     public void init() {
-        spawner = new SpawnerFactory().getSpawner(SpawnerType.Default);
+        if(_spawner_on){
+            spawner = new SpawnerFactory().getSpawner(SpawnerType.Default);
+        }
+        else{
+            this.spawner = new SpawnerFactory().getSpawner(SpawnerType.__EMPTY__);
+        }
+    }
+    public World(boolean spawner_enabled) {
+        this._spawner_on = spawner_enabled;
     }
 }

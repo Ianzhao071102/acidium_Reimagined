@@ -13,7 +13,6 @@ public class Inventory {
     @Setter
     public List<Equipment> items;
 
-
     /**
      * here defines the primary_inventory MAX slot sizes
      */

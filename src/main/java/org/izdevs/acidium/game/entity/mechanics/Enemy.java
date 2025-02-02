@@ -7,7 +7,10 @@ public class Enemy extends LivingEntity {
     static String generateName(){
         return "ENEMY-" + RandomUtils.getRandomString(5);
     }
-    public Enemy(World world, double movementSpeed, int health, int hitboxRadius, int bDamage) {
-        super(world, generateName(), movementSpeed, health, hitboxRadius, bDamage);
+    public Enemy(World world,int health) {
+        super(world,generateName(),1D,health,0,300);
+        HitBox hb = new DefaultHitbox();
+        hb.multiplier = 2;
+        super.setHitbox(hb);
     }
 }

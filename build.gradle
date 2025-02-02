@@ -18,7 +18,6 @@ repositories {
 	maven {
 		url "https://maven-central-asia.storage-download.googleapis.com/maven2/"
 	}
-	mavenCentral()
 	maven {
 		url "https://libraries.minecraft.net"
 	}
@@ -44,17 +43,18 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.modulith:spring-modulith-starter-jpa'
 	implementation 'org.springframework.session:spring-session-core'
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+	implementation 'org.springframework.session:spring-session-data-redis'
 	testImplementation 'org.testcontainers:junit-jupiter'
 	testImplementation 'org.springframework.boot:spring-boot-testcontainers'
-	testImplementation 'org.testcontainers:postgresql'
 	implementation("com.google.guava:guava:33.2.1-jre")
 
 
 	compileOnly 'org.projectlombok:lombok:1.18.30'
 	annotationProcessor 'org.projectlombok:lombok:1.18.30'
-	runtimeOnly 'org.postgresql:postgresql'
 	runtimeOnly 'io.micrometer:micrometer-registry-prometheus'
 	runtimeOnly 'io.micrometer:micrometer-registry-prometheus'
+	runtimeOnly 'com.h2database:h2'
 	testCompileOnly 'org.projectlombok:lombok:1.18.30'
 	testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
 
@@ -83,20 +83,14 @@ dependencies {
 	implementation 'com.github.implicit-invocation:jwalkable:8ffaaf3558'
 
 	implementation "com.badlogicgames.gdx:gdx-ai:1.8.1"
-
-	implementation "com.github.xaguzman:pathfinding:0.2.6"
-
-	implementation 'org.springframework.session:spring-session-data-redis:3.2.2'
-
+	
 	implementation 'io.lettuce:lettuce-core:6.3.2.RELEASE'
 
 	//the jcabi-log bundle utils
 	implementation group: 'com.jcabi', name: 'jcabi-log', version: '0.24.1'
 
-	compileOnly 'com.yworks:yguard:4.1.0'
-	runtimeOnly 'org.postgresql:postgresql'
 	implementation("com.google.guava:guava:33.2.0-jre")
-
+	implementation 'commons-beanutils:commons-beanutils:1.10.0'
 }
 
 dependencyManagement {

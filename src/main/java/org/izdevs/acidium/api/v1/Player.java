@@ -1,19 +1,14 @@
 package org.izdevs.acidium.api.v1;
 
 import lombok.Getter;
-import org.izdevs.acidium.basic.InventoryRepository;
 import org.izdevs.acidium.game.inventory.PlayerInventory;
-import org.springframework.beans.factory.annotation.Autowire;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Configurable;
 
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
 @Getter
-@Configurable(autowire = Autowire.BY_TYPE)
 public class Player{
-    @Autowired
-    InventoryRepository repository;
 
     public volatile PlayerInventory inventory;
     UUID uuid;
@@ -21,13 +16,7 @@ public class Player{
 
     public Player(User user) {
         this.user = user;
-
-        //create a new inventory if not found for the player
-        if(repository.findInventoryByOwner(this.user) != null){
-            inventory = repository.findInventoryByOwner(this.user);
-        }else{
-            inventory = new PlayerInventory(this.user);
-            repository.save(this.inventory);
-        }
     }
+
+    public Set<String> parties_joined = new HashSet<>();
 }
